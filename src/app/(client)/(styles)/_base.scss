@@ -1,0 +1,29 @@
+.layout-center {
+    display: flex;
+    justify-content: center;
+
+    & > * {
+        @apply mx-auto;
+    }
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bg-img-center {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+[local-btn-dropdown-toggle] {
+    &:hover {
+        & > [local-data-dropdown-toggle] {
+            display: block;
+        }
+    }
+}

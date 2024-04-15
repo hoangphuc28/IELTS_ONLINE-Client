@@ -1,0 +1,45 @@
+.ui-front.webform-confirmation-modal .ui-widget-header {
+    background: transparent;
+    border: 0;
+}
+
+.contact-field.webform-actions {
+    margin: 0 auto;
+}
+
+ .webform-submission-form .btn.webform-button--submit {
+    display: inline-block;
+    width: auto;
+    line-height: normal;
+  border-radius: 30px;
+}
+ html .home-page .webform-submission-form .form-group {
+    margin-bottom: 0;
+}
+.webform-submission-form .captcha div.description{
+    float: left;
+    font-size: 13px;
+}
+
+.webform-submission-form .captcha input[name="captcha_response"] {
+    width: calc(100% - 80px);
+    float: right;
+}
+.webform-submission-form .captcha p#captcha--description {
+    font-weight: bold;
+    color: #284664;
+}
+.webform-submission-form .captcha .form-item-captcha-response {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.webform-submission-form .captcha .form-item-captcha-response label {
+    font-weight: bold;
+        width: 100%;display:none;
+}
+.webform-submission-form .webform-button--submit span.ajax-throbber {
+    font-size: 12px;
+}

@@ -1,0 +1,23 @@
+ var main_records = {
+              'Student': ['Custom lesson package','Report mistake/bug','Payment problem','Suggestion','Other'],
+              'IELTS Teacher/Examiner': ['Looking for freelance work', 'Provide Content','Other'],
+              'Others': ['Others'],
+          }
+    var youare = jQuery('[name="you_are"]').val(), lcns = main_records[youare] || [];
+   // Hide options of select about that are not in the lcns array
+    jQuery('[name="contact_about"] option').each(function () {
+      var $this = jQuery(this);
+      $this.toggle(lcns.indexOf($this.val()) > -1);
+    }) 
+    // Default selected option first in lcns array.
+    jQuery('[name="contact_about"]').val(lcns[0]);
+jQuery('[name="you_are"]').change(function () {
+   var youare = jQuery(this).val(), lcns = main_records[youare] || [];
+  // Hide options of select about that are not in the lcns array
+    jQuery('[name="contact_about"] option').each(function () {
+      var $this = jQuery(this);
+      $this.toggle(lcns.indexOf($this.val()) > -1);
+    }) 
+    // Default selected option first in lcns array.
+    jQuery('[name="contact_about"]').val(lcns[0]);
+});

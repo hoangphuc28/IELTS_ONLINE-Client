@@ -1,0 +1,323 @@
+/**
+ * @file
+ * JavaScript behaviors for jQuery Text Counter integration.
+ */
+
+(function ($, Drupal) {
+
+  'use strict';
+
+  // @see https://github.com/ractoon/jQuery-Text-Counter#options
+  Drupal.webform = Drupal.webform || {};
+  Drupal.webform.counter = Drupal.webform.counter || {};
+  Drupal.webform.counter.options = Drupal.webform.counter.options || {};
+
+  /**
+   * Initialize text field and textarea word and character counter.
+   *
+   * @type {Drupal~behavior}
+   */
+  Drupal.behaviors.webformCounter = {
+    attach: function (context) {
+      if (!$.fn.textcounter) {
+        return;
+      }
+
+      $(context).find('.js-webform-counter').once('webform-counter').each(function () {
+        var options = {
+          type: $(this).data('counter-type'),
+          max: $(this).data('counter-maximum'),
+          min: $(this).data('counter-minimum') || 0,
+          counterText: $(this).data('counter-minimum-message'),
+          countDownText: $(this).data('counter-maximum-message'),
+          inputErrorClass: 'webform-counter-warning',
+          counterErrorClass: 'webform-counter-warning',
+          countSpaces: true,
+          twoCharCarriageReturn: true,
+          stopInputAtMaximum: false,
+          // Don't display min/max message since server-side validation will
+          // display these messages.
+          minimumErrorText: '',
+          maximumErrorText: ''
+        };
+
+        options.countDown = (options.max) ? true : false;
+        if (!options.counterText) {
+          options.counterText = (options.type === 'word') ? Drupal.t('%d word(s) entered') : Drupal.t('%d character(s) entered');
+        }
+        if (!options.countDownText) {
+          options.countDownText = (options.type === 'word') ? Drupal.t('%d word(s) remaining') : Drupal.t('%d character(s) remaining');
+        }
+
+        options = $.extend(options, Drupal.webform.counter.options);
+
+        $(this).textcounter(options);
+      });
+
+    }
+  };
+
+})(jQuery, Drupal);
+;
+/**
+ * @file
+ * JavaScript behaviors for select menu.
+ */
+
+(function ($, Drupal) {
+
+  'use strict';
+
+  /**
+   * Disable select menu options using JavaScript.
+   *
+   * @type {Drupal~behavior}
+   */
+  Drupal.behaviors.webformSelectOptionsDisabled = {
+    attach: function (context) {
+      $('select[data-webform-select-options-disabled]', context).once('webform-select-options-disabled').each(function () {
+        var $select = $(this);
+        var disabled = $select.attr('data-webform-select-options-disabled').split(/\s*,\s*/);
+        $select.find('option').filter(function isDisabled() {
+          return ($.inArray(this.value, disabled) !== -1);
+        }).attr('disabled', 'disabled');
+      });
+    }
+  };
+
+
+})(jQuery, Drupal);
+;
+/**
+ * @file
+ * Provides Fivestar voting effect.
+ */
+
+(function($, Drupal) {
+
+  'use strict';
+
+  Drupal.behaviors.fivestar = {
+    attach: function(context, settings) {
+      var $stars = $('.rate-widget-fivestar li').once();
+
+      // Add hover effect to fivestar voting.
+      $stars.each(function (){
+        var $this = $(this);
+        var $prev = $this.prev();
+
+        $this.hover(function () {
+          $this.addClass('hovering');
+          $prev.trigger('mouseenter');
+        }, function () {
+          $this.removeClass('hovering');
+          $prev.trigger('mouseleave');
+        });
+      });
+    }
+  };
+})(jQuery, Drupal);
+;
+/**
+ * @file
+ * Provides some feature for Global Webinar.
+ */
+(function ($, Drupal) {
+  Drupal.behaviors.webinarCountDown = function (timestamp, offset) {
+    var d = new Date();
+    var utc_now = d.getTime() + (d.getTimezoneOffset() * 60000);
+
+    var d_t = new Date(timestamp * 1000);
+    var utc_t = d_t.getTime() + (d_t.getTimezoneOffset() * 60000);
+
+    return (utc_t - utc_now) / (1000 * 60);
+  }
+
+  function addTooltipAwaitingClass(elm, val) {
+    $(elm).mouseenter(function () {
+      $(this).append(val);
+    });
+    $(elm).mouseleave(function () {
+      $(this).find('span').remove();
+    });
+  }
+
+  function onHoverButton() {
+    $(document).on('mouseenter', '.wbn-count-down.registered', function (){
+      initTooltip();
+    });
+  }
+
+  function initTooltip() {
+    var toolTipClassesAlert = {
+      tooltipItem: [
+        {
+          tagApplied: ".wbn-count-down.registered",
+          elmContent: "<span>" + Drupal.t("Your live lesson can only be accessed 15 minutes prior to the scheduled time.") + "</span>"
+        },
+        {
+          tagApplied: ".aw-rewatch",
+          elmContent: "<span>" + Drupal.t("The live lesson will be available to rewatched soon.") + "</span>"
+        },
+        {
+          tagApplied: ".class-item .aw-rewatch",
+          elmContent: "<span>" + Drupal.t("The live lesson will be available to rewatched soon.") + "</span>"
+        },
+        {
+          tagApplied: ".class-item .rewatch",
+          elmContent: "<span>" + Drupal.t("This replay will be available for 30 days.") + "</span>"
+        },
+        {
+          tagApplied: ".bt-rewatch.disabled",
+          elmContent: "<span>" + Drupal.t("Lesson video will be available soon.") + "</span>"
+        },
+        {
+          tagApplied: ".rewatch.disabled",
+          elmContent: "<span>" + Drupal.t("Lesson video will be available soon.") + "</span>"
+        },
+        {
+          tagApplied: ".bt-rewatch.fee-charged.disabled",
+          elmContent: "<span>" + Drupal.t("Available for registered students only.") + "</span>"
+        },
+      ]
+    };
+    $.each(toolTipClassesAlert.tooltipItem, function (i, currItem) {
+      addTooltipAwaitingClass(currItem.tagApplied, currItem.elmContent)
+    });
+  }
+
+  function countDownAllItem() {
+    if ($('.wbn-count-down').length) {
+      $('.wbn-count-down').once('wbn_countdown').each(function (e) {
+        var _self = $(this);
+        var remain = _self.data('time_to_start') || 0;
+        var duration = _self.data('duration') || 0;
+        if (_self.data('webinar_registed')) {
+          if (!_self.hasClass('aw-rewatch')) {
+            var countDown = setInterval(function () {
+              if (0 < remain && remain < 900) {
+                _self.removeClass('awaiting registered').addClass('join-now').text(Drupal.t('Join Now'));
+              }
+              else {
+                if (remain > 0) {
+                  var remain_days = Math.floor(remain / (60 * 60 * 24));
+                  if (remain_days > 0) {
+                    // Starting in X Days.
+                    if (remain_days == 1) {
+                      var text = Drupal.t('Starting in @day day', {'@day': remain_days});
+                    }
+                    else {
+                      var text = Drupal.t('Starting in ') + remain_days + Drupal.t(' days');
+                    }
+                  }
+                  else {
+                    var remain_hours = Math.floor(remain / (60 * 60));
+                    if (remain_hours > 0) {
+                      // Starting in X Hours.
+                      var text = Drupal.t('Starting in @hours hours', {'@hours': remain_hours});
+                    }
+                    else {
+                      // Starting in X Minutes.
+                      var text = Drupal.t('Starting in @minutes minutes', {'@minutes': Math.ceil(remain / 60)});
+                    }
+                  }
+                  _self.attr('title', text).children('em').text(text);
+                }
+                else {
+                  if (remain + duration <= 0) {
+                    _self.removeClass('join').addClass('registered-ds bt-reg').children('em').text(Drupal.t('Join'));
+                    addTooltipAwaitingClass(_self, "<span>" + Drupal.t("Registration is no longer available since this is a past event.") + "</span>");
+
+                    if ($('.td-classses .class-slider').length) {
+                      window.location.reload();
+                    }
+                    clearInterval(countDown);
+                  }
+                  else {
+                    _self.removeClass('awaiting registered').addClass('join-now').text(Drupal.t('Join Now'));
+                  }
+                }
+              }
+              remain -= 10;
+            }, 10000);
+          }
+        }
+      });
+    }
+    if ($('.webinar-teaser').length) {
+      $('.webinar-teaser .date.today').once('webinar_teaser').each(function (e) {
+        var _self = $(this);
+        var time_progress = _self.data('time_to_start') || 0;
+        var end_time = _self.data('duration') || 0;
+        end_time = end_time + time_progress;
+        if (time_progress <= 0) {
+          _self.text(Drupal.t('In progress'));
+          _self.addClass('current--time');
+        }
+        var countDownProgress = setInterval(function () {
+          if (time_progress <= 0) {
+            _self.text(Drupal.t('In progress'));
+            _self.addClass('current--time');
+          }
+          else if (end_time < 0) {
+            _self.text(Drupal.t('Today'));
+            _self.removeClass('current--time');
+            clearInterval(countDownProgress);
+          }
+          end_time -= 1;
+          time_progress -= 1;
+        }, 1000);
+      });
+    }
+  }
+
+  Drupal.behaviors.webinar_global = {
+    attach: function (context, settings) {
+      initTooltip();
+      // Countdown to join webinar.
+      countDownAllItem();
+
+      onHoverButton();
+
+      // Modal-wbn-welcome.
+      $('body').once('open_modal_wbn_classroom').on('click', '.join[data-toggle="modal"]', function (e) {
+        var webinar_id = $(this).data('webinar_id');
+        var webinar_registed = $(this).data('webinar_registed');
+        if (!$('#modal-wbn-welcome').length) {
+          $('body').append('<div aria-labelledby="mySmallModalLabel" class="modal fade" id="modal-wbn-welcome" role="dialog" tabindex="-1">' +
+              '<div class="modal-dialog modal-auto modal-insu-credit">' +
+              '<div class="modal-content-wp">' +
+              '<i aria-label="Close" class="ion-android-close close-modal ic-upgrade" data-dismiss="modal"></i>' +
+              '<div class="clearfix welcome-wrap">' +
+
+              '<img alt="" class="cam-icon" src="/themes/iot/images/network-cam.svg">' +
+              '<h2>' + Drupal.t("Welcome to Classroom") + '</h2>' +
+              '<p>' + Drupal.t('Your Zoom meeting room number is: <span class="webinar_id">@class_id</span>', {'@class_id': webinar_id}) + '</p>' +
+              '<p>' + Drupal.t("After going to classroom, remember allow your camera and microphone") + '</p>' +
+              '<p>' + Drupal.t("If the classroom doesn't automatically connect you can enter the number above to join the lesson") + '</p>' +
+              '<a class="iot-bt gt-class wbn-join-room-link" href="#" target="_blank">' + Drupal.t("Go To Classroom") + '</a>' +
+
+              '</div>' +
+              '</div>' +
+              '</div>' +
+              '</div>');
+        }
+        else {
+          $('#modal-wbn-welcome').find('.wbn-join-room-link').attr('href', '#');
+        }
+
+        //  Get register.
+        $.ajax({
+          url: '/webinar/join/' + webinar_registed,
+          success: function (data) {
+            if (data && data.join_url) {
+              $('#modal-wbn-welcome').find('.webinar_id').text(webinar_id);
+              $('#modal-wbn-welcome').find('.wbn-join-room-link').attr('href', data.join_url);
+            }
+          }
+        });
+      });
+    }
+  }
+})(jQuery, Drupal);
+;

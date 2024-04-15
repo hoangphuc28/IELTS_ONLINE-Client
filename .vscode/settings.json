@@ -1,0 +1,22 @@
+{
+    "liveSassCompile.settings.formats": [
+        {
+            "savePath": "/public/assets/css"
+        }
+    ],
+    "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],
+    "liveSassCompile.settings.generateMap": true,
+    "liveSassCompile.settings.autoprefix": ["defaults"],
+    "liveSassCompile.settings.compileOnWatch": true,
+    "liveSassCompile.settings.showOutputWindowOn": "None",
+    "liveSassCompile.settings.partialsList": ["/src/**/_*.s[ac]ss"],
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.associations": {
+        "*.css": "tailwindcss",
+    },
+}

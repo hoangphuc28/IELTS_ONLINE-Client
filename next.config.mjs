@@ -1,4 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import path from 'path'
+import { fileURLToPath } from 'url'
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+const __fileName = fileURLToPath(import.meta.url)
+const nextConfig = {
+    sassOptions: {
+        includePaths: [path.join(path.dirname(__fileName), 'styles')],
+    },
+}
+
+export default nextConfig
