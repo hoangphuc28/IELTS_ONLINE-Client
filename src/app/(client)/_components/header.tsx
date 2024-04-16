@@ -9,7 +9,7 @@ function ExamLibrary() {
             <div className="flex flex-col gy-5">
                 <div>
                     <Link
-                        href="/vi/ielts-exam-library?skill=listening"
+                        href="/exam-library?skill=listening"
                         className="text-white  hover:opacity-[0.8]"
                     >
                         IELTS Listening Tests
@@ -17,7 +17,7 @@ function ExamLibrary() {
                 </div>
                 <div>
                     <Link
-                        href="/vi/ielts-exam-library?skill=reading"
+                        href="/exam-library?skill=reading"
                         className="text-white  hover:opacity-[0.8]"
                     >
                         IELTS Reading Tests
@@ -25,7 +25,7 @@ function ExamLibrary() {
                 </div>
                 <div>
                     <Link
-                        href="/vi/ielts-exam-library?skill=writing"
+                        href="/exam-library?skill=writing"
                         className="text-white  hover:opacity-[0.8]"
                     >
                         IELTS Writing Tests
@@ -33,14 +33,14 @@ function ExamLibrary() {
                 </div>
                 <div>
                     <Link
-                        href="/vi/ielts-exam-library?skill=speaking"
+                        href="/exam-library?skill=speaking"
                         className="text-white  hover:opacity-[0.8]"
                     >
                         IELTS Speaking Tests
                     </Link>
                 </div>
                 <div>
-                    <Link href="/vi/ielts-exam-library" className="text-white  hover:opacity-[0.8]">
+                    <Link href="/exam-library" className="text-white  hover:opacity-[0.8]">
                         IELTS Test Collection
                     </Link>
                 </div>
@@ -90,7 +90,7 @@ function ContainerAccount() {
                     >
                         <Link
                             className="block text-[#000] ps-3 pe-5 py-2 hover:opacity-[0.7] hover:bg-gray-500 hover:text-stone-100"
-                            href="/account/logout"
+                            href="/account/dashboard"
                         >
                             Trang cá nhân
                         </Link>
@@ -116,34 +116,34 @@ export default function Header() {
                     <LayoutCenter>
                         <section className="hidden sm:flex items-center justify-between">
                             <div className="logo lg:w-48 sm:w-28">
-                                <a href="/" className="logo">
+                                <Link href="/" className="logo">
                                     <img
                                         alt=""
                                         className="w-100 w-full"
-                                        src="./IELTS Online Practice Tests FREE _ IELTS Online Tests_files/logo.svg"
+                                        src="./../../../../../IELTS Online Practice Tests FREE _ IELTS Online Tests_files/logo.svg"
                                     />
-                                </a>
+                                </Link>
                             </div>
                             <div className="header-banner">
-                                <a href="#">
+                                <Link href="#">
                                     <img
-                                        src="./IELTS Online Practice Tests FREE _ IELTS Online Tests_files/da18bdcf8b0a4f8d6afce6dcf976b3b6.png"
+                                        src="./../../../../../IELTS Online Practice Tests FREE _ IELTS Online Tests_files/da18bdcf8b0a4f8d6afce6dcf976b3b6.png"
                                         width="728"
                                         height="90"
                                         alt=""
                                         title=""
                                     />
-                                </a>
+                                </Link>
                             </div>
                         </section>
                         <section className="header-mobile flex sm:hidden justify-between items-center px-2 py-2 shadow shadow-lg-[#000]">
                             <div className="logo mobile w-24">
-                                <a href="/">
+                                <Link href="/">
                                     <img
-                                        src="./IELTS Online Practice Tests FREE _ IELTS Online Tests_files/logo_mobile.svg"
+                                        src="./../../../../../IELTS Online Practice Tests FREE _ IELTS Online Tests_files/logo_mobile.svg"
                                         alt=""
                                     />
-                                </a>
+                                </Link>
                             </div>
                             <nav className="h-full flex md:hidden items-center">
                                 <ContainerSignInSignUp />
@@ -160,13 +160,16 @@ export default function Header() {
                     <LayoutCenter className="h-full">
                         <nav className="h-full flex justify-between items-center gap-x-5">
                             <div>
-                                <a href="/" className="main-menu__home-link text-white text-[20px]">
+                                <Link
+                                    href="/"
+                                    className="main-menu__home-link text-white text-[20px]"
+                                >
                                     <i className="fa fa-home" aria-hidden="true"></i>
-                                </a>
+                                </Link>
                             </div>
                             <div className="relative">
                                 <Link
-                                    href="/ielts-exam-library"
+                                    href="/exam-library"
                                     className="text-white"
                                     local-btn-dropdown-toggle=""
                                 >

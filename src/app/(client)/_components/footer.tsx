@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import LayoutCenter from './layoutCenter'
 
 export default function Footer() {
@@ -7,12 +8,12 @@ export default function Footer() {
                 <LayoutCenter>
                     <div className="relative z-20 px-5 w-full py-10 text-gray-300 text-lg flex flex-col sm:flex-row justify-between gap-5">
                         <section className="logo mobile w-24">
-                            <a href="/">
+                            <Link href="/">
                                 <img
                                     src="./IELTS Online Practice Tests FREE _ IELTS Online Tests_files/logo_mobile.svg"
                                     alt=""
                                 />
-                            </a>
+                            </Link>
                             <h2 className="mt-1">IELTS</h2>
                         </section>
                         <section>
@@ -36,15 +37,15 @@ export default function Footer() {
                             </div>
                         </section>
                         <section className="header-banner">
-                            <a href="#">
+                            <Link href="#">
                                 <img
-                                    src="./IELTS Online Practice Tests FREE _ IELTS Online Tests_files/da18bdcf8b0a4f8d6afce6dcf976b3b6.png"
+                                    src="./../../../../../IELTS Online Practice Tests FREE _ IELTS Online Tests_files/da18bdcf8b0a4f8d6afce6dcf976b3b6.png"
                                     width="728"
                                     height="90"
                                     alt=""
                                     title=""
                                 />
-                            </a>
+                            </Link>
                         </section>
                     </div>
                     <div

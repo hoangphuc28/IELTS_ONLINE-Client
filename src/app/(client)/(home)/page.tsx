@@ -47,7 +47,13 @@ export default function Page() {
                         <div className="min-h-[60vh] flex flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-x-3">
                             {(() => {
                                 return [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2].map((e, index) => (
-                                    <ComponentCard key={`card-` + index} />
+                                    <ComponentCard
+                                        key={`card-` + index}
+                                        data={{
+                                            name: 'Noteworthy technology acquisitions 2021 Noteworthy technology acquisitions 2021 Noteworthy technology acquisitions 2021',
+                                            title: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
+                                        }}
+                                    />
                                 ))
                             })()}
                         </div>
