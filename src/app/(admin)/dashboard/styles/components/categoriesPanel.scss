@@ -1,0 +1,30 @@
+.categories-panel {
+    height: 100%;
+    .portlet {
+        .portlet-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            img {
+                max-width: 28px;
+                max-height: 28px;
+                cursor: pointer;
+            }
+        }
+        .portlet-bottom {
+            .portlet-contain {
+                padding: 20px;
+                .portlet-item {
+                    display: flex;
+                    align-items: center;
+                    .text {
+                        margin-left: 15px;
+                        font-size: 14px;
+                    }
+                }
+            
+            }
+           
+        }
+    }
+}

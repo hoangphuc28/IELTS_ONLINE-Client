@@ -1,0 +1,7 @@
+<svg id="icon_文件夹_未打开" data-name="icon/文件夹/未打开" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="图层_1" data-name="图层 1">
+    <rect id="矩形_3399" data-name="矩形 3399" width="20" height="20" fill="#999" opacity="0"/>
+    <path id="路径_1453" data-name="路径 1453" d="M20,7.33V8.85a2.47,2.47,0,0,0-2-1H2a2.47,2.47,0,0,0-2,1V5.13A2.13,2.13,0,0,1,2.11,3H6.74a2,2,0,0,1,1.14.36L10,4.84a2.05,2.05,0,0,0,1.14.36h6.74A2.13,2.13,0,0,1,20,7.33Z" fill="#008cef"/>
+    <rect id="矩形_3400" data-name="矩形 3400" width="20" height="11.67" rx="2" transform="translate(0 7)" fill="#6cc5fe"/>
+  </g>
+</svg>

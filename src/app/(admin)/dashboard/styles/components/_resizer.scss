@@ -1,0 +1,12 @@
+@import "../variables.scss";
+.resizer {
+    width: 15px;
+    height: 100%;
+    cursor: col-resize;
+    background-size: 8px 24px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    object-fit: cover !important;
+    border-right: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+  }

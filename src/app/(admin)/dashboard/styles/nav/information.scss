@@ -1,0 +1,24 @@
+.nav-information {
+    margin-top: 20px;
+    padding: 0 24px;
+    text-align: center;
+    .information {
+        margin: 0 auto;
+        cursor: pointer;
+        a {
+
+            img {
+                height: 52px;
+                width: 52px;
+            }
+
+            h3 {
+                margin-top: 12px;
+                font-size: 14px;
+                color: #666;
+                word-break: break-all;
+                text-align: center;
+            }
+        }
+    }
+}

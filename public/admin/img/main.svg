@@ -1,0 +1,922 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="392" height="224" viewBox="0 0 392 224">
+  <defs>
+    <clipPath id="clip-其他icon">
+      <rect width="392" height="224"/>
+    </clipPath>
+  </defs>
+  <g id="其他icon" clip-path="url(#clip-其他icon)">
+    <g id="icon_提示" data-name="icon/提示">
+      <g id="矩形_3892" data-name="矩形 3892" fill="#fff" stroke="#707070" stroke-width="1" opacity="0">
+        <rect width="28" height="28" stroke="none"/>
+        <rect x="0.5" y="0.5" width="27" height="27" fill="none"/>
+      </g>
+      <g id="icon_提示-2" data-name="icon/提示" transform="translate(-346 -130)">
+        <circle id="椭圆_108" data-name="椭圆 108" cx="8" cy="8" r="8" transform="translate(352 136)" fill="#e6e6e6"/>
+        <path id="路径_1119" data-name="路径 1119" d="M206.644.006q-2.519.28-2.8,2.183-.056.616.616.672.336.056.56-.5a1.518,1.518,0,0,1,1.623-1.175,1.582,1.582,0,0,1,1.68,1.567c0,.9-.608,1.042-.938,1.312a4.112,4.112,0,0,0-1.027,1.278,4.584,4.584,0,0,0-.33,1.552q0,.672.616.672.559,0,.616-.672a3.341,3.341,0,0,1,.529-1.712c.543-.595,1.841-1.012,1.878-2.542Q209.443.23,206.644.006Zm0,8.121a.779.779,0,1,0,.779.779A.779.779,0,0,0,206.644,8.127Z" transform="translate(153.199 139.154)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="icon_提示-3" data-name="icon/提示" transform="translate(28)">
+      <g id="矩形_3892-2" data-name="矩形 3892" fill="#fff" stroke="#707070" stroke-width="1" opacity="0">
+        <rect width="28" height="28" stroke="none"/>
+        <rect x="0.5" y="0.5" width="27" height="27" fill="none"/>
+      </g>
+      <g id="icon_提示-4" data-name="icon/提示" transform="translate(-346 -130)">
+        <circle id="椭圆_108-2" data-name="椭圆 108" cx="8" cy="8" r="8" transform="translate(352 136)" fill="#36aafd"/>
+        <path id="路径_1119-2" data-name="路径 1119" d="M206.644.006q-2.519.28-2.8,2.183-.056.616.616.672.336.056.56-.5a1.518,1.518,0,0,1,1.623-1.175,1.582,1.582,0,0,1,1.68,1.567c0,.9-.608,1.042-.938,1.312a4.112,4.112,0,0,0-1.027,1.278,4.584,4.584,0,0,0-.33,1.552q0,.672.616.672.559,0,.616-.672a3.341,3.341,0,0,1,.529-1.712c.543-.595,1.841-1.012,1.878-2.542Q209.443.23,206.644.006Zm0,8.121a.779.779,0,1,0,.779.779A.779.779,0,0,0,206.644,8.127Z" transform="translate(153.199 139.154)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="icon_删除试卷库" data-name="icon/删除试卷库" transform="translate(56)">
+      <g id="矩形_3892-3" data-name="矩形 3892" fill="#fff" stroke="#333" stroke-width="1" opacity="0">
+        <rect width="28" height="28" stroke="none"/>
+        <rect x="0.5" y="0.5" width="27" height="27" fill="none"/>
+      </g>
+      <g id="icon_删除试卷库-2" data-name="icon/删除试卷库" transform="translate(-252 -282)">
+        <g id="图层_1" data-name="图层 1" transform="translate(256 286)">
+          <rect id="矩形_3075" data-name="矩形 3075" width="20" height="20" fill="none" opacity="0"/>
+          <path id="路径_796" data-name="路径 796" d="M20,7.33v8.54A2.13,2.13,0,0,1,17.89,18H2.11A2.13,2.13,0,0,1,0,15.87V5.13A2.13,2.13,0,0,1,2.11,3H6.74a2,2,0,0,1,1.14.36L10,4.84a2.05,2.05,0,0,0,1.14.36h6.74A2.13,2.13,0,0,1,20,7.33Z" fill="none" stroke="#333" stroke-width="1"/>
+          <line id="直线_51" data-name="直线 51" x2="7" transform="translate(6.5 11.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_删除试卷库-3" data-name="icon/删除试卷库" transform="translate(84)">
+      <g id="矩形_3892-4" data-name="矩形 3892" fill="#fff" stroke="#707070" stroke-width="1" opacity="0">
+        <rect width="28" height="28" stroke="none"/>
+        <rect x="0.5" y="0.5" width="27" height="27" fill="none"/>
+      </g>
+      <g id="icon_删除试卷库-4" data-name="icon/删除试卷库" transform="translate(-252 -282)">
+        <g id="图层_1-2" data-name="图层 1" transform="translate(256 286)">
+          <rect id="矩形_3075-2" data-name="矩形 3075" width="20" height="20" fill="none" opacity="0"/>
+          <path id="路径_796-2" data-name="路径 796" d="M20,7.33v8.54A2.13,2.13,0,0,1,17.89,18H2.11A2.13,2.13,0,0,1,0,15.87V5.13A2.13,2.13,0,0,1,2.11,3H6.74a2,2,0,0,1,1.14.36L10,4.84a2.05,2.05,0,0,0,1.14.36h6.74A2.13,2.13,0,0,1,20,7.33Z" fill="none" stroke="red" stroke-width="1"/>
+          <line id="直线_51-2" data-name="直线 51" x2="7" transform="translate(6.5 11.5)" fill="none" stroke="red" stroke-linecap="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_新增试卷库" data-name="icon/新增试卷库" transform="translate(112)">
+      <g id="矩形_3892-5" data-name="矩形 3892" fill="#fff" stroke="#707070" stroke-width="1" opacity="0">
+        <rect width="28" height="28" stroke="none"/>
+        <rect x="0.5" y="0.5" width="27" height="27" fill="none"/>
+      </g>
+      <g id="icon_新增试卷库-2" data-name="icon/新增试卷库" transform="translate(4 4)">
+        <g id="图层_1-3" data-name="图层 1">
+          <rect id="矩形_3075-3" data-name="矩形 3075" width="20" height="20" fill="#999" opacity="0"/>
+          <path id="路径_796-3" data-name="路径 796" d="M20,7.33v8.54A2.13,2.13,0,0,1,17.89,18H2.11A2.13,2.13,0,0,1,0,15.87V5.13A2.13,2.13,0,0,1,2.11,3H6.74a2,2,0,0,1,1.14.36L10,4.84a2.05,2.05,0,0,0,1.14.36h6.74A2.13,2.13,0,0,1,20,7.33Z" fill="none" stroke="#333" stroke-width="1"/>
+          <line id="直线_52" data-name="直线 52" x2="7" transform="translate(6.5 11.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1"/>
+          <line id="直线_53" data-name="直线 53" y2="7" transform="translate(10 8)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_新增试卷库-3" data-name="icon/新增试卷库" transform="translate(140)">
+      <g id="矩形_3892-6" data-name="矩形 3892" fill="#fff" stroke="#36aafd" stroke-width="1" opacity="0">
+        <rect width="28" height="28" stroke="none"/>
+        <rect x="0.5" y="0.5" width="27" height="27" fill="none"/>
+      </g>
+      <g id="icon_新增试卷库-4" data-name="icon/新增试卷库" transform="translate(4 4)">
+        <g id="图层_1-4" data-name="图层 1">
+          <rect id="矩形_3075-4" data-name="矩形 3075" width="20" height="20" fill="#999" opacity="0"/>
+          <path id="路径_796-4" data-name="路径 796" d="M20,7.33v8.54A2.13,2.13,0,0,1,17.89,18H2.11A2.13,2.13,0,0,1,0,15.87V5.13A2.13,2.13,0,0,1,2.11,3H6.74a2,2,0,0,1,1.14.36L10,4.84a2.05,2.05,0,0,0,1.14.36h6.74A2.13,2.13,0,0,1,20,7.33Z" fill="none" stroke="#36aafd" stroke-width="1"/>
+          <line id="直线_52-2" data-name="直线 52" x2="7" transform="translate(6.5 11.5)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1"/>
+          <line id="直线_53-2" data-name="直线 53" y2="7" transform="translate(10 8)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_收缩" data-name="icon/收缩" transform="translate(168)">
+      <g id="矩形_3892-7" data-name="矩形 3892" fill="#fff" stroke="#36aafd" stroke-width="1" opacity="0">
+        <rect width="28" height="28" stroke="none"/>
+        <rect x="0.5" y="0.5" width="27" height="27" fill="none"/>
+      </g>
+      <g id="icon_收缩-2" data-name="icon/收缩" transform="translate(-189 180)">
+        <rect id="矩形_2950" data-name="矩形 2950" width="24" height="24" transform="translate(191 -178)" fill="#999" opacity="0"/>
+        <g id="组_2791" data-name="组 2791">
+          <line id="直线_42" data-name="直线 42" x2="16" transform="translate(195.5 -171.5)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="2"/>
+          <line id="直线_44" data-name="直线 44" x2="16" transform="translate(195.5 -159.5)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="2"/>
+          <line id="直线_43" data-name="直线 43" x2="9" transform="translate(195.5 -165.5)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="2"/>
+          <g id="多边形_9" data-name="多边形 9" transform="translate(208.28 -162.5) rotate(-90)" fill="#999">
+            <path d="M 4.850730419158936 2.719791650772095 L 1.149646878242493 2.719791650772095 L 3.000000238418579 0.7334716320037842 L 4.850730419158936 2.719791650772095 C 4.850729465484619 2.719791173934937 4.850729465484619 2.719791412353516 4.850728988647461 2.719791650772095 L 4.850730419158936 2.719791650772095 Z" stroke="none"/>
+            <path d="M 2.999999523162842 1.466933250427246 L 2.298532485961914 2.219791650772095 L 3.701467037200928 2.219791650772095 L 2.999999523162842 1.466933250427246 M 3.000000238418579 0.2334640026092529 C 3.133480310440063 0.2334640026092529 3.266960144042969 0.2865166664123535 3.365820169448853 0.3926215171813965 L 5.216550350189209 2.378941535949707 C 5.514440059661865 2.698651552200317 5.287720203399658 3.219791650772095 4.850729942321777 3.219791650772095 L 1.149270057678223 3.219791650772095 C 0.7122802734375 3.219791650772095 0.485560417175293 2.698651552200317 0.7834501266479492 2.378941535949707 L 2.634180307388306 0.3926215171813965 C 2.733040332794189 0.2865166664123535 2.866520166397095 0.2334640026092529 3.000000238418579 0.2334640026092529 Z" stroke="none" fill="#999"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="icon_收缩-3" data-name="icon/收缩" transform="translate(196)">
+      <g id="矩形_3892-8" data-name="矩形 3892" fill="#36aafd" stroke="#36aafd" stroke-width="1" opacity="0">
+        <rect width="28" height="28" stroke="none"/>
+        <rect x="0.5" y="0.5" width="27" height="27" fill="none"/>
+      </g>
+      <g id="icon_收缩-4" data-name="icon/收缩" transform="translate(-189 180)">
+        <rect id="矩形_2950-2" data-name="矩形 2950" width="24" height="24" transform="translate(191 -178)" fill="#36aafd" opacity="0"/>
+        <g id="组_2791-2" data-name="组 2791">
+          <line id="直线_42-2" data-name="直线 42" x2="16" transform="translate(195.5 -171.5)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="2"/>
+          <line id="直线_44-2" data-name="直线 44" x2="16" transform="translate(195.5 -159.5)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="2"/>
+          <line id="直线_43-2" data-name="直线 43" x2="9" transform="translate(195.5 -165.5)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="2"/>
+          <g id="多边形_9-2" data-name="多边形 9" transform="translate(208.28 -162.5) rotate(-90)" fill="#36aafd">
+            <path d="M 4.850730419158936 2.719791650772095 L 1.149646878242493 2.719791650772095 L 3.000000238418579 0.7334716320037842 L 4.850730419158936 2.719791650772095 C 4.850729465484619 2.719791173934937 4.850729465484619 2.719791412353516 4.850728988647461 2.719791650772095 L 4.850730419158936 2.719791650772095 Z" stroke="none"/>
+            <path d="M 2.999999523162842 1.466933250427246 L 2.298532485961914 2.219791650772095 L 3.701467037200928 2.219791650772095 L 2.999999523162842 1.466933250427246 M 3.000000238418579 0.2334640026092529 C 3.133480310440063 0.2334640026092529 3.266960144042969 0.2865166664123535 3.365820169448853 0.3926215171813965 L 5.216550350189209 2.378941535949707 C 5.514440059661865 2.698651552200317 5.287720203399658 3.219791650772095 4.850729942321777 3.219791650772095 L 1.149270057678223 3.219791650772095 C 0.7122802734375 3.219791650772095 0.485560417175293 2.698651552200317 0.7834501266479492 2.378941535949707 L 2.634180307388306 0.3926215171813965 C 2.733040332794189 0.2865166664123535 2.866520166397095 0.2334640026092529 3.000000238418579 0.2334640026092529 Z" stroke="none" fill="#36aafd"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="icon_展开" data-name="icon/展开" transform="translate(252)">
+      <g id="矩形_3892-9" data-name="矩形 3892" fill="#fff" stroke="#36aafd" stroke-width="1" opacity="0">
+        <rect width="28" height="28" stroke="none"/>
+        <rect x="0.5" y="0.5" width="27" height="27" fill="none"/>
+      </g>
+      <g id="icon_收缩-5" data-name="icon/收缩" transform="translate(-189 180)">
+        <rect id="矩形_2950-3" data-name="矩形 2950" width="24" height="24" transform="translate(191 -178)" fill="#999" opacity="0"/>
+        <g id="组_2791-3" data-name="组 2791">
+          <line id="直线_42-3" data-name="直线 42" x2="16" transform="translate(195.5 -171.5)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="2"/>
+          <line id="直线_44-3" data-name="直线 44" x2="16" transform="translate(195.5 -159.5)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="2"/>
+          <line id="直线_43-3" data-name="直线 43" x2="9" transform="translate(195.5 -165.5)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="2"/>
+          <g id="多边形_9-3" data-name="多边形 9" transform="translate(211.499 -168.5) rotate(90)" fill="#36aafd">
+            <path d="M 4.850949764251709 2.720706462860107 L 1.149425625801086 2.720706462860107 L 3 0.7335864901542664 L 4.850949764251709 2.720706462860107 Z" stroke="none"/>
+            <path d="M 3.000000238418579 1.467151641845703 L 2.298083782196045 2.220706462860107 L 3.701916456222534 2.220706462860107 L 3.000000238418579 1.467151641845703 M 3 0.2335765361785889 C 3.13350248336792 0.2335765361785889 3.26700496673584 0.2866463661193848 3.365869998931885 0.3927865028381348 L 5.216819763183594 2.379906415939331 C 5.514639854431152 2.699636459350586 5.287909984588623 3.220706462860107 4.850950241088867 3.220706462860107 L 1.149050235748291 3.220706462860107 C 0.712090015411377 3.220706462860107 0.4853601455688477 2.699636459350586 0.7831802368164062 2.379906415939331 L 2.634130001068115 0.3927865028381348 C 2.73299503326416 0.2866463661193848 2.86649751663208 0.2335765361785889 3 0.2335765361785889 Z" stroke="none" fill="#36aafd"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="icon_展开-2" data-name="icon/展开" transform="translate(224)">
+      <g id="矩形_3892-10" data-name="矩形 3892" fill="#999" stroke="#999" stroke-width="1" opacity="0">
+        <rect width="28" height="28" stroke="none"/>
+        <rect x="0.5" y="0.5" width="27" height="27" fill="none"/>
+      </g>
+      <g id="icon_收缩-6" data-name="icon/收缩" transform="translate(-189 180)">
+        <rect id="矩形_2950-4" data-name="矩形 2950" width="24" height="24" transform="translate(191 -178)" fill="#999" opacity="0"/>
+        <g id="组_2791-4" data-name="组 2791">
+          <line id="直线_42-4" data-name="直线 42" x2="16" transform="translate(195.5 -171.5)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="2"/>
+          <line id="直线_44-4" data-name="直线 44" x2="16" transform="translate(195.5 -159.5)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="2"/>
+          <line id="直线_43-4" data-name="直线 43" x2="9" transform="translate(195.5 -165.5)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="2"/>
+          <g id="多边形_9-4" data-name="多边形 9" transform="translate(211.499 -168.5) rotate(90)" fill="#999">
+            <path d="M 4.850949764251709 2.720706462860107 L 1.149425625801086 2.720706462860107 L 3 0.7335864901542664 L 4.850949764251709 2.720706462860107 Z" stroke="none"/>
+            <path d="M 3.000000238418579 1.467151641845703 L 2.298083782196045 2.220706462860107 L 3.701916456222534 2.220706462860107 L 3.000000238418579 1.467151641845703 M 3 0.2335765361785889 C 3.13350248336792 0.2335765361785889 3.26700496673584 0.2866463661193848 3.365869998931885 0.3927865028381348 L 5.216819763183594 2.379906415939331 C 5.514639854431152 2.699636459350586 5.287909984588623 3.220706462860107 4.850950241088867 3.220706462860107 L 1.149050235748291 3.220706462860107 C 0.712090015411377 3.220706462860107 0.4853601455688477 2.699636459350586 0.7831802368164062 2.379906415939331 L 2.634130001068115 0.3927865028381348 C 2.73299503326416 0.2866463661193848 2.86649751663208 0.2335765361785889 3 0.2335765361785889 Z" stroke="none" fill="#999"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="icon_删除试卷" data-name="icon/删除试卷" transform="translate(-772 -198)">
+      <rect id="矩形_3068" data-name="矩形 3068" width="28" height="28" transform="translate(772 226)" fill="#333" opacity="0"/>
+      <g id="组_2993" data-name="组 2993" transform="translate(616 70)">
+        <path id="路径_786" data-name="路径 786" d="M179.318,163.636H175v-1.591A2.037,2.037,0,0,0,172.955,160h-5.909A2.037,2.037,0,0,0,165,162.045v1.591h-4.318a.682.682,0,1,0,0,1.364h18.636a.682.682,0,1,0,0-1.364Zm-12.955,0v-1.591a.7.7,0,0,1,.682-.682h5.909a.7.7,0,0,1,.682.682v1.591ZM177,166.364a.7.7,0,0,0-.682.682v10.318a1.271,1.271,0,0,1-1.273,1.273H164.909a1.27,1.27,0,0,1-1.273-1.273V167.045a.682.682,0,1,0-1.364,0v10.318A2.638,2.638,0,0,0,164.909,180h10.182a2.638,2.638,0,0,0,2.636-2.636V167.045A.776.776,0,0,0,177,166.364Z" transform="translate(0 0)" fill="#333"/>
+        <path id="路径_787" data-name="路径 787" d="M398.164,394.227v-8.545a.682.682,0,0,0-1.364,0v8.545a.682.682,0,1,0,1.364,0Zm5.182,0v-8.545a.682.682,0,0,0-1.364,0v8.545a.682.682,0,0,0,1.364,0Z" transform="translate(-230.073 -217.636)" fill="#333"/>
+      </g>
+    </g>
+    <g id="icon_删除试卷-2" data-name="icon/删除试卷" transform="translate(-744 -198)">
+      <rect id="矩形_3068-2" data-name="矩形 3068" width="28" height="28" transform="translate(772 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_2993-2" data-name="组 2993" transform="translate(616 70)">
+        <path id="路径_786-2" data-name="路径 786" d="M179.318,163.636H175v-1.591A2.037,2.037,0,0,0,172.955,160h-5.909A2.037,2.037,0,0,0,165,162.045v1.591h-4.318a.682.682,0,1,0,0,1.364h18.636a.682.682,0,1,0,0-1.364Zm-12.955,0v-1.591a.7.7,0,0,1,.682-.682h5.909a.7.7,0,0,1,.682.682v1.591ZM177,166.364a.7.7,0,0,0-.682.682v10.318a1.271,1.271,0,0,1-1.273,1.273H164.909a1.27,1.27,0,0,1-1.273-1.273V167.045a.682.682,0,1,0-1.364,0v10.318A2.638,2.638,0,0,0,164.909,180h10.182a2.638,2.638,0,0,0,2.636-2.636V167.045A.776.776,0,0,0,177,166.364Z" transform="translate(0 0)" fill="#36aafd"/>
+        <path id="路径_787-2" data-name="路径 787" d="M398.164,394.227v-8.545a.682.682,0,0,0-1.364,0v8.545a.682.682,0,1,0,1.364,0Zm5.182,0v-8.545a.682.682,0,0,0-1.364,0v8.545a.682.682,0,0,0,1.364,0Z" transform="translate(-230.073 -217.636)" fill="#36aafd"/>
+      </g>
+    </g>
+    <g id="icon_删除试卷-3" data-name="icon/删除试卷" transform="translate(-716 -198)">
+      <rect id="矩形_3068-3" data-name="矩形 3068" width="28" height="28" transform="translate(772 226)" fill="#b3b3b3" opacity="0"/>
+      <g id="组_2993-3" data-name="组 2993" transform="translate(616 70)">
+        <path id="路径_786-3" data-name="路径 786" d="M179.318,163.636H175v-1.591A2.037,2.037,0,0,0,172.955,160h-5.909A2.037,2.037,0,0,0,165,162.045v1.591h-4.318a.682.682,0,1,0,0,1.364h18.636a.682.682,0,1,0,0-1.364Zm-12.955,0v-1.591a.7.7,0,0,1,.682-.682h5.909a.7.7,0,0,1,.682.682v1.591ZM177,166.364a.7.7,0,0,0-.682.682v10.318a1.271,1.271,0,0,1-1.273,1.273H164.909a1.27,1.27,0,0,1-1.273-1.273V167.045a.682.682,0,1,0-1.364,0v10.318A2.638,2.638,0,0,0,164.909,180h10.182a2.638,2.638,0,0,0,2.636-2.636V167.045A.776.776,0,0,0,177,166.364Z" transform="translate(0 0)" fill="#b3b3b3"/>
+        <path id="路径_787-3" data-name="路径 787" d="M398.164,394.227v-8.545a.682.682,0,0,0-1.364,0v8.545a.682.682,0,1,0,1.364,0Zm5.182,0v-8.545a.682.682,0,0,0-1.364,0v8.545a.682.682,0,0,0,1.364,0Z" transform="translate(-230.073 -217.636)" fill="#b3b3b3"/>
+      </g>
+    </g>
+    <g id="icon_移动至分类" data-name="icon/移动至分类" transform="translate(-752 -198)">
+      <rect id="矩形_3069" data-name="矩形 3069" width="28" height="28" transform="translate(836 226)" fill="#333" opacity="0"/>
+      <g id="组_2994" data-name="组 2994" transform="translate(-2 -1)">
+        <path id="路径_835" data-name="路径 835" d="M21.522,7.66v9.19a2.292,2.292,0,0,1-2.271,2.292H2.271A2.292,2.292,0,0,1,0,16.85V5.292A2.292,2.292,0,0,1,2.271,3H7.253a2.152,2.152,0,0,1,1.227.387L10.761,4.98a2.206,2.206,0,0,0,1.227.387h7.253A2.292,2.292,0,0,1,21.522,7.66Z" transform="translate(841 230)" fill="none" stroke="#333" stroke-width="1.5"/>
+        <g id="组_3146" data-name="组 3146" transform="translate(814.593 -4.327)">
+          <path id="路径_1129" data-name="路径 1129" d="M93.644,462h10.3a.644.644,0,1,1,0,1.287h-10.3a.644.644,0,1,1,0-1.287Z" transform="translate(-61.226 -215.909)" fill="#333"/>
+          <path id="路径_1130" data-name="路径 1130" d="M32.075,468.789l2.731,2.731a.644.644,0,0,1-.91.91L31.163,469.7a.644.644,0,1,1,.912-.91Z" transform="translate(0 -222.424)" fill="#333"/>
+          <path id="路径_1131" data-name="路径 1131" d="M34.9,244.374,32.174,247.1a.644.644,0,0,1-.91-.91l2.731-2.731a.644.644,0,0,1,.91.91Z" transform="translate(-0.099 0)" fill="#333"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_移动至分类-2" data-name="icon/移动至分类" transform="translate(-724 -198)">
+      <rect id="矩形_3069-2" data-name="矩形 3069" width="28" height="28" transform="translate(836 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_2994-2" data-name="组 2994" transform="translate(-2 -1)">
+        <path id="路径_835-2" data-name="路径 835" d="M21.522,7.66v9.19a2.292,2.292,0,0,1-2.271,2.292H2.271A2.292,2.292,0,0,1,0,16.85V5.292A2.292,2.292,0,0,1,2.271,3H7.253a2.152,2.152,0,0,1,1.227.387L10.761,4.98a2.206,2.206,0,0,0,1.227.387h7.253A2.292,2.292,0,0,1,21.522,7.66Z" transform="translate(841 230)" fill="none" stroke="#36aafd" stroke-width="1.5"/>
+        <g id="组_3146-2" data-name="组 3146" transform="translate(814.593 -4.327)">
+          <path id="路径_1129-2" data-name="路径 1129" d="M93.644,462h10.3a.644.644,0,1,1,0,1.287h-10.3a.644.644,0,1,1,0-1.287Z" transform="translate(-61.226 -215.909)" fill="#36aafd"/>
+          <path id="路径_1130-2" data-name="路径 1130" d="M32.075,468.789l2.731,2.731a.644.644,0,0,1-.91.91L31.163,469.7a.644.644,0,1,1,.912-.91Z" transform="translate(0 -222.424)" fill="#36aafd"/>
+          <path id="路径_1131-2" data-name="路径 1131" d="M34.9,244.374,32.174,247.1a.644.644,0,0,1-.91-.91l2.731-2.731a.644.644,0,0,1,.91.91Z" transform="translate(-0.099 0)" fill="#36aafd"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_移动至分类_禁用" data-name="icon/移动至分类/禁用" transform="translate(-696 -198)">
+      <rect id="矩形_3069-3" data-name="矩形 3069" width="28" height="28" transform="translate(836 226)" fill="#b3b3b3" opacity="0"/>
+      <g id="组_2994-3" data-name="组 2994" transform="translate(-2 -1)">
+        <path id="路径_835-3" data-name="路径 835" d="M21.522,7.66v9.19a2.292,2.292,0,0,1-2.271,2.292H2.271A2.292,2.292,0,0,1,0,16.85V5.292A2.292,2.292,0,0,1,2.271,3H7.253a2.152,2.152,0,0,1,1.227.387L10.761,4.98a2.206,2.206,0,0,0,1.227.387h7.253A2.292,2.292,0,0,1,21.522,7.66Z" transform="translate(841 230)" fill="none" stroke="#b3b3b3" stroke-width="1.5"/>
+        <g id="组_3146-3" data-name="组 3146" transform="translate(814.593 -4.327)">
+          <path id="路径_1129-3" data-name="路径 1129" d="M93.644,462h10.3a.644.644,0,1,1,0,1.287h-10.3a.644.644,0,1,1,0-1.287Z" transform="translate(-61.226 -215.909)" fill="#b3b3b3"/>
+          <path id="路径_1130-3" data-name="路径 1130" d="M32.075,468.789l2.731,2.731a.644.644,0,0,1-.91.91L31.163,469.7a.644.644,0,1,1,.912-.91Z" transform="translate(0 -222.424)" fill="#b3b3b3"/>
+          <path id="路径_1131-3" data-name="路径 1131" d="M34.9,244.374,32.174,247.1a.644.644,0,0,1-.91-.91l2.731-2.731a.644.644,0,0,1,.91.91Z" transform="translate(-0.099 0)" fill="#b3b3b3"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_移动至归档_鼠标移入" data-name="icon/移动至归档/鼠标移入" transform="translate(-732 -198)">
+      <rect id="矩形_3070" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <path id="路径_793" data-name="路径 793" d="M98.818,76.534v-7.28A2.657,2.657,0,0,0,96.163,66.6H85.616a2.657,2.657,0,0,0-2.655,2.655v7.28A2.131,2.131,0,0,0,81.1,78.647v5.825A2.131,2.131,0,0,0,83.228,86.6H98.551a2.131,2.131,0,0,0,2.128-2.128V78.647A2.134,2.134,0,0,0,98.818,76.534Zm-14.275-7.28a1.074,1.074,0,0,1,1.073-1.073H96.163a1.074,1.074,0,0,1,1.073,1.073v7.264H94.4V78.5a.136.136,0,0,1-.136.136H87.514a.136.136,0,0,1-.136-.136V76.519H84.543ZM99.1,84.474a.547.547,0,0,1-.547.547H83.228a.547.547,0,0,1-.547-.547V78.647a.547.547,0,0,1,.547-.547H85.8v.4a1.719,1.719,0,0,0,1.717,1.717h6.751A1.719,1.719,0,0,0,95.983,78.5v-.4h2.567a.547.547,0,0,1,.547.547v5.827Z" transform="translate(823.11 163.4)" fill="#333"/>
+      <path id="路径_795" data-name="路径 795" d="M74.726,161.168a5.3,5.3,0,0,1-.95,2.569,4.067,4.067,0,0,0-.17-2.106A5.409,5.409,0,0,0,72.3,159.7l-1.02,1.02v-3.494h3.494l-1,1a4.381,4.381,0,0,1,.95,2.945Z" transform="translate(853.182 401.386) rotate(-135)" fill="none" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+    <g id="icon_移动至归档_鼠标移入-2" data-name="icon/移动至归档/鼠标移入" transform="translate(-704 -198)">
+      <rect id="矩形_3070-2" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <path id="路径_793-2" data-name="路径 793" d="M98.818,76.534v-7.28A2.657,2.657,0,0,0,96.163,66.6H85.616a2.657,2.657,0,0,0-2.655,2.655v7.28A2.131,2.131,0,0,0,81.1,78.647v5.825A2.131,2.131,0,0,0,83.228,86.6H98.551a2.131,2.131,0,0,0,2.128-2.128V78.647A2.134,2.134,0,0,0,98.818,76.534Zm-14.275-7.28a1.074,1.074,0,0,1,1.073-1.073H96.163a1.074,1.074,0,0,1,1.073,1.073v7.264H94.4V78.5a.136.136,0,0,1-.136.136H87.514a.136.136,0,0,1-.136-.136V76.519H84.543ZM99.1,84.474a.547.547,0,0,1-.547.547H83.228a.547.547,0,0,1-.547-.547V78.647a.547.547,0,0,1,.547-.547H85.8v.4a1.719,1.719,0,0,0,1.717,1.717h6.751A1.719,1.719,0,0,0,95.983,78.5v-.4h2.567a.547.547,0,0,1,.547.547v5.827Z" transform="translate(823.11 163.4)" fill="#36aafd"/>
+      <path id="路径_795-2" data-name="路径 795" d="M74.726,161.168a5.3,5.3,0,0,1-.95,2.569,4.067,4.067,0,0,0-.17-2.106A5.409,5.409,0,0,0,72.3,159.7l-1.02,1.02v-3.494h3.494l-1,1a4.381,4.381,0,0,1,.95,2.945Z" transform="translate(853.182 401.386) rotate(-135)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+    <g id="icon_移动至归档_鼠标移入-3" data-name="icon/移动至归档/鼠标移入" transform="translate(-676 -198)">
+      <rect id="矩形_3070-3" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#b3b3b3" opacity="0"/>
+      <path id="路径_793-3" data-name="路径 793" d="M98.818,76.534v-7.28A2.657,2.657,0,0,0,96.163,66.6H85.616a2.657,2.657,0,0,0-2.655,2.655v7.28A2.131,2.131,0,0,0,81.1,78.647v5.825A2.131,2.131,0,0,0,83.228,86.6H98.551a2.131,2.131,0,0,0,2.128-2.128V78.647A2.134,2.134,0,0,0,98.818,76.534Zm-14.275-7.28a1.074,1.074,0,0,1,1.073-1.073H96.163a1.074,1.074,0,0,1,1.073,1.073v7.264H94.4V78.5a.136.136,0,0,1-.136.136H87.514a.136.136,0,0,1-.136-.136V76.519H84.543ZM99.1,84.474a.547.547,0,0,1-.547.547H83.228a.547.547,0,0,1-.547-.547V78.647a.547.547,0,0,1,.547-.547H85.8v.4a1.719,1.719,0,0,0,1.717,1.717h6.751A1.719,1.719,0,0,0,95.983,78.5v-.4h2.567a.547.547,0,0,1,.547.547v5.827Z" transform="translate(823.11 163.4)" fill="#b3b3b3"/>
+      <path id="路径_795-3" data-name="路径 795" d="M74.726,161.168a5.3,5.3,0,0,1-.95,2.569,4.067,4.067,0,0,0-.17-2.106A5.409,5.409,0,0,0,72.3,159.7l-1.02,1.02v-3.494h3.494l-1,1a4.381,4.381,0,0,1,.95,2.945Z" transform="translate(853.182 401.386) rotate(-135)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+    <g id="icon_导出所选试题" data-name="icon/导出所选试题" transform="translate(-844 -170)">
+      <rect id="矩形_3070-4" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#b3b3b3" opacity="0"/>
+      <g id="组_3087" data-name="组 3087">
+        <path id="路径_840" data-name="路径 840" d="M19.48,79.225v1.743a1.719,1.719,0,0,1-1.695,1.742H1.693A1.718,1.718,0,0,1,0,80.968V72.252a1.719,1.719,0,0,1,1.693-1.743h.847" transform="translate(904.26 166.524)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_841" data-name="路径 841" d="M7.676,5.716A11.791,11.791,0,0,0,5.561,0a9.05,9.05,0,0,1-.379,4.686A12.036,12.036,0,0,1,2.269,8.977L0,6.708v7.776H7.777L5.561,12.269A9.75,9.75,0,0,0,7.676,5.716Z" transform="matrix(-0.966, -0.259, 0.259, -0.966, 917.049, 246.77)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_导出所选试题-2" data-name="icon/导出所选试题" transform="translate(-900 -170)">
+      <rect id="矩形_3070-5" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="组_3087-2" data-name="组 3087">
+        <path id="路径_840-2" data-name="路径 840" d="M19.48,79.225v1.743a1.719,1.719,0,0,1-1.695,1.742H1.693A1.718,1.718,0,0,1,0,80.968V72.252a1.719,1.719,0,0,1,1.693-1.743h.847" transform="translate(904.26 166.524)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_841-2" data-name="路径 841" d="M7.676,5.716A11.791,11.791,0,0,0,5.561,0a9.05,9.05,0,0,1-.379,4.686A12.036,12.036,0,0,1,2.269,8.977L0,6.708v7.776H7.777L5.561,12.269A9.75,9.75,0,0,0,7.676,5.716Z" transform="matrix(-0.966, -0.259, 0.259, -0.966, 917.049, 246.77)" fill="none" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_导出所选试题-3" data-name="icon/导出所选试题" transform="translate(-872 -170)">
+      <rect id="矩形_3070-6" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_3087-3" data-name="组 3087">
+        <path id="路径_840-3" data-name="路径 840" d="M19.48,79.225v1.743a1.719,1.719,0,0,1-1.695,1.742H1.693A1.718,1.718,0,0,1,0,80.968V72.252a1.719,1.719,0,0,1,1.693-1.743h.847" transform="translate(904.26 166.524)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_841-3" data-name="路径 841" d="M7.676,5.716A11.791,11.791,0,0,0,5.561,0a9.05,9.05,0,0,1-.379,4.686A12.036,12.036,0,0,1,2.269,8.977L0,6.708v7.776H7.777L5.561,12.269A9.75,9.75,0,0,0,7.676,5.716Z" transform="matrix(-0.966, -0.259, 0.259, -0.966, 917.049, 246.77)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_添加标签" data-name="icon/添加标签" transform="translate(-816 -170)">
+      <rect id="矩形_3070-7" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="组_3086" data-name="组 3086" transform="translate(833.67 161.384)">
+        <path id="减去_40" data-name="减去 40" d="M17077.4,17389.43a1.917,1.917,0,0,1-1.656-.953l-.654-1.135a3.525,3.525,0,0,0,.531-1.43l1.141,1.975a.74.74,0,0,0,.639.373.719.719,0,0,0,.357-.094l.008,0,6.633-3.832a.743.743,0,0,0,.279-1l-.008-.008-7.117-12.334a.742.742,0,0,0-.525-.357h-.008l-4.85-.7a.958.958,0,0,0-.105-.008.739.739,0,0,0-.68.457l0,.01-1.789,4.529a.742.742,0,0,0,.039.629l.008.008,3.838,6.645a3.508,3.508,0,0,0-1.324-.26c-.059,0-.119,0-.18.006l-3.35-5.8a1.914,1.914,0,0,1-.123-1.654l1.789-4.531a1.907,1.907,0,0,1,1.777-1.207,1.977,1.977,0,0,1,.275.021l4.844.7a1.9,1.9,0,0,1,1.379.936l7.123,12.332a1.908,1.908,0,0,1-.7,2.605l-6.629,3.832A1.912,1.912,0,0,1,17077.4,17389.43Z" transform="translate(-16996.822 -17300.822)" fill="#333"/>
+        <path id="路径_839" data-name="路径 839" d="M199.583,197.519a2.6,2.6,0,0,1,3.713,3.652l-.03.031a2.6,2.6,0,0,1-3.713-3.652Zm.829.829a1.432,1.432,0,1,0,2.025,0A1.432,1.432,0,0,0,200.411,198.348Z" transform="matrix(-0.259, 0.966, -0.966, -0.259, 322.038, -69.527)" fill="#333"/>
+        <g id="椭圆_107" data-name="椭圆 107" transform="translate(71.33 80.616)" fill="none" stroke="#333" stroke-width="1">
+          <circle cx="4" cy="4" r="4" stroke="none"/>
+          <circle cx="4" cy="4" r="3.5" fill="none"/>
+        </g>
+        <g id="组_3088" data-name="组 3088" transform="translate(-3 6.153)">
+          <line id="直线_61" data-name="直线 61" x2="4" transform="translate(76.33 78.464)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1"/>
+          <line id="直线_62" data-name="直线 62" x2="4" transform="translate(78.33 76.464) rotate(90)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_添加标签-2" data-name="icon/添加标签" transform="translate(-788 -170)">
+      <rect id="矩形_3070-8" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_3086-2" data-name="组 3086" transform="translate(833.67 161.384)">
+        <path id="减去_40-2" data-name="减去 40" d="M17077.4,17389.43a1.917,1.917,0,0,1-1.656-.953l-.654-1.135a3.525,3.525,0,0,0,.531-1.43l1.141,1.975a.74.74,0,0,0,.639.373.719.719,0,0,0,.357-.094l.008,0,6.633-3.832a.743.743,0,0,0,.279-1l-.008-.008-7.117-12.334a.742.742,0,0,0-.525-.357h-.008l-4.85-.7a.958.958,0,0,0-.105-.008.739.739,0,0,0-.68.457l0,.01-1.789,4.529a.742.742,0,0,0,.039.629l.008.008,3.838,6.645a3.508,3.508,0,0,0-1.324-.26c-.059,0-.119,0-.18.006l-3.35-5.8a1.914,1.914,0,0,1-.123-1.654l1.789-4.531a1.907,1.907,0,0,1,1.777-1.207,1.977,1.977,0,0,1,.275.021l4.844.7a1.9,1.9,0,0,1,1.379.936l7.123,12.332a1.908,1.908,0,0,1-.7,2.605l-6.629,3.832A1.912,1.912,0,0,1,17077.4,17389.43Z" transform="translate(-16996.822 -17300.822)" fill="#36aafd"/>
+        <path id="路径_839-2" data-name="路径 839" d="M199.583,197.519a2.6,2.6,0,0,1,3.713,3.652l-.03.031a2.6,2.6,0,0,1-3.713-3.652Zm.829.829a1.432,1.432,0,1,0,2.025,0A1.432,1.432,0,0,0,200.411,198.348Z" transform="matrix(-0.259, 0.966, -0.966, -0.259, 322.038, -69.527)" fill="#36aafd"/>
+        <g id="椭圆_107-2" data-name="椭圆 107" transform="translate(71.33 80.616)" fill="none" stroke="#36aafd" stroke-width="1">
+          <circle cx="4" cy="4" r="4" stroke="none"/>
+          <circle cx="4" cy="4" r="3.5" fill="none"/>
+        </g>
+        <g id="组_3088-2" data-name="组 3088" transform="translate(-3 6.153)">
+          <line id="直线_61-2" data-name="直线 61" x2="4" transform="translate(76.33 78.464)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1"/>
+          <line id="直线_62-2" data-name="直线 62" x2="4" transform="translate(78.33 76.464) rotate(90)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_添加标签-3" data-name="icon/添加标签" transform="translate(-760 -170)">
+      <rect id="矩形_3070-9" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#b3b3b3" opacity="0"/>
+      <g id="组_3086-3" data-name="组 3086" transform="translate(833.67 161.384)">
+        <path id="减去_40-3" data-name="减去 40" d="M17077.4,17389.43a1.917,1.917,0,0,1-1.656-.953l-.654-1.135a3.525,3.525,0,0,0,.531-1.43l1.141,1.975a.74.74,0,0,0,.639.373.719.719,0,0,0,.357-.094l.008,0,6.633-3.832a.743.743,0,0,0,.279-1l-.008-.008-7.117-12.334a.742.742,0,0,0-.525-.357h-.008l-4.85-.7a.958.958,0,0,0-.105-.008.739.739,0,0,0-.68.457l0,.01-1.789,4.529a.742.742,0,0,0,.039.629l.008.008,3.838,6.645a3.508,3.508,0,0,0-1.324-.26c-.059,0-.119,0-.18.006l-3.35-5.8a1.914,1.914,0,0,1-.123-1.654l1.789-4.531a1.907,1.907,0,0,1,1.777-1.207,1.977,1.977,0,0,1,.275.021l4.844.7a1.9,1.9,0,0,1,1.379.936l7.123,12.332a1.908,1.908,0,0,1-.7,2.605l-6.629,3.832A1.912,1.912,0,0,1,17077.4,17389.43Z" transform="translate(-16996.822 -17300.822)" fill="#b3b3b3"/>
+        <path id="路径_839-3" data-name="路径 839" d="M199.583,197.519a2.6,2.6,0,0,1,3.713,3.652l-.03.031a2.6,2.6,0,0,1-3.713-3.652Zm.829.829a1.432,1.432,0,1,0,2.025,0A1.432,1.432,0,0,0,200.411,198.348Z" transform="matrix(-0.259, 0.966, -0.966, -0.259, 322.038, -69.527)" fill="#b3b3b3"/>
+        <g id="椭圆_107-3" data-name="椭圆 107" transform="translate(71.33 80.616)" fill="none" stroke="#b3b3b3" stroke-width="1">
+          <circle cx="4" cy="4" r="4" stroke="none"/>
+          <circle cx="4" cy="4" r="3.5" fill="none"/>
+        </g>
+        <g id="组_3088-3" data-name="组 3088" transform="translate(-3 6.153)">
+          <line id="直线_61-3" data-name="直线 61" x2="4" transform="translate(76.33 78.464)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1"/>
+          <line id="直线_62-3" data-name="直线 62" x2="4" transform="translate(78.33 76.464) rotate(90)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_题库查重" data-name="icon/题库查重" transform="translate(-732 -170)">
+      <rect id="矩形_3070-10" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <path id="路径_837" data-name="路径 837" d="M142.984,64a1.362,1.362,0,0,1,1.362,1.34v9.576a.511.511,0,0,1-1.022.011V65.362a.341.341,0,0,0-.331-.34H129.362a.341.341,0,0,0-.34.331V81.708a.341.341,0,0,0,.331.34h6.831a.511.511,0,0,1,.011,1.022h-6.832A1.362,1.362,0,0,1,128,81.731V65.362A1.362,1.362,0,0,1,129.34,64h13.644Zm-4.6,7.151a.511.511,0,0,1,0,1.022H132.6a.511.511,0,0,1,0-1.022Zm1.362-3.065a.511.511,0,0,1,0,1.022H132.6a.511.511,0,0,1,0-1.022Z" transform="translate(778 166)" fill="#333" stroke="#333" stroke-width="0.5"/>
+      <g id="组_4371" data-name="组 4371" transform="translate(649.091 -295.737) rotate(45)">
+        <g id="椭圆_100" data-name="椭圆 100" transform="translate(569 189)" fill="none" stroke="#333" stroke-width="1.3">
+          <circle cx="3.236" cy="3.236" r="3.236" stroke="none"/>
+          <circle cx="3.236" cy="3.236" r="2.586" fill="none"/>
+        </g>
+        <line id="直线_45" data-name="直线 45" x2="1.618" transform="translate(575.876 192.37)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.3"/>
+      </g>
+    </g>
+    <g id="icon_题库查重-2" data-name="icon/题库查重" transform="translate(-704 -170)">
+      <rect id="矩形_3070-11" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <path id="路径_837-2" data-name="路径 837" d="M142.984,64a1.362,1.362,0,0,1,1.362,1.34v9.576a.511.511,0,0,1-1.022.011V65.362a.341.341,0,0,0-.331-.34H129.362a.341.341,0,0,0-.34.331V81.708a.341.341,0,0,0,.331.34h6.831a.511.511,0,0,1,.011,1.022h-6.832A1.362,1.362,0,0,1,128,81.731V65.362A1.362,1.362,0,0,1,129.34,64h13.644Zm-4.6,7.151a.511.511,0,0,1,0,1.022H132.6a.511.511,0,0,1,0-1.022Zm1.362-3.065a.511.511,0,0,1,0,1.022H132.6a.511.511,0,0,1,0-1.022Z" transform="translate(778 166)" fill="#36aafd" stroke="#36aafd" stroke-width="0.5"/>
+      <g id="组_4371-2" data-name="组 4371" transform="translate(649.091 -295.737) rotate(45)">
+        <g id="椭圆_100-2" data-name="椭圆 100" transform="translate(569 189)" fill="none" stroke="#36aafd" stroke-width="1.3">
+          <circle cx="3.236" cy="3.236" r="3.236" stroke="none"/>
+          <circle cx="3.236" cy="3.236" r="2.586" fill="none"/>
+        </g>
+        <line id="直线_45-2" data-name="直线 45" x2="1.618" transform="translate(575.876 192.37)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.3"/>
+      </g>
+    </g>
+    <g id="icon_标签管理" data-name="icon/标签管理" transform="translate(-676 -170)">
+      <rect id="矩形_3070-12" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="组_3086-4" data-name="组 3086" transform="translate(836.17 163.036)">
+        <path id="路径_838" data-name="路径 838" d="M70.072,67.555l4.861-.578a1.909,1.909,0,0,1,1.576.546L86.578,77.593a1.91,1.91,0,0,1,0,2.7l-5.416,5.416a1.91,1.91,0,0,1-2.7,0L68.389,75.637a1.91,1.91,0,0,1-.547-1.569l.558-4.835a1.909,1.909,0,0,1,1.672-1.677Zm.138,1.164a.738.738,0,0,0-.645.638v.01L69.006,74.2a.738.738,0,0,0,.2.6l.008.008L79.29,84.881a.738.738,0,0,0,1.035.009l.009-.009,5.416-5.416a.738.738,0,0,0,.009-1.035l-.009-.009L75.68,68.352a.738.738,0,0,0-.6-.212h-.011Z" fill="#333"/>
+        <path id="路径_839-4" data-name="路径 839" d="M199.583,197.519a2.6,2.6,0,0,1,3.713,3.652l-.03.031a2.6,2.6,0,0,1-3.713-3.652Zm.829.829a1.432,1.432,0,1,0,2.025,0A1.432,1.432,0,0,0,200.411,198.348Z" transform="translate(-128.148 -126.976)" fill="#333"/>
+        <path id="路径_1754" data-name="路径 1754" d="M79.537,83.2l4.591-4.591" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.3"/>
+      </g>
+    </g>
+    <g id="icon_标签管理-2" data-name="icon/标签管理" transform="translate(-648 -170)">
+      <rect id="矩形_3070-13" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_3086-5" data-name="组 3086" transform="translate(836.17 163.036)">
+        <path id="路径_838-2" data-name="路径 838" d="M70.072,67.555l4.861-.578a1.909,1.909,0,0,1,1.576.546L86.578,77.593a1.91,1.91,0,0,1,0,2.7l-5.416,5.416a1.91,1.91,0,0,1-2.7,0L68.389,75.637a1.91,1.91,0,0,1-.547-1.569l.558-4.835a1.909,1.909,0,0,1,1.672-1.677Zm.138,1.164a.738.738,0,0,0-.645.638v.01L69.006,74.2a.738.738,0,0,0,.2.6l.008.008L79.29,84.881a.738.738,0,0,0,1.035.009l.009-.009,5.416-5.416a.738.738,0,0,0,.009-1.035l-.009-.009L75.68,68.352a.738.738,0,0,0-.6-.212h-.011Z" fill="#36aafd"/>
+        <path id="路径_839-5" data-name="路径 839" d="M199.583,197.519a2.6,2.6,0,0,1,3.713,3.652l-.03.031a2.6,2.6,0,0,1-3.713-3.652Zm.829.829a1.432,1.432,0,1,0,2.025,0A1.432,1.432,0,0,0,200.411,198.348Z" transform="translate(-128.148 -126.976)" fill="#36aafd"/>
+        <path id="路径_1754-2" data-name="路径 1754" d="M79.537,83.2l4.591-4.591" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.3"/>
+      </g>
+    </g>
+    <g id="icon_考生登录链接" data-name="icon/考生登录链接" transform="translate(-900 -142)">
+      <rect id="矩形_3070-14" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <path id="路径_1120" data-name="路径 1120" d="M76.373,73.61a4.995,4.995,0,0,1,4.5,2.834,1.6,1.6,0,0,1-1.174.486,1.747,1.747,0,0,1-.486-.072,3.386,3.386,0,0,0-1.1-1.1,3.275,3.275,0,0,0-1.732-.486,3.317,3.317,0,0,0-1.258.247,3.273,3.273,0,0,0-1.089.727l-2.492,2.492a3.272,3.272,0,0,0-.727,1.089,3.327,3.327,0,0,0,0,2.517,3.221,3.221,0,0,0,.727,1.089,3.262,3.262,0,0,0,1.089.727,3.332,3.332,0,0,0,2.519,0,3.272,3.272,0,0,0,1.089-.727l1.744-1.744a6.533,6.533,0,0,0,1.72.227q.142,0,.4-.012c-.066.072-.132.144-.2.214l-2.492,2.492a4.886,4.886,0,0,1-1.633,1.089,4.993,4.993,0,0,1-3.781,0,5,5,0,0,1-2.722-2.718,5.006,5.006,0,0,1,0-3.781,4.9,4.9,0,0,1,1.089-1.631l2.492-2.492c.047-.047.119-.113.214-.2a4.915,4.915,0,0,1,1.551-.937A5.05,5.05,0,0,1,76.373,73.61ZM82.187,67.8a5,5,0,0,1,1.89.371A5.017,5.017,0,0,1,86.8,70.89a5.006,5.006,0,0,1,0,3.781A4.9,4.9,0,0,1,85.708,76.3l-2.492,2.492c-.047.049-.119.115-.214.2a4.868,4.868,0,0,1-1.551.937,4.98,4.98,0,0,1-1.759.321,4.995,4.995,0,0,1-4.5-2.834,1.592,1.592,0,0,1,1.174-.486,1.737,1.737,0,0,1,.486.072,3.38,3.38,0,0,0,1.1,1.1,3.28,3.28,0,0,0,1.732.486,3.317,3.317,0,0,0,1.258-.247,3.253,3.253,0,0,0,1.089-.727l2.492-2.492a3.242,3.242,0,0,0,.727-1.089,3.327,3.327,0,0,0,0-2.517,3.346,3.346,0,0,0-1.816-1.816,3.327,3.327,0,0,0-2.517,0,3.252,3.252,0,0,0-1.089.727l-1.746,1.744a6.533,6.533,0,0,0-1.72-.227q-.142,0-.4.012c.066-.072.132-.144.2-.214l2.492-2.492a4.9,4.9,0,0,1,1.631-1.087A4.965,4.965,0,0,1,82.187,67.8Zm0,0" transform="translate(835.966 163.068)" fill="#333"/>
+    </g>
+    <g id="icon_考生登录链接-2" data-name="icon/考生登录链接" transform="translate(-872 -142)">
+      <rect id="矩形_3070-15" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <path id="路径_1120-2" data-name="路径 1120" d="M76.373,73.61a4.995,4.995,0,0,1,4.5,2.834,1.6,1.6,0,0,1-1.174.486,1.747,1.747,0,0,1-.486-.072,3.386,3.386,0,0,0-1.1-1.1,3.275,3.275,0,0,0-1.732-.486,3.317,3.317,0,0,0-1.258.247,3.273,3.273,0,0,0-1.089.727l-2.492,2.492a3.272,3.272,0,0,0-.727,1.089,3.327,3.327,0,0,0,0,2.517,3.221,3.221,0,0,0,.727,1.089,3.262,3.262,0,0,0,1.089.727,3.332,3.332,0,0,0,2.519,0,3.272,3.272,0,0,0,1.089-.727l1.744-1.744a6.533,6.533,0,0,0,1.72.227q.142,0,.4-.012c-.066.072-.132.144-.2.214l-2.492,2.492a4.886,4.886,0,0,1-1.633,1.089,4.993,4.993,0,0,1-3.781,0,5,5,0,0,1-2.722-2.718,5.006,5.006,0,0,1,0-3.781,4.9,4.9,0,0,1,1.089-1.631l2.492-2.492c.047-.047.119-.113.214-.2a4.915,4.915,0,0,1,1.551-.937A5.05,5.05,0,0,1,76.373,73.61ZM82.187,67.8a5,5,0,0,1,1.89.371A5.017,5.017,0,0,1,86.8,70.89a5.006,5.006,0,0,1,0,3.781A4.9,4.9,0,0,1,85.708,76.3l-2.492,2.492c-.047.049-.119.115-.214.2a4.868,4.868,0,0,1-1.551.937,4.98,4.98,0,0,1-1.759.321,4.995,4.995,0,0,1-4.5-2.834,1.592,1.592,0,0,1,1.174-.486,1.737,1.737,0,0,1,.486.072,3.38,3.38,0,0,0,1.1,1.1,3.28,3.28,0,0,0,1.732.486,3.317,3.317,0,0,0,1.258-.247,3.253,3.253,0,0,0,1.089-.727l2.492-2.492a3.242,3.242,0,0,0,.727-1.089,3.327,3.327,0,0,0,0-2.517,3.346,3.346,0,0,0-1.816-1.816,3.327,3.327,0,0,0-2.517,0,3.252,3.252,0,0,0-1.089.727l-1.746,1.744a6.533,6.533,0,0,0-1.72-.227q-.142,0-.4.012c.066-.072.132-.144.2-.214l2.492-2.492a4.9,4.9,0,0,1,1.631-1.087A4.965,4.965,0,0,1,82.187,67.8Zm0,0" transform="translate(835.966 163.068)" fill="#36aafd"/>
+    </g>
+    <g id="icon_考生字段设置" data-name="icon/考生字段设置" transform="translate(-844 -142)">
+      <rect id="矩形_3070-16" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="组_3126" data-name="组 3126" transform="translate(-0.869 -1.071)">
+        <g id="矩形_3126" data-name="矩形 3126" transform="translate(904.869 231.071)" fill="none" stroke="#333" stroke-width="1.5">
+          <rect width="20" height="20" rx="2" stroke="none"/>
+          <rect x="0.75" y="0.75" width="18.5" height="18.5" rx="1.25" fill="none"/>
+        </g>
+        <g id="组_3125" data-name="组 3125" transform="translate(911.322 237.787)">
+          <path id="路径_1121" data-name="路径 1121" d="M0,0H7" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+          <line id="直线_66" data-name="直线 66" y2="7" transform="translate(3.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_考生字段设置-2" data-name="icon/考生字段设置" transform="translate(-816 -142)">
+      <rect id="矩形_3070-17" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="组_3126-2" data-name="组 3126" transform="translate(-0.869 -1.071)">
+        <g id="矩形_3126-2" data-name="矩形 3126" transform="translate(904.869 231.071)" fill="none" stroke="#36aafd" stroke-width="1.5">
+          <rect width="20" height="20" rx="2" stroke="none"/>
+          <rect x="0.75" y="0.75" width="18.5" height="18.5" rx="1.25" fill="none"/>
+        </g>
+        <g id="组_3125-2" data-name="组 3125" transform="translate(911.322 237.787)">
+          <path id="路径_1121-2" data-name="路径 1121" d="M0,0H7" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+          <line id="直线_66-2" data-name="直线 66" y2="7" transform="translate(3.5)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_错题消灭记录" data-name="icon/错题消灭记录" transform="translate(-788 -142)">
+      <rect id="矩形_3070-18" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="组_3127" data-name="组 3127" transform="translate(813.24 210.504)">
+        <path id="路径_1122" data-name="路径 1122" d="M108.431,27.933V21.518a1.577,1.577,0,0,0-1.577-1.577H94.276A1.577,1.577,0,0,0,92.7,21.518V36.826A1.577,1.577,0,0,0,94.276,38.4h5.783" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+        <line id="直线_67" data-name="直线 67" x2="8.699" transform="translate(95.855 24.185)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+        <line id="直线_68" data-name="直线 68" x2="5.873" transform="translate(95.855 28.895)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+        <g id="组_3128" data-name="组 3128" transform="translate(105.881 30.172) rotate(45)">
+          <line id="直线_69" data-name="直线 69" x2="6.985" transform="translate(0 3.493)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+          <line id="直线_70" data-name="直线 70" x2="6.985" transform="translate(3.493 0) rotate(90)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_错题消灭记录-2" data-name="icon/错题消灭记录" transform="translate(-760 -142)">
+      <rect id="矩形_3070-19" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_3127-2" data-name="组 3127" transform="translate(813.24 210.504)">
+        <path id="路径_1122-2" data-name="路径 1122" d="M108.431,27.933V21.518a1.577,1.577,0,0,0-1.577-1.577H94.276A1.577,1.577,0,0,0,92.7,21.518V36.826A1.577,1.577,0,0,0,94.276,38.4h5.783" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        <line id="直线_67-2" data-name="直线 67" x2="8.699" transform="translate(95.855 24.185)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        <line id="直线_68-2" data-name="直线 68" x2="5.873" transform="translate(95.855 28.895)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        <g id="组_3128-2" data-name="组 3128" transform="translate(105.881 30.172) rotate(45)">
+          <line id="直线_69-2" data-name="直线 69" x2="6.985" transform="translate(0 3.493)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+          <line id="直线_70-2" data-name="直线 70" x2="6.985" transform="translate(3.493 0) rotate(90)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_考生数据对比" data-name="icon/考生数据对比" transform="translate(-732 -142)">
+      <rect id="矩形_3070-20" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#999" opacity="0"/>
+      <g id="组_3131" data-name="组 3131" transform="translate(0.627 0.981)">
+        <path id="路径_1128" data-name="路径 1128" d="M904.1,233.616v10.147h19.186" transform="translate(-0.32 3.63)" fill="none" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <rect id="矩形_3127" data-name="矩形 3127" width="3.58" height="10.741" transform="translate(906.662 234.226)" fill="none" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <rect id="矩形_3128" data-name="矩形 3128" width="3.58" height="14.322" transform="translate(912.5 230.645)" fill="none" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <rect id="矩形_3129" data-name="矩形 3129" width="3.58" height="5.371" transform="translate(918.299 239.597)" fill="none" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_考生数据对比-2" data-name="icon/考生数据对比" transform="translate(-704 -142)">
+      <rect id="矩形_3070-21" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#999" opacity="0"/>
+      <g id="组_3131-2" data-name="组 3131" transform="translate(0.627 0.981)">
+        <path id="路径_1128-2" data-name="路径 1128" d="M904.1,233.616v10.147h19.186" transform="translate(-0.32 3.63)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <rect id="矩形_3127-2" data-name="矩形 3127" width="3.58" height="10.741" transform="translate(906.662 234.226)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <rect id="矩形_3128-2" data-name="矩形 3128" width="3.58" height="14.322" transform="translate(912.5 230.645)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <rect id="矩形_3129-2" data-name="矩形 3129" width="3.58" height="5.371" transform="translate(918.299 239.597)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_导出学习记录" data-name="icon/导出学习记录" transform="translate(-676 -142)">
+      <rect id="矩形_3070-22" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#999" opacity="0"/>
+      <g id="组_3087-4" data-name="组 3087">
+        <path id="路径_840-4" data-name="路径 840" d="M19.48,79.225v1.743a1.719,1.719,0,0,1-1.695,1.742H1.693A1.718,1.718,0,0,1,0,80.968V72.252a1.719,1.719,0,0,1,1.693-1.743h.847" transform="translate(904.26 166.524)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_841-4" data-name="路径 841" d="M7.676,5.716A11.791,11.791,0,0,0,5.561,0a9.05,9.05,0,0,1-.379,4.686A12.036,12.036,0,0,1,2.269,8.977L0,6.708v7.776H7.777L5.561,12.269A9.75,9.75,0,0,0,7.676,5.716Z" transform="matrix(-0.966, -0.259, 0.259, -0.966, 917.049, 246.77)" fill="none" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_导出学习记录-2" data-name="icon/导出学习记录" transform="translate(-648 -142)">
+      <rect id="矩形_3070-23" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#999" opacity="0"/>
+      <g id="组_3087-5" data-name="组 3087">
+        <path id="路径_840-5" data-name="路径 840" d="M19.48,79.225v1.743a1.719,1.719,0,0,1-1.695,1.742H1.693A1.718,1.718,0,0,1,0,80.968V72.252a1.719,1.719,0,0,1,1.693-1.743h.847" transform="translate(904.26 166.524)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_841-5" data-name="路径 841" d="M7.676,5.716A11.791,11.791,0,0,0,5.561,0a9.05,9.05,0,0,1-.379,4.686A12.036,12.036,0,0,1,2.269,8.977L0,6.708v7.776H7.777L5.561,12.269A9.75,9.75,0,0,0,7.676,5.716Z" transform="matrix(-0.966, -0.259, 0.259, -0.966, 917.049, 246.77)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_导出考生信息" data-name="icon/导出考生信息" transform="translate(-620 -142)">
+      <rect id="矩形_3070-24" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="组_3129" data-name="组 3129" transform="translate(829.759 176.374)">
+        <path id="路径_1123" data-name="路径 1123" d="M229.984,53.333a5.984,5.984,0,1,0,5.984,5.984A5.984,5.984,0,0,0,229.984,53.333Zm0,1.436a4.548,4.548,0,1,1-4.548,4.548,4.548,4.548,0,0,1,4.548-4.548Z" transform="translate(-145.982 0)" fill="#333"/>
+        <path id="路径_1124" data-name="路径 1124" d="M84.044,522.667a9.375,9.375,0,0,1,4.383,1.081.718.718,0,1,1-.67,1.271A7.952,7.952,0,0,0,76.1,532a.718.718,0,0,1-1.436,0A9.357,9.357,0,0,1,84.044,522.667Z" transform="translate(0 -458.802)" fill="#333"/>
+        <path id="路径_1757" data-name="路径 1757" d="M86.674,68.658h6.454" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_1758" data-name="路径 1758" d="M86.674,68.658h6.454" transform="translate(0 4)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_导出考生信息-2" data-name="icon/导出考生信息" transform="translate(-592 -142)">
+      <rect id="矩形_3070-25" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_3129-2" data-name="组 3129" transform="translate(829.759 176.374)">
+        <path id="路径_1123-2" data-name="路径 1123" d="M229.984,53.333a5.984,5.984,0,1,0,5.984,5.984A5.984,5.984,0,0,0,229.984,53.333Zm0,1.436a4.548,4.548,0,1,1-4.548,4.548,4.548,4.548,0,0,1,4.548-4.548Z" transform="translate(-145.982 0)" fill="#36aafd"/>
+        <path id="路径_1124-2" data-name="路径 1124" d="M84.044,522.667a9.375,9.375,0,0,1,4.383,1.081.718.718,0,1,1-.67,1.271A7.952,7.952,0,0,0,76.1,532a.718.718,0,0,1-1.436,0A9.357,9.357,0,0,1,84.044,522.667Z" transform="translate(0 -458.802)" fill="#36aafd"/>
+        <path id="路径_1757-2" data-name="路径 1757" d="M86.674,68.658h6.454" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_1758-2" data-name="路径 1758" d="M86.674,68.658h6.454" transform="translate(0 4)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_批量上传照片" data-name="icon/批量上传照片" transform="translate(-564 -142)">
+      <rect id="矩形_3070-26" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#999" opacity="0"/>
+      <g id="组_3130" data-name="组 3130" transform="translate(808.208 71.715)">
+        <path id="路径_1125" data-name="路径 1125" d="M114.83,160H96.753a.753.753,0,0,0-.753.753v15.064a.753.753,0,0,0,.753.753H114.83a.753.753,0,0,0,.753-.753V160.753A.753.753,0,0,0,114.83,160Zm-.753,1.506v11.11l-5.348-4.011a1.135,1.135,0,0,0-1.356,0l-2.32,1.74-3.094-2.475a1.125,1.125,0,0,0-1.337-.056l-3.116,2.1v-8.4Zm-16.57,13.557v-3.339l3.727-2.506,3.79,3.032,3.027-2.271,6.026,4.519v.565Z" fill="#333"/>
+        <path id="路径_1126" data-name="路径 1126" d="M610.26,292.519a2.26,2.26,0,1,0-2.26-2.26A2.262,2.262,0,0,0,610.26,292.519Zm0-3.013a.753.753,0,1,1-.753.753A.754.754,0,0,1,610.26,289.506Z" transform="translate(-499.949 -124.987)" fill="#333"/>
+      </g>
+    </g>
+    <g id="icon_批量上传照片-2" data-name="icon/批量上传照片" transform="translate(-536 -142)">
+      <rect id="矩形_3070-27" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_3130-2" data-name="组 3130" transform="translate(808.208 71.715)">
+        <path id="路径_1125-2" data-name="路径 1125" d="M114.83,160H96.753a.753.753,0,0,0-.753.753v15.064a.753.753,0,0,0,.753.753H114.83a.753.753,0,0,0,.753-.753V160.753A.753.753,0,0,0,114.83,160Zm-.753,1.506v11.11l-5.348-4.011a1.135,1.135,0,0,0-1.356,0l-2.32,1.74-3.094-2.475a1.125,1.125,0,0,0-1.337-.056l-3.116,2.1v-8.4Zm-16.57,13.557v-3.339l3.727-2.506,3.79,3.032,3.027-2.271,6.026,4.519v.565Z" fill="#36aafd"/>
+        <path id="路径_1126-2" data-name="路径 1126" d="M610.26,292.519a2.26,2.26,0,1,0-2.26-2.26A2.262,2.262,0,0,0,610.26,292.519Zm0-3.013a.753.753,0,1,1-.753.753A.754.754,0,0,1,610.26,289.506Z" transform="translate(-499.949 -124.987)" fill="#36aafd"/>
+      </g>
+    </g>
+    <g id="icon_复制报名" data-name="icon/复制报名" transform="translate(-772 -114)">
+      <rect id="矩形_3068-4" data-name="矩形 3068" width="28" height="28" transform="translate(772 226)" fill="#333" opacity="0"/>
+      <g id="icon_复制报名-2" data-name="icon/复制报名" transform="translate(713.6 165.2)">
+        <path id="路径_13" data-name="路径 13" d="M76.157,232.8H64.9a2.511,2.511,0,0,0-2.5,2.5v11.242a2.511,2.511,0,0,0,2.5,2.5H76.157a2.511,2.511,0,0,0,2.5-2.5V235.3A2.511,2.511,0,0,0,76.157,232.8Zm1.252,13.726a1.244,1.244,0,0,1-1.252,1.251H64.9a1.244,1.244,0,0,1-1.252-1.251V235.284a1.244,1.244,0,0,1,1.252-1.251H76.157a1.244,1.244,0,0,1,1.252,1.251Z" transform="translate(0 -164.247)" fill="#333"/>
+        <path id="路径_15" data-name="路径 15" d="M243.357,64.8H232.1a2.511,2.511,0,0,0-2.5,2.5h1.252a1.244,1.244,0,0,1,1.252-1.251h11.252a1.244,1.244,0,0,1,1.252,1.251V78.544a1.244,1.244,0,0,1-1.252,1.251v1.251a2.511,2.511,0,0,0,2.5-2.5V67.3A2.5,2.5,0,0,0,243.357,64.8Z" transform="translate(-163.461)" fill="#333"/>
+        <path id="路径_1759" data-name="路径 1759" d="M66.545,73.623h8.081" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1760" data-name="路径 1760" d="M66.545,73.623h8.081" transform="translate(-0.055 3)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1761" data-name="路径 1761" d="M66.545,73.623h4.465" transform="translate(-0.055 6)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.3"/>
+        <circle id="椭圆_208" data-name="椭圆 208" cx="0.625" cy="0.625" r="0.625" transform="translate(66.139 66.6)" fill="#333"/>
+        <circle id="椭圆_209" data-name="椭圆 209" cx="0.625" cy="0.625" r="0.625" transform="translate(79.32 79.797)" fill="#333"/>
+      </g>
+    </g>
+    <g id="icon_复制报名-3" data-name="icon/复制报名" transform="translate(-744 -114)">
+      <rect id="矩形_3068-5" data-name="矩形 3068" width="28" height="28" transform="translate(772 226)" fill="#36aafd" opacity="0"/>
+      <g id="icon_复制报名-4" data-name="icon/复制报名" transform="translate(713.6 165.2)">
+        <path id="路径_13-2" data-name="路径 13" d="M76.157,232.8H64.9a2.511,2.511,0,0,0-2.5,2.5v11.242a2.511,2.511,0,0,0,2.5,2.5H76.157a2.511,2.511,0,0,0,2.5-2.5V235.3A2.511,2.511,0,0,0,76.157,232.8Zm1.252,13.726a1.244,1.244,0,0,1-1.252,1.251H64.9a1.244,1.244,0,0,1-1.252-1.251V235.284a1.244,1.244,0,0,1,1.252-1.251H76.157a1.244,1.244,0,0,1,1.252,1.251Z" transform="translate(0 -164.247)" fill="#36aafd"/>
+        <path id="路径_15-2" data-name="路径 15" d="M243.357,64.8H232.1a2.511,2.511,0,0,0-2.5,2.5h1.252a1.244,1.244,0,0,1,1.252-1.251h11.252a1.244,1.244,0,0,1,1.252,1.251V78.544a1.244,1.244,0,0,1-1.252,1.251v1.251a2.511,2.511,0,0,0,2.5-2.5V67.3A2.5,2.5,0,0,0,243.357,64.8Z" transform="translate(-163.461)" fill="#36aafd"/>
+        <path id="路径_1759-2" data-name="路径 1759" d="M66.545,73.623h8.081" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1760-2" data-name="路径 1760" d="M66.545,73.623h8.081" transform="translate(-0.055 3)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1761-2" data-name="路径 1761" d="M66.545,73.623h4.465" transform="translate(-0.055 6)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.3"/>
+        <circle id="椭圆_208-2" data-name="椭圆 208" cx="0.625" cy="0.625" r="0.625" transform="translate(66.139 66.6)" fill="#36aafd"/>
+        <circle id="椭圆_209-2" data-name="椭圆 209" cx="0.625" cy="0.625" r="0.625" transform="translate(79.32 79.797)" fill="#36aafd"/>
+      </g>
+    </g>
+    <g id="icon_复制报名-5" data-name="icon/复制报名" transform="translate(-716 -114)">
+      <rect id="矩形_3068-6" data-name="矩形 3068" width="28" height="28" transform="translate(772 226)" fill="#b3b3b3" opacity="0"/>
+      <g id="icon_复制报名-6" data-name="icon/复制报名" transform="translate(713.6 165.2)">
+        <path id="路径_13-3" data-name="路径 13" d="M76.157,232.8H64.9a2.511,2.511,0,0,0-2.5,2.5v11.242a2.511,2.511,0,0,0,2.5,2.5H76.157a2.511,2.511,0,0,0,2.5-2.5V235.3A2.511,2.511,0,0,0,76.157,232.8Zm1.252,13.726a1.244,1.244,0,0,1-1.252,1.251H64.9a1.244,1.244,0,0,1-1.252-1.251V235.284a1.244,1.244,0,0,1,1.252-1.251H76.157a1.244,1.244,0,0,1,1.252,1.251Z" transform="translate(0 -164.247)" fill="#b3b3b3"/>
+        <path id="路径_15-3" data-name="路径 15" d="M243.357,64.8H232.1a2.511,2.511,0,0,0-2.5,2.5h1.252a1.244,1.244,0,0,1,1.252-1.251h11.252a1.244,1.244,0,0,1,1.252,1.251V78.544a1.244,1.244,0,0,1-1.252,1.251v1.251a2.511,2.511,0,0,0,2.5-2.5V67.3A2.5,2.5,0,0,0,243.357,64.8Z" transform="translate(-163.461)" fill="#b3b3b3"/>
+        <path id="路径_1759-3" data-name="路径 1759" d="M66.545,73.623h8.081" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1760-3" data-name="路径 1760" d="M66.545,73.623h8.081" transform="translate(-0.055 3)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1761-3" data-name="路径 1761" d="M66.545,73.623h4.465" transform="translate(-0.055 6)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.3"/>
+        <circle id="椭圆_208-3" data-name="椭圆 208" cx="0.625" cy="0.625" r="0.625" transform="translate(66.139 66.6)" fill="#b3b3b3"/>
+        <circle id="椭圆_209-3" data-name="椭圆 209" cx="0.625" cy="0.625" r="0.625" transform="translate(79.32 79.797)" fill="#b3b3b3"/>
+      </g>
+    </g>
+    <g id="icon_批量续费" data-name="icon/批量续费" transform="translate(-732 -114)">
+      <rect id="矩形_3070-28" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="组_3530" data-name="组 3530" transform="translate(902.248 228.247)">
+        <path id="路径_1448" data-name="路径 1448" d="M105.645,96a9.547,9.547,0,0,1,9.485,10.645.734.734,0,1,1-1.459-.168,8.078,8.078,0,1,0-7.126,7.1.734.734,0,1,1,.161,1.459A9.547,9.547,0,1,1,105.645,96Z" transform="translate(-93.895 -93.797)" fill="#333"/>
+        <path id="路径_1450" data-name="路径 1450" d="M377.381,309.349a2.693,2.693,0,0,1,2.692,2.692.734.734,0,0,1-1.461.109l-.008-.109a1.223,1.223,0,0,0-1.09-1.216l-.133-.007h-.98a1.224,1.224,0,0,0-.133,2.44l.133.007h.98a.734.734,0,0,1,.108,1.461l-.108.008h-.98a2.693,2.693,0,0,1-.184-5.379l.184-.006h.98Z" transform="translate(-365.141 -302.25)" fill="#333"/>
+        <path id="路径_1451" data-name="路径 1451" d="M376.043,485.386a2.693,2.693,0,0,1-2.692-2.692.734.734,0,0,1,1.461-.109l.008.109a1.223,1.223,0,0,0,1.09,1.216l.133.007h.98a1.224,1.224,0,0,0,.133-2.44l-.133-.007h-.98a.734.734,0,0,1-.108-1.461l.108-.008h.98a2.693,2.693,0,0,1,.184,5.379l-.184.006h-.98Z" transform="translate(-364.783 -468.985)" fill="#333"/>
+        <path id="路径_1452" data-name="路径 1452" d="M480.734,266.65a.734.734,0,0,1,.726.626l.008.108v9.792a.734.734,0,0,1-1.461.108l-.008-.108v-9.792A.735.735,0,0,1,480.734,266.65Z" transform="translate(-468.984 -260.531)" fill="#333"/>
+        <path id="路径_1764" data-name="路径 1764" d="M18.115,15.376v5.218" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_1765" data-name="路径 1765" d="M18.115,15.376v5.218" transform="translate(36.1 -0.13) rotate(90)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_批量续费-2" data-name="icon/批量续费" transform="translate(-704 -114)">
+      <rect id="矩形_3070-29" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_3530-2" data-name="组 3530" transform="translate(902.248 228.247)">
+        <path id="路径_1448-2" data-name="路径 1448" d="M105.645,96a9.547,9.547,0,0,1,9.485,10.645.734.734,0,1,1-1.459-.168,8.078,8.078,0,1,0-7.126,7.1.734.734,0,1,1,.161,1.459A9.547,9.547,0,1,1,105.645,96Z" transform="translate(-93.895 -93.797)" fill="#36aafd"/>
+        <path id="路径_1450-2" data-name="路径 1450" d="M377.381,309.349a2.693,2.693,0,0,1,2.692,2.692.734.734,0,0,1-1.461.109l-.008-.109a1.223,1.223,0,0,0-1.09-1.216l-.133-.007h-.98a1.224,1.224,0,0,0-.133,2.44l.133.007h.98a.734.734,0,0,1,.108,1.461l-.108.008h-.98a2.693,2.693,0,0,1-.184-5.379l.184-.006h.98Z" transform="translate(-365.141 -302.25)" fill="#36aafd"/>
+        <path id="路径_1451-2" data-name="路径 1451" d="M376.043,485.386a2.693,2.693,0,0,1-2.692-2.692.734.734,0,0,1,1.461-.109l.008.109a1.223,1.223,0,0,0,1.09,1.216l.133.007h.98a1.224,1.224,0,0,0,.133-2.44l-.133-.007h-.98a.734.734,0,0,1-.108-1.461l.108-.008h.98a2.693,2.693,0,0,1,.184,5.379l-.184.006h-.98Z" transform="translate(-364.783 -468.985)" fill="#36aafd"/>
+        <path id="路径_1452-2" data-name="路径 1452" d="M480.734,266.65a.734.734,0,0,1,.726.626l.008.108v9.792a.734.734,0,0,1-1.461.108l-.008-.108v-9.792A.735.735,0,0,1,480.734,266.65Z" transform="translate(-468.984 -260.531)" fill="#36aafd"/>
+        <path id="路径_1764-2" data-name="路径 1764" d="M18.115,15.376v5.218" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_1765-2" data-name="路径 1765" d="M18.115,15.376v5.218" transform="translate(36.1 -0.13) rotate(90)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_批量续费-3" data-name="icon/批量续费" transform="translate(-676 -114)">
+      <rect id="矩形_3070-30" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#b3b3b3" opacity="0"/>
+      <g id="组_3530-3" data-name="组 3530" transform="translate(902.248 228.247)">
+        <path id="路径_1448-3" data-name="路径 1448" d="M105.645,96a9.547,9.547,0,0,1,9.485,10.645.734.734,0,1,1-1.459-.168,8.078,8.078,0,1,0-7.126,7.1.734.734,0,1,1,.161,1.459A9.547,9.547,0,1,1,105.645,96Z" transform="translate(-93.895 -93.797)" fill="#b3b3b3"/>
+        <path id="路径_1450-3" data-name="路径 1450" d="M377.381,309.349a2.693,2.693,0,0,1,2.692,2.692.734.734,0,0,1-1.461.109l-.008-.109a1.223,1.223,0,0,0-1.09-1.216l-.133-.007h-.98a1.224,1.224,0,0,0-.133,2.44l.133.007h.98a.734.734,0,0,1,.108,1.461l-.108.008h-.98a2.693,2.693,0,0,1-.184-5.379l.184-.006h.98Z" transform="translate(-365.141 -302.25)" fill="#b3b3b3"/>
+        <path id="路径_1451-3" data-name="路径 1451" d="M376.043,485.386a2.693,2.693,0,0,1-2.692-2.692.734.734,0,0,1,1.461-.109l.008.109a1.223,1.223,0,0,0,1.09,1.216l.133.007h.98a1.224,1.224,0,0,0,.133-2.44l-.133-.007h-.98a.734.734,0,0,1-.108-1.461l.108-.008h.98a2.693,2.693,0,0,1,.184,5.379l-.184.006h-.98Z" transform="translate(-364.783 -468.985)" fill="#b3b3b3"/>
+        <path id="路径_1452-3" data-name="路径 1452" d="M480.734,266.65a.734.734,0,0,1,.726.626l.008.108v9.792a.734.734,0,0,1-1.461.108l-.008-.108v-9.792A.735.735,0,0,1,480.734,266.65Z" transform="translate(-468.984 -260.531)" fill="#b3b3b3"/>
+        <path id="路径_1764-3" data-name="路径 1764" d="M18.115,15.376v5.218" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_1765-3" data-name="路径 1765" d="M18.115,15.376v5.218" transform="translate(36.1 -0.13) rotate(90)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_已激活" data-name="icon/已激活" transform="translate(-900 -86)">
+      <rect id="矩形_3070-31" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#999" opacity="0"/>
+      <g id="激活码" transform="translate(906.646 232.15)">
+        <path id="路径_451" data-name="路径 451" d="M33.356,0H44.751a1.512,1.512,0,0,1,1.231.779,1.675,1.675,0,0,1,.181.867c0,1.884,0,3.769,0,5.653-.01.254.082.529-.06.762a.485.485,0,0,1-.782.127.694.694,0,0,1-.139-.49c0-1.758,0-3.516,0-5.274A1.49,1.49,0,0,0,43.683.983c-3.11,0-6.221,0-9.331,0a1.466,1.466,0,0,0-1.435,1.449q-.007,4.866,0,9.732a1.49,1.49,0,0,0,.567,1.255,1.729,1.729,0,0,0,1.1.318c1.334,0,2.67,0,4,0a.633.633,0,0,1,.657.279.5.5,0,0,1-.416.706c-1.78-.007-3.562,0-5.343,0a1.492,1.492,0,0,1-1.553-1.606c0-3.874,0-7.747,0-11.621A1.476,1.476,0,0,1,33.356,0Z" transform="translate(-31.932 -0.001)" fill="#999" stroke="#999" stroke-width="0.3"/>
+        <path id="减去_41" data-name="减去 41" d="M17081.27,17221.656h-.094a3.093,3.093,0,0,1-1.561-.473,3,3,0,0,1-1.34-2.277,3.034,3.034,0,0,1,.678-2.088c-.52-.52-1.049-1.045-1.561-1.553l-.357-.357-.48-.475a.532.532,0,0,1-.178-.545.474.474,0,0,1,.471-.354.4.4,0,0,1,.1.014,1.019,1.019,0,0,1,.455.328c.043.043.094.1.143.141.158-.15.316-.314.459-.459l.047-.049c.168-.172.342-.35.521-.516a.517.517,0,0,1,.357-.146.465.465,0,0,1,.244.068.458.458,0,0,1,.225.332.47.47,0,0,1-.107.385c-.176.2-.365.387-.549.566l-.037.037c-.154.154-.316.313-.465.479.225.23.457.463.682.688l.191.191c.2.191.387.385.582.578a3.1,3.1,0,0,1,1.518-.393,2.812,2.812,0,0,1,1.83.646,2.946,2.946,0,0,1-1.77,5.23Zm-.043-4.949a2,2,0,1,0,2,2A2,2,0,0,0,17081.227,17216.707Z" transform="translate(-17069.428 -17205.955)" fill="#999" stroke="#999" stroke-width="0.3"/>
+        <path id="路径_1768" data-name="路径 1768" d="M2.86,3.745h8.067" fill="none" stroke="#999" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1769" data-name="路径 1769" d="M2.86,3.745h2.92" transform="translate(0.033 3)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1770" data-name="路径 1770" d="M2.86,3.745H5.3" transform="translate(0.033 6)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="1.3"/>
+      </g>
+    </g>
+    <g id="icon_已激活-2" data-name="icon/已激活" transform="translate(-872 -86)">
+      <rect id="矩形_3070-32" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#999" opacity="0"/>
+      <g id="激活码-2" data-name="激活码" transform="translate(906.646 232.15)">
+        <path id="路径_451-2" data-name="路径 451" d="M33.356,0H44.751a1.512,1.512,0,0,1,1.231.779,1.675,1.675,0,0,1,.181.867c0,1.884,0,3.769,0,5.653-.01.254.082.529-.06.762a.485.485,0,0,1-.782.127.694.694,0,0,1-.139-.49c0-1.758,0-3.516,0-5.274A1.49,1.49,0,0,0,43.683.983c-3.11,0-6.221,0-9.331,0a1.466,1.466,0,0,0-1.435,1.449q-.007,4.866,0,9.732a1.49,1.49,0,0,0,.567,1.255,1.729,1.729,0,0,0,1.1.318c1.334,0,2.67,0,4,0a.633.633,0,0,1,.657.279.5.5,0,0,1-.416.706c-1.78-.007-3.562,0-5.343,0a1.492,1.492,0,0,1-1.553-1.606c0-3.874,0-7.747,0-11.621A1.476,1.476,0,0,1,33.356,0Z" transform="translate(-31.932 -0.001)" fill="#36aafd" stroke="#36aafd" stroke-width="0.3"/>
+        <path id="减去_42" data-name="减去 42" d="M17053.268,17221.656h-.1a3.089,3.089,0,0,1-1.555-.473,2.95,2.95,0,0,1-.662-4.365c-.3-.3-.611-.609-.91-.906l-.291-.291c-.393-.389-.8-.791-1.2-1.187a.537.537,0,0,1-.178-.545.473.473,0,0,1,.469-.354.406.406,0,0,1,.1.014.987.987,0,0,1,.445.324c.045.045.1.1.146.145.17-.16.334-.328.492-.488l.057-.059c.156-.158.318-.322.484-.477a.513.513,0,0,1,.355-.146.472.472,0,0,1,.469.4.451.451,0,0,1-.111.381c-.174.2-.363.385-.547.564-.168.166-.34.338-.5.518.268.273.543.547.809.814l.217.215c.143.143.287.287.43.432a3.065,3.065,0,0,1,1.518-.4,2.825,2.825,0,0,1,1.832.646,2.947,2.947,0,0,1-1.771,5.23Zm-.039-4.949a2,2,0,1,0,2,2A2,2,0,0,0,17053.229,17216.707Z" transform="translate(-17041.428 -17205.955)" fill="#36aafd" stroke="#36aafd" stroke-width="0.3"/>
+        <path id="路径_1768-2" data-name="路径 1768" d="M2.86,3.745h8.067" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1769-2" data-name="路径 1769" d="M2.86,3.745h2.92" transform="translate(0.033 3)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1770-2" data-name="路径 1770" d="M2.86,3.745H5.3" transform="translate(0.033 6)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.3"/>
+      </g>
+    </g>
+    <g id="icon_未激活" data-name="icon/未激活" transform="translate(-844 -86)">
+      <rect id="矩形_3070-33" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#999" opacity="0"/>
+      <g id="未激活" transform="translate(903.876 231.64)">
+        <path id="路径_451-3" data-name="路径 451" d="M33.356,0H44.751a1.512,1.512,0,0,1,1.231.779,1.675,1.675,0,0,1,.181.867c0,1.884,0,3.769,0,5.653-.01.254.082.529-.06.762a.485.485,0,0,1-.782.127.694.694,0,0,1-.139-.49c0-1.758,0-3.516,0-5.274A1.49,1.49,0,0,0,43.683.983c-3.11,0-6.221,0-9.331,0a1.466,1.466,0,0,0-1.435,1.449q-.007,4.866,0,9.732a1.49,1.49,0,0,0,.567,1.255,1.729,1.729,0,0,0,1.1.318c1.334,0,2.67,0,4,0a.633.633,0,0,1,.657.279.5.5,0,0,1-.416.706c-1.78-.007-3.562,0-5.343,0a1.492,1.492,0,0,1-1.553-1.606c0-3.874,0-7.747,0-11.621A1.476,1.476,0,0,1,33.356,0Z" transform="translate(-28.932 0.999)" fill="#999" stroke="#999" stroke-width="0.3"/>
+        <path id="路径_1768-3" data-name="路径 1768" d="M2.86,3.745h8.067" transform="translate(3 1)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1769-3" data-name="路径 1769" d="M2.86,3.745h2.92" transform="translate(3.033 4)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1770-3" data-name="路径 1770" d="M2.86,3.745H5.3" transform="translate(3.033 7)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="1.3"/>
+        <line id="直线_129" data-name="直线 129" x2="5" transform="translate(13.232 11.732) rotate(45)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="1.3"/>
+        <line id="直线_130" data-name="直线 130" x2="5" transform="translate(16.768 11.732) rotate(135)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="1.3"/>
+      </g>
+    </g>
+    <g id="icon_未激活-2" data-name="icon/未激活" transform="translate(-816 -86)">
+      <rect id="矩形_3070-34" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="未激活-2" data-name="未激活" transform="translate(903.876 231.64)">
+        <path id="路径_451-4" data-name="路径 451" d="M33.356,0H44.751a1.512,1.512,0,0,1,1.231.779,1.675,1.675,0,0,1,.181.867c0,1.884,0,3.769,0,5.653-.01.254.082.529-.06.762a.485.485,0,0,1-.782.127.694.694,0,0,1-.139-.49c0-1.758,0-3.516,0-5.274A1.49,1.49,0,0,0,43.683.983c-3.11,0-6.221,0-9.331,0a1.466,1.466,0,0,0-1.435,1.449q-.007,4.866,0,9.732a1.49,1.49,0,0,0,.567,1.255,1.729,1.729,0,0,0,1.1.318c1.334,0,2.67,0,4,0a.633.633,0,0,1,.657.279.5.5,0,0,1-.416.706c-1.78-.007-3.562,0-5.343,0a1.492,1.492,0,0,1-1.553-1.606c0-3.874,0-7.747,0-11.621A1.476,1.476,0,0,1,33.356,0Z" transform="translate(-28.932 0.999)" fill="#36aafd" stroke="#36aafd" stroke-width="0.3"/>
+        <path id="路径_1768-4" data-name="路径 1768" d="M2.86,3.745h8.067" transform="translate(3 1)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1769-4" data-name="路径 1769" d="M2.86,3.745h2.92" transform="translate(3.033 4)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.3"/>
+        <path id="路径_1770-4" data-name="路径 1770" d="M2.86,3.745H5.3" transform="translate(3.033 7)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.3"/>
+        <line id="直线_129-2" data-name="直线 129" x2="5" transform="translate(13.232 11.732) rotate(45)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.3"/>
+        <line id="直线_130-2" data-name="直线 130" x2="5" transform="translate(16.768 11.732) rotate(135)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.3"/>
+      </g>
+    </g>
+    <g id="icon_草稿箱" data-name="icon/草稿箱" transform="translate(-788 -86)">
+      <rect id="矩形_3070-35" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_3521" data-name="组 3521" transform="translate(537.339 198.533)">
+        <path id="路径_1447" data-name="路径 1447" d="M387.319,31.467H366.038a.666.666,0,0,0-.7.61v.08c.022.4.352.543.737.543h.785l3.122,17.347a1.726,1.726,0,0,0,1.691,1.419h9.981a1.715,1.715,0,0,0,1.691-1.419L386.417,32.7h1.023a.523.523,0,0,0,.546-.566c.036-.41-.283-.646-.668-.668Zm-5.3,18.8H371.372L368.128,32.7h17.089Z" fill="#333" stroke="#333" stroke-width="0.3"/>
+        <path id="路径_1772" data-name="路径 1772" d="M149.954,152.165h0a.272.272,0,0,0-.272.272h0v.693a3.59,3.59,0,0,1,.234-6.694.272.272,0,0,0-.091-.529H148.2a.272.272,0,0,0,0,.544h.5a4.007,4.007,0,0,0-1.747,3.266,4.093,4.093,0,0,0,2.916,4.061.268.268,0,0,0,.081.012h0a.272.272,0,0,0,.272-.272h0v-1.081h0a.272.272,0,0,0-.272-.272h0Zm3.8,1.083h-.493a3.954,3.954,0,0,0,1.858-3.266,4.093,4.093,0,0,0-2.916-4.061.266.266,0,0,0-.081-.012.272.272,0,0,0-.272.272h0v1.081a.272.272,0,1,0,.544,0v-.693a3.569,3.569,0,0,1,2.18,3.413,3.635,3.635,0,0,1-2.543,3.282.272.272,0,0,0,.091.528h1.632a.272.272,0,0,0,.272-.272h0a.272.272,0,0,0-.272-.272h0Z" transform="translate(225.621 -109.183)" fill="#333" stroke="#333" stroke-width="0.6"/>
+      </g>
+    </g>
+    <g id="icon_草稿箱-2" data-name="icon/草稿箱" transform="translate(-760 -86)">
+      <rect id="矩形_3070-36" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_3521-2" data-name="组 3521" transform="translate(537.339 198.533)">
+        <path id="路径_1447-2" data-name="路径 1447" d="M387.319,31.467H366.038a.666.666,0,0,0-.7.61v.08c.022.4.352.543.737.543h.785l3.122,17.347a1.726,1.726,0,0,0,1.691,1.419h9.981a1.715,1.715,0,0,0,1.691-1.419L386.417,32.7h1.023a.523.523,0,0,0,.546-.566c.036-.41-.283-.646-.668-.668Zm-5.3,18.8H371.372L368.128,32.7h17.089Z" fill="#36aafd" stroke="#36aafd" stroke-width="0.3"/>
+        <path id="路径_1772-2" data-name="路径 1772" d="M149.954,152.165h0a.272.272,0,0,0-.272.272h0v.693a3.59,3.59,0,0,1,.234-6.694.272.272,0,0,0-.091-.529H148.2a.272.272,0,0,0,0,.544h.5a4.007,4.007,0,0,0-1.747,3.266,4.093,4.093,0,0,0,2.916,4.061.268.268,0,0,0,.081.012h0a.272.272,0,0,0,.272-.272h0v-1.081h0a.272.272,0,0,0-.272-.272h0Zm3.8,1.083h-.493a3.954,3.954,0,0,0,1.858-3.266,4.093,4.093,0,0,0-2.916-4.061.266.266,0,0,0-.081-.012.272.272,0,0,0-.272.272h0v1.081a.272.272,0,1,0,.544,0v-.693a3.569,3.569,0,0,1,2.18,3.413,3.635,3.635,0,0,1-2.543,3.282.272.272,0,0,0,.091.528h1.632a.272.272,0,0,0,.272-.272h0a.272.272,0,0,0-.272-.272h0Z" transform="translate(225.621 -109.183)" fill="#36aafd" stroke="#36aafd" stroke-width="0.6"/>
+      </g>
+    </g>
+    <g id="icon_搜索" data-name="icon/搜索" transform="translate(-732 -86)">
+      <rect id="矩形_3070-37" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="icon_搜索_左侧试卷库" data-name="icon/搜索/左侧试卷库" transform="translate(902 227.98)">
+        <g id="矩形_3062" data-name="矩形 3062" transform="translate(0 0.037)" fill="#fff" stroke="#707070" stroke-width="1" opacity="0">
+          <rect width="24" height="24" stroke="none"/>
+          <rect x="0.5" y="0.5" width="23" height="23" fill="none"/>
+        </g>
+        <g id="组_2967" data-name="组 2967" transform="translate(10.395) rotate(45)">
+          <g id="椭圆_100-3" data-name="椭圆 100" transform="translate(0 0)" fill="none" stroke="#333" stroke-width="1">
+            <circle cx="7.35" cy="7.35" r="7.35" stroke="none"/>
+            <circle cx="7.35" cy="7.35" r="6.85" fill="none"/>
+          </g>
+          <line id="直线_45-3" data-name="直线 45" x2="3.675" transform="translate(15.619 7.656)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_搜索-2" data-name="icon/搜索" transform="translate(-704 -86)">
+      <rect id="矩形_3070-38" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_2980" data-name="组 2980" transform="translate(-1980 389)">
+        <rect id="矩形_3066" data-name="矩形 3066" width="16" height="16" transform="translate(2886 -157)" fill="#999" opacity="0"/>
+        <g id="组_2985" data-name="组 2985" transform="translate(2624.26 -692.987) rotate(45)">
+          <g id="椭圆_100-4" data-name="椭圆 100" transform="translate(569 189)" fill="none" stroke="#999" stroke-width="1">
+            <circle cx="4.826" cy="4.826" r="4.826" stroke="none"/>
+            <circle cx="4.826" cy="4.826" r="4.326" fill="none"/>
+          </g>
+          <line id="直线_45-4" data-name="直线 45" x2="2.413" transform="translate(579.256 194.027)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_新增" data-name="icon/新增" transform="translate(-676 -86)">
+      <rect id="矩形_3070-39" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_2987" data-name="组 2987" transform="translate(406 37)">
+        <g id="矩形_3061" data-name="矩形 3061" transform="translate(500 195)" fill="#fff" stroke="#fff" stroke-width="1" opacity="0">
+          <rect width="16" height="16" stroke="none"/>
+          <rect x="0.5" y="0.5" width="15" height="15" fill="none"/>
+        </g>
+        <line id="直线_46" data-name="直线 46" x2="12" transform="translate(502 203)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+        <line id="直线_47" data-name="直线 47" x2="12" transform="translate(508 197) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_生成充值卡卡号" data-name="icon/生成充值卡卡号" transform="translate(-648 -86)">
+      <rect id="矩形_3070-40" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="生成充值卡卡号" transform="translate(904 229)">
+        <g id="矩形_3891" data-name="矩形 3891" transform="translate(-2 -1)" fill="#fff" stroke="#707070" stroke-width="1" opacity="0">
+          <rect width="24" height="24" stroke="none"/>
+          <rect x="0.5" y="0.5" width="23" height="23" fill="none"/>
+        </g>
+        <g id="组_4372" data-name="组 4372" transform="translate(-303 -218)">
+          <g id="矩形_3889" data-name="矩形 3889" transform="translate(305 220)" fill="none" stroke="#fff" stroke-width="1.5">
+            <rect width="16" height="17" rx="3" stroke="none"/>
+            <rect x="0.75" y="0.75" width="14.5" height="15.5" rx="2.25" fill="none"/>
+          </g>
+          <rect id="矩形_3890" data-name="矩形 3890" width="20" height="6" rx="2" transform="translate(303 233)" fill="#fff"/>
+          <path id="路径_1153" data-name="路径 1153" d="M818.775,452.412a.509.509,0,0,0,0-.838.825.825,0,0,0-1.027,0l-1.834,1.436-1.834-1.436a.825.825,0,0,0-1.027,0,.509.509,0,0,0,0,.838l2.055,1.616v.359h-1.468c-.44,0-.734.239-.734.6s.293.6.734.6h1.468v.6h-1.468c-.44,0-.734.239-.734.6s.293.6.734.6h1.468v1.257c0,.359.293.6.734.6s.734-.239.734-.6v-1.257h1.468c.44,0,.734-.239.734-.6s-.294-.6-.734-.6h-1.468v-.6h1.468c.44,0,.734-.239.734-.6s-.294-.6-.734-.6h-1.468v-.239Zm0,0" transform="translate(-502.832 -227.814)" fill="#fff"/>
+          <circle id="椭圆_210" data-name="椭圆 210" cx="4" cy="4" r="4" transform="translate(314 218)" fill="#fff" stroke="#3699fd" stroke-width="1"/>
+          <path id="路径_1766" data-name="路径 1766" d="M674.925,164.486l1.489,1.164,2.966-3.189" transform="translate(-359.152 57.944)" fill="none" stroke="#3799fe" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_证书颁发" data-name="icon/证书颁发" transform="translate(-620 -86)">
+      <rect id="矩形_3070-41" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="award_certificate" transform="translate(691 89)">
+        <rect id="矩形_310" data-name="矩形 310" width="16" height="16" transform="translate(215 143)" fill="none"/>
+        <path id="路径_534" data-name="路径 534" d="M550.935,141.8h5.332a.528.528,0,0,1,.528.528h0a.528.528,0,0,1-.528.528h-5.332a1.055,1.055,0,0,1-1.055-1.055v-10.23a1.055,1.055,0,0,1,1.055-1.055h8.97a1.055,1.055,0,0,1,1.055,1.055v3.208a.528.528,0,0,1-.575.525h0a.528.528,0,0,1-.48-.525v-3.208h-8.97Zm7.915-8.119a.528.528,0,0,0-.528-.528h-5.8a.528.528,0,0,0,0,1.055h5.8a.527.527,0,0,0,.528-.528Zm-1.319,2.374a.528.528,0,0,0-.528-.528h-4.485a.528.528,0,0,0,0,1.055H557a.528.528,0,0,0,.528-.528Zm-5.013,1.847a.528.528,0,0,0,0,1.055h3.43a.528.528,0,1,0,0-1.055Z" transform="translate(-332.989 14.097)" fill="#fff"/>
+        <path id="路径_1771" data-name="路径 1771" d="M562.1,138.209a2.4,2.4,0,0,1-.878,1.859v1.872a.439.439,0,0,1-.193.364.453.453,0,0,1-.246.075.486.486,0,0,1-.165-.031l-.933-.373-.933.373a.439.439,0,0,1-.6-.408v-1.87a2.6,2.6,0,0,1-.375-.386,2.4,2.4,0,0,1-.5-1.475,2.426,2.426,0,0,1,2.215-2.415,2.33,2.33,0,0,1,.878.088,2.415,2.415,0,0,1,1.736,2.327Zm-1.756,3.073v-.755a2.372,2.372,0,0,1-.391.081,2.124,2.124,0,0,1-.268.015,2.234,2.234,0,0,1-.272-.015,2.321,2.321,0,0,1-.386-.081v.755l.494-.2a.439.439,0,0,1,.329,0Zm.878-3.073a1.536,1.536,0,0,0-1.1-1.475,1.49,1.49,0,0,0-.439-.061h-.13a1.537,1.537,0,0,0-1.407,1.536,1.514,1.514,0,0,0,.32.937,1.537,1.537,0,0,0,1.045.6,1.249,1.249,0,0,0,.338,0,1.476,1.476,0,0,0,.685-.248,1.536,1.536,0,0,0,.685-1.288Zm0,0" transform="translate(-332.989 15.003)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="icon_购买资管理员" data-name="icon/购买资管理员" transform="translate(-900 -58)">
+      <rect id="矩形_3070-42" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="icon_购买资管理员-2" data-name="icon/购买资管理员" transform="translate(406 37)">
+        <g id="矩形_3061-2" data-name="矩形 3061" transform="translate(500 195)" fill="#fff" stroke="#fff" stroke-width="1" opacity="0">
+          <rect width="16" height="16" stroke="none"/>
+          <rect x="0.5" y="0.5" width="15" height="15" fill="none"/>
+        </g>
+        <g id="组_3189" data-name="组 3189" transform="translate(-92.375 38.609)">
+          <path id="路径_1152" data-name="路径 1152" d="M602.914,161.761a3.645,3.645,0,0,0,1.108-2.261,1.67,1.67,0,0,0-.462-1.246c-.6-.6-1.661-.6-2.861-.6h-.877c-1.108,0-2.031-.046-2.631.554a1.71,1.71,0,0,0-.462,1.292,4.115,4.115,0,0,0,1.615,2.769.458.458,0,0,0,.6-.692,3.277,3.277,0,0,1-1.292-2.077c0-.462.138-.6.185-.646a3.747,3.747,0,0,1,1.985-.277h.969c.969,0,1.892,0,2.215.323a1.253,1.253,0,0,1,.138.6,3.217,3.217,0,0,1-1.338,2.031.372.372,0,0,0-.138.415.718.718,0,0,0,.277.369,5.323,5.323,0,0,1,3.507,4.8c0,2.261-1.385,3.092-5.077,3.092s-5.077-.831-5.077-3.092a5.1,5.1,0,0,1,1.8-3.784.458.458,0,0,0-.6-.692,6.076,6.076,0,0,0-2.123,4.477c0,4.015,4.061,4.015,6,4.015s6,0,6-4.015A6.073,6.073,0,0,0,602.914,161.761Zm0,0" transform="translate(0 0)" fill="#fff"/>
+          <path id="路径_1153-2" data-name="路径 1153" d="M816.57,452.179a.457.457,0,0,0-.646-.646l-1.154,1.108-1.154-1.108a.457.457,0,0,0-.646.646l1.292,1.246v.277h-.923a.462.462,0,0,0,0,.923h.923v.462h-.923a.462.462,0,0,0,0,.923h.923v.969a.461.461,0,1,0,.923,0v-.969h.923a.462.462,0,1,0,0-.923h-.923v-.462h.923a.462.462,0,1,0,0-.923h-.923v-.185Zm0,0" transform="translate(-214.303 -288.157)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_批量强制交卷" data-name="icon/批量强制交卷" transform="translate(-836 -30)">
+      <rect id="矩形_3069-4" data-name="矩形 3069" width="28" height="28" transform="translate(836 226)" fill="#333" opacity="0"/>
+      <g id="组_5511" data-name="组 5511" transform="translate(51.435 -48.662)">
+        <g id="路径_1740" data-name="路径 1740" transform="translate(790.318 279.01)" fill="#333">
+          <path d="M 4.153128623962402 19.35288429260254 C 3.36793851852417 19.35288429260254 2.741058349609375 19.35187339782715 2.236668348312378 19.34981346130371 C 2.219448566436768 19.35026359558105 2.200858354568481 19.35049438476562 2.182268381118774 19.35049438476562 C 1.211918473243713 19.35049438476562 0.3620084524154663 18.72912406921387 0.06738846749067307 17.80428314208984 C -0.01344153378158808 17.53780364990234 -0.05282153189182281 17.26217269897461 -0.04985153302550316 16.98441314697266 L -0.04985153302550316 2.696233510971069 C -0.04985153302550316 0.1620534360408783 1.336888432502747 -0.04999656602740288 2.75726842880249 -0.04999656602740288 L 12.79485893249512 -0.04999656602740288 C 14.91080856323242 -0.04999656602740288 15.62493801116943 0.658333420753479 15.62493801116943 2.757103443145752 L 15.62493801116943 7.564313411712646 C 15.62493801116943 8.130243301391602 15.26930809020996 8.383563041687012 14.91686820983887 8.383563041687012 C 14.54335880279541 8.383563041687012 14.14638805389404 8.096433639526367 14.14638805389404 7.564313411712646 L 14.14638805389404 2.757103443145752 C 14.14638805389404 1.751373410224915 13.81881809234619 1.428543448448181 12.79829883575439 1.428543448448181 L 2.75726842880249 1.428543448448181 C 1.663418412208557 1.428543448448181 1.428718447685242 1.543033480644226 1.428718447685242 2.757103443145752 L 1.428718447685242 16.53690338134766 C 1.428718447685242 17.36880302429199 1.925368428230286 17.86546325683594 2.75726842880249 17.86546325683594 L 7.514368534088135 17.86546325683594 C 7.976198673248291 17.86549377441406 8.217818260192871 18.24763298034668 8.217808723449707 18.62510299682617 C 8.217798233032227 18.97414398193359 7.9969482421875 19.34981346130371 7.512088298797607 19.34981346130371 C 7.271328449249268 19.34981346130371 6.904308319091797 19.35030364990234 6.463498592376709 19.35089302062988 C 5.800738334655762 19.35177421569824 4.971178531646729 19.35288429260254 4.153128623962402 19.35288429260254 Z" stroke="none"/>
+          <path d="M 4.153131484985352 19.30287933349609 C 5.51528787612915 19.30287933349609 6.909336566925049 19.29981422424316 7.512088298797607 19.29981422424316 C 8.41619873046875 19.29981422424316 8.355308532714844 17.91551399230957 7.514388561248779 17.91551399230957 L 7.514368534088135 17.91546249389648 L 2.75726842880249 17.91546249389648 C 1.792278409004211 17.91546249389648 1.378718495368958 17.29281425476074 1.378718495368958 16.53690338134766 L 1.378718495368958 2.757103443145752 C 1.378718495368958 1.533633470535278 1.615368485450745 1.378543376922607 2.75726842880249 1.378543376922607 L 12.79829883575439 1.378543376922607 C 13.86437892913818 1.378543376922607 14.19638824462891 1.735823392868042 14.19638824462891 2.757103443145752 L 14.19638824462891 7.564313411712646 C 14.19638729095459 8.527003288269043 15.57493782043457 8.651073455810547 15.57493877410889 7.564313411712646 L 15.57493877410889 2.757103443145752 C 15.57493877410889 0.7237234115600586 14.91782855987549 3.435668986639939e-06 12.79485893249512 3.435668986639939e-06 L 2.75726842880249 3.435668986639939e-06 C 1.405128479003906 3.435668986639939e-06 0.0001484666427131742 0.1654234379529953 0.0001484666427131742 2.696233510971069 L 0.0001484666427131742 16.98494338989258 C -0.002761533251032233 17.25728416442871 0.03597846627235413 17.52847290039062 0.1150284633040428 17.78910255432129 C 0.4078684747219086 18.70834350585938 1.272416353225708 19.32378196716309 2.236868381500244 19.29981422424316 C 2.798977375030518 19.3021125793457 3.472115516662598 19.30287933349609 4.153131484985352 19.30287933349609 M 4.153128623962402 19.40288352966309 C 3.368418455123901 19.40288352966309 2.74146842956543 19.40188407897949 2.236458539962769 19.39981269836426 C 2.220298528671265 19.4002628326416 2.201278448104858 19.40049362182617 2.182268381118774 19.40049362182617 C 1.190058469772339 19.40049362182617 0.3210084736347198 18.76512336730957 0.01974846608936787 17.81945419311523 C -0.06277153640985489 17.54743385314941 -0.1028715297579765 17.26674270629883 -0.09984153509140015 16.98387336730957 L -0.09985153377056122 2.696233510971069 C -0.09985153377056122 1.518283486366272 0.199398472905159 0.7399234175682068 0.81499844789505 0.3166634440422058 C 1.374178409576416 -0.06779656559228897 2.110758543014526 -0.09999656677246094 2.75726842880249 -0.09999656677246094 L 12.79485893249512 -0.09999656677246094 C 13.91497802734375 -0.09999656677246094 14.61115837097168 0.09916343539953232 15.05216884613037 0.545773446559906 C 15.48286819458008 0.9819434285163879 15.6749382019043 1.663943409919739 15.6749382019043 2.757103443145752 L 15.6749382019043 7.564313411712646 C 15.6749382019043 8.164783477783203 15.29419803619385 8.433563232421875 14.91686820983887 8.433563232421875 C 14.519118309021 8.433563232421875 14.0963888168335 8.128913879394531 14.0963888168335 7.564313411712646 L 14.0963888168335 2.757103443145752 C 14.0963888168335 1.777273416519165 13.79309844970703 1.478543400764465 12.79829883575439 1.478543400764465 L 2.75726842880249 1.478543400764465 C 1.688228487968445 1.478543400764465 1.478718519210815 1.580973386764526 1.478718519210815 2.757103443145752 L 1.478718519210815 16.53690338134766 C 1.478718519210815 16.92133331298828 1.603298425674438 17.81546401977539 2.75726842880249 17.81546401977539 L 7.514368534088135 17.81546401977539 C 8.003758430480957 17.81549263000488 8.267818450927734 18.23263359069824 8.26780891418457 18.62510299682617 C 8.26779842376709 18.99822425842285 8.031298637390137 19.39981269836426 7.512088298797607 19.39981269836426 C 6.909349918365479 19.39981269836426 5.515261173248291 19.40288352966309 4.153128623962402 19.40288352966309 Z" stroke="none" fill="#333"/>
+        </g>
+        <path id="路径_2103" data-name="路径 2103" d="M33.46,21.356h5.781" transform="translate(761 262.32)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_2104" data-name="路径 2104" d="M33.46,21.356h5.781" transform="translate(761 265.54)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_832" data-name="路径 832" d="M308.831,120.907a.713.713,0,0,1,1,0l2.649,2.648a.71.71,0,1,1-1,1l-1.384-1.384v4.784a.762.762,0,0,1-1.525,0v-4.783l-1.384,1.384a.71.71,0,1,1-1-1Z" transform="translate(494.267 169.589)" fill="#333"/>
+      </g>
+    </g>
+    <g id="icon_批量强制交卷-2" data-name="icon/批量强制交卷" transform="translate(-808 -30)">
+      <rect id="矩形_3069-5" data-name="矩形 3069" width="28" height="28" transform="translate(836 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_5511-2" data-name="组 5511" transform="translate(51.435 -48.662)">
+        <g id="路径_1740-2" data-name="路径 1740" transform="translate(790.318 279.01)" fill="#36aafd">
+          <path d="M 4.153128623962402 19.35288429260254 C 3.36793851852417 19.35288429260254 2.741058349609375 19.35187339782715 2.236668348312378 19.34981346130371 C 2.219448566436768 19.35026359558105 2.200858354568481 19.35049438476562 2.182268381118774 19.35049438476562 C 1.211918473243713 19.35049438476562 0.3620084524154663 18.72912406921387 0.06738846749067307 17.80428314208984 C -0.01344153378158808 17.53780364990234 -0.05282153189182281 17.26217269897461 -0.04985153302550316 16.98441314697266 L -0.04985153302550316 2.696233510971069 C -0.04985153302550316 0.1620534360408783 1.336888432502747 -0.04999656602740288 2.75726842880249 -0.04999656602740288 L 12.79485893249512 -0.04999656602740288 C 14.91080856323242 -0.04999656602740288 15.62493801116943 0.658333420753479 15.62493801116943 2.757103443145752 L 15.62493801116943 7.564313411712646 C 15.62493801116943 8.130243301391602 15.26930809020996 8.383563041687012 14.91686820983887 8.383563041687012 C 14.54335880279541 8.383563041687012 14.14638805389404 8.096433639526367 14.14638805389404 7.564313411712646 L 14.14638805389404 2.757103443145752 C 14.14638805389404 1.751373410224915 13.81881809234619 1.428543448448181 12.79829883575439 1.428543448448181 L 2.75726842880249 1.428543448448181 C 1.663418412208557 1.428543448448181 1.428718447685242 1.543033480644226 1.428718447685242 2.757103443145752 L 1.428718447685242 16.53690338134766 C 1.428718447685242 17.36880302429199 1.925368428230286 17.86546325683594 2.75726842880249 17.86546325683594 L 7.514368534088135 17.86546325683594 C 7.976198673248291 17.86549377441406 8.217818260192871 18.24763298034668 8.217808723449707 18.62510299682617 C 8.217798233032227 18.97414398193359 7.9969482421875 19.34981346130371 7.512088298797607 19.34981346130371 C 7.271328449249268 19.34981346130371 6.904308319091797 19.35030364990234 6.463498592376709 19.35089302062988 C 5.800738334655762 19.35177421569824 4.971178531646729 19.35288429260254 4.153128623962402 19.35288429260254 Z" stroke="none"/>
+          <path d="M 4.153131484985352 19.30287933349609 C 5.51528787612915 19.30287933349609 6.909336566925049 19.29981422424316 7.512088298797607 19.29981422424316 C 8.41619873046875 19.29981422424316 8.355308532714844 17.91551399230957 7.514388561248779 17.91551399230957 L 7.514368534088135 17.91546249389648 L 2.75726842880249 17.91546249389648 C 1.792278409004211 17.91546249389648 1.378718495368958 17.29281425476074 1.378718495368958 16.53690338134766 L 1.378718495368958 2.757103443145752 C 1.378718495368958 1.533633470535278 1.615368485450745 1.378543376922607 2.75726842880249 1.378543376922607 L 12.79829883575439 1.378543376922607 C 13.86437892913818 1.378543376922607 14.19638824462891 1.735823392868042 14.19638824462891 2.757103443145752 L 14.19638824462891 7.564313411712646 C 14.19638729095459 8.527003288269043 15.57493782043457 8.651073455810547 15.57493877410889 7.564313411712646 L 15.57493877410889 2.757103443145752 C 15.57493877410889 0.7237234115600586 14.91782855987549 3.435668986639939e-06 12.79485893249512 3.435668986639939e-06 L 2.75726842880249 3.435668986639939e-06 C 1.405128479003906 3.435668986639939e-06 0.0001484666427131742 0.1654234379529953 0.0001484666427131742 2.696233510971069 L 0.0001484666427131742 16.98494338989258 C -0.002761533251032233 17.25728416442871 0.03597846627235413 17.52847290039062 0.1150284633040428 17.78910255432129 C 0.4078684747219086 18.70834350585938 1.272416353225708 19.32378196716309 2.236868381500244 19.29981422424316 C 2.798977375030518 19.3021125793457 3.472115516662598 19.30287933349609 4.153131484985352 19.30287933349609 M 4.153128623962402 19.40288352966309 C 3.368418455123901 19.40288352966309 2.74146842956543 19.40188407897949 2.236458539962769 19.39981269836426 C 2.220298528671265 19.4002628326416 2.201278448104858 19.40049362182617 2.182268381118774 19.40049362182617 C 1.190058469772339 19.40049362182617 0.3210084736347198 18.76512336730957 0.01974846608936787 17.81945419311523 C -0.06277153640985489 17.54743385314941 -0.1028715297579765 17.26674270629883 -0.09984153509140015 16.98387336730957 L -0.09985153377056122 2.696233510971069 C -0.09985153377056122 1.518283486366272 0.199398472905159 0.7399234175682068 0.81499844789505 0.3166634440422058 C 1.374178409576416 -0.06779656559228897 2.110758543014526 -0.09999656677246094 2.75726842880249 -0.09999656677246094 L 12.79485893249512 -0.09999656677246094 C 13.91497802734375 -0.09999656677246094 14.61115837097168 0.09916343539953232 15.05216884613037 0.545773446559906 C 15.48286819458008 0.9819434285163879 15.6749382019043 1.663943409919739 15.6749382019043 2.757103443145752 L 15.6749382019043 7.564313411712646 C 15.6749382019043 8.164783477783203 15.29419803619385 8.433563232421875 14.91686820983887 8.433563232421875 C 14.519118309021 8.433563232421875 14.0963888168335 8.128913879394531 14.0963888168335 7.564313411712646 L 14.0963888168335 2.757103443145752 C 14.0963888168335 1.777273416519165 13.79309844970703 1.478543400764465 12.79829883575439 1.478543400764465 L 2.75726842880249 1.478543400764465 C 1.688228487968445 1.478543400764465 1.478718519210815 1.580973386764526 1.478718519210815 2.757103443145752 L 1.478718519210815 16.53690338134766 C 1.478718519210815 16.92133331298828 1.603298425674438 17.81546401977539 2.75726842880249 17.81546401977539 L 7.514368534088135 17.81546401977539 C 8.003758430480957 17.81549263000488 8.267818450927734 18.23263359069824 8.26780891418457 18.62510299682617 C 8.26779842376709 18.99822425842285 8.031298637390137 19.39981269836426 7.512088298797607 19.39981269836426 C 6.909349918365479 19.39981269836426 5.515261173248291 19.40288352966309 4.153128623962402 19.40288352966309 Z" stroke="none" fill="#36aafd"/>
+        </g>
+        <path id="路径_2103-2" data-name="路径 2103" d="M33.46,21.356h5.781" transform="translate(761 262.32)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_2104-2" data-name="路径 2104" d="M33.46,21.356h5.781" transform="translate(761 265.54)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_832-2" data-name="路径 832" d="M308.831,120.907a.713.713,0,0,1,1,0l2.649,2.648a.71.71,0,1,1-1,1l-1.384-1.384v4.784a.762.762,0,0,1-1.525,0v-4.783l-1.384,1.384a.71.71,0,1,1-1-1Z" transform="translate(494.267 169.589)" fill="#36aafd"/>
+      </g>
+    </g>
+    <g id="icon_批量强制交卷-3" data-name="icon/批量强制交卷" transform="translate(-780 -30)">
+      <rect id="矩形_3069-6" data-name="矩形 3069" width="28" height="28" transform="translate(836 226)" fill="#b3b3b3" opacity="0"/>
+      <g id="组_5511-3" data-name="组 5511" transform="translate(51.435 -48.662)">
+        <g id="路径_1740-3" data-name="路径 1740" transform="translate(790.318 279.01)" fill="#b3b3b3">
+          <path d="M 4.153128623962402 19.35288429260254 C 3.36793851852417 19.35288429260254 2.741058349609375 19.35187339782715 2.236668348312378 19.34981346130371 C 2.219448566436768 19.35026359558105 2.200858354568481 19.35049438476562 2.182268381118774 19.35049438476562 C 1.211918473243713 19.35049438476562 0.3620084524154663 18.72912406921387 0.06738846749067307 17.80428314208984 C -0.01344153378158808 17.53780364990234 -0.05282153189182281 17.26217269897461 -0.04985153302550316 16.98441314697266 L -0.04985153302550316 2.696233510971069 C -0.04985153302550316 0.1620534360408783 1.336888432502747 -0.04999656602740288 2.75726842880249 -0.04999656602740288 L 12.79485893249512 -0.04999656602740288 C 14.91080856323242 -0.04999656602740288 15.62493801116943 0.658333420753479 15.62493801116943 2.757103443145752 L 15.62493801116943 7.564313411712646 C 15.62493801116943 8.130243301391602 15.26930809020996 8.383563041687012 14.91686820983887 8.383563041687012 C 14.54335880279541 8.383563041687012 14.14638805389404 8.096433639526367 14.14638805389404 7.564313411712646 L 14.14638805389404 2.757103443145752 C 14.14638805389404 1.751373410224915 13.81881809234619 1.428543448448181 12.79829883575439 1.428543448448181 L 2.75726842880249 1.428543448448181 C 1.663418412208557 1.428543448448181 1.428718447685242 1.543033480644226 1.428718447685242 2.757103443145752 L 1.428718447685242 16.53690338134766 C 1.428718447685242 17.36880302429199 1.925368428230286 17.86546325683594 2.75726842880249 17.86546325683594 L 7.514368534088135 17.86546325683594 C 7.976198673248291 17.86549377441406 8.217818260192871 18.24763298034668 8.217808723449707 18.62510299682617 C 8.217798233032227 18.97414398193359 7.9969482421875 19.34981346130371 7.512088298797607 19.34981346130371 C 7.271328449249268 19.34981346130371 6.904308319091797 19.35030364990234 6.463498592376709 19.35089302062988 C 5.800738334655762 19.35177421569824 4.971178531646729 19.35288429260254 4.153128623962402 19.35288429260254 Z" stroke="none"/>
+          <path d="M 4.153131484985352 19.30287933349609 C 5.51528787612915 19.30287933349609 6.909336566925049 19.29981422424316 7.512088298797607 19.29981422424316 C 8.41619873046875 19.29981422424316 8.355308532714844 17.91551399230957 7.514388561248779 17.91551399230957 L 7.514368534088135 17.91546249389648 L 2.75726842880249 17.91546249389648 C 1.792278409004211 17.91546249389648 1.378718495368958 17.29281425476074 1.378718495368958 16.53690338134766 L 1.378718495368958 2.757103443145752 C 1.378718495368958 1.533633470535278 1.615368485450745 1.378543376922607 2.75726842880249 1.378543376922607 L 12.79829883575439 1.378543376922607 C 13.86437892913818 1.378543376922607 14.19638824462891 1.735823392868042 14.19638824462891 2.757103443145752 L 14.19638824462891 7.564313411712646 C 14.19638729095459 8.527003288269043 15.57493782043457 8.651073455810547 15.57493877410889 7.564313411712646 L 15.57493877410889 2.757103443145752 C 15.57493877410889 0.7237234115600586 14.91782855987549 3.435668986639939e-06 12.79485893249512 3.435668986639939e-06 L 2.75726842880249 3.435668986639939e-06 C 1.405128479003906 3.435668986639939e-06 0.0001484666427131742 0.1654234379529953 0.0001484666427131742 2.696233510971069 L 0.0001484666427131742 16.98494338989258 C -0.002761533251032233 17.25728416442871 0.03597846627235413 17.52847290039062 0.1150284633040428 17.78910255432129 C 0.4078684747219086 18.70834350585938 1.272416353225708 19.32378196716309 2.236868381500244 19.29981422424316 C 2.798977375030518 19.3021125793457 3.472115516662598 19.30287933349609 4.153131484985352 19.30287933349609 M 4.153128623962402 19.40288352966309 C 3.368418455123901 19.40288352966309 2.74146842956543 19.40188407897949 2.236458539962769 19.39981269836426 C 2.220298528671265 19.4002628326416 2.201278448104858 19.40049362182617 2.182268381118774 19.40049362182617 C 1.190058469772339 19.40049362182617 0.3210084736347198 18.76512336730957 0.01974846608936787 17.81945419311523 C -0.06277153640985489 17.54743385314941 -0.1028715297579765 17.26674270629883 -0.09984153509140015 16.98387336730957 L -0.09985153377056122 2.696233510971069 C -0.09985153377056122 1.518283486366272 0.199398472905159 0.7399234175682068 0.81499844789505 0.3166634440422058 C 1.374178409576416 -0.06779656559228897 2.110758543014526 -0.09999656677246094 2.75726842880249 -0.09999656677246094 L 12.79485893249512 -0.09999656677246094 C 13.91497802734375 -0.09999656677246094 14.61115837097168 0.09916343539953232 15.05216884613037 0.545773446559906 C 15.48286819458008 0.9819434285163879 15.6749382019043 1.663943409919739 15.6749382019043 2.757103443145752 L 15.6749382019043 7.564313411712646 C 15.6749382019043 8.164783477783203 15.29419803619385 8.433563232421875 14.91686820983887 8.433563232421875 C 14.519118309021 8.433563232421875 14.0963888168335 8.128913879394531 14.0963888168335 7.564313411712646 L 14.0963888168335 2.757103443145752 C 14.0963888168335 1.777273416519165 13.79309844970703 1.478543400764465 12.79829883575439 1.478543400764465 L 2.75726842880249 1.478543400764465 C 1.688228487968445 1.478543400764465 1.478718519210815 1.580973386764526 1.478718519210815 2.757103443145752 L 1.478718519210815 16.53690338134766 C 1.478718519210815 16.92133331298828 1.603298425674438 17.81546401977539 2.75726842880249 17.81546401977539 L 7.514368534088135 17.81546401977539 C 8.003758430480957 17.81549263000488 8.267818450927734 18.23263359069824 8.26780891418457 18.62510299682617 C 8.26779842376709 18.99822425842285 8.031298637390137 19.39981269836426 7.512088298797607 19.39981269836426 C 6.909349918365479 19.39981269836426 5.515261173248291 19.40288352966309 4.153128623962402 19.40288352966309 Z" stroke="none" fill="#b3b3b3"/>
+        </g>
+        <path id="路径_2103-3" data-name="路径 2103" d="M33.46,21.356h5.781" transform="translate(761 262.32)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_2104-3" data-name="路径 2104" d="M33.46,21.356h5.781" transform="translate(761 265.54)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_832-3" data-name="路径 832" d="M308.831,120.907a.713.713,0,0,1,1,0l2.649,2.648a.71.71,0,1,1-1,1l-1.384-1.384v4.784a.762.762,0,0,1-1.525,0v-4.783l-1.384,1.384a.71.71,0,1,1-1-1Z" transform="translate(494.267 169.589)" fill="#b3b3b3"/>
+      </g>
+    </g>
+    <g id="icon_新增-2" data-name="icon/新增" transform="translate(-872 -58)">
+      <rect id="矩形_3070-43" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_2987-2" data-name="组 2987" transform="translate(906 232)">
+        <g id="矩形_3061-3" data-name="矩形 3061" fill="#36aafd" stroke="#36aafd" stroke-width="1" opacity="0">
+          <rect width="16" height="16" stroke="none"/>
+          <rect x="0.5" y="0.5" width="15" height="15" fill="none"/>
+        </g>
+        <line id="直线_46-2" data-name="直线 46" x2="12" transform="translate(2 8)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        <line id="直线_47-2" data-name="直线 47" x2="12" transform="translate(8 2) rotate(90)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_新增-3" data-name="icon/新增" transform="translate(-844 -58)">
+      <rect id="矩形_3070-44" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_2987-3" data-name="组 2987" transform="translate(906 232)">
+        <g id="矩形_3061-4" data-name="矩形 3061" fill="#07f" stroke="#07f" stroke-width="1" opacity="0">
+          <rect width="16" height="16" stroke="none"/>
+          <rect x="0.5" y="0.5" width="15" height="15" fill="none"/>
+        </g>
+        <line id="直线_46-3" data-name="直线 46" x2="12" transform="translate(2 8)" fill="none" stroke="#07f" stroke-linecap="round" stroke-width="1.5"/>
+        <line id="直线_47-3" data-name="直线 47" x2="12" transform="translate(8 2) rotate(90)" fill="none" stroke="#07f" stroke-linecap="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_新增-4" data-name="icon/新增" transform="translate(-816 -58)">
+      <rect id="矩形_3070-45" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_2987-4" data-name="组 2987" transform="translate(906 232)">
+        <g id="矩形_3061-5" data-name="矩形 3061" fill="#07f" stroke="#b3b3b3" stroke-width="1" opacity="0">
+          <rect width="16" height="16" stroke="none"/>
+          <rect x="0.5" y="0.5" width="15" height="15" fill="none"/>
+        </g>
+        <line id="直线_46-4" data-name="直线 46" x2="12" transform="translate(2 8)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.5"/>
+        <line id="直线_47-4" data-name="直线 47" x2="12" transform="translate(8 2) rotate(90)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_返回旧版" data-name="icon/返回旧版" transform="translate(-788 -58)">
+      <rect id="矩形_3070-46" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_3991" data-name="组 3991" transform="translate(902 228)">
+        <g id="矩形_3748" data-name="矩形 3748" fill="#999" stroke="rgba(112,112,112,0)" stroke-width="1" opacity="0">
+          <rect width="24" height="24" stroke="none"/>
+          <rect x="0.5" y="0.5" width="23" height="23" fill="none"/>
+        </g>
+        <path id="路径_1731" data-name="路径 1731" d="M119.131,128.295h-8.247l2.453-2.453a.607.607,0,0,0-.858-.858l-3.495,3.464a.593.593,0,0,0,0,.858l3.464,3.464a.607.607,0,0,0,.858-.858l-2.391-2.391h8.216a4.139,4.139,0,1,1,0,8.277h-4.285a.613.613,0,0,0,0,1.226h4.285a5.365,5.365,0,0,0,0-10.73Z" transform="translate(-104.648 -119.912)" fill="#999"/>
+      </g>
+    </g>
+    <g id="icon_返回旧版-2" data-name="icon/返回旧版" transform="translate(-760 -58)">
+      <rect id="矩形_3070-47" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_3991-2" data-name="组 3991" transform="translate(902 228)">
+        <g id="矩形_3748-2" data-name="矩形 3748" fill="#36aafd" stroke="rgba(112,112,112,0)" stroke-width="1" opacity="0">
+          <rect width="24" height="24" stroke="none"/>
+          <rect x="0.5" y="0.5" width="23" height="23" fill="none"/>
+        </g>
+        <path id="路径_1731-2" data-name="路径 1731" d="M119.131,128.295h-8.247l2.453-2.453a.607.607,0,0,0-.858-.858l-3.495,3.464a.593.593,0,0,0,0,.858l3.464,3.464a.607.607,0,0,0,.858-.858l-2.391-2.391h8.216a4.139,4.139,0,1,1,0,8.277h-4.285a.613.613,0,0,0,0,1.226h4.285a5.365,5.365,0,0,0,0-10.73Z" transform="translate(-104.648 -119.912)" fill="#36aafd"/>
+      </g>
+    </g>
+    <g id="icon_消息通知" data-name="icon/消息通知" transform="translate(-732 -58)">
+      <rect id="矩形_3070-48" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="组_2794" data-name="组 2794" transform="translate(902 228)">
+        <rect id="矩形_2950-5" data-name="矩形 2950" width="24" height="24" fill="#fff" opacity="0"/>
+        <g id="组_7119" data-name="组 7119" transform="translate(10167 8955)">
+          <path id="减去_95" data-name="减去 95" d="M6.825,16.21A2.212,2.212,0,0,1,4.615,14v-.617l4.42.029V14A2.212,2.212,0,0,1,6.825,16.21ZM5.325,1.835h0V1.5a1.5,1.5,0,1,1,3,0v.319a4.764,4.764,0,0,0-3,.016Z" transform="translate(-10161.825 -8951)" fill="none" stroke="#333" stroke-width="1.5"/>
+          <g id="路径_3896" data-name="路径 3896" transform="translate(-20323.65 -17901.705)" fill="none">
+            <path d="M10174.268,8964.891l-11.241-.074a1.209,1.209,0,0,1-1.031-.549,1.136,1.136,0,0,1-.06-1.086l1.271-2.98c.013-1.235,0-1.967,0-3.4a5.14,5.14,0,0,1,1.6-3.665,5.467,5.467,0,0,1,9.334,3.754c.021,1.064,0,2.138,0,3.343l1.241,2.99v0a1.2,1.2,0,0,1-1.113,1.66Z" stroke="none"/>
+            <path d="M 10173.8291015625 8963.3876953125 L 10172.6455078125 8960.5361328125 L 10172.6455078125 8960.2373046875 C 10172.6455078125 8959.8603515625 10172.6474609375 8959.4951171875 10172.6484375 8959.140625 C 10172.65234375 8958.3681640625 10172.6552734375 8957.6396484375 10172.640625 8956.9248046875 C 10172.6201171875 8955.896484375 10172.2080078125 8954.9287109375 10171.482421875 8954.203125 C 10170.73046875 8953.453125 10169.7333984375 8953.0400390625 10168.6748046875 8953.0400390625 C 10167.615234375 8953.0400390625 10166.6181640625 8953.453125 10165.8681640625 8954.2001953125 C 10165.0986328125 8954.970703125 10164.708984375 8955.84765625 10164.708984375 8956.8056640625 C 10164.708984375 8957.2724609375 10164.7099609375 8957.6650390625 10164.7109375 8958.025390625 C 10164.712890625 8958.7802734375 10164.71484375 8959.376953125 10164.7060546875 8960.216796875 L 10164.703125 8960.5146484375 L 10163.5078125 8963.3193359375 L 10173.8291015625 8963.3876953125 M 10174.2734375 8964.890625 L 10174.267578125 8964.890625 L 10163.0263671875 8964.81640625 C 10162.59765625 8964.81640625 10162.2119140625 8964.609375 10161.9951171875 8964.267578125 C 10161.79296875 8963.9453125 10161.76953125 8963.5419921875 10161.935546875 8963.181640625 L 10163.2060546875 8960.201171875 C 10163.21875 8958.9658203125 10163.208984375 8958.234375 10163.208984375 8956.8056640625 C 10163.208984375 8955.376953125 10163.822265625 8954.126953125 10164.806640625 8953.140625 C 10165.8408203125 8952.109375 10167.21484375 8951.5400390625 10168.6748046875 8951.5400390625 C 10170.1337890625 8951.5400390625 10171.5078125 8952.109375 10172.5419921875 8953.140625 C 10173.544921875 8954.14453125 10174.1123046875 8955.474609375 10174.140625 8956.89453125 C 10174.162109375 8957.958984375 10174.1455078125 8959.0322265625 10174.1455078125 8960.2373046875 L 10175.38671875 8963.23046875 C 10175.5400390625 8963.603515625 10175.49609375 8964.0244140625 10175.271484375 8964.359375 C 10175.0498046875 8964.69140625 10174.6767578125 8964.890625 10174.2734375 8964.890625 Z" stroke="none" fill="#333"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="icon_消息通知-2" data-name="icon/消息通知" transform="translate(-704 -58)">
+      <rect id="矩形_3070-49" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="组_2794-2" data-name="组 2794" transform="translate(902 228)">
+        <rect id="矩形_2950-6" data-name="矩形 2950" width="24" height="24" fill="#fff" opacity="0"/>
+        <g id="组_7119-2" data-name="组 7119" transform="translate(10167 8955)">
+          <path id="减去_95-2" data-name="减去 95" d="M6.825,16.21A2.212,2.212,0,0,1,4.615,14v-.617l4.42.029V14A2.212,2.212,0,0,1,6.825,16.21ZM5.325,1.835h0V1.5a1.5,1.5,0,1,1,3,0v.319a4.764,4.764,0,0,0-3,.016Z" transform="translate(-10161.825 -8951)" fill="none" stroke="#36aafd" stroke-width="1.5"/>
+          <g id="路径_3896-2" data-name="路径 3896" transform="translate(-20323.65 -17901.705)" fill="none">
+            <path d="M10174.268,8964.891l-11.241-.074a1.209,1.209,0,0,1-1.031-.549,1.136,1.136,0,0,1-.06-1.086l1.271-2.98c.013-1.235,0-1.967,0-3.4a5.14,5.14,0,0,1,1.6-3.665,5.467,5.467,0,0,1,9.334,3.754c.021,1.064,0,2.138,0,3.343l1.241,2.99v0a1.2,1.2,0,0,1-1.113,1.66Z" stroke="none"/>
+            <path d="M 10173.8291015625 8963.3876953125 L 10172.6455078125 8960.5361328125 L 10172.6455078125 8960.2373046875 C 10172.6455078125 8959.8603515625 10172.6474609375 8959.4951171875 10172.6484375 8959.140625 C 10172.65234375 8958.3681640625 10172.6552734375 8957.6396484375 10172.640625 8956.9248046875 C 10172.6201171875 8955.896484375 10172.2080078125 8954.9287109375 10171.482421875 8954.203125 C 10170.73046875 8953.453125 10169.7333984375 8953.0400390625 10168.6748046875 8953.0400390625 C 10167.615234375 8953.0400390625 10166.6181640625 8953.453125 10165.8681640625 8954.2001953125 C 10165.0986328125 8954.970703125 10164.708984375 8955.84765625 10164.708984375 8956.8056640625 C 10164.708984375 8957.2724609375 10164.7099609375 8957.6650390625 10164.7109375 8958.025390625 C 10164.712890625 8958.7802734375 10164.71484375 8959.376953125 10164.7060546875 8960.216796875 L 10164.703125 8960.5146484375 L 10163.5078125 8963.3193359375 L 10173.8291015625 8963.3876953125 M 10174.2734375 8964.890625 L 10174.267578125 8964.890625 L 10163.0263671875 8964.81640625 C 10162.59765625 8964.81640625 10162.2119140625 8964.609375 10161.9951171875 8964.267578125 C 10161.79296875 8963.9453125 10161.76953125 8963.5419921875 10161.935546875 8963.181640625 L 10163.2060546875 8960.201171875 C 10163.21875 8958.9658203125 10163.208984375 8958.234375 10163.208984375 8956.8056640625 C 10163.208984375 8955.376953125 10163.822265625 8954.126953125 10164.806640625 8953.140625 C 10165.8408203125 8952.109375 10167.21484375 8951.5400390625 10168.6748046875 8951.5400390625 C 10170.1337890625 8951.5400390625 10171.5078125 8952.109375 10172.5419921875 8953.140625 C 10173.544921875 8954.14453125 10174.1123046875 8955.474609375 10174.140625 8956.89453125 C 10174.162109375 8957.958984375 10174.1455078125 8959.0322265625 10174.1455078125 8960.2373046875 L 10175.38671875 8963.23046875 C 10175.5400390625 8963.603515625 10175.49609375 8964.0244140625 10175.271484375 8964.359375 C 10175.0498046875 8964.69140625 10174.6767578125 8964.890625 10174.2734375 8964.890625 Z" stroke="none" fill="#36aafd"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="icon_设置" data-name="icon/设置" transform="translate(-676 -58)">
+      <rect id="矩形_3070-50" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="组_2795" data-name="组 2795" transform="translate(902 228)">
+        <g id="组_2795-2" data-name="组 2795">
+          <g id="组_2792" data-name="组 2792">
+            <rect id="矩形_2950-7" data-name="矩形 2950" width="24" height="24" fill="#fff" opacity="0"/>
+            <g id="组_2796" data-name="组 2796" transform="translate(3.884 3.596)">
+              <path id="路径_765" data-name="路径 765" d="M33.273,10.11,31.827,8.967c.017-.2.025-.387.025-.563s-.008-.361-.025-.563L33.281,6.69a.857.857,0,0,0,.2-1.109L31.911,2.832a.875.875,0,0,0-1.076-.378l-1.706.689a6.089,6.089,0,0,0-.958-.563L27.911.74A.875.875,0,0,0,27.054,0H23.919a.867.867,0,0,0-.857.748L22.8,2.58a6.089,6.089,0,0,0-.958.563l-1.714-.7a.89.89,0,0,0-1.067.378L17.49,5.572A.869.869,0,0,0,17.7,6.69l1.454,1.151c-.017.2-.025.387-.025.563s.008.361.025.563L17.7,10.119a.867.867,0,0,0-.2,1.109l1.572,2.748a.869.869,0,0,0,1.076.378l1.706-.7a6.089,6.089,0,0,0,.958.563l.261,1.849a.875.875,0,0,0,.857.74h3.143a.875.875,0,0,0,.857-.748l.261-1.841a6.089,6.089,0,0,0,.958-.563l1.714.7a.787.787,0,0,0,.311.059.858.858,0,0,0,.748-.437c1.782-3.118,1.689-3.589,1.353-3.866Z" transform="translate(-17.372)" fill="none" stroke="#333" stroke-linejoin="round" stroke-width="1.5"/>
+              <path id="路径_766" data-name="路径 766" d="M312.576,313.915a3.358,3.358,0,1,0-3.328-3.353A3.346,3.346,0,0,0,312.576,313.915Z" transform="translate(-304.457 -302.157)" fill="none" stroke="#333" stroke-width="1.5"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="icon_设置-2" data-name="icon/设置" transform="translate(-648 -58)">
+      <rect id="矩形_3070-51" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_2795-3" data-name="组 2795" transform="translate(902 228)">
+        <g id="组_2795-4" data-name="组 2795">
+          <g id="组_2792-2" data-name="组 2792">
+            <rect id="矩形_2950-8" data-name="矩形 2950" width="24" height="24" fill="#36aafd" opacity="0"/>
+            <g id="组_2796-2" data-name="组 2796" transform="translate(3.884 3.596)">
+              <path id="路径_765-2" data-name="路径 765" d="M33.273,10.11,31.827,8.967c.017-.2.025-.387.025-.563s-.008-.361-.025-.563L33.281,6.69a.857.857,0,0,0,.2-1.109L31.911,2.832a.875.875,0,0,0-1.076-.378l-1.706.689a6.089,6.089,0,0,0-.958-.563L27.911.74A.875.875,0,0,0,27.054,0H23.919a.867.867,0,0,0-.857.748L22.8,2.58a6.089,6.089,0,0,0-.958.563l-1.714-.7a.89.89,0,0,0-1.067.378L17.49,5.572A.869.869,0,0,0,17.7,6.69l1.454,1.151c-.017.2-.025.387-.025.563s.008.361.025.563L17.7,10.119a.867.867,0,0,0-.2,1.109l1.572,2.748a.869.869,0,0,0,1.076.378l1.706-.7a6.089,6.089,0,0,0,.958.563l.261,1.849a.875.875,0,0,0,.857.74h3.143a.875.875,0,0,0,.857-.748l.261-1.841a6.089,6.089,0,0,0,.958-.563l1.714.7a.787.787,0,0,0,.311.059.858.858,0,0,0,.748-.437c1.782-3.118,1.689-3.589,1.353-3.866Z" transform="translate(-17.372)" fill="none" stroke="#36aafd" stroke-linejoin="round" stroke-width="1.5"/>
+              <path id="路径_766-2" data-name="路径 766" d="M312.576,313.915a3.358,3.358,0,1,0-3.328-3.353A3.346,3.346,0,0,0,312.576,313.915Z" transform="translate(-304.457 -302.157)" fill="none" stroke="#36aafd" stroke-width="1.5"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="icon_退出" data-name="icon/退出" transform="translate(-620 -58)">
+      <rect id="矩形_3070-52" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_2797" data-name="组 2797" transform="translate(902 228)">
+        <g id="组_2792-3" data-name="组 2792">
+          <rect id="矩形_2950-9" data-name="矩形 2950" width="24" height="24" fill="#fff" opacity="0"/>
+          <path id="路径_767" data-name="路径 767" d="M153.327,139.2a8.246,8.246,0,0,1-3.185-.632,8.145,8.145,0,0,1-2.6-1.72,8.009,8.009,0,0,1-1.754-2.553,7.9,7.9,0,0,1,.293-6.853,8.172,8.172,0,0,1,2.489-2.8.648.648,0,0,1,.894.145.619.619,0,0,1-.148.875,6.909,6.909,0,0,0-2.1,2.364,6.569,6.569,0,0,0-.79,3.142,6.667,6.667,0,0,0,2.023,4.791,6.993,6.993,0,0,0,9.762,0,6.667,6.667,0,0,0,2.022-4.791,6.563,6.563,0,0,0-.79-3.142,6.9,6.9,0,0,0-2.1-2.363.619.619,0,0,1-.148-.875.647.647,0,0,1,.893-.145,8.163,8.163,0,0,1,2.49,2.8,7.894,7.894,0,0,1,.293,6.853,8,8,0,0,1-1.754,2.553,8.184,8.184,0,0,1-2.6,1.721,8.293,8.293,0,0,1-3.185.629h0Zm.192-9.714a.633.633,0,0,1-.64-.627v-6.438a.64.64,0,0,1,1.281,0v6.438a.634.634,0,0,1-.641.627Z" transform="translate(-141.327 -118.495)" fill="#333" stroke="#333" stroke-width="0.5"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_退出-2" data-name="icon/退出" transform="translate(-592 -58)">
+      <rect id="矩形_3070-53" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="组_2797-2" data-name="组 2797" transform="translate(902 228)">
+        <g id="组_2792-4" data-name="组 2792">
+          <rect id="矩形_2950-10" data-name="矩形 2950" width="24" height="24" fill="#36aafd" opacity="0"/>
+          <path id="路径_767-2" data-name="路径 767" d="M153.327,139.2a8.246,8.246,0,0,1-3.185-.632,8.145,8.145,0,0,1-2.6-1.72,8.009,8.009,0,0,1-1.754-2.553,7.9,7.9,0,0,1,.293-6.853,8.172,8.172,0,0,1,2.489-2.8.648.648,0,0,1,.894.145.619.619,0,0,1-.148.875,6.909,6.909,0,0,0-2.1,2.364,6.569,6.569,0,0,0-.79,3.142,6.667,6.667,0,0,0,2.023,4.791,6.993,6.993,0,0,0,9.762,0,6.667,6.667,0,0,0,2.022-4.791,6.563,6.563,0,0,0-.79-3.142,6.9,6.9,0,0,0-2.1-2.363.619.619,0,0,1-.148-.875.647.647,0,0,1,.893-.145,8.163,8.163,0,0,1,2.49,2.8,7.894,7.894,0,0,1,.293,6.853,8,8,0,0,1-1.754,2.553,8.184,8.184,0,0,1-2.6,1.721,8.293,8.293,0,0,1-3.185.629h0Zm.192-9.714a.633.633,0,0,1-.64-.627v-6.438a.64.64,0,0,1,1.281,0v6.438a.634.634,0,0,1-.641.627Z" transform="translate(-141.327 -118.495)" fill="#36aafd" stroke="#36aafd" stroke-width="0.5"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_批量加时" data-name="icon/批量加时" transform="translate(-752 -30)">
+      <rect id="矩形_3069-7" data-name="矩形 3069" width="28" height="28" transform="translate(836 226)" fill="#333" opacity="0"/>
+      <path id="路径_3912" data-name="路径 3912" d="M9.5,0A9.5,9.5,0,1,1,0,9.5" transform="translate(859.5 249.5) rotate(180)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+      <path id="路径_3913" data-name="路径 3913" d="M850,234.109v6.352l-3.4,1.909" transform="translate(0.398)" fill="none" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="直线_372" data-name="直线 372" x2="6" transform="translate(853.5 246.5)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+      <line id="直线_373" data-name="直线 373" x2="6" transform="translate(856.5 243.5) rotate(90)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+    </g>
+    <g id="icon_批量加时-2" data-name="icon/批量加时" transform="translate(-724 -30)">
+      <rect id="矩形_3069-8" data-name="矩形 3069" width="28" height="28" transform="translate(836 226)" fill="#36aafd" opacity="0"/>
+      <path id="路径_3912-2" data-name="路径 3912" d="M9.5,0A9.5,9.5,0,1,1,0,9.5" transform="translate(859.5 249.5) rotate(180)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+      <path id="路径_3913-2" data-name="路径 3913" d="M850,234.109v6.352l-3.4,1.909" transform="translate(0.398)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="直线_372-2" data-name="直线 372" x2="6" transform="translate(853.5 246.5)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+      <line id="直线_373-2" data-name="直线 373" x2="6" transform="translate(856.5 243.5) rotate(90)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+    </g>
+    <g id="icon_批量加时-3" data-name="icon/批量加时" transform="translate(-696 -30)">
+      <rect id="矩形_3069-9" data-name="矩形 3069" width="28" height="28" transform="translate(836 226)" fill="#b3b3b3" opacity="0"/>
+      <path id="路径_3912-3" data-name="路径 3912" d="M9.5,0A9.5,9.5,0,1,1,0,9.5" transform="translate(859.5 249.5) rotate(180)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.5"/>
+      <path id="路径_3913-3" data-name="路径 3913" d="M850,234.109v6.352l-3.4,1.909" transform="translate(0.398)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="直线_372-3" data-name="直线 372" x2="6" transform="translate(853.5 246.5)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.5"/>
+      <line id="直线_373-3" data-name="直线 373" x2="6" transform="translate(856.5 243.5) rotate(90)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.5"/>
+    </g>
+    <g id="icon_修改部门权限" data-name="icon/修改部门权限" transform="translate(-584 -114)">
+      <rect id="矩形_3069-10" data-name="矩形 3069" width="28" height="28" transform="translate(836 226)" fill="#b3b3b3" opacity="0"/>
+      <g id="icon_修改权限" data-name="icon/修改权限" transform="translate(342 37)">
+        <g id="矩形_3061-6" data-name="矩形 3061" transform="translate(500 195)" fill="#bfbfbf" stroke="#bfbfbf" stroke-width="1" opacity="0">
+          <rect width="16" height="16" stroke="none"/>
+          <rect x="0.5" y="0.5" width="15" height="15" fill="none"/>
+        </g>
+        <g id="组_7197" data-name="组 7197" transform="translate(-370.528 107.472)">
+          <circle id="椭圆_768" data-name="椭圆 768" cx="3.767" cy="3.767" r="3.767" transform="translate(876.413 90.055)" fill="none" stroke="#bfbfbf" stroke-width="1.5"/>
+          <line id="直线_363" data-name="直线 363" x2="5.919" transform="translate(873.331 100.671) rotate(-45)" fill="none" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1.5"/>
+          <line id="直线_365" data-name="直线 365" y2="2.152" transform="translate(875.423 98.578) rotate(-45)" fill="none" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1.5"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_修改部门权限-2" data-name="icon/修改部门权限" transform="translate(-556 -114)">
+      <rect id="矩形_3069-11" data-name="矩形 3069" width="28" height="28" transform="translate(836 226)" fill="#b3b3b3" opacity="0"/>
+      <g id="icon_修改权限-2" data-name="icon/修改权限" transform="translate(342 37)">
+        <g id="矩形_3061-7" data-name="矩形 3061" transform="translate(500 195)" fill="#36aafd" stroke="#36aafd" stroke-width="1" opacity="0">
+          <rect width="16" height="16" stroke="none"/>
+          <rect x="0.5" y="0.5" width="15" height="15" fill="none"/>
+        </g>
+        <g id="组_7197-2" data-name="组 7197" transform="translate(-370.528 107.472)">
+          <circle id="椭圆_768-2" data-name="椭圆 768" cx="3.767" cy="3.767" r="3.767" transform="translate(876.413 90.055)" fill="none" stroke="#36aafd" stroke-width="1.5"/>
+          <line id="直线_363-2" data-name="直线 363" x2="5.919" transform="translate(873.331 100.671) rotate(-45)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+          <line id="直线_365-2" data-name="直线 365" y2="2.152" transform="translate(875.423 98.578) rotate(-45)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_购买子管理员" data-name="icon/购买子管理员" transform="translate(-528 -114)">
+      <rect id="矩形_3069-12" data-name="矩形 3069" width="28" height="28" transform="translate(836 226)" fill="#b3b3b3" opacity="0"/>
+      <g id="icon_购买资管理员-3" data-name="icon/购买资管理员" transform="translate(342 37)">
+        <g id="矩形_3061-8" data-name="矩形 3061" transform="translate(500 195)" fill="#36aafd" stroke="#36aafd" stroke-width="1" opacity="0">
+          <rect width="16" height="16" stroke="none"/>
+          <rect x="0.5" y="0.5" width="15" height="15" fill="none"/>
+        </g>
+        <g id="组_3189-2" data-name="组 3189" transform="translate(-92.375 38.609)">
+          <path id="路径_1152-2" data-name="路径 1152" d="M602.914,161.761a3.645,3.645,0,0,0,1.108-2.261,1.67,1.67,0,0,0-.462-1.246c-.6-.6-1.661-.6-2.861-.6h-.877c-1.108,0-2.031-.046-2.631.554a1.71,1.71,0,0,0-.462,1.292,4.115,4.115,0,0,0,1.615,2.769.458.458,0,0,0,.6-.692,3.277,3.277,0,0,1-1.292-2.077c0-.462.138-.6.185-.646a3.747,3.747,0,0,1,1.985-.277h.969c.969,0,1.892,0,2.215.323a1.253,1.253,0,0,1,.138.6,3.217,3.217,0,0,1-1.338,2.031.372.372,0,0,0-.138.415.718.718,0,0,0,.277.369,5.323,5.323,0,0,1,3.507,4.8c0,2.261-1.385,3.092-5.077,3.092s-5.077-.831-5.077-3.092a5.1,5.1,0,0,1,1.8-3.784.458.458,0,0,0-.6-.692,6.076,6.076,0,0,0-2.123,4.477c0,4.015,4.061,4.015,6,4.015s6,0,6-4.015A6.073,6.073,0,0,0,602.914,161.761Zm0,0" transform="translate(0 0)" fill="#36aafd"/>
+          <path id="路径_1153-3" data-name="路径 1153" d="M816.885,452.088a.347.347,0,0,0,0-.571.562.562,0,0,0-.7,0l-1.251.979-1.251-.979a.562.562,0,0,0-.7,0,.347.347,0,0,0,0,.571l1.4,1.1v.245h-1c-.3,0-.5.163-.5.408s.2.408.5.408h1v.408h-1c-.3,0-.5.163-.5.408s.2.408.5.408h1v.857c0,.245.2.408.5.408s.5-.163.5-.408v-.857h1c.3,0,.5-.163.5-.408s-.2-.408-.5-.408h-1v-.408h1c.3,0,.5-.163.5-.408s-.2-.408-.5-.408h-1v-.163Zm0,0" transform="translate(-214.557 -287.457)" fill="#36aafd"/>
+        </g>
+      </g>
+    </g>
+    <g id="icon_批量修改密码" data-name="icon/批量修改密码" transform="translate(-816 -114)">
+      <rect id="矩形_3070-54" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="组_3187" data-name="组 3187" transform="translate(740.564 129.506)">
+        <path id="路径_3901" data-name="路径 3901" d="M3,7H0V4A4,4,0,0,1,8,4v.594" transform="translate(169.436 101.495)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_3900" data-name="路径 3900" d="M7.695,11.3h4.882a2.652,2.652,0,0,0,2.695-2.608V2.608A2.652,2.652,0,0,0,12.577,0H2.695A2.652,2.652,0,0,0,0,2.608V6.693" transform="translate(181.022 119.795) rotate(180)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+        <line id="直线_92" data-name="直线 92" y1="6.91" x2="6.778" transform="translate(174.158 106.995)" fill="none" stroke="#333" stroke-linecap="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_批量修改密码-2" data-name="icon/批量修改密码" transform="translate(-788 -114)">
+      <rect id="矩形_3070-55" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="组_3187-2" data-name="组 3187" transform="translate(740.564 129.506)">
+        <path id="路径_3901-2" data-name="路径 3901" d="M3,7H0V4A4,4,0,0,1,8,4v.594" transform="translate(169.436 101.495)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_3900-2" data-name="路径 3900" d="M7.695,11.3h4.882a2.652,2.652,0,0,0,2.695-2.608V2.608A2.652,2.652,0,0,0,12.577,0H2.695A2.652,2.652,0,0,0,0,2.608V6.693" transform="translate(181.022 119.795) rotate(180)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+        <line id="直线_92-2" data-name="直线 92" y1="6.91" x2="6.778" transform="translate(174.158 106.995)" fill="none" stroke="#36aafd" stroke-linecap="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_批量修改密码-3" data-name="icon/批量修改密码" transform="translate(-760 -114)">
+      <rect id="矩形_3070-56" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#b3b3b3" opacity="0"/>
+      <g id="组_3187-3" data-name="组 3187" transform="translate(740.564 129.506)">
+        <path id="路径_3901-3" data-name="路径 3901" d="M3,7H0V4A4,4,0,0,1,8,4v.594" transform="translate(169.436 101.495)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.5"/>
+        <path id="路径_3900-3" data-name="路径 3900" d="M7.695,11.3h4.882a2.652,2.652,0,0,0,2.695-2.608V2.608A2.652,2.652,0,0,0,12.577,0H2.695A2.652,2.652,0,0,0,0,2.608V6.693" transform="translate(181.022 119.795) rotate(180)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.5"/>
+        <line id="直线_92-3" data-name="直线 92" y1="6.91" x2="6.778" transform="translate(174.158 106.995)" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width="1.5"/>
+      </g>
+    </g>
+    <g id="icon_更多" data-name="icon/更多" transform="translate(-536 -170)">
+      <rect id="矩形_3070-57" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#36aafd" opacity="0"/>
+      <g id="椭圆_763" data-name="椭圆 763" transform="translate(904 230)" fill="none" stroke="#36aafd" stroke-width="1.5">
+        <circle cx="10" cy="10" r="10" stroke="none"/>
+        <circle cx="10" cy="10" r="9.25" fill="none"/>
+      </g>
+      <circle id="椭圆_764" data-name="椭圆 764" cx="1.5" cy="1.5" r="1.5" transform="translate(907.5 238.5)" fill="#36aafd"/>
+      <circle id="椭圆_765" data-name="椭圆 765" cx="1.5" cy="1.5" r="1.5" transform="translate(912.5 238.5)" fill="#36aafd"/>
+      <circle id="椭圆_766" data-name="椭圆 766" cx="1.5" cy="1.5" r="1.5" transform="translate(917.5 238.5)" fill="#36aafd"/>
+    </g>
+    <g id="icon_更多-2" data-name="icon/更多" transform="translate(-564 -170)">
+      <rect id="矩形_3070-58" data-name="矩形 3070" width="28" height="28" transform="translate(900 226)" fill="#333" opacity="0"/>
+      <g id="椭圆_763-2" data-name="椭圆 763" transform="translate(904 230)" fill="none" stroke="#333" stroke-width="1.5">
+        <circle cx="10" cy="10" r="10" stroke="none"/>
+        <circle cx="10" cy="10" r="9.25" fill="none"/>
+      </g>
+      <circle id="椭圆_764-2" data-name="椭圆 764" cx="1.5" cy="1.5" r="1.5" transform="translate(907.5 238.5)" fill="#333"/>
+      <circle id="椭圆_765-2" data-name="椭圆 765" cx="1.5" cy="1.5" r="1.5" transform="translate(912.5 238.5)" fill="#333"/>
+      <circle id="椭圆_766-2" data-name="椭圆 766" cx="1.5" cy="1.5" r="1.5" transform="translate(917.5 238.5)" fill="#333"/>
+    </g>
+  </g>
+</svg>
