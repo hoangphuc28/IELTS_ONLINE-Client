@@ -2,110 +2,7 @@
 import Link from 'next/link'
 import LayoutCenter from './layoutCenter'
 import ComponentSearch from './search'
-
-function ExamLibrary() {
-    return (
-        <>
-            <div className="flex flex-col gy-5">
-                <div>
-                    <Link
-                        href="/exam-library?skill=listening"
-                        className="text-white  hover:opacity-[0.8]"
-                    >
-                        IELTS Listening Tests
-                    </Link>
-                </div>
-                <div>
-                    <Link
-                        href="/exam-library?skill=reading"
-                        className="text-white  hover:opacity-[0.8]"
-                    >
-                        IELTS Reading Tests
-                    </Link>
-                </div>
-                <div>
-                    <Link
-                        href="/exam-library?skill=writing"
-                        className="text-white  hover:opacity-[0.8]"
-                    >
-                        IELTS Writing Tests
-                    </Link>
-                </div>
-                <div>
-                    <Link
-                        href="/exam-library?skill=speaking"
-                        className="text-white  hover:opacity-[0.8]"
-                    >
-                        IELTS Speaking Tests
-                    </Link>
-                </div>
-                <div>
-                    <Link href="/exam-library" className="text-white  hover:opacity-[0.8]">
-                        IELTS Test Collection
-                    </Link>
-                </div>
-            </div>
-        </>
-    )
-}
-
-function ContainerSignInSignUp() {
-    return (
-        <>
-            <div className="pe-2 me-2 sm:me-0 border-r border-black md:border-white">
-                <Link
-                    className="text-black sm:text-white"
-                    data-drupal-selector="menu-item-user"
-                    href="/account/login"
-                >
-                    Đăng nhập
-                </Link>
-            </div>
-            <div className="">
-                <Link
-                    className="text-black sm:text-white"
-                    data-drupal-selector="menu-item-user"
-                    href="/account/register"
-                >
-                    Đăng ký
-                </Link>
-            </div>
-        </>
-    )
-}
-
-function ContainerAccount() {
-    return (
-        <>
-            <div local-btn-dropdown-toggle="">
-                <Link
-                    className="block bg-gray-500 rounded-full w-[40px] h-[40px] flex items-center justify-center text-lg text-white"
-                    href="/account/dashboard"
-                >
-                    <i className="fa-solid fa-user-tie"></i>
-
-                    <div
-                        className="hidden z-[9999] rounded-b pt-2 pb-5 min-w-[160px] top-[110%] right-0 bg-gray-300 text-base"
-                        local-data-dropdown-toggle=""
-                    >
-                        <Link
-                            className="block text-[#000] ps-3 pe-5 py-2 hover:opacity-[0.7] hover:bg-gray-500 hover:text-stone-100"
-                            href="/account/dashboard"
-                        >
-                            Trang cá nhân
-                        </Link>
-                        <Link
-                            className="block text-[#000] ps-3 pe-5  py-2 hover:opacity-[0.7] hover:bg-gray-500 hover:text-stone-100"
-                            href="/account/logout"
-                        >
-                            Đăng xuất
-                        </Link>
-                    </div>
-                </Link>
-            </div>
-        </>
-    )
-}
+import { MouseEventHandler } from 'react'
 
 export default function Header() {
     return (
@@ -167,7 +64,7 @@ export default function Header() {
                                     <i className="fa fa-home" aria-hidden="true"></i>
                                 </Link>
                             </div>
-                            <div className="relative">
+                            {/* <div className="relative">
                                 <Link
                                     href="/exam-library"
                                     className="text-white"
@@ -183,7 +80,7 @@ export default function Header() {
                                         <ExamLibrary />
                                     </div>
                                 </Link>
-                            </div>
+                            </div> */}
                             <div className="grow">
                                 <ComponentSearch className="w-full bg-white" />
                             </div>
@@ -195,7 +92,115 @@ export default function Header() {
                     </LayoutCenter>
                 </section>
             </header>
-            <script src="../../../../../lib/flowbite/flowbite@2.3.js"></script>
         </>
     )
+}
+
+// function ExamLibrary() {
+//     return (
+//         <>
+//             <div className="flex flex-col gy-5">
+//                 <div>
+//                     <Link
+//                         href="/exam-library?skill=listening"
+//                         className="text-white  hover:opacity-[0.8]"
+//                     >
+//                         IELTS Listening Tests
+//                     </Link>
+//                 </div>
+//                 <div>
+//                     <Link
+//                         href="/exam-library?skill=reading"
+//                         className="text-white  hover:opacity-[0.8]"
+//                     >
+//                         IELTS Reading Tests
+//                     </Link>
+//                 </div>
+//                 <div>
+//                     <Link
+//                         href="/exam-library?skill=writing"
+//                         className="text-white  hover:opacity-[0.8]"
+//                     >
+//                         IELTS Writing Tests
+//                     </Link>
+//                 </div>
+//                 <div>
+//                     <Link
+//                         href="/exam-library?skill=speaking"
+//                         className="text-white  hover:opacity-[0.8]"
+//                     >
+//                         IELTS Speaking Tests
+//                     </Link>
+//                 </div>
+//                 <div>
+//                     <Link href="/exam-library" className="text-white  hover:opacity-[0.8]">
+//                         IELTS Test Collection
+//                     </Link>
+//                 </div>
+//             </div>
+//         </>
+//     )
+// }
+
+function ContainerSignInSignUp() {
+    return (
+        <>
+            <div className="pe-2 me-2 sm:me-0 border-r border-black md:border-white">
+                <Link
+                    className="text-black sm:text-white"
+                    data-drupal-selector="menu-item-user"
+                    href="/login"
+                >
+                    Đăng nhập
+                </Link>
+            </div>
+            <div className="">
+                <Link
+                    className="text-black sm:text-white"
+                    data-drupal-selector="menu-item-user"
+                    href="/signup"
+                >
+                    Đăng ký
+                </Link>
+            </div>
+        </>
+    )
+}
+
+function ContainerAccount() {
+    return (
+        <>
+            <div local-btn-dropdown-toggle="">
+                <Link
+                    className="block bg-gray-500 rounded-full w-[40px] h-[40px] flex items-center justify-center text-lg text-white"
+                    href="/account/dashboard"
+                >
+                    <i className="fa-solid fa-user-tie"></i>
+
+                    <div
+                        className="hidden z-[9999] rounded-b pt-2 pb-5 min-w-[160px] top-[110%] right-0 bg-gray-300 text-base"
+                        local-data-dropdown-toggle=""
+                    >
+                        <Link
+                            className="block text-[#000] ps-3 pe-5 py-2 hover:opacity-[0.7] hover:bg-gray-500 hover:text-stone-100"
+                            href="/account/dashboard"
+                        >
+                            Trang cá nhân
+                        </Link>
+                        <Link
+                            className="block text-[#000] ps-3 pe-5  py-2 hover:opacity-[0.7] hover:bg-gray-500 hover:text-stone-100"
+                            href="/account/logout"
+                            // onClick={async (e: MouseEventHandler<HTMLAnchorElement>) =>
+                            // await handleLogOut(e)
+                            // }
+                        >
+                            Đăng xuất
+                        </Link>
+                    </div>
+                </Link>
+            </div>
+        </>
+    )
+
+    async function handleLogOut(e: MouseEventHandler<HTMLAnchorElement>) {}
 }

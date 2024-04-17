@@ -11,10 +11,8 @@ export default function LayoutCenter({
     style?: CSSProperties
 }) {
     return (
-        <>
-            <section className={`layout-center ${className}`} style={style}>
-                <div className="container">{children}</div>
-            </section>
-        </>
+        <section className={`layout-center ${className}`} style={style}>
+            <section className="container">{children}</section>
+        </section>
     )
 }

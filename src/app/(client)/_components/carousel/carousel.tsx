@@ -1,5 +1,5 @@
 'use client'
-import { Carousel } from 'flowbite'
+import { Carousel, initCarousels } from 'flowbite'
 import type { CarouselItem, CarouselOptions, CarouselInterface, IndicatorItem } from 'flowbite'
 import type { InstanceOptions } from 'flowbite'
 import React, { CSSProperties, useEffect } from 'react'
@@ -16,65 +16,7 @@ export default function ContainerCarousel({
     style?: CSSProperties
 }): React.JSX.Element {
     useEffect(() => {
-        const carouselElement: HTMLElement | null = document.getElementById(id)
-        if (!carouselElement) return
-        const itemsDOM = carouselElement.querySelectorAll<HTMLElement>('[data-carousel-item]')
-        const items: CarouselItem[] = Array.from(itemsDOM).map((item, index) => ({
-            position: index,
-            el: item,
-        }))
-        // object options with default values
-        const indicatorsDOM = carouselElement.querySelectorAll<HTMLElement>(
-            '[data-carousel-slide-to]',
-        )
-        const indicators: IndicatorItem[] = Array.from(indicatorsDOM).map((item, index) => ({
-            position: index,
-            el: item,
-        }))
-        const options: CarouselOptions = {
-            defaultPosition: 1,
-            interval: 5000,
-
-            indicators: {
-                activeClasses: 'bg-white dark:bg-gray-800',
-                inactiveClasses:
-                    'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800',
-                items: indicators,
-            },
-            // callback functions
-            onNext: () => {
-                // console.log('next slider item is shown')
-            },
-            onPrev: () => {
-                // console.log('previous slider item is shown')
-            },
-            onChange: () => {
-                // console.log('new slider item has been shown')
-            },
-        }
-        // instance options object
-        const instanceOptions: InstanceOptions = {
-            id,
-            override: true,
-        }
-        const carousel: CarouselInterface = new Carousel(
-            carouselElement,
-            items,
-            options,
-            instanceOptions,
-        )
-        // carousel.cycle()
-        // set event listeners for prev and next buttons
-        const $prevButton = carouselElement.querySelector('[data-carousel-prev]')!
-        const $nextButton = carouselElement.querySelector('[data-carousel-next]')!
-
-        $prevButton.addEventListener('click', () => {
-            carousel.prev()
-        })
-
-        $nextButton.addEventListener('click', () => {
-            carousel.next()
-        })
+        initCarousels()
     }, [])
     return (
         <>
@@ -146,3 +88,67 @@ export default function ContainerCarousel({
         </>
     )
 }
+
+/**
+ * 
+ * 
+        // const carouselElement: HTMLElement | null = document.getElementById(id)
+        // if (!carouselElement) return
+        // const itemsDOM = carouselElement.querySelectorAll<HTMLElement>('[data-carousel-item]')
+        // const items: CarouselItem[] = Array.from(itemsDOM).map((item, index) => ({
+        //     position: index,
+        //     el: item,
+        // }))
+        // // object options with default values
+        // const indicatorsDOM = carouselElement.querySelectorAll<HTMLElement>(
+        //     '[data-carousel-slide-to]',
+        // )
+        // const indicators: IndicatorItem[] = Array.from(indicatorsDOM).map((item, index) => ({
+        //     position: index,
+        //     el: item,
+        // }))
+        // const options: CarouselOptions = {
+        //     defaultPosition: 1,
+        //     interval: 5000,
+
+        //     indicators: {
+        //         activeClasses: 'bg-white dark:bg-gray-800',
+        //         inactiveClasses:
+        //             'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800',
+        //         items: indicators,
+        //     },
+        //     // callback functions
+        //     onNext: () => {
+        //         // console.log('next slider item is shown')
+        //     },
+        //     onPrev: () => {
+        //         // console.log('previous slider item is shown')
+        //     },
+        //     onChange: () => {
+        //         // console.log('new slider item has been shown')
+        //     },
+        // }
+        // // instance options object
+        // const instanceOptions: InstanceOptions = {
+        //     id,
+        //     override: true,
+        // }
+        // const carousel: CarouselInterface = new Carousel(
+        //     carouselElement,
+        //     items,
+        //     options,
+        //     instanceOptions,
+        // )
+        // // carousel.cycle()
+        // // set event listeners for prev and next buttons
+        // const $prevButton = carouselElement.querySelector('[data-carousel-prev]')!
+        // const $nextButton = carouselElement.querySelector('[data-carousel-next]')!
+
+        // $prevButton.addEventListener('click', () => {
+        //     carousel.prev()
+        // })
+
+        // $nextButton.addEventListener('click', () => {
+        //     carousel.next()
+        // })
+ */

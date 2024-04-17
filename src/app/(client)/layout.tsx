@@ -17,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Header />
                 {children}
                 <Footer />
+                <div id="alert" className="z-50 fixed top-[20%] right-0 pointer-events-none"></div>
             </body>
         </html>
     )

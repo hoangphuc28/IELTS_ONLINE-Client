@@ -28,11 +28,6 @@ export default function Page() {
                                 backgroundImage: `url(https://flowbite.com/docs/images/carousel/carousel-2.svg)`,
                             }}
                         ></div>
-                        {/* <img
-                            src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
-                            className="absolute-center w-full h-full"
-                            alt="..."
-                        /> */}
                     </CarouselItem>
                 </ContainerCarousel>
 

@@ -16,26 +16,6 @@ export default function Footer() {
                             </Link>
                             <h2 className="mt-1">IELTS</h2>
                         </section>
-                        <section>
-                            <h2 className="text-xl uppercase">Thư viện bài thi</h2>
-                            <div className="mt-3 text-stone-300">
-                                <a className="block hover:bg-gray-500 hover:text-white" href="">
-                                    Bài thi Listening
-                                </a>
-                                <a className="block hover:bg-gray-500 hover:text-white" href="">
-                                    Bài thi Reading
-                                </a>
-                                <a className="block hover:bg-gray-500 hover:text-white" href="">
-                                    Bài thi Writing
-                                </a>
-                                <a className="block hover:bg-gray-500 hover:text-white" href="">
-                                    Bài thi Speaking
-                                </a>
-                                <a className="block hover:bg-gray-500 hover:text-white" href="">
-                                    Bài thi tổng hợp
-                                </a>
-                            </div>
-                        </section>
                         <section className="header-banner">
                             <Link href="#">
                                 <img
