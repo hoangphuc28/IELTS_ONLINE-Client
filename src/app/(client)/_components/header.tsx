@@ -2,7 +2,10 @@
 import Link from 'next/link'
 import LayoutCenter from './layoutCenter'
 import ComponentSearch from './search'
-import { MouseEventHandler } from 'react'
+import { MouseEvent } from 'react'
+import { createToastDanger } from './toast/sysToast'
+import authService from '@/services/auth.service'
+import { redirect } from 'next/navigation'
 
 export default function Header() {
     return (
@@ -190,9 +193,7 @@ function ContainerAccount() {
                         <Link
                             className="block text-[#000] ps-3 pe-5  py-2 hover:opacity-[0.7] hover:bg-gray-500 hover:text-stone-100"
                             href="/account/logout"
-                            // onClick={async (e: MouseEventHandler<HTMLAnchorElement>) =>
-                            // await handleLogOut(e)
-                            // }
+                            onClick={async (e) => await handleLogOut(e)}
                         >
                             Đăng xuất
                         </Link>
@@ -202,5 +203,13 @@ function ContainerAccount() {
         </>
     )
 
-    async function handleLogOut(e: MouseEventHandler<HTMLAnchorElement>) {}
+    async function handleLogOut(e: MouseEvent<HTMLAnchorElement, any>) {
+        e.preventDefault()
+        try {
+            const data = await authService.logout()
+        } catch (error) {
+            console.log(error)
+            createToastDanger('Đăng xuất thất bại!')
+        }
+    }
 }

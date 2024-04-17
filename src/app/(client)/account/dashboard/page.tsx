@@ -1,13 +1,13 @@
-import LayoutCenter from '../../_components/layoutCenter'
+import ComponentOverallAssessment from './_components/overallAssessment'
 
 export default function Page() {
     return (
         <>
-            <main className="min-h-[50vh]">
-                <LayoutCenter>
-                    <h1>Dashboard</h1>
-                </LayoutCenter>
-            </main>
+            <section>
+                <ComponentOverallAssessment />
+                <ComponentOverallAssessment />
+                <ComponentOverallAssessment />
+            </section>
         </>
     )
 }

@@ -19,6 +19,6 @@ class AuthService extends BaseService {
     }
 }
 
-const testService = new AuthService(process.env.NEXT_PUBLIC_API_URL + '/auth');
+const authService = new AuthService(process.env.NEXT_PUBLIC_API_URL + '/auth');
 
-export default testService;
+export default authService;

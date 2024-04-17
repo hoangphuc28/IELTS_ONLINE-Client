@@ -54,7 +54,7 @@ export default function ComponentSearch({
             const form: HTMLFormElement = e.currentTarget
             const formData = new FormData(form)
             const data = Object.fromEntries(formData.entries())
-            console.log('search: ', data?.testCode)
+            // console.log('search: ', data?.testCode)
             if (!data?.testCode) return
             const haveCode = await testService.search(data.testCode as string)
             if (haveCode) {
