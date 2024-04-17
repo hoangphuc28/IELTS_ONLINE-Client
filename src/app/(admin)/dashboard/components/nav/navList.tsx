@@ -4,7 +4,6 @@ import ExamIcon from "@/public/admin/svg/exam.svg";
 import QuestionIcon from "@/public/admin/svg/question.svg";
 import StudentIcon from "@/public/admin/svg/student.svg";
 import LogoutIcon from "@/public/admin/svg/logout.svg";
-
 import { usePathname } from 'next/navigation'
 import Image from "next/image";
 import "../../styles/nav/list.scss"
@@ -55,7 +54,7 @@ export default function NavList() {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link href="/dashboard/students">
+                    <Link href="/">
                         <div>
                         <Image src={LogoutIcon} alt="question-icon" />
                         <span>
@@ -64,7 +63,7 @@ export default function NavList() {
                         </div>
                     </Link>
                 </li>
-            </ul>
+           </ul>
         </div>
     )
 }
