@@ -4,8 +4,7 @@ import LayoutCenter from './layoutCenter'
 import ComponentSearch from './search'
 import { MouseEvent } from 'react'
 import { createToastDanger } from './toast/sysToast'
-import authService from '@/services/auth.service'
-import { redirect } from 'next/navigation'
+import authService from '@services/auth.service'
 
 export default function Header() {
     return (

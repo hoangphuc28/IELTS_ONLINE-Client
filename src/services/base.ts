@@ -1,6 +1,6 @@
 import type { AxiosInstance, InternalAxiosRequestConfig } from 'axios'
-import createApiClient from './api'
-import { regexResponse } from '@/utils/shares'
+import createApiClient from '@services/api'
+import { regexResponse } from '@utils/shares'
 
 class BaseService {
     api: AxiosInstance

@@ -1,5 +1,5 @@
-import { regexResponse } from "@/utils/shares";
-import BaseService from "./base";
+import { regexResponse } from "@utils/shares";
+import BaseService from "@services/base";
 
 class TestService extends BaseService {
     constructor(url: string) {

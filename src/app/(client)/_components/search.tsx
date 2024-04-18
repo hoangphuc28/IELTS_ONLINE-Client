@@ -1,11 +1,7 @@
 import { useRouter } from 'next/navigation'
 import { CSSProperties, FormEvent } from 'react'
-import ComponentSysToast, { createToastDanger } from './toast/sysToast'
-import ReactDOM from 'react-dom'
-import { CONSTANT as toastConstant } from './toast/sysToast'
-import { createRoot } from 'react-dom/client'
-import { Container } from 'react-dom/client'
-import testService from '@/services/test.service'
+import { createToastDanger } from './toast/sysToast'
+import testService from '@services/test.service'
 
 export default function ComponentSearch({
     className,
