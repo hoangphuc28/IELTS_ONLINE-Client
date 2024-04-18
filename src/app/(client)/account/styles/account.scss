@@ -1,0 +1,26 @@
+.account-page {
+    .account-page-content {
+        & > section {
+            & {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1.8rem;
+            }
+
+            & > section {
+                display: flex;
+                flex-direction: column;
+                row-gap: 0.6rem;
+
+                & > h2:first-child {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+.highcharts-credits {
+    pointer-events: none;
+}

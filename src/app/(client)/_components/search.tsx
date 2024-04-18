@@ -1,3 +1,4 @@
+'use client'
 import { useRouter } from 'next/navigation'
 import { CSSProperties, FormEvent } from 'react'
 import { createToastDanger } from './toast/sysToast'

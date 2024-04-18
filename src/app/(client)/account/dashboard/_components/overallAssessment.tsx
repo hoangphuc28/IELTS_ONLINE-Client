@@ -3,9 +3,9 @@ import ComponentCardMini from './cards/mini'
 export default function ComponentOverallAssessment() {
     return (
         <section>
-            <h2 className="text-xl font-bold">Đánh giá tổng quan</h2>
+            <h2 className="">Đánh giá tổng quan</h2>
 
-            <section className="mt-3 flex gap-2">
+            <section className="flex gap-2">
                 <ComponentCardMini
                     iconClass="fa-solid fa-arrow-trend-up"
                     name="Điểm trung bình"

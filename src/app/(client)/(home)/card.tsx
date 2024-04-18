@@ -30,7 +30,7 @@ export default function ComponentCard({
                     {data?.title ? data.title : ''}
                 </p>
                 <div className="text-right">
-                    <span className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-800 rounded hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <span className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300">
                         <span>Chi tiết</span>
                         <i className="ms-1 fa-solid fa-arrow-right"></i>
                     </span>

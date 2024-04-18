@@ -9,17 +9,17 @@ import authService from '@services/auth.service'
 export default function Header() {
     return (
         <>
-            <header>
+            <header className="mb-1 shadow">
                 {/* logo desktop and banner and header mobile */}
                 <section>
                     <LayoutCenter>
-                        <section className="hidden sm:flex items-center justify-between">
+                        {/* <section className="hidden sm:flex items-center justify-between">
                             <div className="logo lg:w-48 sm:w-28">
                                 <Link href="/" className="logo">
                                     <img
                                         alt=""
                                         className="w-100 w-full"
-                                        src="./../../../../../IELTS Online Practice Tests FREE _ IELTS Online Tests_files/logo.svg"
+                                        src={process.env.NEXT_PUBLIC_APP_LOGO}
                                     />
                                 </Link>
                             </div>
@@ -34,13 +34,14 @@ export default function Header() {
                                     />
                                 </Link>
                             </div>
-                        </section>
+                        </section> */}
                         <section className="header-mobile flex sm:hidden justify-between items-center px-2 py-2 shadow shadow-lg-[#000]">
-                            <div className="logo mobile w-24">
-                                <Link href="/">
+                            <div className="logo mobile w-16">
+                                <Link href="/" className="logo">
                                     <img
-                                        src="./../../../../../IELTS Online Practice Tests FREE _ IELTS Online Tests_files/logo_mobile.svg"
                                         alt=""
+                                        className="w-100 w-full"
+                                        src={process.env.NEXT_PUBLIC_APP_LOGO}
                                     />
                                 </Link>
                             </div>
@@ -51,19 +52,17 @@ export default function Header() {
                         </section>
                     </LayoutCenter>
                 </section>
-                {/* feature */}
-                <section
-                    className="hidden md:block"
-                    style={{ backgroundColor: '#294563', height: '50px' }}
-                >
+                {/* feature - nav */}
+                <section className="hidden h-[80px] bg-[#294563] bg-purple-400 bg-yellow-400 bg-pink-400 md:block py-2">
                     <LayoutCenter className="h-full">
                         <nav className="h-full flex justify-between items-center gap-x-5">
-                            <div>
-                                <Link
-                                    href="/"
-                                    className="main-menu__home-link text-white text-[20px]"
-                                >
-                                    <i className="fa fa-home" aria-hidden="true"></i>
+                            <div className="h-full logo shadow-lg rounded-full">
+                                <Link href="/" className="h-full logo">
+                                    <img
+                                        alt=""
+                                        className="h-full"
+                                        src={process.env.NEXT_PUBLIC_APP_LOGO}
+                                    />
                                 </Link>
                             </div>
                             {/* <div className="relative">
@@ -180,17 +179,24 @@ function ContainerAccount() {
                     <i className="fa-solid fa-user-tie"></i>
 
                     <div
-                        className="hidden z-[9999] rounded-b pt-2 pb-5 min-w-[160px] top-[110%] right-0 bg-gray-300 text-base"
+                        // {/** bg-amber-100 */}
+                        className="hidden z-[9999] bg-white rounded-b pt-2 pb-5 min-w-[160px] top-[110%] text-base shadow shadow-fuchsia-400"
                         local-data-dropdown-toggle=""
                     >
                         <Link
-                            className="block text-[#000] ps-3 pe-5 py-2 hover:opacity-[0.7] hover:bg-gray-500 hover:text-stone-100"
+                            className="block text-[#000] text-violet-800 ps-3 pe-5 py-2 hover:bg-amber-300 hover:text-white"
+                            href="/dashboard"
+                        >
+                            Admin Dashboard
+                        </Link>
+                        <Link
+                            className="block text-[#000] text-violet-800 ps-3 pe-5 py-2 hover:bg-amber-300 hover:text-white"
                             href="/account/dashboard"
                         >
                             Trang cá nhân
                         </Link>
                         <Link
-                            className="block text-[#000] ps-3 pe-5  py-2 hover:opacity-[0.7] hover:bg-gray-500 hover:text-stone-100"
+                            className="block text-[#000] text-violet-800 ps-3 pe-5  py-2 hover:bg-amber-300 hover:text-white"
                             href="/account/logout"
                             onClick={async (e) => await handleLogOut(e)}
                         >
