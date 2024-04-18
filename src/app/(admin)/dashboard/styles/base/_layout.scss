@@ -1,0 +1,14 @@
+.layout {
+    .layout-cover {
+        display: flex;
+        position:fixed;
+        inset: 0;
+        .page-contain {
+            overflow-y: scroll;
+            width: 85%;
+            margin: 20px;
+           
+            
+        }
+    }
+}
