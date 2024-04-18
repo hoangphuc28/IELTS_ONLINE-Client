@@ -1,13 +1,36 @@
+import HistoryItem from '../test-history/_components/item'
+import ComponentHistory from '../test-history/_components/listItem'
 import HightChart from './_components/charts/highChart'
 import ComponentOverallAssessment from './_components/overallAssessment'
 
 export default function Page() {
+    const histories = [
+        {
+            time: '12:12:00 - 12/12/1997',
+            name: 'Kiểm thử chất lượng đầu vào IELTS',
+            grade: 8.9,
+        },
+        {
+            time: '12:12:00 - 12/12/1997',
+            name: 'Kiểm thử chất lượng đầu vào IELTS',
+            grade: 8.9,
+        },
+        {
+            time: '12:12:00 - 12/12/1997',
+            name: 'Kiểm thử chất lượng đầu vào IELTS',
+            grade: 8.9,
+        },
+        {
+            time: '12:12:00 - 12/12/1997',
+            name: 'Kiểm thử chất lượng đầu vào IELTS',
+            grade: 8.9,
+        },
+    ]
     return (
         <>
             <section className="flex flex-col gap-5">
                 <ComponentOverallAssessment />
                 <section>
-                    <h2 className="">Đánh giá tổng quan</h2>
                     <HightChart
                         title="Điểm số"
                         props={{}}
@@ -66,6 +89,11 @@ export default function Page() {
                             },
                         ]}
                     />
+                </section>
+                <section>
+                    <h2>Lịch sử</h2>
+
+                    <ComponentHistory data={histories} />
                 </section>
             </section>
         </>

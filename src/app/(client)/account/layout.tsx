@@ -13,7 +13,7 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
     return (
         <>
             <main className="account-page min-h-[80vh]">
-                <LayoutCenter className="my-5">
+                <LayoutCenter className="my-5 pb-3">
                     <section className="flex flex-col sm:grid sm:grid-cols-12 gap-x-5">
                         <SideBar className="col-span-3" target={activeSidebar} />
                         <article className="col-span-9 text-neutral-600 account-page-content">
