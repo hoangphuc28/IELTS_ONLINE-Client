@@ -32,7 +32,6 @@
     &:hover {
         // background-color: red;
         & [local-data-dropdown-toggle] {
-            position: absolute;
             display: block;
         }
         &::before {

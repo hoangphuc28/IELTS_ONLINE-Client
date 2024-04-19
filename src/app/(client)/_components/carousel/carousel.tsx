@@ -22,48 +22,25 @@ export default function ContainerCarousel({
         <>
             <section
                 id={id}
-                className={`min-w-2xl min-h-2 mx-auto overflow-hidden ` + (className || '')}
+                className={`min-w-2xl min-h-2 mx-auto overflow-hidden ${
+                    className ? className : ''
+                } carousel`}
                 style={style}
             >
                 <section className="relative h-full" data-carousel="static">
                     <section className="overflow-hidden relative h-full">
                         <section>
                             {children}
-                            {(() => {
+                            {/* {(() => {
                                 if (React.Children.count(children) > 2) return
                                 return <>{children}</>
-                            })()}
+                            })()} */}
                         </section>
-                        {/* Slider indicators */}
-                        {/* <div className="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                            {React.Children.toArray(children).map((child: any, index: number) => (
-                                <button
-                                    key={`carousel-toggle-${index}`}
-                                    type="button"
-                                    className="hidden w-3 h-3 rounded-full"
-                                    aria-current={index === 0}
-                                    aria-label={`Slide ` + (index + 1)}
-                                    data-carousel-slide-to={index}
-                                ></button>
-                            ))}
-                            {React.Children.toArray(children).map((child: any, index: number) => {
-                                if (numOfChild > 2) return
-                                return (
-                                    <button
-                                        key={`carousel-toggle-${index + 2}`}
-                                        type="button"
-                                        className="hidden w-3 h-3 rounded-full"
-                                        aria-label={`Slide ` + (index + 1 + 2)}
-                                        data-carousel-slide-to={index + 2}
-                                    ></button>
-                                )
-                            })}
-                        </div> */}
                         {/* Slider controls */}
                         <section>
                             <button
                                 type="button"
-                                className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                                className="absolute top-[50%] translate-[-50%] start-0 z-30 flex items-center justify-center px-4 cursor-pointer group focus:outline-none"
                                 data-carousel-prev
                             >
                                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -73,7 +50,7 @@ export default function ContainerCarousel({
                             </button>
                             <button
                                 type="button"
-                                className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                                className="absolute top-[50%] translate-[-50%] end-0 z-30 flex items-center justify-center px-4 cursor-pointer group focus:outline-none"
                                 data-carousel-next
                             >
                                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -88,6 +65,35 @@ export default function ContainerCarousel({
         </>
     )
 }
+
+/**
+ * 
+    Slider indicators
+    <div className="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+        {React.Children.toArray(children).map((child: any, index: number) => (
+            <button
+                key={`carousel-toggle-${index}`}
+                type="button"
+                className="hidden w-3 h-3 rounded-full"
+                aria-current={index === 0}
+                aria-label={`Slide ` + (index + 1)}
+                data-carousel-slide-to={index}
+            ></button>
+        ))}
+        {React.Children.toArray(children).map((child: any, index: number) => {
+            if (numOfChild > 2) return
+            return (
+                <button
+                    key={`carousel-toggle-${index + 2}`}
+                    type="button"
+                    className="hidden w-3 h-3 rounded-full"
+                    aria-label={`Slide ` + (index + 1 + 2)}
+                    data-carousel-slide-to={index + 2}
+                ></button>
+            )
+        })}
+    </div>
+*/
 
 /**
  * 

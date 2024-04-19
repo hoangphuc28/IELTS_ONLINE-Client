@@ -29,12 +29,12 @@ export default function ComponentCard({
                 >
                     {data?.title ? data.title : ''}
                 </p>
-                <div className="text-right">
+                <section className="text-right">
                     <span className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300">
                         <span>Chi tiết</span>
                         <i className="ms-1 fa-solid fa-arrow-right"></i>
                     </span>
-                </div>
+                </section>
             </Link>
         </>
     )

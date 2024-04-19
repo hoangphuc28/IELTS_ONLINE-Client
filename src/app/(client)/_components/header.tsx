@@ -36,7 +36,7 @@ export default function Header() {
                             </div>
                         </section> */}
                         <section className="header-mobile flex sm:hidden justify-between items-center px-2 py-2 shadow shadow-lg-[#000]">
-                            <div className="logo mobile w-16">
+                            <section className="logo mobile w-16">
                                 <Link href="/" className="logo">
                                     <img
                                         alt=""
@@ -44,7 +44,7 @@ export default function Header() {
                                         src={process.env.NEXT_PUBLIC_APP_LOGO}
                                     />
                                 </Link>
-                            </div>
+                            </section>
                             <nav className="h-full flex md:hidden items-center">
                                 <ContainerSignInSignUp />
                                 <ContainerAccount />
@@ -56,7 +56,7 @@ export default function Header() {
                 <section className="hidden h-[80px] bg-[#294563] bg-purple-400 bg-yellow-400 bg-pink-400 md:block py-2">
                     <LayoutCenter className="h-full">
                         <nav className="h-full flex justify-between items-center gap-x-5">
-                            <div className="h-full logo shadow-lg rounded-full">
+                            <section className="h-full logo shadow-lg rounded-full">
                                 <Link href="/" className="h-full logo">
                                     <img
                                         alt=""
@@ -64,7 +64,7 @@ export default function Header() {
                                         src={process.env.NEXT_PUBLIC_APP_LOGO}
                                     />
                                 </Link>
-                            </div>
+                            </section>
                             {/* <div className="relative">
                                 <Link
                                     href="/exam-library"
@@ -82,13 +82,13 @@ export default function Header() {
                                     </div>
                                 </Link>
                             </div> */}
-                            <div className="grow">
+                            <section className="grow">
                                 <ComponentSearch className="w-full bg-white" />
-                            </div>
-                            <div className="flex items-center gap-x-2">
+                            </section>
+                            <section className="flex items-center gap-x-2">
                                 <ContainerSignInSignUp />
                                 <ContainerAccount />
-                            </div>
+                            </section>
                         </nav>
                     </LayoutCenter>
                 </section>
@@ -146,7 +146,7 @@ export default function Header() {
 function ContainerSignInSignUp() {
     return (
         <>
-            <div className="pe-2 me-2 sm:me-0 border-r border-black md:border-white">
+            <section className="pe-2 me-2 sm:me-0 border-r border-black md:border-white">
                 <Link
                     className="text-black sm:text-white"
                     data-drupal-selector="menu-item-user"
@@ -154,8 +154,8 @@ function ContainerSignInSignUp() {
                 >
                     Đăng nhập
                 </Link>
-            </div>
-            <div className="">
+            </section>
+            <section className="">
                 <Link
                     className="text-black sm:text-white"
                     data-drupal-selector="menu-item-user"
@@ -163,7 +163,7 @@ function ContainerSignInSignUp() {
                 >
                     Đăng ký
                 </Link>
-            </div>
+            </section>
         </>
     )
 }
@@ -171,40 +171,39 @@ function ContainerSignInSignUp() {
 function ContainerAccount() {
     return (
         <>
-            <div local-btn-dropdown-toggle="">
+            <section local-btn-dropdown-toggle="">
                 <Link
                     className="block bg-gray-500 rounded-full w-[40px] h-[40px] flex items-center justify-center text-lg text-white"
                     href="/account/dashboard"
                 >
                     <i className="fa-solid fa-user-tie"></i>
-
-                    <div
-                        // {/** bg-amber-100 */}
-                        className="hidden z-[9999] bg-white rounded-b pt-2 pb-5 min-w-[160px] top-[110%] text-base shadow shadow-fuchsia-400"
-                        local-data-dropdown-toggle=""
-                    >
-                        <Link
-                            className="block text-[#000] text-violet-800 ps-3 pe-5 py-2 hover:bg-amber-300 hover:text-white"
-                            href="/dashboard"
-                        >
-                            Admin Dashboard
-                        </Link>
-                        <Link
-                            className="block text-[#000] text-violet-800 ps-3 pe-5 py-2 hover:bg-amber-300 hover:text-white"
-                            href="/account/dashboard"
-                        >
-                            Trang cá nhân
-                        </Link>
-                        <Link
-                            className="block text-[#000] text-violet-800 ps-3 pe-5  py-2 hover:bg-amber-300 hover:text-white"
-                            href="/account/logout"
-                            onClick={async (e) => await handleLogOut(e)}
-                        >
-                            Đăng xuất
-                        </Link>
-                    </div>
                 </Link>
-            </div>
+                <section
+                    // {/** bg-amber-100 */}
+                    className="hidden z-[9999] bg-white rounded-b pt-2 pb-5 min-w-[160px] absolute top-[110%] right-0 text-base shadow shadow-fuchsia-400"
+                    local-data-dropdown-toggle=""
+                >
+                    <Link
+                        className="block text-[#000] text-violet-800 ps-3 pe-5 py-2 hover:bg-amber-300 hover:text-white"
+                        href="/admin/dashboard"
+                    >
+                        Admin Dashboard
+                    </Link>
+                    <Link
+                        className="block text-[#000] text-violet-800 ps-3 pe-5 py-2 hover:bg-amber-300 hover:text-white"
+                        href="/account/dashboard"
+                    >
+                        Trang cá nhân
+                    </Link>
+                    <Link
+                        className="block text-[#000] text-violet-800 ps-3 pe-5  py-2 hover:bg-amber-300 hover:text-white"
+                        href="/account/logout"
+                        onClick={async (e) => await handleLogOut(e)}
+                    >
+                        Đăng xuất
+                    </Link>
+                </section>
+            </section>
         </>
     )
 
