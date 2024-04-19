@@ -32,11 +32,6 @@ export default function CarouselItem({
                 <div
                     className="w-full h-full bg-img-center"
                     style={{
-                        // backgroundImage: `url(${
-                        //     data.url.length > 0
-                        //         ? data.url
-                        //         : '../../../../../../assets/img/carousel-default.svg'
-                        // })`,
                         background: `url(${data.url}), url(../../../../../../assets/img/carousel-default.svg)`,
                     }}
                 >
@@ -49,6 +44,7 @@ export default function CarouselItem({
                                     height="100%"
                                     playing={true}
                                     suppressHydrationWarning
+                                    loop={true}
                                 />
                             ) : (
                                 ''
