@@ -1,0 +1,39 @@
+.table-toolbar {
+    box-shadow: 0px 3px 6px 0px rgba(51, 51, 51, 0.1);
+    z-index: 10;
+    margin-bottom: 16px !important;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+        a {
+            border-radius: 10px;
+            padding: 13px 18px;
+            transition: box-shadow .3s;
+            color: #fff !important;
+            border-radius: 4px !important;
+            text-decoration: none !important;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 14px;
+            display: block;
+            background-image: linear-gradient(60deg, #36c0fd 0%, #3672fd 100%) !important;
+            img {
+                margin-right: 5px;
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
+    .right {
+        .search {
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+        .flex {
+            align-items: flex-end;
+            display: flex;
+        }
+    }
+}

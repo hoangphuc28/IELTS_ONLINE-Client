@@ -1,0 +1,46 @@
+.exam {
+    display: flex;
+    height: 100%;
+
+    .exam-left {
+        overflow: scroll;
+        width: 30%;
+
+        .cover {
+            height: 100%;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+
+        }
+    }
+
+    .exam-right {
+        overflow: scroll;
+        height: 100%;
+        width: 100%;
+        .search {
+            input {
+            border-radius: 5px;
+
+            }
+        }
+
+        .cover {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            .exams-contain {
+               height: 80%;
+                .exams-list {
+                    overflow: auto;
+                    height: 100%;
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,107 @@
+@import "../variables.scss";
+
+.exam-item {
+    padding: 20px 30px 20px 0 ;
+
+    span {
+        color: $font-color2;
+    }
+
+    border-bottom: 1px solid $font-color2;
+
+    .item-infor {
+        display: flex;
+
+        .exam-infor-left {
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            img {
+                margin-left: 20px;
+                border-radius: 5px;
+                width: 150px;
+                height: 100px;
+            }
+        }
+
+        .exam-infor-right {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .infor-right-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                span {
+                    padding: 5px;
+                    border-radius: 20px;
+                    font-size: 14px;
+                    background: $color-white1;
+                }
+                .container {
+                    .des {
+                        font-size: 14px;
+                        margin-top:10px;
+                        color: $font-color2;
+                    }
+
+
+                }
+                a {
+                    text-align: center;
+                    display: block;
+                    border-radius: 4px !important;
+                    font-size: 14px;
+                    width: 120px;
+                    height: 40px;
+                    line-height: 40px;
+                    padding: 0;
+                    margin-left: 16px;
+                    border: 0 !important;
+                    background-color: #36aafd;
+                    color: white;
+                    transition: all .2s;
+                    &:hover {
+                        background-color: #0077ff;
+                    }
+                }
+            }
+
+            .infor-right-bottom {
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                .text-left-bottom {
+                    font-size: 14px;
+                }
+
+                .text-right-bottom {
+                    a {
+                        color: $color-blue4;
+                        text-decoration: none;
+                        font-size: 14px;
+                        &:not(:last-child):after {
+                            content: "|";
+                            color: #e6e6e6!important;
+                            margin: 0 9px;
+                        }
+                        &:hover {
+                            color: $color-blue2;
+                        }
+                    }
+                    a:last-child {
+                        color: $color-red1;
+                        &:hover {
+                            color: #ed7271;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
