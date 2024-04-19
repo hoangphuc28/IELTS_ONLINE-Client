@@ -20,7 +20,7 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@admin/*" :["./src/app/(admin)/*"]
+      "@admin/*" :["./src/app/(admin)/*"],
       "@utils/*": ["./src/utils/*"],
       "@services/*": ["./src/services/*"],
       "@clientAccount": ["./src/app/(client)/account/*"],
