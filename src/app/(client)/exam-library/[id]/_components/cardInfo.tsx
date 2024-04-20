@@ -7,14 +7,14 @@ export default function ComponentCardInfo({ data }: { data: ITest }) {
                 <div
                     className="w-48 h-48 rounded-lg bg-img-center"
                     style={{
-                        background: 'url(../../../../assets/img/src-test-default.jpg)',
+                        background: `url(${data.src}), url(../../../../assets/img/src-test-default.jpg)`,
                     }}
                 ></div>
                 <div className="">
                     <h2 className="w-full font-bold text-2xl text-violet-800">{data.name}</h2>
                     <p className="text-stone-400">
-                        <i className="fa-regular fa-calendar"></i>{' '}
-                        <span>Đăng ngày: {data.updatedAt}</span>
+                        <i className="fa-regular fa-calendar me-1"></i>{' '}
+                        <span>{data.updatedAt}</span>
                     </p>
                     <p className="text-stone-400">{data.title}</p>
                     <p className="text-stone-400">{data.description}</p>

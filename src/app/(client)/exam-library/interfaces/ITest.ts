@@ -8,8 +8,8 @@ export default interface ITest {
     description: string
     time: string
     status: string
-    password: string
-    createdAt: string
-    updatedAt: string
+    hasPassword: boolean
+    createdAt?: string
+    updatedAt?: string
     details: Array<IMiniTest>
 }

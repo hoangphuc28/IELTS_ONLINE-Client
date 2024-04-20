@@ -28,7 +28,6 @@ export default function ComponentSearch({
                     <div className="flex overflow-hidden" style={{ borderRadius: 'inherit' }}>
                         <input
                             type="search"
-                            id="default-search"
                             className="block grow px-4 py-2 ps-10 text-base text-gray-900 border-0 focus:ring-0 focus:outline-0 bg-gray-50 bg-transparent"
                             placeholder="Mã kiểm tra..."
                             required

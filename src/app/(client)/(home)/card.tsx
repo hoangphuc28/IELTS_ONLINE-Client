@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { CSSProperties } from 'react'
+import ITest from '@client/exam-library/interfaces/ITest'
 
 export default function ComponentCard({
     className,
@@ -8,7 +9,7 @@ export default function ComponentCard({
 }: {
     className?: string
     style?: CSSProperties
-    data: { name: string; title?: string }
+    data: ITest
 }) {
     return (
         <>
@@ -16,6 +17,12 @@ export default function ComponentCard({
                 href="/exam-library/abc"
                 className="mb-4 max-w-sm px-4 py-6 bg-white border border-gray-200 rounded shadow dark:bg-gray-800 dark:border-gray-700"
             >
+                <div
+                    className="w-48 h-48 rounded-lg bg-img-center"
+                    style={{
+                        background: `url(${data.src}), url(../../../../assets/img/src-test-default.jpg)`,
+                    }}
+                ></div>
                 <h5 className="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
                     {data.name}
                 </h5>
@@ -31,7 +38,7 @@ export default function ComponentCard({
                 </p>
                 <section className="text-right">
                     <span className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300">
-                        <span>Chi tiết</span>
+                        <span>Làm bài</span>
                         <i className="ms-1 fa-solid fa-arrow-right"></i>
                     </span>
                 </section>

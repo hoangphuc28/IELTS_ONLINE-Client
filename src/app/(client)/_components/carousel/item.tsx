@@ -10,12 +10,10 @@ export default function CarouselItem({
     className,
     style,
     data,
-    keyName,
 }: {
     className?: string
     style?: CSSProperties
     data: ICarouselData
-    keyName: string
 }) {
     const [isClient, setIsClient] = useState(false)
     useEffect(() => {
@@ -24,7 +22,8 @@ export default function CarouselItem({
     return (
         <>
             <div
-                key={keyName}
+                // key={'-abc-' + (new Date().getTime() * Math.random()).toString()}
+                // key={data.type + '-' + data.url + (new Date().getTime() * Math.random()).toString()}
                 className={`hidden duration-700 ease-in-out${className ? ` ${className}` : ''}`}
                 style={style}
                 data-carousel-item

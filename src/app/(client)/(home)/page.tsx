@@ -1,14 +1,19 @@
 'use client'
-import { useEffect } from 'react'
-import ReactPlayer from 'react-player'
+import { useEffect, useState } from 'react'
 import ContainerCarousel from '../_components/carousel/carousel'
 import CarouselItem from '../_components/carousel/item'
 import LayoutCenter from '../_components/layoutCenter'
 import ComponentSearch from '../_components/search'
 import ComponentCard from './card'
 import ICarouselData from './interfaces/ICarouselData'
+import ITest from '@client/exam-library/interfaces/ITest'
 
 export default function Page() {
+    const [isClient, setIsClient] = useState(false)
+    useEffect(() => {
+        setIsClient(true)
+    }, [])
+
     const carousels: Array<ICarouselData> = [
         {
             type: 'video',
@@ -23,24 +28,39 @@ export default function Page() {
         carousels.push(...carousels)
     }
 
+    const test: ITest = {
+        code: 'haha',
+        name: 'IELTS Mock Test 2023 December',
+        title: 'Bài này để làm mẫu',
+        description: 'Bài này để làm mẫu, gió thoang thoảng, âm vang lăn tăn, tí tắt tí tắt...',
+        src: '',
+        createdAt: new Date().toLocaleString(),
+        details: [],
+        hasPassword: false,
+        status: '',
+        time: '03:00:00',
+        updatedAt: new Date().toLocaleString(),
+    }
+    const tests: ITest[] = []
+    while (tests.length < 18) {
+        tests.push({ ...test })
+    }
+    tests[tests.length - 1].src = ''
+
     return (
         <>
             <main>
-                <ContainerCarousel
-                    id="carousel"
-                    className="w-full overflow-hidden h-[50vh] md:h-[70vh]"
-                >
-                    {carousels.map((carouselUrl: ICarouselData, index: number) => {
-                        return (
-                            <>
-                                <CarouselItem
-                                    keyName={`home-carousel-${index}-${index}`}
-                                    data={carouselUrl}
-                                ></CarouselItem>
-                            </>
-                        )
-                    })}
-                </ContainerCarousel>
+                {isClient && (
+                    <ContainerCarousel
+                        id="carousel"
+                        className="w-full overflow-hidden h-[50vh] md:h-[70vh]"
+                    >
+                        {carousels.map((carouselUrl: ICarouselData, index: number) => {
+                            const key = `home-carousel-item-${index}`
+                            return <CarouselItem key={key} data={carouselUrl}></CarouselItem>
+                        })}
+                    </ContainerCarousel>
+                )}
 
                 <LayoutCenter className="my-5 min-h-1/2">
                     <section className="px-5 py-5">
@@ -52,13 +72,10 @@ export default function Page() {
                         </section>
                         <section className="min-h-[60vh] flex flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-x-3">
                             {(() => {
-                                return [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2].map((e, index) => (
+                                return tests.map((test, index) => (
                                     <ComponentCard
-                                        key={`card-` + index}
-                                        data={{
-                                            name: 'Noteworthy technology acquisitions 2021 Noteworthy technology acquisitions 2021 Noteworthy technology acquisitions 2021',
-                                            title: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
-                                        }}
+                                        key={`card-` + test.code + '-' + index}
+                                        data={test}
                                     />
                                 ))
                             })()}

@@ -2,7 +2,7 @@
 import { Carousel, initCarousels } from 'flowbite'
 import type { CarouselItem, CarouselOptions, CarouselInterface, IndicatorItem } from 'flowbite'
 import type { InstanceOptions } from 'flowbite'
-import React, { CSSProperties, useEffect } from 'react'
+import React, { CSSProperties, LegacyRef, useEffect, useRef, useState } from 'react'
 
 export default function ContainerCarousel({
     children,
@@ -15,13 +15,18 @@ export default function ContainerCarousel({
     className?: string
     style?: CSSProperties
 }): React.JSX.Element {
+    const refCarousel = useRef<HTMLElement>(null)
     useEffect(() => {
+        if (!refCarousel.current) return
+        // const carousel = refCarousel.current
+        // const crs = new Carousel(carousel)
         initCarousels()
     }, [])
     return (
         <>
             <section
                 id={id}
+                ref={refCarousel}
                 className={`min-w-2xl min-h-2 mx-auto overflow-hidden ${
                     className ? className : ''
                 } carousel`}
