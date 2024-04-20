@@ -1,4 +1,4 @@
-import LayoutCenter from '../../../_components/layoutCenter'
+import LayoutCenter from '@client/_components/layoutCenter'
 
 export default function Page() {
     return (
