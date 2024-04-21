@@ -1,7 +1,7 @@
 import Nav from "./components/nav/nav"
 import "@admin/styles/base/_reset.scss"
 import "@admin/styles/base/_layout.scss"
-
+import Provider from "./providers/examProvider"
 export const metadata = {
   title: 'Admin',
 }
@@ -18,7 +18,10 @@ export default function RootLayout({
           <div className="layout-cover">
             <Nav />
             <div className="page-contain">
+              <Provider>
               {children}
+              </Provider>
+              
             </div>
           </div>
         </div>

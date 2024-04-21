@@ -1,0 +1,207 @@
+@import "../variables.scss";
+
+.create-exam {
+    height: 100%;
+
+    .cover {
+        background: #fafafa;
+        padding: 0;
+        height: 100%;
+
+        .title {
+            padding-left: 24px;
+
+            float: left;
+            width: calc(40% / 2);
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .header-container {
+            background-color: white;
+            position: relative;
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #e6e6e6;
+
+            ul {
+                position: absolute;
+                left: 100%;
+                transform: translateX(-100%);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 80%;
+                padding: 0;
+                list-style: none;
+
+                li {
+                    cursor: pointer;
+                    width: calc((100% - 62px) / 3);
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        vertical-align: middle;
+                        font-size: 16px;
+                    }
+
+                    .circle {
+                        border-radius: 50%;
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 24px;
+                        height: 24px;
+                        line-height: 22px;
+                        margin-right: 6px;
+                        text-align: center;
+                        border: solid 2px #e6e6e6;
+                    }
+
+                    .line {
+                        flex: 1;
+                        display: inline-block;
+                        width: calc(100% - 94px - 16px);
+                        height: 4px;
+                        margin: 0 8px;
+                        background-color: $color-white1;
+                        border-radius: 6px;
+                        vertical-align: middle;
+                    }
+
+
+                }
+
+                .selected {
+                    span {
+                        color: $color-blue2;
+                    }
+
+                    .circle {
+                        box-shadow: 0px 2px 10px 0px #36aafd;
+                        border-color: #36aafd;
+                        background-color: #36aafd;
+                        color: #fff;
+                    }
+
+                }
+            }
+        }
+
+        .content {
+            .cover {
+                position: relative;
+                margin: 24px auto;
+                width: 50%;
+                max-width: 1000px;
+                padding: 60px 80px;
+                background: white;
+
+            }
+
+            .add-questions {
+                display: flex;
+                justify-content: space-between;
+
+                .table-questions {
+                    min-height: 500px;
+                    width: 80%;
+                    margin-left: 10px;
+                    margin-right: 5px;
+
+                    .cover {
+                        padding: 0;
+                        width: 100%;
+
+                        .header {
+                            border-bottom: 1px solid #e5e5e5;
+                            padding-top: 15px;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                        }
+                    }
+
+                }
+
+                .exam-information {
+                    margin-left: 5px;
+                    margin-right: 10px;
+                    width: 20%;
+
+                    .cover {
+                        width: 100%;
+                        padding: 0;
+                        .time {
+                            padding: 20px;
+                            span {
+                                font-size: 16px;
+                                display: block;
+                                height: 40px;
+                                line-height: 40px;
+                                background-color: #EEEEEE;
+                                text-align: center;
+                                font-weight: 700;
+                            }
+                            form {
+                                justify-content: right;
+                                display: flex;
+                                margin-top: 15px;
+                                font-size: 16px;
+                                div {
+                                    margin-right: 10px;
+                                    width: 50%;
+                                    position: relative;
+                                    input {
+                                        width: 100%;
+                                        text-align: center;
+                                        box-shadow: none;
+                                        outline: none;
+                                        width: 30%;
+                                        border: none;
+                                        background: transparent;
+                                        color: #ff962a;
+                                        &.edit {
+                                            border-bottom: 1px solid #ff962a;
+                                        }
+                                    }
+                                    div {
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                    }
+                                }
+                               
+                                .edit-time {
+                                    align-items: center;
+                                    cursor: pointer;
+                                    border: none;
+                                    background: transparent;
+                                    display: flex;
+                                    color: $color-blue2;
+                                    svg {
+                                        margin-right: 5px;
+                                        fill: $color-blue2;
+                                        width: 12px;
+                                    }
+                                    &:hover svg {
+                                        fill: #777
+                                    }
+                                    &:hover {
+                                        color: #777;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
