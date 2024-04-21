@@ -1,0 +1,18 @@
+.title-label {
+    position: relative;
+    font-size: 16px;
+    text-indent: 16px;
+    color: #333333;
+    padding-left: 15px;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 16px;
+        background-color: #36aafd;
+        border-radius: 2px;
+    }
+}
