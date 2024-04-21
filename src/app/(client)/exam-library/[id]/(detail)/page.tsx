@@ -87,7 +87,7 @@ export default function Page() {
         console.log('check code with server')
         const isCorrect = true
         if (isCorrect) {
-            router.push('/exam-library/' + data.testCode + '/overview')
+            router.push('/exam-library/' + test.code + '/overview')
             return
         }
     }

@@ -3,7 +3,9 @@ import { useRouter } from 'next/router'
 import LayoutCenter from '../_components/layoutCenter'
 import SideBar, { targets } from './_components/sideBar'
 import { usePathname } from 'next/navigation'
-import '@/src/app/(client)/account/styles/account.scss'
+import '@clientAccount/styles/account.scss'
+import Header from '@client/_components/header'
+import Footer from '@client/_components/footer'
 
 export default function AccountLayout({ children }: { children: React.ReactNode }) {
     // #region select side bar active
@@ -12,6 +14,7 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
     const activeSidebar = routerSegments[routerSegments.length - 1]
     return (
         <>
+            <Header />
             <main className="account-page min-h-[80vh]">
                 <LayoutCenter className="my-5 pb-3">
                     <section className="flex flex-col sm:grid sm:grid-cols-12 gap-x-5">
@@ -22,6 +25,8 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
                     </section>
                 </LayoutCenter>
             </main>
+            <Footer />
+            <div id="alert" className="z-50 fixed top-[20%] right-0 pointer-events-none"></div>
         </>
     )
 }

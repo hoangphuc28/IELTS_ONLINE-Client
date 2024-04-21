@@ -45,7 +45,7 @@ export default function ComponentCardTestItem({
                 </section>
                 <div>
                     <Link
-                        href={`/${testId}/${data.name}/test`}
+                        href={`/exam-library/${testId}/${data.name}/test`}
                         className="block text-white px-3 py-2 rounded-3xl"
                         style={{ backgroundColor: color || 'black' }}
                     >
