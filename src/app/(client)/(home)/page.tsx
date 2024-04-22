@@ -1,31 +1,36 @@
 'use client'
-import { useEffect, useState } from 'react'
+
 import ContainerCarousel from '../_components/carousel/carousel'
 import CarouselItem from '../_components/carousel/item'
 import LayoutCenter from '../_components/layoutCenter'
 import ComponentSearch from '../_components/search'
 import ComponentCard from './card'
+import ISourceData from './interfaces/ISourceData'
 import ICarouselData from './interfaces/ICarouselData'
 import ITest from '@client/exam-library/interfaces/ITest'
+import ComponentMedia from '../_components/media'
 
 export default function Page() {
-    const [isClient, setIsClient] = useState(false)
-    useEffect(() => {
-        setIsClient(true)
-    }, [])
-
-    const carousels: Array<ICarouselData> = [
-        {
-            type: 'video',
-            url: 'https://www.youtube-nocookie.com/embed/50VNCymT-Cs?si=sqoM4SnQgU98ytj7',
-        },
-        {
-            type: 'img',
-            url: 'https://ieltsonlinetests.com/themes/iot/images/hero-background/hero-banner.jpg',
-        },
-    ]
-    if (carousels.length < 3) {
-        carousels.push(...carousels)
+    // const carousels: Array<ICarouselData> = [
+    //     {
+    //         type: 'video',
+    //         url: 'https://www.youtube-nocookie.com/embed/50VNCymT-Cs?si=sqoM4SnQgU98ytj7',
+    //     },
+    //     {
+    //         type: 'img',
+    //         url: 'https://ieltsonlinetests.com/themes/iot/images/hero-background/hero-banner.jpg',
+    //     },
+    // ]
+    // if (carousels.length < 3) {
+    //     carousels.push(...carousels)
+    // }
+    const bannerData: ISourceData = {
+        type: 'video',
+        src: 'https://www.youtube-nocookie.com/embed/50VNCymT-Cs?si=sqoM4SnQgU98ytj7',
+        content: 'Thông báo: Hahahahahahah ahahahhahaha hahaha',
+        // type: 'image',
+        // type: 'hybrid',
+        // src: 'https://ieltsonlinetests.com/themes/iot/images/hero-background/hero-banner.jpg',
     }
 
     const test: ITest = {
@@ -43,14 +48,16 @@ export default function Page() {
     }
     const tests: ITest[] = []
     while (tests.length < 18) {
-        tests.push({ ...test })
+        const testI = { ...test }
+        if (tests.length % 4 != 0) testI.hasPassword = !testI.hasPassword
+        testI.code += '-' + tests.length.toString()
+        tests.push(testI)
     }
-    tests[tests.length - 1].src = ''
 
     return (
         <>
             <main>
-                {isClient && (
+                {/* {isClient && (
                     <ContainerCarousel
                         id="carousel"
                         className="w-full overflow-hidden h-[50vh] md:h-[70vh]"
@@ -60,7 +67,29 @@ export default function Page() {
                             return <CarouselItem key={key} data={carouselUrl}></CarouselItem>
                         })}
                     </ContainerCarousel>
-                )}
+                )} */}
+                {/* banner */}
+                <section
+                    className="w-full h-[60vh] banner-container"
+                    style={{ background: 'rgba(0, 0, 0, 0.8)' }}
+                >
+                    <LayoutCenter className="h-full">
+                        <section
+                            className="h-full bg-img-center banner"
+                            style={{
+                                background: `url(https://ieltsonlinetests.com/themes/iot/images/hero-background/hero-banner.jpg)`,
+                            }}
+                        ></section>
+                    </LayoutCenter>
+                </section>
+                <section
+                    className="w-full h-[60vh] notify-container"
+                    style={{ background: 'rgba(0, 0, 0, 0.8)' }}
+                >
+                    <LayoutCenter className="h-full">
+                        <ComponentMedia data={bannerData} className="block" />
+                    </LayoutCenter>
+                </section>
 
                 <LayoutCenter className="my-5 min-h-1/2">
                     <section className="px-5 py-5">
