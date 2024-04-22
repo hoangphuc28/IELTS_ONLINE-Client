@@ -1,5 +1,4 @@
 'use client'
-import { useRouter } from 'next/router'
 import LayoutCenter from '../_components/layoutCenter'
 import SideBar, { targets } from './_components/sideBar'
 import { usePathname } from 'next/navigation'
