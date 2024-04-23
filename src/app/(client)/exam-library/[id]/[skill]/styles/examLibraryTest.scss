@@ -4,4 +4,33 @@
             background: white;
         }
     }
+
+    .scrollbar::-webkit-scrollbar {
+        width: 4px;
+        border-radius: 50%;
+    }
+
+    /* width */
+    .scrollbar-horizontal::-webkit-scrollbar {
+        height: 8px;
+        border-radius: 50%;
+        margin-bottom: 2px;
+    }
+
+    /* Track */
+    .scrollbar::-webkit-scrollbar-track {
+        background: #ffffff69;
+        border-radius: 4px;
+    }
+
+    /* Handle */
+    .scrollbar::-webkit-scrollbar-thumb {
+        background: #5d9cf1;
+        border-radius: 4px;
+    }
+
+    /* Handle on hover */
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #5d9cf8;
+    }
 }

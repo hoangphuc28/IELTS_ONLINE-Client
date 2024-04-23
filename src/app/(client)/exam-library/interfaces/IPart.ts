@@ -1,6 +1,7 @@
 import IGroup from "./IGroup"
 
 export default interface IPart {
+    id: string
     description: string
     src: string
     time: string
