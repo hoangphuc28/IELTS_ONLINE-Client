@@ -148,6 +148,13 @@ const miniTest: Array<IMiniTest> = [
                                     },
                                 ],
                             },
+                        ],
+                    },
+                    {
+                        title: 'Do the following statements agree with the information given in Reading Passage 1?',
+                        description: 'In boxes 9 - 13 on your answer sheet, write.',
+                        type: 'drag-drop',
+                        questions: [
                             {
                                 id: 'listening-parts-1-groups-1-9',
                                 src: '',
@@ -180,8 +187,8 @@ const miniTest: Array<IMiniTest> = [
                                     },
                                 ],
                             },
-                        ],
-                    },
+                        ]
+                    }
                 ],
                 createdAt: new Date().toLocaleString(),
                 updatedAt: new Date().toLocaleString(),
@@ -214,6 +221,45 @@ const miniTest: Array<IMiniTest> = [
                                 ],
                             },
                         ],
+                    },
+                    {
+                        title: 'Do the following statements agree with the information given in Reading Passage 1?',
+                        description: 'In boxes 9 - 13 on your answer sheet, write.',
+                        type: 'drag-drop',
+                        questions: [
+                            {
+                                id: 'listening-parts-1-groups-1-9',
+                                src: '',
+                                content:
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                answers: [
+                                    {
+                                        id: 'listening-parts-1-groups-1-9-1',
+                                        content: 'T',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-9-2',
+                                        content: 'F',
+                                    },
+                                ],
+                            },
+                            {
+                                id: 'listening-parts-1-groups-1-10',
+                                src: '',
+                                content:
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                answers: [
+                                    {
+                                        id: 'listening-parts-1-groups-1-10-1',
+                                        content: 'T',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-10-2',
+                                        content: 'F',
+                                    },
+                                ],
+                            },
+                        ]
                     },
                 ],
                 createdAt: new Date().toLocaleString(),
@@ -248,6 +294,45 @@ const miniTest: Array<IMiniTest> = [
                             },
                         ],
                     },
+                    {
+                        title: 'Do the following statements agree with the information given in Reading Passage 1?',
+                        description: 'In boxes 9 - 13 on your answer sheet, write.',
+                        type: 'drag-drop',
+                        questions: [
+                            {
+                                id: 'listening-parts-1-groups-1-9',
+                                src: '',
+                                content:
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                answers: [
+                                    {
+                                        id: 'listening-parts-1-groups-1-9-1',
+                                        content: 'T',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-9-2',
+                                        content: 'F',
+                                    },
+                                ],
+                            },
+                            {
+                                id: 'listening-parts-1-groups-1-10',
+                                src: '',
+                                content:
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                answers: [
+                                    {
+                                        id: 'listening-parts-1-groups-1-10-1',
+                                        content: 'T',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-10-2',
+                                        content: 'F',
+                                    },
+                                ],
+                            },
+                        ]
+                    },
                 ],
                 createdAt: new Date().toLocaleString(),
                 updatedAt: new Date().toLocaleString(),
@@ -280,6 +365,45 @@ const miniTest: Array<IMiniTest> = [
                                 ],
                             },
                         ],
+                    },
+                    {
+                        title: 'Do the following statements agree with the information given in Reading Passage 1?',
+                        description: 'In boxes 9 - 13 on your answer sheet, write.',
+                        type: 'drag-drop',
+                        questions: [
+                            {
+                                id: 'listening-parts-1-groups-1-9',
+                                src: '',
+                                content:
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                answers: [
+                                    {
+                                        id: 'listening-parts-1-groups-1-9-1',
+                                        content: 'T',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-9-2',
+                                        content: 'F',
+                                    },
+                                ],
+                            },
+                            {
+                                id: 'listening-parts-1-groups-1-10',
+                                src: '',
+                                content:
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                answers: [
+                                    {
+                                        id: 'listening-parts-1-groups-1-10-1',
+                                        content: 'T',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-10-2',
+                                        content: 'F',
+                                    },
+                                ],
+                            },
+                        ]
                     },
                 ],
                 createdAt: new Date().toLocaleString(),

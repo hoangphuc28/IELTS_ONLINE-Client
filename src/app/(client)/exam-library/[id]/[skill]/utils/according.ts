@@ -36,6 +36,37 @@ export default function according() {
     })
 }
 
+export function handleAccording(e: MouseEvent<HTMLElement, any>) {
+    const target = e.currentTarget as HTMLElement | null
+    const currentShowTarget = document.querySelector('[data-according-target="true"]') as (HTMLElement | null)
+    // #region change element show
+    if (currentShowTarget) {
+        currentShowTarget.dataset['accordingTarget'] = 'false'
+        const contentShowId = currentShowTarget.dataset['accordingId']
+        if (contentShowId) {
+            toggleShow(`[data-according-body="${contentShowId}"]`)
+            toggleShow(`[data-according-content="${contentShowId}"]`)
+        }
+    }
+    if (!target) {
+        console.log('No target')
+        return
+    }
+    target.dataset['accordingTarget'] = 'true'
+    // #endregion change element show
+
+    // #region show content
+    const contentId = target.dataset['accordingId']
+    if (!contentId) {
+        console.log('No id content')
+        return
+    }
+
+    toggleShow(`[data-according-body="${contentId}"]`)
+    toggleShow(`[data-according-content="${contentId}"]`)
+    // #endregion show content
+}
+
 function toggleShow(selector: string) {
     const target = document.querySelector(selector) as HTMLElement | null
     if (!target) {

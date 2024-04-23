@@ -2,6 +2,8 @@
 import IQuestion from '@/src/app/(client)/exam-library/interfaces/IQuestion'
 import IPart from '@clientExamLibrary/interfaces/IPart'
 import { useParams } from 'next/navigation'
+import { handleAccording } from '../../../utils/according'
+import { handleToQuestion } from '../../../utils/toQuestion'
 
 export default function ComponentTabItem({
     index,
@@ -25,17 +27,22 @@ export default function ComponentTabItem({
                 data-according-id={data.id}
                 className="flex items-center gap-1 border rounded-xl px-2 py-1 cursor-pointer bg-slate-100 shadow-lg select-none"
                 data-according-target={index === 0 ? 'true' : 'false'}
+                onClick={(e) => handleAccording(e)}
             >
                 <p className="" style={{ textWrap: 'nowrap' }}>
-                    {itemName} {index + 1}
+                    {itemName} <span className="">{index + 1}</span>
                 </p>
                 <div
-                    className={'items-center gap-1 ' + `${index === 0 ? 'flex' : 'hidden'}`}
+                    className={
+                        'rounded-lg bg-blue-100 px-1 items-center gap-1 ' +
+                        `${index === 0 ? 'flex' : 'hidden'}`
+                    }
                     data-according-body={data.id}
                 >
-                    <span>(</span>
+                    <span className="text-3xl mb-[8px]">[</span>
                     {questions.map((question, index) => (
                         <button
+                            onClick={(e) => handleToQuestion(e)}
                             data-part-id={data.id}
                             data-question-id-target={question.id}
                             className="border w-8 h-8 rounded-full bg-gray-200 hover:opacity-[0.7] hover:shadow-lg"
@@ -44,7 +51,7 @@ export default function ComponentTabItem({
                             {index + questionIndex}
                         </button>
                     ))}
-                    <span>)</span>
+                    <span className="text-3xl mb-[8px]">]</span>
                 </div>
             </section>
         </>
