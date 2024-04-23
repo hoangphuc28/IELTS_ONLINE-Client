@@ -1,3 +1,4 @@
+@import "../variables.scss";
 .btn-style1 {
     height: 36px;
     padding: 8px 18px;
@@ -10,7 +11,6 @@
     background-image: linear-gradient(60deg, #36c0fd 0%, #3672fd 100%) !important;
 }
 
-
 .btn-style2 {
     display: inline-block;
     text-decoration: none;
@@ -20,6 +20,41 @@
     color: #36aafd;
     border: solid 1px #36aafd;
 }
+
+.btn-style3 {
+    border-radius: 10px;
+    padding: 13px 18px;
+    transition: box-shadow .3s;
+    color: #fff !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 14px;
+    display: block;
+    background-image: linear-gradient(60deg, #36c0fd 0%, #3672fd 100%) !important;
+    img {
+        margin-right: 5px;
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.btn-style4 {
+    border-radius: 10px;
+    padding: 0px 18px;
+    transition: box-shadow .3s;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 14px;
+    display: block;
+    background: white;
+    color: $color-blue2;
+    border: 1px solid $color-blue2;
+}
+
 
 .release-btn {
    a {

@@ -1,8 +1,8 @@
-.exam {
+.layout-table {
     display: flex;
     height: 100%;
 
-    .exam-left {
+    .layout-table-left {
         overflow: scroll;
         width: 30%;
 
@@ -14,7 +14,7 @@
         }
     }
 
-    .exam-right {
+    .layout-table-right {
         overflow: scroll;
         height: 100%;
         width: 100%;

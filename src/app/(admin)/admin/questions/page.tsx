@@ -1,40 +1,33 @@
 'use client'
-import React from "react";
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/table";
-
+import CategoriesPanel from '../components/categoriesPanel/categoriesPanel'
+import { useRef } from 'react'
+import '@admin/styles/pages/layoutTable.scss'
+import Resizer from '../components/resizer'
+import QuestionPanel from './questionPanel'
+import Pagination from '@mui/material/Pagination'
+import Stack from '@mui/material/Stack'
+interface Category {
+    id: String
+    title: String
+}
 export default function Page() {
-    return (
-        <div>
- <Table aria-label="Example static collection table">
-      <TableHeader>
-        <TableColumn>NAME</TableColumn>
-        <TableColumn>ROLE</TableColumn>
-        <TableColumn>STATUS</TableColumn>
-      </TableHeader>
-      <TableBody>
-        <TableRow key="1">
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
-        </TableRow>
-        <TableRow key="2">
-          <TableCell>Zoey Lang</TableCell>
-          <TableCell>Technical Lead</TableCell>
-          <TableCell>Paused</TableCell>
-        </TableRow>
-        <TableRow key="3">
-          <TableCell>Jane Fisher</TableCell>
-          <TableCell>Senior Developer</TableCell>
-          <TableCell>Active</TableCell>
-        </TableRow>
-        <TableRow key="4">
-          <TableCell>William Howard</TableCell>
-          <TableCell>Community Manager</TableCell>
-          <TableCell>Vacation</TableCell>
-        </TableRow>
-      </TableBody>
-    </Table>
+    let categories: Category[] = [
+        { id: '1', title: 'All categories' },
+        { id: '2', title: 'Default categories' },
+    ]
+    const examLeft = useRef<HTMLDivElement>(null)
 
+    return (
+        <div className="layout-table">
+            <div ref={examLeft} className="layout-table-left">
+                <CategoriesPanel dataPanel={{ text: 'Question', categories }} />
+            </div>
+            <div style={{ padding: '17px 0' }} className="layout-table-middle">
+                <Resizer max={800} forwardedRef={examLeft} />
+            </div>
+            <div className="layout-table-right">
+                <QuestionPanel />
+            </div>
         </div>
     )
 }

@@ -7,24 +7,7 @@
     justify-content: space-between;
     align-items: center;
     .left {
-        a {
-            border-radius: 10px;
-            padding: 13px 18px;
-            transition: box-shadow .3s;
-            color: #fff !important;
-            border-radius: 4px !important;
-            text-decoration: none !important;
-            white-space: nowrap;
-            cursor: pointer;
-            font-size: 14px;
-            display: block;
-            background-image: linear-gradient(60deg, #36c0fd 0%, #3672fd 100%) !important;
-            img {
-                margin-right: 5px;
-                width: 12px;
-                height: 12px;
-            }
-        }
+        
     }
     .right {
         .search {

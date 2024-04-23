@@ -1,5 +1,29 @@
-.container {
-    .header {
-        
+.popup {
+    position: absolute;
+    z-index: 99;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.285);
+
+    .cover {
+        height: 50%;
+
+        .container {
+            .header {
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                .popup-close {
+                    margin-top: 10px;
+                    margin-right: 10px;
+                    cursor: pointer;
+
+                    svg {
+                        width: 20px;
+                    }
+                }
+            }
+        }
     }
+
 }

@@ -9,7 +9,11 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@emotion/react": "^11.11.4",
+        "@emotion/styled": "^11.11.5",
         "@fortawesome/fontawesome-free": "6.5.2",
+        "@mui/icons-material": "^5.15.15",
+        "@mui/material": "^5.15.15",
         "@nextui-org/table": "^2.0.32",
         "axios": "1.6.8",
         "flowbite": "2.3.0",
@@ -18,7 +22,7 @@
         "next": "14.1.4",
         "react": "18",
         "react-dom": "18",
-        "react-player": "2.16.0"
+        "react-player": "^2.16.0"
     },
     "devDependencies": {
         "@types/node": "20",

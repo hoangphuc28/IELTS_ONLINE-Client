@@ -3,9 +3,12 @@ import '@admin/styles/components/_navbar.scss'
 import '@admin/styles/components/_button.scss'
 import { useFormik } from 'formik'
 
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
+import Popup from '../../components/popup/popup'
+import ChosePart from './selectParts'
 
 export default function AddQuestions() {
+    const [showPopup, setShowPopup] = useState(false)
     const [selected, setSelected] = useState(1)
     const [inputDisabled, setInputDisabled] = useState(true)
     const formik = useFormik({
@@ -16,6 +19,12 @@ export default function AddQuestions() {
     })
     return (
         <div className="add-questions">
+            {showPopup ? (
+                <Popup onClose={() => setShowPopup(false)}>{<ChosePart />}</Popup>
+            ) : (
+                <Fragment></Fragment>
+            )}
+
             <div className="table-questions">
                 <div className="cover">
                     <div className="header">
@@ -83,6 +92,7 @@ export default function AddQuestions() {
                     </div>
                     <div className="action">
                         <button
+                            onClick={() => setShowPopup(!showPopup)}
                             style={{ background: 'transparent', border: 'none' }}
                             className="release-btn"
                         >
