@@ -12,9 +12,9 @@ const miniTest: Array<IMiniTest> = [
                 description: "India's Modern Women",
                 groups: [
                     {
-                        title: 'Do the following statements agree with the information given in Reading Passage 1?',
+                        title: '(Choice) Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'drag-drop',
+                        type: 'choice',
                         questions: [
                             {
                                 id: 'listening-parts-1-groups-1-1',
@@ -24,11 +24,19 @@ const miniTest: Array<IMiniTest> = [
                                 answers: [
                                     {
                                         id: 'listening-parts-1-groups-1-1-answer-1',
-                                        content: 'T',
+                                        content: 'Haha',
                                     },
                                     {
                                         id: 'listening-parts-1-groups-1-1-answer-2',
-                                        content: 'F',
+                                        content: 'Hehehe',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hihihi',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hohoho',
                                     },
                                 ],
                             },
@@ -39,12 +47,20 @@ const miniTest: Array<IMiniTest> = [
                                     '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
                                 answers: [
                                     {
-                                        id: 'listening-parts-1-groups-1-2-answer-1',
-                                        content: 'T',
+                                        id: 'listening-parts-1-groups-1-1-answer-1',
+                                        content: 'Haha',
                                     },
                                     {
-                                        id: 'listening-parts-1-groups-1-2-answer-2',
-                                        content: 'F',
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hehehe',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hihihi',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hohoho',
                                     },
                                 ],
                             },
@@ -55,103 +71,82 @@ const miniTest: Array<IMiniTest> = [
                                     '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
                                 answers: [
                                     {
-                                        id: 'listening-parts-1-groups-1-3-1',
-                                        content: 'T',
+                                        id: 'listening-parts-1-groups-1-1-answer-1',
+                                        content: 'Haha',
                                     },
                                     {
-                                        id: 'listening-parts-1-groups-1-3-2',
-                                        content: 'F',
-                                    },
-                                ],
-                            },
-                            {
-                                id: 'listening-parts-1-groups-1-4',
-                                src: '',
-                                content:
-                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
-                                answers: [
-                                    {
-
-                                        id: 'listening-parts-1-groups-1-4-1',
-                                        content: 'T',
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hehehe',
                                     },
                                     {
-
-                                        id: 'listening-parts-1-groups-1-4-2',
-                                        content: 'F',
-                                    },
-                                ],
-                            },
-                            {
-                                id: 'listening-parts-1-groups-1-5',
-                                src: '',
-                                content:
-                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
-                                answers: [
-                                    {
-
-                                        id: 'listening-parts-1-groups-1-5-1',
-                                        content: 'T',
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hihihi',
                                     },
                                     {
-
-                                        id: 'listening-parts-1-groups-1-5-2',
-                                        content: 'F',
-                                    },
-                                ],
-                            },
-                            {
-                                id: 'listening-parts-1-groups-1-6',
-                                src: '',
-                                content:
-                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
-                                answers: [
-                                    {
-                                        id: 'listening-parts-1-groups-1-6-1',
-                                        content: 'T',
-                                    },
-                                    {
-                                        id: 'listening-parts-1-groups-1-6-2',
-                                        content: 'F',
-                                    },
-                                ],
-                            },
-                            {
-                                id: 'listening-parts-1-groups-1-7',
-                                src: '',
-                                content:
-                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
-                                answers: [
-                                    {
-                                        id: 'listening-parts-1-groups-1-7-1',
-                                        content: 'T',
-                                    },
-                                    {
-                                        id: 'listening-parts-1-groups-1-7-2',
-                                        content: 'F',
-                                    },
-                                ],
-                            },
-                            {
-                                id: 'listening-parts-1-groups-1-8',
-                                src: '',
-                                content:
-                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
-                                answers: [
-                                    {
-                                        id: 'listening-parts-1-groups-1-8-1',
-                                        content: 'T',
-                                    },
-                                    {
-                                        id: 'listening-parts-1-groups-1-8-2',
-                                        content: 'F',
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hohoho',
                                     },
                                 ],
                             },
                         ],
                     },
                     {
-                        title: 'Do the following statements agree with the information given in Reading Passage 1?',
+                        title: '(Multi choice) Do the following statements agree with the information given in Reading Passage 1?',
+                        description: 'In boxes 9 - 13 on your answer sheet, write.',
+                        type: 'multi-choice',
+                        questions: [
+                            {
+                                id: 'listening-parts-1-groups-1-9',
+                                src: '',
+                                content:
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                answers: [
+                                    {
+                                        id: 'listening-parts-1-groups-1-1-answer-1',
+                                        content: 'Haha',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hehehe',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hihihi',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hohoho',
+                                    },
+                                ],
+                            },
+                            {
+                                id: 'listening-parts-1-groups-1-10',
+                                src: '',
+                                content:
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                answers: [
+                                    {
+                                        id: 'listening-parts-1-groups-1-1-answer-1',
+                                        content: 'Haha',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hehehe',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hihihi',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-1-answer-2',
+                                        content: 'Hohoho',
+                                    },
+                                ],
+                            },
+                        ]
+                    },
+                    {
+                        title: '(Drag and drop) Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
                         type: 'drag-drop',
                         questions: [
@@ -159,7 +154,7 @@ const miniTest: Array<IMiniTest> = [
                                 id: 'listening-parts-1-groups-1-9',
                                 src: '',
                                 content:
-                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                    'Nội dung 1',
                                 answers: [
                                     {
                                         id: 'listening-parts-1-groups-1-9-1',
@@ -175,7 +170,7 @@ const miniTest: Array<IMiniTest> = [
                                 id: 'listening-parts-1-groups-1-10',
                                 src: '',
                                 content:
-                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                    'Nội dung 2',
                                 answers: [
                                     {
                                         id: 'listening-parts-1-groups-1-10-1',
@@ -188,7 +183,83 @@ const miniTest: Array<IMiniTest> = [
                                 ],
                             },
                         ]
-                    }
+                    },
+                    {
+                        title: '(Drag and drop) Do the following statements agree with the information given in Reading Passage 1?',
+                        description: 'In boxes 9 - 13 on your answer sheet, write.',
+                        type: 'drag-drop',
+                        questions: [
+                            {
+                                id: 'listening-parts-1-groups-1-9',
+                                src: '',
+                                content:
+                                    'Nội dung 1',
+                                answers: [
+                                    {
+                                        id: 'listening-parts-1-groups-1-9-1',
+                                        content: 'A',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-9-2',
+                                        content: 'B',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-9-1',
+                                        content: 'C',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-9-2',
+                                        content: 'D',
+                                    },
+                                ],
+                            },
+                            {
+                                id: 'listening-parts-1-groups-1-10',
+                                src: '',
+                                content:
+                                    'Nội dung 2',
+                                answers: [
+                                    {
+                                        id: 'listening-parts-1-groups-1-10-1',
+                                        content: 'A',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-10-2',
+                                        content: 'B',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-10-1',
+                                        content: 'C',
+                                    },
+                                    {
+                                        id: 'listening-parts-1-groups-1-10-2',
+                                        content: 'D',
+                                    },
+                                ],
+                            },
+                        ]
+                    },
+                    {
+                        title: '(Short answer) Do the following statements agree with the information given in Reading Passage 1?',
+                        description: 'In boxes 9 - 13 on your answer sheet, write.',
+                        type: 'short-answer',
+                        questions: [
+                            {
+                                id: 'listening-parts-1-groups-1-9',
+                                src: '',
+                                content:
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                answers: [],
+                            },
+                            {
+                                id: 'listening-parts-1-groups-1-10',
+                                src: '',
+                                content:
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                answers: [],
+                            },
+                        ]
+                    },
                 ],
                 createdAt: new Date().toLocaleString(),
                 updatedAt: new Date().toLocaleString(),

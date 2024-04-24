@@ -20,6 +20,7 @@ export default function ComponentPart({
     let indexGroup = 1
     for (const group of data.groups) {
         startQuestionIndex.push(startQuestionIndex[indexGroup - 1] + group.questions.length)
+        indexGroup += 1
     }
 
     return (
@@ -34,7 +35,7 @@ export default function ComponentPart({
                     </h2>
                 </section>
 
-                <section>
+                <section className="flex flex-col gap-3">
                     {data.groups.map((group, index) => (
                         <ComponentListQuestion
                             key={'exam-library-part-' + index + '-group-' + index}
