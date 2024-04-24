@@ -1,4 +1,5 @@
 import IGroup from '@/src/app/(client)/exam-library/interfaces/IGroup'
+import ComponentListQuestionContent from './listQuestionContent'
 
 export default function ComponentListQuestion({
     data,
@@ -18,7 +19,9 @@ export default function ComponentListQuestion({
                     </h3>
                 </section>
 
-                <section></section>
+                <section>
+                    <ComponentListQuestionContent data={data} />
+                </section>
             </section>
         </>
     )
