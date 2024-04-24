@@ -39,7 +39,7 @@ export default function Page() {
     // #endregion parts contains number of questions in groups
     return (
         <>
-            <main className="min-h-[80vh] px-3">
+            <main className="min-h-[80vh] px-3 mb-[100px]">
                 {targetSkillTest.parts.map((part: IPart, index: number) => (
                     <ComponentPart
                         key={'exam-library-part-' + index}

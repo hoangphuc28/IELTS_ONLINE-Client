@@ -17,10 +17,10 @@ export default function ComponentPart({
     const name = params.skill != 'Writing' ? 'Part' : 'Task'
 
     const startQuestionIndex = [startQuestion]
-    let indexGroup = 1
-    for (const group of data.groups) {
-        startQuestionIndex.push(startQuestionIndex[indexGroup - 1] + group.questions.length)
-        indexGroup += 1
+
+    for (let i = 1; i < data.groups.length; i++) {
+        const group = data.groups[i - 1]
+        startQuestionIndex.push(startQuestionIndex[i - 1] + group.questions.length)
     }
 
     return (
@@ -36,13 +36,15 @@ export default function ComponentPart({
                 </section>
 
                 <section className="flex flex-col gap-3">
-                    {data.groups.map((group, index) => (
-                        <ComponentListQuestion
-                            key={'exam-library-part-' + index + '-group-' + index}
-                            data={group}
-                            startIndex={startQuestionIndex[index]}
-                        />
-                    ))}
+                    {data.groups.map((group, index) => {
+                        return (
+                            <ComponentListQuestion
+                                key={'exam-library-part-' + index + '-group-' + index}
+                                data={group}
+                                startIndex={startQuestionIndex[index]}
+                            />
+                        )
+                    })}
                 </section>
             </section>
         </>

@@ -1,6 +1,7 @@
 import IQuestion from "./IQuestion";
 
 export default interface IGroup {
+    id: string
     type: string
     title: string
     description: string
