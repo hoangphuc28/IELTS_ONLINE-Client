@@ -20,7 +20,7 @@ export default function ComponentListQuestion({
                 </section>
 
                 <section>
-                    <ComponentListQuestionContent data={data} />
+                    <ComponentListQuestionContent data={data} startQuestionIndex={startIndex} />
                 </section>
             </section>
         </>

@@ -40,14 +40,16 @@ export default function Page() {
     return (
         <>
             <main className="min-h-[80vh] px-3 mb-[100px]">
-                {targetSkillTest.parts.map((part: IPart, index: number) => (
-                    <ComponentPart
-                        key={'exam-library-part-' + index}
-                        data={part}
-                        index={index}
-                        startQuestion={startIndexEveryPart[index]}
-                    />
-                ))}
+                <form name={'form-exam-' + targetSkillTest.name} action="">
+                    {targetSkillTest.parts.map((part: IPart, index: number) => (
+                        <ComponentPart
+                            key={'exam-library-part-' + index}
+                            data={part}
+                            index={index}
+                            startQuestion={startIndexEveryPart[index]}
+                        />
+                    ))}
+                </form>
             </main>
             <ComponentTestFooter data={targetSkillTest} />
         </>

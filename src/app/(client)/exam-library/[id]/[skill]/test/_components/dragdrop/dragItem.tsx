@@ -1,17 +1,17 @@
 import IAnswer from '@/src/app/(client)/exam-library/interfaces/IAnswer'
 import { DragEvent } from 'react'
+import { drag } from '@clientExamLibrary/[id]/[skill]/utils/dragAndDrop'
 
-export default function ComponentDragItem({ data }: { data: IAnswer }) {
+export default function ComponentDragItem({ groupId, data }: { groupId: string; data: IAnswer }) {
     return (
-        <div data-id={data.id} draggable="true" onDragStart={(e) => drag(e)} className="bg-red-500">
+        <div
+            data-group-id={groupId}
+            data-id={data.id}
+            draggable="true"
+            onDragStart={(e) => drag(e)}
+            className=""
+        >
             {data.content}
         </div>
     )
-
-    function drag(ev: DragEvent<HTMLElement>) {
-        const target = ev.target as HTMLElement
-        const dragElementId = target.dataset.id
-        if (!dragElementId) return
-        ev.dataTransfer.setData('dragDataId', dragElementId)
-    }
 }
