@@ -9,6 +9,7 @@ import toQuestion from '@clientExamLibrary/[id]/[skill]/utils/toQuestion'
 import ComponentPart from './_components/part.tsx/part'
 import IPart from '@clientExamLibrary/interfaces/IPart'
 import IGroup from '../../../interfaces/IGroup'
+import ComponentTestHeader from './_components/header'
 
 export default function Page() {
     const params = useParams<{ id: string; skill: string }>()
@@ -39,8 +40,9 @@ export default function Page() {
     // #endregion parts contains number of questions in groups
     return (
         <>
-            <main className="min-h-[80vh] px-3 mb-[100px]">
-                <form name={'form-exam-' + targetSkillTest.name} action="">
+            <ComponentTestHeader data={targetSkillTest} />
+            <main className="min-h-[80vh] ps-7 pe-4 mb-[100px] bg-white py-2">
+                <form className="block h-full" name={'form-exam-' + targetSkillTest.name} action="">
                     {targetSkillTest.parts.map((part: IPart, index: number) => (
                         <ComponentPart
                             key={'exam-library-part-' + index}

@@ -1,6 +1,7 @@
+import IMiniTest from '../../../../interfaces/IMiniTest'
 import ComponentSubmit from './submit'
 
-export default function ComponentTestHeader() {
+export default function ComponentTestHeader({ data }: { data: IMiniTest }) {
     const time = {
         h: 3,
         m: 12,
@@ -27,13 +28,13 @@ export default function ComponentTestHeader() {
                         <ComponentSubmit target="" />
                     </section>
                 </section>
-                <ListeningHeader data={{}} />
+                {data.name === 'Listening' && <ListeningHeader data={data.src || ''} />}
             </header>
         </>
     )
 }
 
-function ListeningHeader({ data }: { data: any }) {
+function ListeningHeader({ data }: { data: string }) {
     return (
         <>
             <section>

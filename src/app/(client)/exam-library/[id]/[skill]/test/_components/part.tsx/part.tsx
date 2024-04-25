@@ -3,6 +3,8 @@
 import IPart from '@/src/app/(client)/exam-library/interfaces/IPart'
 import { useParams } from 'next/navigation'
 import ComponentListQuestion from './listQuestion'
+import ComponentLeftSide from './leftSide'
+import ComponentSubmit from '../submit'
 
 export default function ComponentPart({
     data,
@@ -14,7 +16,7 @@ export default function ComponentPart({
     startQuestion: number
 }) {
     const params = useParams<{ skill: string }>()
-    const name = params.skill != 'Writing' ? 'Part' : 'Task'
+    const name = (params.skill != 'Writing' ? 'Part' : 'Task') + ' ' + (index + 1)
 
     const startQuestionIndex = [startQuestion]
 
@@ -25,26 +27,34 @@ export default function ComponentPart({
 
     return (
         <>
-            <section
-                className={'flex-col gap-2 ' + (index === 0 ? 'flex' : 'hidden')}
-                data-according-content={data.id}
-            >
-                <section>
-                    <h2 className="font-bold text-lg">
-                        {name} {index + 1}
-                    </h2>
-                </section>
+            <section className="flex gap-2 h-full">
+                <ComponentLeftSide name={name} skill={params.skill} data={data} />
+                <section
+                    className={
+                        'w-full min-h-[60vh] h-full flex-col gap-2 ' +
+                        (index === 0 ? 'flex' : 'hidden')
+                    }
+                    data-according-content={data.id}
+                >
+                    <section>
+                        <h2 className="font-bold text-lg">{name}</h2>
+                    </section>
 
-                <section className="flex flex-col gap-3">
-                    {data.groups.map((group, index) => {
-                        return (
-                            <ComponentListQuestion
-                                key={'exam-library-part-' + index + '-group-' + index}
-                                data={group}
-                                startIndex={startQuestionIndex[index]}
-                            />
-                        )
-                    })}
+                    <section className="flex flex-col gap-3 w-full">
+                        {data.groups.map((group, index) => {
+                            return (
+                                <ComponentListQuestion
+                                    key={'exam-library-part-' + index + '-group-' + index}
+                                    data={group}
+                                    startIndex={startQuestionIndex[index]}
+                                />
+                            )
+                        })}
+                    </section>
+
+                    <section className="mt-auto text-end">
+                        <ComponentSubmit target="" />
+                    </section>
                 </section>
             </section>
         </>

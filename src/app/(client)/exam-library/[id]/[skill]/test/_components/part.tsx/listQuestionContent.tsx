@@ -1,7 +1,11 @@
+'use client'
+
 import IAnswer from '@/src/app/(client)/exam-library/interfaces/IAnswer'
 import IGroup from '@/src/app/(client)/exam-library/interfaces/IGroup'
 import ComponentDropItem from '../dragdrop/dropItem'
 import ComponentListDrag from '../dragdrop/listDrag'
+import ComponentFloatingInputLabel from '../floatingInputLabel'
+import { useParams } from 'next/navigation'
 
 export default function ComponentListQuestionContent({
     data,
@@ -10,11 +14,38 @@ export default function ComponentListQuestionContent({
     data: IGroup
     startQuestionIndex: number
 }) {
+    const params = useParams<{ skill: string }>()
+    if (params.skill === 'Speaking') return <></>
+    if (params.skill === 'Writing') return <ComponentWritingQuestion data={data} />
     if (data.type === 'choice') return <ComponentQuestionChoice data={data} />
     if (data.type === 'multi-choice') return <ComponentQuestionMultiChoice data={data} />
     if (data.type === 'drag-drop') return <ComponentQuestionDragDrop data={data} />
     if (data.type === 'short-answer')
         return <ComponentQuestionShortAnswer data={data} startQuestionIndex={startQuestionIndex} />
+}
+
+function ComponentWritingQuestion({ data }: { data: IGroup }) {
+    return (
+        <section className="flex flex-col gap-5 px-5 w-full">
+            {data.questions.map((question) => (
+                <textarea
+                    name={question.id}
+                    className="w-full rounded-lg border-violet-500 border-2"
+                    rows={16}
+                ></textarea>
+            ))}
+        </section>
+    )
+}
+
+function ComponentSpeakingQuestion({ data }: { data: IGroup }) {
+    return (
+        <section className="flex flex-col gap-5 px-5 w-full">
+            {data.questions.map((question) => (
+                <h3>{data.title}</h3>
+            ))}
+        </section>
+    )
 }
 
 function ComponentQuestionChoice({ data }: { data: IGroup }) {
@@ -137,36 +168,11 @@ function ComponentQuestionShortAnswer({
 
                 <section className="flex gap-1">
                     {data.questions.map((question, index) => (
-                        <div
-                            className="max-w-[120px] relative"
+                        <ComponentFloatingInputLabel
+                            id={question.id}
                             key={'question-' + question.id + '-short-answer-' + index}
-                        >
-                            <input
-                                type="text"
-                                name={question.id}
-                                id={question.id}
-                                className="bg-white block px-2.5 pb-2.5 pt-4 w-full
-                                    text-sm text-gray-90
-                                    rounded-lg border-1 border-gray-300 appearance-none
-                                    focus:outline-none focus:ring-0 focus:border-blue-600
-                                    peer"
-                                placeholder=""
-                            />
-                            <label
-                                htmlFor={question.id}
-                                className="
-                                    absolute bg-[transparent] text-gray-500 duration-300 transform -translate-y-4 scale-100
-                                    top-2 start-1 z-10 origin-[0] bg-white px-2
-                                    peer-focus:px-2 peer-focus:text-blue-600
-                                    peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2
-                                    peer-placeholder-shown:top-1/2
-                                    peer-focus:top-2 peer-focus:scale-100 peer-focus:-translate-y-4
-                                    rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto
-                                    "
-                            >
-                                {startQuestionIndex + index}
-                            </label>
-                        </div>
+                            label={(startQuestionIndex + index).toString()}
+                        />
                     ))}
                 </section>
             </section>
