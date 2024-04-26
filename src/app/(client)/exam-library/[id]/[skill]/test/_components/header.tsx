@@ -9,8 +9,8 @@ export default function ComponentTestHeader({ data }: { data: IMiniTest }) {
     }
     return (
         <>
-            <header className="bg-white px-5">
-                <section className="flex justify-between">
+            <header className="bg-white px-5 h-12">
+                <section className="relative flex justify-between">
                     <section className="logo mobile w-12 h-12">
                         <img
                             alt=""
@@ -18,15 +18,13 @@ export default function ComponentTestHeader({ data }: { data: IMiniTest }) {
                             src={process.env.NEXT_PUBLIC_APP_LOGO}
                         />
                     </section>
-                    <section className="flex gap-2 items-center font-bold text-violet-800">
+                    <section className="-ms-20 flex gap-2 items-center font-bold text-violet-800">
                         <i className="fa-regular fa-clock text-2xl"></i>
                         <p className="text-xl">
                             {time.h}:{time.m}:{time.s}
                         </p>
                     </section>
-                    <section>
-                        <ComponentSubmit target="" />
-                    </section>
+                    <section>{data.name === 'Listening' && <ComponentSubmit target="" />}</section>
                 </section>
                 {data.name === 'Listening' && <ListeningHeader data={data.src || ''} />}
             </header>

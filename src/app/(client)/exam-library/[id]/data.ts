@@ -585,25 +585,108 @@ const miniTest: Array<IMiniTest> = [
                 groups: [
                     {
                         id: 'speaking-part-1-group-1',
-                        title: 'Do the following statements agree with the information given in Reading Passage 1?',
+                        title: 'part 1 - question 1',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
                         type: 'drag-drop',
                         questions: [
                             {
                                 id: 'speaking-parts-1-groups-1-1',
-                                src: '',
+                                src: '../../../../../../../assets/media/test-media.m4a',
                                 content:
-                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
-                                answers: [
-                                    {
-                                        id: 'speaking-parts-1-groups-1-1-1',
-                                        content: 'T',
-                                    },
-                                    {
-                                        id: 'speaking-parts-1-groups-1-1-2',
-                                        content: 'F',
-                                    },
-                                ],
+                                    'part 1 - question 1',
+                                answers: [],
+                            },
+                            {
+                                id: 'speaking-parts-1-groups-1-1',
+                                src: '../../../../../../../assets/media/test-media.m4a',
+                                content:
+                                    'part 1 - question 2',
+                                answers: [],
+                            },
+                            {
+                                id: 'speaking-parts-1-groups-1-1',
+                                src: '../../../../../../../assets/media/test-media.m4a',
+                                content:
+                                    'part 1 - question 3',
+                                answers: [],
+                            },
+                        ],
+                    },
+                ],
+                createdAt: new Date().toLocaleString(),
+                updatedAt: new Date().toLocaleString(),
+            },
+            {
+                id: 'speaking-part-2',
+                src: '../../../../assets/img/src-test-default.jpg',
+                time: '00:30:00',
+                description: "India's Modern Women",
+                groups: [
+                    {
+                        id: 'speaking-parts-2-group-1',
+                        title: 'Do the following statements agree with the information given in Reading Passage 1?',
+                        description: 'In boxes 9 - 13 on your answer sheet, write.',
+                        type: 'drag-drop',
+                        questions: [
+                            {
+                                id: 'speaking-parts-2-groups-1-1',
+                                src: '../../../../../../../assets/media/test-media.m4a',
+                                content:
+                                    'part 2 - question 1',
+                                answers: [],
+                            },
+                            {
+                                id: 'speaking-parts-2-groups-1-1',
+                                src: '../../../../../../../assets/media/test-media.m4a',
+                                content:
+                                    'part 2 - question 2',
+                                answers: [],
+                            },
+                            {
+                                id: 'speaking-parts-2-groups-1-1',
+                                src: '../../../../../../../assets/media/test-media.m4a',
+                                content:
+                                    'part 2 - question 3',
+                                answers: [],
+                            },
+                        ],
+                    },
+                ],
+                createdAt: new Date().toLocaleString(),
+                updatedAt: new Date().toLocaleString(),
+            },
+            {
+                id: 'speaking-part-3',
+                src: '../../../../assets/img/src-test-default.jpg',
+                time: '00:30:00',
+                description: "India's Modern Women",
+                groups: [
+                    {
+                        id: 'speaking-parts-3-group-1',
+                        title: 'Do the following statements agree with the information given in Reading Passage 1?',
+                        description: 'In boxes 9 - 13 on your answer sheet, write.',
+                        type: 'drag-drop',
+                        questions: [
+                            {
+                                id: 'speaking-parts-3-groups-1-1',
+                                src: '../../../../../../../assets/media/test-media.m4a',
+                                content:
+                                    'part 3 - question 1',
+                                answers: [],
+                            },
+                            {
+                                id: 'speaking-parts-3-groups-1-1',
+                                src: '../../../../../../../assets/media/test-media.m4a',
+                                content:
+                                    'part 3 - question 2',
+                                answers: [],
+                            },
+                            {
+                                id: 'speaking-parts-3-groups-1-1',
+                                src: '../../../../../../../assets/media/test-media.m4a',
+                                content:
+                                    'part 3 - question 3',
+                                answers: [],
                             },
                         ],
                     },
