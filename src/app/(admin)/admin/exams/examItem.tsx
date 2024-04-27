@@ -5,11 +5,11 @@ import Link from 'next/link'
 import '@admin/styles/components/_examItem.scss'
 import '@admin/styles/components/_button.scss'
 interface Props {
-    data: Exam;
+    data: Exam
     index: number
 }
 interface Exam {
-    thumbnail: String
+    thumbnail: string
     title: String
     description: String
     status: String
@@ -21,7 +21,7 @@ export default function ExamItem({ data, index }: Props) {
         <div className="exam-item">
             <div className="item-infor">
                 <div className="exam-infor-left">
-                    <div>#{index+1}</div>
+                    <div>#{index + 1}</div>
                     <img src={data.thumbnail} alt="thumbnail" />
                 </div>
                 <div className="exam-infor-right">
