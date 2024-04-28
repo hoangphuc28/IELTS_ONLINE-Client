@@ -9,7 +9,6 @@ import ComponentFileQuestion from './fileQuestion'
 import ComponentShortAnswer from './shortAnswer'
 
 export enum ListTypeQuestion {
-    choice = 'Choice',
     multiChoice = 'Multi choice',
     dragDrop = 'Drag and drop',
     shortAnswer = 'Short answer',
@@ -17,14 +16,16 @@ export enum ListTypeQuestion {
 }
 
 export default function ComponentAddBaseQuestion({}: {}) {
-    const [typeQuestion, setTypeQuestion] = useState<string>(ListTypeQuestion.choice)
+    const [typeQuestion, setTypeQuestion] = useState<string>(ListTypeQuestion.multiChoice)
     const { step: stepContext } = useQuestionContext()
 
     const formik = useFormik({
         initialValues: {
-            type: ListTypeQuestion.choice,
+            type: ListTypeQuestion.multiChoice,
         },
-        onSubmit: (values) => {},
+        onSubmit: (values) => {
+            stepContext.setStepSelected(stepContext.stepSelected + 1)
+        },
     })
     return (
         <>

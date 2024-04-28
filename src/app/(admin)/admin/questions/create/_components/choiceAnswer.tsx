@@ -1,10 +1,8 @@
 'use client'
 import Link from 'next/link'
-import { useRef } from 'react'
-import ComponentAnswer from './answer'
+import ComponentManagerAnswer from './answerManager'
 
 export default function ComponentChoiceAnswer() {
-    const refListQuestion = useRef<HTMLElement>(null)
     return (
         <>
             <section className="flex flex-col gap-3 ps-7 pe-3 w-full">
@@ -12,7 +10,7 @@ export default function ComponentChoiceAnswer() {
                     <div className="flex gap-2 items-start w-full">
                         <label htmlFor="">Group Description</label>
                         <textarea
-                            className="text-base rounded-lg px-2 py-1 w-full max-w-[620px]"
+                            className="text-base rounded-lg px-2 py-1 w-full max-w-[620px] min-h-[40px]"
                             name=""
                             id=""
                             rows={3}
@@ -39,29 +37,7 @@ export default function ComponentChoiceAnswer() {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-3">
-                    <section>
-                        <p>- Answers:</p>
-                    </section>
-                    <div className="flex items-end gap-3">
-                        <section
-                            ref={refListQuestion}
-                            className="flex flex-col items-center gap-3 w-full"
-                        >
-                            <section className="flex items-center w-full gap-2">
-                                <p className="min-w-[62px]">Correct</p>
-                                <p>Answer</p>
-                            </section>
-                            <ComponentAnswer />
-                        </section>
-                        <Link
-                            className="block w-[30px] h-[30px] flex items-center justify-center text-xl font-bold rounded bg-blue-300"
-                            href={''}
-                        >
-                            +
-                        </Link>
-                    </div>
-                </div>
+                <ComponentManagerAnswer />
             </section>
         </>
     )

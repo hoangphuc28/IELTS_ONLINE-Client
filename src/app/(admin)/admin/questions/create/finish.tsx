@@ -1,7 +1,3 @@
 export default function Finish() {
-    return (
-        <div>
-            finish
-        </div>
-    )
+    return <div className="flex items-center justify-center">Finish</div>
 }
