@@ -1,6 +1,7 @@
 import Nav from '@admin/admin/components/nav/nav'
 import '@admin/styles/base/_reset.scss'
 import '@admin/styles/base/_layout.scss'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 import Provider from '@admin/admin/providers/questionProvider'
 export const metadata = {
     title: 'Admin',

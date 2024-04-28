@@ -7,6 +7,9 @@ import { Fragment, useState } from 'react'
 import Popup from '../../components/popup/popup'
 import ChosePart from './selectParts'
 
+import { dataPart } from './dataPart'
+import ComponentPartItem from './_components/partItem'
+
 export default function AddQuestions() {
     const [showPopup, setShowPopup] = useState(false)
     const [selected, setSelected] = useState(1)
@@ -57,7 +60,22 @@ export default function AddQuestions() {
                             </ul>
                         </div>
                     </div>
-                    <div className="content"></div>
+                    <div className="content flex flex-col gap-2 mt-[64px] px-3">
+                        {(() => {
+                            if (selected === 1) {
+                                return dataPart.listening.map((e) => <ComponentPartItem data={e} />)
+                            }
+                            if (selected === 2) {
+                                return dataPart.reading.map((e) => <ComponentPartItem data={e} />)
+                            }
+                            if (selected === 3) {
+                                return dataPart.writing.map((e) => <ComponentPartItem data={e} />)
+                            }
+                            if (selected === 4) {
+                                return dataPart.speaking.map((e) => <ComponentPartItem data={e} />)
+                            }
+                        })()}
+                    </div>
                 </div>
             </div>
             <div className="exam-information">
