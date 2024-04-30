@@ -42,7 +42,7 @@ function ComponentSpeakingQuestion({ data }: { data: IGroup }) {
     return (
         <section className="flex flex-col gap-5 px-5 w-full">
             {data.questions.map((question) => (
-                <h3>{data.title}</h3>
+                <h3 dangerouslySetInnerHTML={{ __html: data.title }}></h3>
             ))}
         </section>
     )
@@ -52,13 +52,13 @@ function ComponentQuestionChoice({ data }: { data: IGroup }) {
     return (
         <>
             <section className="flex flex-col gap-2">
-                <h3>{data.title}</h3>
-                <h3>{data.description}</h3>
+                <h3 dangerouslySetInnerHTML={{ __html: data.title }}></h3>
+                <h3 dangerouslySetInnerHTML={{ __html: data.description }}></h3>
                 {data.questions.map((question, index) => {
                     const key = 'exam-library-part-list-question-choice-' + index
                     return (
                         <section className="flex flex-col gap-1" key={key}>
-                            <h3>{question.content}</h3>
+                            <h3 dangerouslySetInnerHTML={{ __html: question.content }}></h3>
 
                             <section className="flex flex-col gap-1">
                                 {question.answers.map((answer, answerIndex) => (
@@ -72,7 +72,10 @@ function ComponentQuestionChoice({ data }: { data: IGroup }) {
                                             name={question.id}
                                             value={answer.id}
                                         />
-                                        <label htmlFor={answer.id}>{answer.content}</label>
+                                        <label
+                                            htmlFor={answer.id}
+                                            dangerouslySetInnerHTML={{ __html: answer.content }}
+                                        ></label>
                                     </section>
                                 ))}
                             </section>
@@ -87,13 +90,13 @@ function ComponentQuestionMultiChoice({ data }: { data: IGroup }) {
     return (
         <>
             <section className="flex flex-col gap-2">
-                <h3>{data.title}</h3>
-                <h3>{data.description}</h3>
+                <h3 dangerouslySetInnerHTML={{ __html: data.title }}></h3>
+                <h3 dangerouslySetInnerHTML={{ __html: data.description }}></h3>
                 {data.questions.map((question, index) => {
                     const key = 'exam-library-part-list-question-choice-' + index
                     return (
                         <section className="flex flex-col gap-1" key={key}>
-                            <h3>{question.content}</h3>
+                            <h3 dangerouslySetInnerHTML={{ __html: question.content }}></h3>
 
                             <section className="flex flex-col gap-1">
                                 {question.answers.map((answer, answerIndex) => (
@@ -111,9 +114,8 @@ function ComponentQuestionMultiChoice({ data }: { data: IGroup }) {
                                             htmlFor={
                                                 key + answer.id + '-answer-index-' + answerIndex
                                             }
-                                        >
-                                            {answer.content}
-                                        </label>
+                                            dangerouslySetInnerHTML={{ __html: answer.content }}
+                                        ></label>
                                     </section>
                                 ))}
                             </section>
@@ -137,8 +139,8 @@ function ComponentQuestionDragDrop({ data }: { data: IGroup }) {
     return (
         <>
             <section className="flex flex-col gap-2">
-                <h3>{data.title}</h3>
-                <h3>{data.description}</h3>
+                <h3 dangerouslySetInnerHTML={{ __html: data.title }}></h3>
+                <h3 dangerouslySetInnerHTML={{ __html: data.description }}></h3>
 
                 <div className="flex gap-2">
                     <ComponentListDrag groupId={data.id} data={answers} />
@@ -163,8 +165,8 @@ function ComponentQuestionShortAnswer({
     return (
         <>
             <section className="flex flex-col gap-2 short-answer">
-                <h3>{data.title}</h3>
-                <h3>{data.description}</h3>
+                <h3 dangerouslySetInnerHTML={{ __html: data.title }}></h3>
+                <h3 dangerouslySetInnerHTML={{ __html: data.description }}></h3>
 
                 <section className="flex gap-1">
                     {data.questions.map((question, index) => (

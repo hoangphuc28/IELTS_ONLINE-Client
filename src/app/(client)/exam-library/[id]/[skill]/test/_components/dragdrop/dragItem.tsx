@@ -10,8 +10,7 @@ export default function ComponentDragItem({ groupId, data }: { groupId: string; 
             draggable="true"
             onDragStart={(e) => drag(e)}
             className=""
-        >
-            {data.content}
-        </section>
+            dangerouslySetInnerHTML={{ __html: data.content }}
+        ></section>
     )
 }

@@ -16,7 +16,7 @@ export default function ComponentDropItem({ groupId, data }: { groupId: string; 
                     <input className="hidden" type="text" name={data.id} />
                 </div>
             </section>
-            <span>{data.content}</span>
+            <span dangerouslySetInnerHTML={{ __html: data.content }}></span>
         </section>
     )
 }
