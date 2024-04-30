@@ -4,14 +4,14 @@ import { drag } from '@clientExamLibrary/[id]/[skill]/utils/dragAndDrop'
 
 export default function ComponentDragItem({ groupId, data }: { groupId: string; data: IAnswer }) {
     return (
-        <div
+        <section
             data-group-id={groupId}
-            data-id={data.id}
+            data-item-id={data.id}
             draggable="true"
             onDragStart={(e) => drag(e)}
             className=""
         >
             {data.content}
-        </div>
+        </section>
     )
 }
