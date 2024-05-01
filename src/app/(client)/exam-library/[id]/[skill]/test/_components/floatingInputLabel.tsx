@@ -29,3 +29,21 @@ export default function ComponentFloatingInputLabel({ label, id }: { label: stri
         </div>
     )
 }
+export function componentStringFloatingInputLabel({ id }: { id: string }) {
+    return `
+        <div className="max-w-[120px] relative inline-block" style="max-width: 120px; position: relative; display: inline-block">
+            <input
+                type="text"
+                name="${id}"
+                id="${id}"
+                className="bg-white block px-2.5 pb-2.5 pt-4 w-full
+                    text-sm text-gray-90
+                    rounded-lg border-1 border-gray-300 appearance-none
+                    focus:outline-none focus:ring-0 focus:border-blue-600
+                peer"
+                style="background: white; display: block; padding: 6px; width: 100%;"
+                placeholder=""
+            />
+        </div>
+    `
+}

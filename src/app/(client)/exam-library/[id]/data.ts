@@ -163,10 +163,6 @@ const miniTest: Array<IMiniTest> = [
                                         id: 'listening-parts-1-groups-3-9-1',
                                         content: 'T',
                                     },
-                                    {
-                                        id: 'listening-parts-1-groups-3-9-2',
-                                        content: 'F',
-                                    },
                                 ],
                             },
                             {
@@ -179,8 +175,15 @@ const miniTest: Array<IMiniTest> = [
                                         id: 'listening-parts-1-groups-3-10-1',
                                         content: 'T',
                                     },
+                                ],
+                            },
+                            {
+                                id: 'listening-parts-1-groups-3-11',
+                                src: '',
+                                content: '',
+                                answers: [
                                     {
-                                        id: 'listening-parts-1-groups-3-10-2',
+                                        id: 'listening-parts-1-groups-3-11-1',
                                         content: 'F',
                                     },
                                 ],
@@ -203,18 +206,6 @@ const miniTest: Array<IMiniTest> = [
                                         id: 'listening-parts-1-groups-4-9-1',
                                         content: 'A',
                                     },
-                                    {
-                                        id: 'listening-parts-1-groups-4-9-2',
-                                        content: 'B',
-                                    },
-                                    {
-                                        id: 'listening-parts-1-groups-4-9-3',
-                                        content: 'C',
-                                    },
-                                    {
-                                        id: 'listening-parts-1-groups-4-9-4',
-                                        content: 'D',
-                                    },
                                 ],
                             },
                             {
@@ -224,19 +215,31 @@ const miniTest: Array<IMiniTest> = [
                                     'Nội dung 2',
                                 answers: [
                                     {
-                                        id: 'listening-parts-1-groups-4-10-1',
-                                        content: 'A',
-                                    },
-                                    {
                                         id: 'listening-parts-1-groups-4-10-2',
                                         content: 'B',
                                     },
+                                ],
+                            },
+                            {
+                                id: 'listening-parts-1-groups-4-11',
+                                src: '',
+                                content:
+                                    '',
+                                answers: [
                                     {
-                                        id: 'listening-parts-1-groups-4-10-3',
+                                        id: 'listening-parts-1-groups-4-11-2',
                                         content: 'C',
                                     },
+                                ],
+                            },
+                            {
+                                id: 'listening-parts-1-groups-4-12',
+                                src: '',
+                                content:
+                                    '',
+                                answers: [
                                     {
-                                        id: 'listening-parts-1-groups-4-10-4',
+                                        id: 'listening-parts-1-groups-4-12-2',
                                         content: 'D',
                                     },
                                 ],
@@ -253,15 +256,19 @@ const miniTest: Array<IMiniTest> = [
                                 id: 'listening-parts-1-groups-5-9',
                                 src: '',
                                 content:
-                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
-                                answers: [],
-                            },
-                            {
-                                id: 'listening-parts-1-groups-5-10',
-                                src: '',
-                                content:
-                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
-                                answers: [],
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India. Input here <ShortAnswer />, input here <ShortAnswer />, here <ShortAnswer />',
+                                answers: [
+                                    {
+                                        id: '',
+                                        content: ''
+                                    }, {
+                                        id: '',
+                                        content: ''
+                                    }, {
+                                        id: '',
+                                        content: ''
+                                    }
+                                ],
                             },
                         ]
                     },
@@ -427,7 +434,7 @@ const miniTest: Array<IMiniTest> = [
                         id: 'listening-parts-4-groups-1',
                         title: 'Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'drag-drop',
+                        type: 'DROP_DOWN_CHECKBOX',
                         questions: [
                             {
                                 id: 'listening-parts-4-groups-1-1',
@@ -446,46 +453,6 @@ const miniTest: Array<IMiniTest> = [
                                 ],
                             },
                         ],
-                    },
-                    {
-                        id: 'listening-parts-4-groups-2',
-                        title: 'Do the following statements agree with the information given in Reading Passage 1?',
-                        description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'drag-drop',
-                        questions: [
-                            {
-                                id: 'listening-parts-1-groups-1-9',
-                                src: '',
-                                content:
-                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
-                                answers: [
-                                    {
-                                        id: 'listening-parts-1-groups-1-9-1',
-                                        content: 'T',
-                                    },
-                                    {
-                                        id: 'listening-parts-1-groups-1-9-2',
-                                        content: 'F',
-                                    },
-                                ],
-                            },
-                            {
-                                id: 'listening-parts-1-groups-1-10',
-                                src: '',
-                                content:
-                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
-                                answers: [
-                                    {
-                                        id: 'listening-parts-1-groups-1-10-1',
-                                        content: 'T',
-                                    },
-                                    {
-                                        id: 'listening-parts-1-groups-1-10-2',
-                                        content: 'F',
-                                    },
-                                ],
-                            },
-                        ]
                     },
                 ],
                 createdAt: new Date().toLocaleString(),

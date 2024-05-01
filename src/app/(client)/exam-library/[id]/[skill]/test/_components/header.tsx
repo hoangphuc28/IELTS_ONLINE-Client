@@ -9,7 +9,7 @@ export default function ComponentTestHeader({ data }: { data: IMiniTest }) {
     }
     return (
         <>
-            <header className="bg-white px-5 h-12">
+            <header className="bg-white px-5">
                 <section className="relative flex justify-between">
                     <section className="logo mobile w-12 h-12">
                         <img
@@ -37,7 +37,7 @@ function ListeningHeader({ data }: { data: string }) {
         <>
             <section>
                 <audio
-                    className="w-full"
+                    className="static block w-full"
                     src="../../../../../../../assets/media/test-media.m4a"
                     controls
                 ></audio>

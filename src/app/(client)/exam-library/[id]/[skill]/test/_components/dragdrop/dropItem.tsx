@@ -4,10 +4,10 @@ import { allowDrop, drop } from '@clientExamLibrary/[id]/[skill]/utils/dragAndDr
 export default function ComponentDropItem({ groupId, data }: { groupId: string; data: IQuestion }) {
     return (
         <section className="flex items-center gap-2">
-            <section className="relative">
-                <span className="text-transparent select-none">TEMP</span>
+            <section className="relative inline-block select-none min-w-[100px] min-h-[28px]">
+                {/* <span className="block text-transparent"></span> */}
                 <div
-                    onDrop={(e) => drop(e, data.answers)}
+                    onDrop={(e) => drop(e)}
                     onDragOver={(e) => allowDrop(e)}
                     data-group-id={groupId}
                     data-drop-max-child={2}

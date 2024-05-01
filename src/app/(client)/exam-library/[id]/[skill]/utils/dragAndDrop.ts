@@ -51,12 +51,12 @@ export function drop(ev: DragEvent<HTMLElement>, transferData?: IAnswer[]) {
             // if dragContainer is another drop container => change input in drop container
             if (dragContainer) {
                 const inputInDragItem = dragContainer.querySelector('input') as HTMLInputElement | null
-                handleChangeInputValue(inputInDragItem, swapItem.innerText, transferData)
+                handleChangeInputValue(inputInDragItem, swapItem.innerText)
             }
         }
     }
     // if drop container exist input element, change value that input
-    handleChangeInputValue(input, dragItemDOM.innerText, transferData)
+    handleChangeInputValue(input, dragItemDOM.innerText)
     dropContainer.appendChild(dragItemDOM)
     // #endregion handle drop
 }
@@ -66,12 +66,14 @@ function getMaxChild(source: HTMLElement | null): number {
     return Number.parseInt(source.dataset.dropMaxChild || Number.POSITIVE_INFINITY.toString())
 }
 
-function handleChangeInputValue(input: HTMLInputElement | null, value: string, transferData?: IAnswer[]) {
-    if (!input || !transferData || transferData.length === 0) return
-    const answerChoice = transferData.find((e) => e.content === value)
-    if (answerChoice) {
-        input.value = answerChoice.id
-    }
+function handleChangeInputValue(input: HTMLInputElement | null, value: string) {
+    if (!input) return
+
+    input.value = value
+    // const answerChoice = transferData.find((e) => e.content === value)
+    // if (answerChoice) {
+    //     input.value = answerChoice.id
+    // }
 }
 
 function handleSwapChild(sourceDOM?: HTMLElement | null, targetDOM?: HTMLElement | null): Element | null {
