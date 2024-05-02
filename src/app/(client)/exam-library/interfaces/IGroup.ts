@@ -1,3 +1,4 @@
+import IAnswer from "./IAnswer";
 import IQuestion from "./IQuestion";
 
 export default interface IGroup {
@@ -8,4 +9,5 @@ export default interface IGroup {
     createdAt?: string
     updatedAt?: string
     questions: Array<IQuestion>
+    answers?: IAnswer[]
 }

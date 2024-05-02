@@ -2,7 +2,7 @@
 
 import IAnswer from '@/src/app/(client)/exam-library/interfaces/IAnswer'
 import IGroup from '@/src/app/(client)/exam-library/interfaces/IGroup'
-import ComponentDropItem from '../dragdrop/dropItem'
+import ComponentDropItem, { componentStringDropItem } from '../dragdrop/dropItem'
 import ComponentListDrag from '../dragdrop/listDrag'
 import ComponentFloatingInputLabel, {
     componentStringFloatingInputLabel,
@@ -11,16 +11,18 @@ import { useParams } from 'next/navigation'
 import ComponentDropdownManager from '../dropdown/dropdownManager'
 import ComponentDropdownItemCheckBox from '../dropdown/dropdownCheckBox'
 import { useEffect, useRef } from 'react'
+import ComponentDropdownItem from '../dropdown/dropdownItem'
+import { allowDrop, drop } from '../../../utils/dragAndDrop'
 
 export default function ComponentListQuestionContent({
     data,
     startQuestionIndex,
 }: {
     data: IGroup
-    startQuestionIndex: number
+    startQuestionIndex?: number
 }) {
     const params = useParams<{ skill: string }>()
-    if (params.skill === 'Speaking') return <></>
+    // if (params.skill === 'Speaking') return <></>
     if (params.skill === 'Writing') return <ComponentWritingQuestion data={data} />
     if (data.type === 'choice') return <ComponentQuestionChoice data={data} />
     if (data.type === 'multi-choice') return <ComponentQuestionMultiChoice data={data} />
@@ -28,10 +30,12 @@ export default function ComponentListQuestionContent({
     if (data.type === 'short-answer')
         return <ComponentQuestionShortAnswer data={data} startQuestionIndex={startQuestionIndex} />
     if (data.type === 'DROP_DOWN') return <ComponentQuestionDropDown data={data} />
-    if (data.type === 'DRAG_DROP_HEADING') return <ComponentQuestionDragDropHeading data={data} />
-    if (data.type === 'DRAG_DROP_SHORT_ANSWER')
+    if (data.type === 'DRAG_AND_DROP_HEADING')
+        return <ComponentQuestionDragDropHeading data={data} />
+    if (data.type === 'DRAG_AND_DROP_SHORT_ANSWER')
         return <ComponentQuestionDragDropShortAnswer data={data} />
     // if (data.type === 'DROP_DOWN_CHECKBOX') return <ComponentDropDownCheckbox data={data} />
+    return <></>
 }
 
 function ComponentWritingQuestion({ data }: { data: IGroup }) {
@@ -43,16 +47,6 @@ function ComponentWritingQuestion({ data }: { data: IGroup }) {
                     className="w-full rounded-lg border-violet-500 border-2"
                     rows={16}
                 ></textarea>
-            ))}
-        </section>
-    )
-}
-
-function ComponentSpeakingQuestion({ data }: { data: IGroup }) {
-    return (
-        <section className="flex flex-col gap-5 px-5 w-full">
-            {data.questions.map((question) => (
-                <h3 dangerouslySetInnerHTML={{ __html: data.title }}></h3>
             ))}
         </section>
     )
@@ -173,7 +167,7 @@ function ComponentQuestionShortAnswer({
     startQuestionIndex,
 }: {
     data: IGroup
-    startQuestionIndex: number
+    startQuestionIndex?: number
 }) {
     const refDataHTML = useRef<HTMLDivElement>(null)
     let dataHTML = data.questions[0].content
@@ -207,15 +201,92 @@ function ComponentQuestionShortAnswer({
 }
 
 function ComponentQuestionDropDown({ data }: { data: IGroup }) {
-    return <section></section>
+    return (
+        <section className="flex flex-col gap-2">
+            <h3 dangerouslySetInnerHTML={{ __html: data.title }}></h3>
+            <h3 dangerouslySetInnerHTML={{ __html: data.description }}></h3>
+            <section className="flex flex-col gap-2">
+                {data.questions.map((question, index) => (
+                    <ComponentDropdownItem
+                        key={'question-' + question.id + '-index-' + index}
+                        data={question}
+                        answers={data.answers || []}
+                    />
+                ))}
+            </section>
+        </section>
+    )
 }
 
 function ComponentQuestionDragDropHeading({ data }: { data: IGroup }) {
-    return <section></section>
+    useEffect(() => {
+        for (let index = 0; index < data.questions.length; index++) {
+            const questionId = data.questions[index]
+
+            const input = document.querySelector(
+                `input[name="${questionId}"]`,
+            ) as HTMLInputElement | null
+            if (!input) continue
+            const parentInput = input.parentElement as HTMLInputElement | null
+            if (!parentInput) continue
+            parentInput.addEventListener('drop', (e) => {
+                drop(e as any)
+            })
+            parentInput.addEventListener('dragover', (e) => {
+                allowDrop(e as any)
+            })
+        }
+    }, [])
+    return (
+        <section className="flex flex-col gap-2">
+            <h3 dangerouslySetInnerHTML={{ __html: data.title }}></h3>
+            <h3 dangerouslySetInnerHTML={{ __html: data.description }}></h3>
+
+            <section className="flex flex-col gap-2">
+                <h3 className="text-base font-bold">List of answers</h3>
+                <ComponentListDrag groupId={data.id} data={data.answers || []} />
+            </section>
+        </section>
+    )
 }
 
 function ComponentQuestionDragDropShortAnswer({ data }: { data: IGroup }) {
-    return <section></section>
+    const refDataHTML = useRef<HTMLDivElement>(null)
+    let dataHTML = data.questions[0].content
+    let index = 0
+    while (index < (data.answers || []).length - 1) {
+        index++
+        dataHTML = dataHTML.replace(
+            '<DragAndDropShortAnswer />',
+            componentStringDropItem({
+                groupId: data.id,
+                data: {
+                    id: 'group-' + data.id + '-question-' + index,
+                    content: '',
+                    answers: [],
+                    src: '',
+                },
+            }),
+        )
+    }
+    return (
+        <section>
+            <section className="flex flex-col gap-2">
+                <h3 dangerouslySetInnerHTML={{ __html: data.title }}></h3>
+                <h3 dangerouslySetInnerHTML={{ __html: data.description }}></h3>
+
+                <section className="flex flex-col gap-2">
+                    <div
+                        className=""
+                        ref={refDataHTML}
+                        dangerouslySetInnerHTML={{ __html: dataHTML }}
+                    ></div>
+                    <h3 className="text-base font-bold">List of answers</h3>
+                    <ComponentListDrag groupId={data.id} data={data.answers || []} />
+                </section>
+            </section>
+        </section>
+    )
 }
 
 // function ComponentDropDownCheckbox({ data }: { data: IGroup }) {

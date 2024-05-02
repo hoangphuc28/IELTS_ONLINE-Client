@@ -272,6 +272,57 @@ const miniTest: Array<IMiniTest> = [
                             },
                         ]
                     },
+                    {
+                        id: 'listening-parts-1-groups-6',
+                        title: '(Short answer) Do the following statements agree with the information given in Reading Passage 1?',
+                        description: 'In boxes 9 - 13 on your answer sheet, write.',
+                        type: 'DROP_DOWN',
+                        questions: [
+                            {
+                                id: 'listening-parts-1-groups-6-9',
+                                src: '',
+                                content:
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                answers: [],
+                            },
+                            {
+                                id: 'listening-parts-1-groups-6-9',
+                                src: '',
+                                content:
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                answers: [],
+                            },
+                            {
+                                id: 'listening-parts-1-groups-6-9',
+                                src: '',
+                                content:
+                                    '9. The effect of American culture on young Indian women was not forecast when satellite and cable TV arrived in India.',
+                                answers: [],
+                            },
+                        ],
+                        answers: [{ id: 'listening-parts-1-groups-6-answer-1', content: 'A' }, { id: 'listening-parts-1-groups-6-answer-2', content: 'B' }, { id: 'listening-parts-1-groups-6-answer-3', content: 'C' }, { id: 'listening-parts-1-groups-6-answer-4', content: 'D' }]
+                    },
+                    {
+                        id: 'listening-parts-1-groups-7',
+                        title: '(Short answer) Do the following statements agree with the information given in Reading Passage 1?',
+                        description: 'In boxes 9 - 13 on your answer sheet, write.',
+                        type: 'DRAG_AND_DROP_HEADING',
+                        questions: [],
+                        answers: [{ id: 'listening-parts-1-groups-7-answer-1', content: 'A' }, { id: 'listening-parts-1-groups-7-answer-2', content: 'B' }, { id: 'listening-parts-1-groups-7-answer-3', content: 'C' }, { id: 'listening-parts-1-groups-7-answer-4', content: 'D' }]
+                    },
+                    {
+                        id: 'listening-parts-1-groups-8',
+                        title: '(DRAG_AND_DROP_HEADING) Do the following statements agree with the information given in Reading Passage 1?',
+                        description: 'In boxes 9 - 13 on your answer sheet, write.',
+                        type: 'DRAG_AND_DROP_SHORT_ANSWER',
+                        questions: [{
+                            id: 'listening-parts-1-groups-8-question-1',
+                            content: 'Do the following statements agree with the information given in Reading Passage 1? <DragAndDropShortAnswer /> Do the following statements agree with the information given in Reading Passage 1? <DragAndDropShortAnswer /> Do the following statements agree with the information given in Reading Passage 1? <DragAndDropShortAnswer />',
+                            answers: [],
+                            src: '',
+                        }],
+                        answers: [{ id: 'listening-parts-1-groups-8-answer-1', content: 'A' }, { id: 'listening-parts-1-groups-8-answer-2', content: 'B' }, { id: 'listening-parts-1-groups-8-answer-3', content: 'C' }, { id: 'listening-parts-1-groups-8-answer-4', content: 'D' }]
+                    },
                 ],
                 createdAt: new Date().toLocaleString(),
                 updatedAt: new Date().toLocaleString(),
