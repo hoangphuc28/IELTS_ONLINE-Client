@@ -1,0 +1,11 @@
+[data-drop-down-btn='true'] {
+    & + [data-drop-down='true'] {
+        display: none;
+    }
+
+    &.show {
+        & + [data-drop-down='true'] {
+            display: block;
+        }
+    }
+}
