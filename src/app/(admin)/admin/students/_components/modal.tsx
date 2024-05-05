@@ -15,7 +15,6 @@ export default function ComponentModal({
         <>
             {isShow && (
                 <section
-                    onClick={(e) => handleClose(e)}
                     ref={refModal}
                     className="fixed top-0 bottom-0 left-0 right-0 bg-black/[0.6] flex justify-center"
                 >
