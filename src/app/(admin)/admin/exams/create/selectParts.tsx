@@ -3,6 +3,7 @@ import CategoriesPanel from '../../components/categoriesPanel/categoriesPanel'
 import Resizer from '../../components/resizer'
 import "@admin/styles/components/_selectParts.scss"
 import Portlet from '../../components/categoriesPanel/portlet'
+import ListParts from '../../questions/listParts'
 interface Category {
     id: String
     title: String
@@ -24,7 +25,9 @@ export default function ChosePart() {
                 <div className="middle">
                     <Resizer max={800} forwardedRef={examLeft} />
                 </div>
-                <div className="right"></div>
+                <div className="right">
+                    <ListParts/>
+                </div>
             </div>
         </div>
     )

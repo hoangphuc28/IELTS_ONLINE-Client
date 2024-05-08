@@ -12,11 +12,11 @@ import { Stack } from "@mui/system";
 export default function ExamPanel() {
     return (
         <div className="cover">
-           
+
             <div className="exams-contain">
                 <div className="table-toolbar">
                     <div className="left">
-                        <Link className="btn-style3" href="/admin/exams/create">
+                        <Link className="btn-style3" href="/admin/exams/create/basic-information">
                             <Image src={PlustIcon} alt="plus-icon"/>
                             New exam
                         </Link>
@@ -35,7 +35,7 @@ export default function ExamPanel() {
                 </Stack>
                 </div>
             </div>
-            
+
         </div>
     )
 }

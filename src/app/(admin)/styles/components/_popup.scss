@@ -1,12 +1,11 @@
 .popup {
-    position: absolute;
+    position: fixed;
     z-index: 99;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.285);
-
     .cover {
-        height: 50%;
-
+        border-top-left-radius: 10px !important;
+        border-top-right-radius: 10px !important;
         .container {
             .header {
                 position: absolute;

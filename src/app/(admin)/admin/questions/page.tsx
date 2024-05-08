@@ -6,6 +6,7 @@ import Resizer from '../components/resizer'
 import QuestionPanel from './questionPanel'
 import Pagination from '@mui/material/Pagination'
 import Stack from '@mui/material/Stack'
+import ListParts from './listParts'
 interface Category {
     id: String
     title: String

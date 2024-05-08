@@ -1,0 +1,21 @@
+.create-part {
+   .cover {
+    padding: 0;
+    .header-container {
+        padding: 20px;
+        border-bottom: solid 1px #e6e6e6;
+    }
+    .content {
+        .content-left {
+            width: 30%;
+            .form-control {
+                width: auto;
+            }
+
+        }
+        .content-right {
+            width: 70%;
+        }
+    }
+   }
+}

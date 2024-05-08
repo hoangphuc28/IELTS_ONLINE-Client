@@ -3,56 +3,36 @@ import '@admin/styles/components/_input.scss'
 import '@admin/styles/components/_cover.scss'
 import '@admin/styles/components/_text.scss'
 import '@admin/styles/pages/createExam.scss'
+import '@admin/styles/pages/createPart.scss'
 import { useEffect } from 'react'
-import BasicInformation from './basicInformation'
-import AddQuestions from './addQuestions'
-import Finish from './finish'
 import { useQuestionContext } from '../../providers/questionProvider'
+import AddPart from '../addedit/part'
+import part from '../type/sampleData';
+import { Part } from '../type/Part.class'
+import { useDispatch } from 'react-redux'
+import { CreatePart } from '../../lib/action/Part/create'
+import { useRouter } from 'next/navigation'
 export default function Page() {
+    const {push} = useRouter()
     const { step: stepContext } = useQuestionContext()
     const { stepSelected, setStepSelected } = stepContext
+    const dispatch = useDispatch()
 
     useEffect(() => {
         setStepSelected(1)
     }, [])
     return (
-        <div className="create-exam">
+        <div className="create-part relative">
             <div className="cover">
                 <div className="header-container">
-                    <div className="title">Create An Part</div>
-                    <ul>
-                        <li
-                            onClick={() => setStepSelected(1)}
-                            className={`${stepSelected === 1 ? 'selected' : ''}`}
-                        >
-                            <div className="circle">1</div>
-                            <span>Basic information</span>
-                            <div className="line" />
-                        </li>
-                        <li
-                            onClick={() => setStepSelected(2)}
-                            className={`${stepSelected === 2 ? 'selected' : ''}`}
-                        >
-                            <div className="circle">2</div>
-                            <span>Add questions</span>
-                            <div className="line" />
-                        </li>
-                        <li
-                            onClick={() => setStepSelected(3)}
-                            className={`${stepSelected === 3 ? 'selected' : ''}`}
-                        >
-                            <span>Finish</span>
-                        </li>
-                    </ul>
+                    <div className="title">Create A Part</div>
                 </div>
-                <div className="content">
-                    {stepSelected === 1 ? (
-                        <BasicInformation />
-                    ) : stepSelected === 2 ? (
-                        <AddQuestions />
-                    ) : (
-                        <Finish />
-                    )}
+
+                <div className="content pb-10">
+                        <AddPart action={(values) => {
+                            dispatch(CreatePart(values, () => push('/admin/questions')));
+                        }} part={new Part()}/>
+
                 </div>
             </div>
         </div>
