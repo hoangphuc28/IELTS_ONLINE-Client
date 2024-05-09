@@ -1,8 +1,9 @@
 import axios from "axios"
-import { Part } from "../../../../parts/type/Part.class.jsx"
+import { Part } from "../../../../admin/parts/type/Part.class"
 
-import { CreateManyGroupQuestion } from "../GroupQuestion/create"
+
 import api from "../api"
+import { CreateManyGroupQuestion } from "../GroupQuestion/create"
 
 
 export const CreatePart = (data: Part, successAction: () => void) => {

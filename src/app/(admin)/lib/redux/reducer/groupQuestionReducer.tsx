@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice, Draft } from "@reduxjs/toolkit";
-import { GroupQuestion } from "../../../parts/type/GroupQuestion.class";
+import { GroupQuestion } from "../../../admin/parts/type/GroupQuestion.class";
 
 interface GroupQuestionState {
     list: Draft<GroupQuestion>[];

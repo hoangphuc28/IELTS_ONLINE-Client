@@ -4,7 +4,7 @@ import PartItem from './partItem'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 
-import { GetAllParts } from '../lib/redux/action/Part/get'
+import { GetAllParts } from '../../lib/redux/action/Part/get'
 
 export default function ListParts() {
     const dispatch = useDispatch()

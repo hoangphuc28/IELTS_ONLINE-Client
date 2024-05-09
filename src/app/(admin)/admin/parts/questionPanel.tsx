@@ -10,7 +10,7 @@ import '@admin/styles/components/_button.scss'
 import '@admin/styles/globals.css'
 import ListParts from './listParts'
 import { Stack, Pagination } from '@mui/material'
-import routes from '../lib/routes/routes'
+import routes from '../../lib/routes/routes'
 export default function QuestionPanel() {
     return (
         <div className="cover">

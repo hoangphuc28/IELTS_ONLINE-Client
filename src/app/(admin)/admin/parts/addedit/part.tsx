@@ -9,7 +9,7 @@ import AddQuestionPopup from './_components/addQuestionPopup'
 import { Part } from '../type/Part.class'
 import { GroupQuestion } from '../type/GroupQuestion.class'
 import GroupQuestionsComponent from './_components/groupQuestion'
-import { CreatePart } from '../../lib/redux/action/Part/create'
+import { CreatePart } from '../../../lib/redux/action/Part/create'
 import { useDispatch, useSelector } from 'react-redux'
 import * as Yup from 'yup';
 import _ from 'lodash'

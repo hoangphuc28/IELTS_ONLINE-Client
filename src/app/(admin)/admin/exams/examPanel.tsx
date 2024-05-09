@@ -9,7 +9,7 @@ import "@admin/styles/components/_tableToolbar.scss";
 import ExamsList from "./examsList";
 import { Pagination } from "@mui/material";
 import { Stack } from "@mui/system";
-import routes from "../lib/routes/routes";
+import routes from "../../lib/routes/routes";
 export default function ExamPanel() {
     return (
         <div className="cover">

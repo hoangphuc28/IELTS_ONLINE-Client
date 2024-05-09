@@ -8,16 +8,16 @@ export enum QuestionType {
     MatchingFillInBlank = 'Matching fill in the blanks',
 }
 export enum SkillEnum {
-    READING = 'READING',
-    LISTENING = 'LISTENING',
-    WRITING = 'WRITING',
-    SPEAKING = 'SPEAKING',
+    READING = 'Reading',
+    LISTENING = 'Listening',
+    WRITING = 'Writing',
+    SPEAKING = 'Speaking',
 }
 export enum PartEnum {
-    Part1= "Part 1",
-    Part2= "Part 2",
-    Part3= "Part 3",
-    Part4= "Part 4",
+    Part1 = 'Part 1',
+    Part2 = 'Part 2',
+    Part3 = 'Part 3',
+    Part4 = 'Part 4',
 }
 export interface SkillPart {
     skill: SkillEnum

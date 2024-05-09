@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Part } from "../../../../parts/type/Part.class";
+import { Part } from "../../../../admin/parts/type/Part.class";
 import api from "../api";
 import { UploadManyGroupQuestion } from "../GroupQuestion/upload";
 import { Dispatch } from "@reduxjs/toolkit";

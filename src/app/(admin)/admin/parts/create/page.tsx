@@ -10,9 +10,9 @@ import AddPart from '../addedit/part'
 import part from '../type/sampleData';
 import { Part } from '../type/Part.class'
 import { useDispatch } from 'react-redux'
-import { CreatePart } from '../../lib/redux/action/Part/create'
+import { CreatePart } from '../../../lib/redux/action/Part/create'
 import { useRouter } from 'next/navigation'
-import routes from '../../lib/routes/routes'
+import routes from '../../../lib/routes/routes'
 export default function Page() {
     const {push} = useRouter()
     const { step: stepContext } = useQuestionContext()

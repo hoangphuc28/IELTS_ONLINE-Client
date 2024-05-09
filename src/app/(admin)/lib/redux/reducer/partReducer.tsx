@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Part } from "../../../parts/type/Part.class";
+import { Part } from "../../../admin/parts/type/Part.class";
 
 interface PartState {
     list: Part[];

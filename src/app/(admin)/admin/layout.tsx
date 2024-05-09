@@ -3,7 +3,7 @@ import "@admin/styles/base/_reset.scss"
 import "@admin/styles/base/_layout.scss"
 import ExamProvider from "./providers/examProvider"
 import { Provider } from 'react-redux'
-import store from "./lib/redux/store"
+import store from "../lib/redux/store"
 import ReduxProvider from "./providers/reduxProvider"
 
 export const metadata = {

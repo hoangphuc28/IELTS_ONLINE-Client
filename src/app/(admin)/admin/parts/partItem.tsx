@@ -3,9 +3,9 @@ import '@admin/styles/components/_button.scss'
 import Link from 'next/link'
 import { Part } from './type/Part.class'
 import { useDispatch } from 'react-redux'
-import { DeletePart } from '../lib/redux/action/Part/delete'
+import { DeletePart } from '../../lib/redux/action/Part/delete'
 import { useRouter } from 'next/navigation'
-import routes from '../lib/routes/routes'
+import routes from '../../lib/routes/routes'
 interface Props {
     item: Part
 }

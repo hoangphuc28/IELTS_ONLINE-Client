@@ -1,6 +1,6 @@
 import axios from "axios"
 import api from "../api"
-import { GroupQuestion } from "../../../../parts/type/GroupQuestion.class"
+import { GroupQuestion } from "../../../../admin/parts/type/GroupQuestion.class"
 import { Dispatch } from "@reduxjs/toolkit"
 
 export const UploadManyGroupQuestion = (groupQuestions: GroupQuestion[], partId: string, successAction: () => void) => {

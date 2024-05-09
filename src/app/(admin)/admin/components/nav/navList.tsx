@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 import Image from "next/image";
 import "@admin/styles/nav/list.scss"
 import Link from "next/link";
-import routes from "../../lib/routes/routes";
+import routes from "../../../lib/routes/routes";
 export default function NavList() {
     const pathname = usePathname()
     return (

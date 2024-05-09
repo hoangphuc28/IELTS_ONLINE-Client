@@ -1,7 +1,5 @@
 import axios from "axios";
-import { GroupQuestion } from "../../../../parts/type/GroupQuestion.class";
-
-import { Part } from "../../../../parts/type/Part.class";
+import { GroupQuestion } from "../../../../admin/parts/type/GroupQuestion.class";
 import api from "../api";
 
 export const CreateGroupQuestion = (data: GroupQuestion) => {

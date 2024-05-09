@@ -25,7 +25,7 @@ import { MultipleChoice as MultipleChoiceType } from '../../type/Question'
 import Close from '@mui/icons-material/Close'
 import { Editor } from '@tiptap/react'
 import dynamic from 'next/dynamic'
-import { truncateParagraph } from '../../../util/truncate'
+import { truncateParagraph } from '../../../../util/truncate'
 import EditIcon from '@mui/icons-material/Edit'
 import AddEditQuestion from './question'
 //using useReducer
