@@ -9,6 +9,7 @@ import "@admin/styles/components/_tableToolbar.scss";
 import ExamsList from "./examsList";
 import { Pagination } from "@mui/material";
 import { Stack } from "@mui/system";
+import routes from "../lib/routes/routes";
 export default function ExamPanel() {
     return (
         <div className="cover">
@@ -16,7 +17,7 @@ export default function ExamPanel() {
             <div className="exams-contain">
                 <div className="table-toolbar">
                     <div className="left">
-                        <Link className="btn-style3" href="/admin/exams/create/basic-information">
+                        <Link className="btn-style3" href={`${routes.exams}/create/basic-information`}>
                             <Image src={PlustIcon} alt="plus-icon"/>
                             New exam
                         </Link>
