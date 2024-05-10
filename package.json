@@ -40,9 +40,9 @@
         "react-redux": "^9.1.2",
         "slate": "^0.103.0",
         "slate-react": "^0.102.0",
-        "yup": "^1.4.0"
+        "yup": "^1.4.0",
         "dexie": "^4.0.4",
-        "dexie-react-hooks": "^1.1.7",
+        "dexie-react-hooks": "^1.1.7"
     },
     "devDependencies": {
         "@types/node": "20",
