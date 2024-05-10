@@ -7,7 +7,7 @@ export class IndexDBModelDexie extends Dexie {
     constructor() {
         super(process.env.NEXT_PUBLIC_DB || 'ielts_online-client')
         this.version(1).stores({
-            answerExams: 'examId'
+            answerExams: 'id'
         })
     }
 }
