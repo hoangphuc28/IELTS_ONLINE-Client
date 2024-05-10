@@ -1,6 +1,6 @@
 'use client'
-import IQuestion from '@/src/app/(client)/exam-library/interfaces/IQuestion'
-import IPart from '@clientExamLibrary/interfaces/IPart'
+import IQuestion from '@/src/utils/shares/interfaces/IQuestion'
+import IPart from '@/src/utils/shares/interfaces/IPart'
 import { useParams } from 'next/navigation'
 import { handleAccording } from '../../../utils/according'
 import { handleToQuestion } from '../../../utils/toQuestion'

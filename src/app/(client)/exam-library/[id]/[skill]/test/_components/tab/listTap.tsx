@@ -1,8 +1,8 @@
 'use client'
-import IMiniTest from '@/src/app/(client)/exam-library/interfaces/IMiniTest'
+import IMiniTest from '@/src/utils/shares/interfaces/IMiniTest'
 import ComponentTabItem from './tabItem'
-import IPart from '@/src/app/(client)/exam-library/interfaces/IPart'
-import IGroup from '@/src/app/(client)/exam-library/interfaces/IGroup'
+import IPart from '@/src/utils/shares/interfaces/IPart'
+import IGroup from '@/src/utils/shares/interfaces/IGroup'
 import { useParams, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 

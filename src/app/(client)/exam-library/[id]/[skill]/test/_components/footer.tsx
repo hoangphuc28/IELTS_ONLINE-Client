@@ -1,5 +1,5 @@
 'use client'
-import IMiniTest from '@clientExamLibrary/interfaces/IMiniTest'
+import IMiniTest from '@/src/utils/shares/interfaces/IMiniTest'
 import ComponentListTap from './tab/listTap'
 
 export default function ComponentTestFooter({ data }: { data: IMiniTest }) {

@@ -1,10 +1,13 @@
+'use client'
+
 import LayoutCenter from '@client/_components/layoutCenter'
-import IMiniTest from '@clientExamLibrary/interfaces/IMiniTest'
-import ITest from '@clientExamLibrary/interfaces/ITest'
+import IMiniTest from '@/src/utils/shares/interfaces/IMiniTest'
+import ITest from '@/src/utils/shares/interfaces/ITest'
 import ComponentCardInfo from '@clientExamLibrary/[id]/_components/cardInfo'
 import ComponentCardTestItem from '@clientExamLibrary/[id]/_components/cardTestItem'
 
 import test from '@clientExamLibrary/[id]/data'
+import { useEffect } from 'react'
 
 export default function Page() {
     const colors = ['#31aabe', '#317343', '#eea055', '#c06073']
@@ -45,6 +48,7 @@ export default function Page() {
             100,
     )
     const maxExams: Array<number> = [40, 40, 3, 2]
+
     return (
         <>
             <main className="min-h-[50vh] mb-5 sm:mt-5 sm:py-5">

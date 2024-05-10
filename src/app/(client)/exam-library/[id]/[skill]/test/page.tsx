@@ -5,8 +5,8 @@ import test from '@clientExamLibrary/[id]/data'
 import { useParams, useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import ComponentPart from './_components/part.tsx/part'
-import IPart from '@clientExamLibrary/interfaces/IPart'
-import IGroup from '../../../interfaces/IGroup'
+import IPart from '@/src/utils/shares/interfaces/IPart'
+import IGroup from '../../../../../../utils/shares/interfaces/IGroup'
 import ComponentTestHeader from './_components/header'
 
 export default function Page() {

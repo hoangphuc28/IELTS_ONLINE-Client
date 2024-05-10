@@ -1,5 +1,5 @@
 import ComponentDragItem from './dragItem'
-import IAnswer from '@/src/app/(client)/exam-library/interfaces/IAnswer'
+import IAnswer from '@/src/utils/shares/interfaces/IAnswer'
 import { allowDrop, drop } from '@clientExamLibrary/[id]/[skill]/utils/dragAndDrop'
 
 export default function ComponentListDrag({ groupId, data }: { groupId: string; data: IAnswer[] }) {

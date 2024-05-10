@@ -7,7 +7,7 @@ import ComponentSearch from '../_components/search'
 import ComponentCard from './card'
 import ISourceData from './interfaces/ISourceData'
 import ICarouselData from './interfaces/ICarouselData'
-import ITest from '@client/exam-library/interfaces/ITest'
+import ITest from '@/src/utils/shares/interfaces/ITest'
 import ComponentMedia from '../_components/media'
 
 export default function Page() {

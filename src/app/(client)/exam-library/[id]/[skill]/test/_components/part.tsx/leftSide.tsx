@@ -1,6 +1,6 @@
 'use client'
 import Resizer from '@/src/app/(admin)/admin/components/resizer'
-import IPart from '@/src/app/(client)/exam-library/interfaces/IPart'
+import IPart from '@/src/utils/shares/interfaces/IPart'
 import { useRef } from 'react'
 
 export default function ComponentLeftSide({

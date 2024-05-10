@@ -1,4 +1,4 @@
-import IAnswer from '@/src/app/(client)/exam-library/interfaces/IAnswer'
+import IAnswer from '@/src/utils/shares/interfaces/IAnswer'
 import { DragEvent } from 'react'
 import { drag } from '@clientExamLibrary/[id]/[skill]/utils/dragAndDrop'
 

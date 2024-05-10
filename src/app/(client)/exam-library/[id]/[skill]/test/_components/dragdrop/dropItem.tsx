@@ -1,4 +1,4 @@
-import IQuestion from '@/src/app/(client)/exam-library/interfaces/IQuestion'
+import IQuestion from '@/src/utils/shares/interfaces/IQuestion'
 import { allowDrop, drop } from '@clientExamLibrary/[id]/[skill]/utils/dragAndDrop'
 import { useEffect } from 'react'
 

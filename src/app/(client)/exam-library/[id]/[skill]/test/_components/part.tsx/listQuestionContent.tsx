@@ -1,7 +1,7 @@
 'use client'
 
-import IAnswer from '@/src/app/(client)/exam-library/interfaces/IAnswer'
-import IGroup from '@/src/app/(client)/exam-library/interfaces/IGroup'
+import IAnswer from '@/src/utils/shares/interfaces/IAnswer'
+import IGroup from '@/src/utils/shares/interfaces/IGroup'
 import ComponentDropItem, { componentStringDropItem } from '../dragdrop/dropItem'
 import ComponentListDrag from '../dragdrop/listDrag'
 import ComponentFloatingInputLabel, {

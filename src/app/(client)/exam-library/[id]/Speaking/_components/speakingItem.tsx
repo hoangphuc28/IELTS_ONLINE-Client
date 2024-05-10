@@ -1,7 +1,7 @@
 'use client'
-import IPart from '@clientExamLibrary/interfaces/IPart'
+import IPart from '@/src/utils/shares/interfaces/IPart'
 import { useEffect, useState } from 'react'
-import IQuestion from '@clientExamLibrary/interfaces/IQuestion'
+import IQuestion from '@/src/utils/shares/interfaces/IQuestion'
 import { listStatus } from './managerSpeakingItem'
 
 export default function ComponentSpeakingItem({

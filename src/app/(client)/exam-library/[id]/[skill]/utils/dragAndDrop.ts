@@ -1,5 +1,5 @@
 import { DragEvent } from 'react'
-import IAnswer from '../../../interfaces/IAnswer'
+import IAnswer from '../../../../../../utils/shares/interfaces/IAnswer'
 
 export function allowDrop(ev: DragEvent<HTMLElement>) {
     ev.preventDefault()

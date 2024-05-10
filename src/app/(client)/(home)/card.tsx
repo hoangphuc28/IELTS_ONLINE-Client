@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { CSSProperties } from 'react'
-import ITest from '@client/exam-library/interfaces/ITest'
+import ITest from '@/src/utils/shares/interfaces/ITest'
 
 export default function ComponentCard({
     className,

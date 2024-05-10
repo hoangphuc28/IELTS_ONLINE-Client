@@ -1,8 +1,8 @@
 'use client'
 
-import IAnswer from '@/src/app/(client)/exam-library/interfaces/IAnswer'
-import IGroup from '@/src/app/(client)/exam-library/interfaces/IGroup'
-import IQuestion from '@/src/app/(client)/exam-library/interfaces/IQuestion'
+import IAnswer from '@/src/utils/shares/interfaces/IAnswer'
+import IGroup from '@/src/utils/shares/interfaces/IGroup'
+import IQuestion from '@/src/utils/shares/interfaces/IQuestion'
 import { useRef } from 'react'
 
 export default function ComponentDropdownItem({

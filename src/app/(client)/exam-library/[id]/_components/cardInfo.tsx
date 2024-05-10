@@ -1,4 +1,4 @@
-import ITest from '@clientExamLibrary/interfaces/ITest'
+import ITest from '@/src/utils/shares/interfaces/ITest'
 
 export default function ComponentCardInfo({ data }: { data: ITest }) {
     return (

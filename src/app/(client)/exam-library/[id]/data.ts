@@ -1,5 +1,5 @@
-import IMiniTest from "../interfaces/IMiniTest"
-import ITest from "../interfaces/ITest"
+import IMiniTest from "../../../../utils/shares/interfaces/IMiniTest"
+import ITest from "../../../../utils/shares/interfaces/ITest"
 
 const miniTest: Array<IMiniTest> = [
     {
@@ -722,11 +722,11 @@ const test: ITest = {
     title: 'Bài này để làm mẫu',
     description: 'Bài này để làm mẫu, gió thoang thoảng, âm vang lăn tăn, tí tắt tí tắt...',
     src: '',
-    createdAt: new Date().toLocaleString(),
+    createdAt: '22:52:52 9/5/2024',
     details: [...miniTest],
     hasPassword: false,
     status: '',
     time: '03:00:00',
-    updatedAt: new Date().toLocaleString(),
+    updatedAt: '22:52:52 9/5/2024',
 }
 export default test

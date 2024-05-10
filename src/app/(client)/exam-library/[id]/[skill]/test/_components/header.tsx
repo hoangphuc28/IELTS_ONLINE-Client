@@ -1,4 +1,4 @@
-import IMiniTest from '../../../../interfaces/IMiniTest'
+import IMiniTest from '../../../../../../../utils/shares/interfaces/IMiniTest'
 import ComponentSubmit from './submit'
 
 export default function ComponentTestHeader({ data }: { data: IMiniTest }) {

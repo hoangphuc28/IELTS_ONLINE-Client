@@ -1,6 +1,6 @@
 'use client'
 
-import IGroup from '@/src/app/(client)/exam-library/interfaces/IGroup'
+import IGroup from '@/src/utils/shares/interfaces/IGroup'
 import ComponentListQuestionContent from './listQuestionContent'
 import { useParams } from 'next/navigation'
 

@@ -1,9 +1,9 @@
 'use client'
-import IMiniTest from '@clientExamLibrary/interfaces/IMiniTest'
+import IMiniTest from '@/src/utils/shares/interfaces/IMiniTest'
 import ComponentSpeakingItem from './speakingItem'
 import { useEffect, useState } from 'react'
-import IQuestion from '@clientExamLibrary/interfaces/IQuestion'
-import IPart from '@clientExamLibrary/interfaces/IPart'
+import IQuestion from '@/src/utils/shares/interfaces/IQuestion'
+import IPart from '@/src/utils/shares/interfaces/IPart'
 
 export enum listStatus {
     newQuestion = 'newQuestion',

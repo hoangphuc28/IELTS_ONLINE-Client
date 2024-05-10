@@ -1,5 +1,5 @@
 'use client'
-import ITest from '@clientExamLibrary/interfaces/ITest'
+import ITest from '@/src/utils/shares/interfaces/ITest'
 import ComponentCardInfo from '@clientExamLibrary/[id]/_components/cardInfo'
 import LayoutCenter from '@client/_components/layoutCenter'
 import { FormEvent, useEffect, useState } from 'react'

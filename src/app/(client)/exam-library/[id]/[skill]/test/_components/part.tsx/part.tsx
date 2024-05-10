@@ -1,6 +1,6 @@
 'use client'
 
-import IPart from '@/src/app/(client)/exam-library/interfaces/IPart'
+import IPart from '@/src/utils/shares/interfaces/IPart'
 import { useParams } from 'next/navigation'
 import ComponentListQuestion from './listQuestion'
 import ComponentLeftSide from './leftSide'

@@ -1,5 +1,5 @@
 'use client'
-import IMiniTest from '@clientExamLibrary/interfaces/IMiniTest'
+import IMiniTest from '@/src/utils/shares/interfaces/IMiniTest'
 import { useEffect, useState } from 'react'
 import CircleProgressBar from './circleProgressBar'
 import Link from 'next/link'
