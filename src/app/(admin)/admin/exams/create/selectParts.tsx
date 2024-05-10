@@ -3,7 +3,7 @@ import CategoriesPanel from '../../components/categoriesPanel/categoriesPanel'
 import Resizer from '../../components/resizer'
 import "@admin/styles/components/_selectParts.scss"
 import Portlet from '../../components/categoriesPanel/portlet'
-import ListParts from '../../questions/listParts'
+import ListParts from '../../parts/listParts'
 interface Category {
     id: String
     title: String

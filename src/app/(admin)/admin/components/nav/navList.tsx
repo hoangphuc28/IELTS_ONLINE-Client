@@ -8,13 +8,14 @@ import { usePathname } from 'next/navigation'
 import Image from "next/image";
 import "@admin/styles/nav/list.scss"
 import Link from "next/link";
+import routes from "../../../lib/routes/routes";
 export default function NavList() {
     const pathname = usePathname()
     return (
         <div className="nav-list">
             <ul>
                 <li className="nav-item">
-                    <Link className={`${pathname === '/admin/dashboard' && 'selected'}`} href="/admin/dashboard">
+                    <Link className={`${pathname === `${routes.dashBoard}` && 'selected'}`} href={`${routes.dashBoard}`}>
                         <div>
                             <Image src={HomeIcon} alt="home-icon" />
                             <span>
@@ -24,7 +25,7 @@ export default function NavList() {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link className={`${pathname === '/admin/exams' && 'selected'}`} href="/admin/exams">
+                    <Link className={`${pathname === `${routes.exams}` && 'selected'}`} href={`${routes.exams}`}>
                         <div>
                         <Image src={ExamIcon} alt="exam-icon" />
                         <span>
@@ -34,21 +35,21 @@ export default function NavList() {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link className={`${pathname === '/admin/questions' && 'selected'}`} href="/admin/questions">
+                    <Link className={`${pathname === `${routes.parts}` && 'selected'}`} href={`${routes.parts}`}>
                         <div>
                         <Image src={QuestionIcon} alt="question-icon" />
                         <span>
-                            Questions
+                            Parts
                         </span>
                         </div>
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link className={`${pathname === '/admin/students' && 'selected'}`} href="/admin/students">
+                    <Link className={`${pathname === `${routes.accounts}` && 'selected'}`} href={`${routes.accounts}`}>
                         <div>
                         <Image src={StudentIcon} alt="question-icon" />
                         <span>
-                            Students
+                             Accounts
                         </span>
                         </div>
                     </Link>

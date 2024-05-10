@@ -1,6 +1,6 @@
 import "@admin/styles/components/_cover.scss"
 import "@admin/styles/components/_popup.scss"
-import AddQuestionPopup from "../../questions/addedit/_components/addQuestionPopup";
+import AddQuestionPopup from "../../parts/addedit/_components/addQuestionPopup";
 interface PopupProps {
     onClose: () => void;
     children: React.ReactNode
