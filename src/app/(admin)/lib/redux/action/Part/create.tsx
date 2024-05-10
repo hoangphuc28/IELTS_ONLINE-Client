@@ -4,6 +4,7 @@ import { Part } from "../../../../admin/parts/type/Part.class"
 
 import api from "../api"
 import { CreateManyGroupQuestion } from "../GroupQuestion/create"
+import { setLoading } from "../../reducer/commonReducer"
 
 
 export const CreatePart = (data: Part, successAction: () => void) => {
@@ -19,7 +20,6 @@ export const CreatePart = (data: Part, successAction: () => void) => {
         catch (err) {
             console.log(err)
         }
-
 
     }
 }

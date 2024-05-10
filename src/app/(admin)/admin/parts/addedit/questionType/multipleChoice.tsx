@@ -1,9 +1,5 @@
 import { Fragment, useMemo, useState } from 'react'
-
-import { FormikProps } from 'formik'
-import { Part } from '../../type/Part.class'
-import { Answer, Dropdown, FillTheBlank, Matching, MatchingFillBlank, MatchingHeading, MultipleChoice as MultipleChoiceType, MultipleReponse } from '../../type/Question'
-import { GroupQuestion } from '../../type/GroupQuestion.class'
+import { Answer, MultipleChoice as MultipleChoiceType } from '../../type/Question'
 import {
     Accordion,
     AccordionActions,
@@ -17,33 +13,14 @@ import {
     RadioGroup,
 } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import CloseIcon from '@mui/icons-material/Close'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
 import dynamic from 'next/dynamic'
-interface Props {
-    formik: FormikProps<Part>
-    index: number
-    saveAction: (question: any) => void
-    closeAction: () => void
-    question:  | MultipleChoiceType
-    | MultipleReponse
-    | Dropdown
-    | Matching
-    | MatchingHeading
-    | FillTheBlank
-    | MatchingFillBlank
-}
+import { QuestionProps } from './dataQuestion'
 
-export default function MultipleChoiceForm({
-    formik,
-    saveAction,
-    index,
-    closeAction,
-    question,
-}: Props) {
+export default function MultipleChoiceForm(props: QuestionProps) {
     const DynamicEditor = dynamic(() => import('../_components/editor/editor'), { ssr: false })
     const Editor = useMemo(() => DynamicEditor, [])
-    const [multipleChoiceQuestion, setMultiplechoiceQuestion] = useState(question)
+    const [question, setQuestion] = useState<MultipleChoiceType>(props.data as MultipleChoiceType)
     return (
         <Fragment>
             <div className="title mb-5">Multiple choice</div>
@@ -52,13 +29,13 @@ export default function MultipleChoiceForm({
                     Question text
                 </label>
                 <Editor
-                    data={multipleChoiceQuestion?.question}
-                    saveData={(data) => (multipleChoiceQuestion.question = data)}
-                    formik={formik}
-                    index={index}
+                    data={question?.questionText}
+                    saveData={(data) => (question.questionText = data)}
+                    formik={props.formik}
+                    index={props.index}
                 />
             </div>
-            {multipleChoiceQuestion?.answers.map((item, i) => (
+            {question?.answers.map((item, i) => (
                 <Fragment key={i}>
                     <Accordion>
                         <AccordionSummary
@@ -74,17 +51,17 @@ export default function MultipleChoiceForm({
                             <Editor
                                 data={item.content}
                                 saveData={(data) => (item.content = data)}
-                                formik={formik}
-                                index={index}
+                                formik={props.formik}
+                                index={props.index}
                             />
                         </AccordionDetails>
                         <AccordionActions>
                             <Button
                                 onClick={() => {
-                                    const updatedAnswers = [...multipleChoiceQuestion.answers]
+                                    const updatedAnswers = [...question.answers]
                                     updatedAnswers.splice(i, 1)
-                                    setMultiplechoiceQuestion({
-                                        ...multipleChoiceQuestion,
+                                    setQuestion({
+                                        ...question,
                                         answers: updatedAnswers,
                                     })
                                 }}
@@ -105,17 +82,17 @@ export default function MultipleChoiceForm({
                     name="row-radio-buttons-group"
                     onChange={(event) => {
                         const id = event.target.value
-                        const updatedAnswers = multipleChoiceQuestion.answers.map((answer, i) => ({
+                        const updatedAnswers = question.answers.map((answer, i) => ({
                             ...answer,
                             isCorrect: id === answer.id,
                         }))
-                        setMultiplechoiceQuestion({
-                            ...multipleChoiceQuestion,
+                        setQuestion({
+                            ...question,
                             answers: updatedAnswers,
                         })
                     }}
                 >
-                    {multipleChoiceQuestion?.answers.map((item, index) => (
+                    {question?.answers.map((item, index) => (
                         <Fragment key={index}>
                             <FormControlLabel
                                 value={item.id}
@@ -130,11 +107,9 @@ export default function MultipleChoiceForm({
             <div className="mt-5">
                 <Button
                     onClick={() => {
-                        let temp = { ...multipleChoiceQuestion }
-                        temp.answers.push(
-                            new Answer((multipleChoiceQuestion.answers.length + 1).toString()),
-                        )
-                        setMultiplechoiceQuestion(temp)
+                        let temp = { ...question }
+                        temp.answers.push(new Answer((question.answers.length + 1).toString()))
+                        setQuestion(temp)
                     }}
                     variant="contained"
                     style={{
@@ -145,8 +120,8 @@ export default function MultipleChoiceForm({
                 </Button>
                 <Button
                     onClick={() => {
-                        saveAction(multipleChoiceQuestion)
-                        closeAction()
+                        props.saveAction(question)
+                        props.closeAction()
                     }}
                     variant="contained"
                     style={{

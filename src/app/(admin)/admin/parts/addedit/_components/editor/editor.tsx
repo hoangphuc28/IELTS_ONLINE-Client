@@ -1,15 +1,26 @@
 'use client'
 import { CKEditor } from '@ckeditor/ckeditor5-react'
-import { Editor } from '@ckeditor/ckeditor5-core'
 import { UploadAdapter, FileLoader } from '@ckeditor/ckeditor5-upload/src/filerepository'
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import Editor from "ckeditor5-custom-build";
+
 import axios from 'axios'
 import { useState } from 'react'
 import { HOST } from '@/src/utils/constanst/host'
 import { FormikProps } from 'formik'
-import { QuestionType } from '../../../type/enum'
-import { GroupQuestion } from '../../../type/GroupQuestion.class'
 import { Part } from '../../../type/Part.class'
+// import { Alignment } from '@ckeditor/ckeditor5-alignment'
+// import { Autoformat } from '@ckeditor/ckeditor5-autoformat'
+// import { Bold, Italic, Underline } from '@ckeditor/ckeditor5-basic-styles'
+// import type { EditorConfig } from '@ckeditor/ckeditor5-core'
+// import { Essentials } from '@ckeditor/ckeditor5-essentials'
+// import { FontSize } from '@ckeditor/ckeditor5-font'
+// import { Image, ImageResize, ImageUpload } from '@ckeditor/ckeditor5-image'
+// import { Link } from '@ckeditor/ckeditor5-link'
+// import { Paragraph } from '@ckeditor/ckeditor5-paragraph'
+// import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office'
+// import { Table, TableToolbar } from '@ckeditor/ckeditor5-table'
+// import { Undo } from '@ckeditor/ckeditor5-undo'
+import config from '../../../../../../../../tailwind.config'
 interface Props {
     formik: FormikProps<Part>
     index: number
@@ -17,31 +28,43 @@ interface Props {
     data: string
 }
 
-const CustomEditor = ({formik, index, saveData, data}: Props) => {
+const CustomEditor = ({ formik, index, saveData, data }: Props) => {
+    const editorConfiguration = {
+        toolbar: [
+            'undo',
+            'redo',
+            'bold',
+            'italic',
+            'underline',
+            'alignment',
+            'fontSize',
+            '|',
+            'imageUpload',
+            'link',
+            'insertTable'
+        ]
+    };
     const [editorData, setEditorData] = useState('')
     return (
-          <div className={`${index}`}>
-              <CKEditor
-                editor={ClassicEditor}
+        <div className={`${index}`}>
+            <CKEditor
+                editor={Editor}
+                // config={editorConfiguration}
                 config={{
+                    editorConfiguration,
                     extraPlugins: [uploadPlugin],
                 }}
-                onReady={(editor) => {
-
-                }}
-                onBlur={(event, editor) => {
-
-                }}
-                onFocus={(event, editor) => {
-
-                }}
+                onReady={(editor) => {}}
+                onBlur={(event, editor) => {}}
+                onFocus={(event, editor) => {}}
                 onChange={(event, editor) => {
+                    console.log(editor.getData())
                     saveData(editor.getData())
                     setEditorData(editor.getData())
                 }}
                 data={data}
             />
-          </div>
+        </div>
     )
 }
 function uploadAdapter(loader: FileLoader): UploadAdapter {
@@ -80,7 +103,6 @@ function uploadPlugin(editor: Editor) {
     editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
         return uploadAdapter(loader)
     }
-
 }
 
 export default CustomEditor

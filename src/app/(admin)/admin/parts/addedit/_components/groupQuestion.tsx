@@ -28,6 +28,8 @@ import dynamic from 'next/dynamic'
 import { truncateParagraph } from '../../../../util/truncate'
 import EditIcon from '@mui/icons-material/Edit'
 import AddEditQuestion from './question'
+import Question from './question'
+import { UnionType } from '../../type/unionType'
 //using useReducer
 // const initialState = {
 //     groupQuestion: formik.values.groupQuestions[index]
@@ -67,52 +69,24 @@ export default function GroupQuestionsComponent({
     const [showModalEditQuestion, setShowModalEditQuestion] = useState(null)
     const DynamicEditor = dynamic(() => import('./editor/editor'), { ssr: false })
     const Editor = useMemo(() => DynamicEditor, [resetEditor])
+    const deleteQuestion = (question: MultipleChoiceType) => {
+        {
+            const isBrowser = typeof window !== 'undefined'
+            if (isBrowser && window.confirm('Bạn có chắc muốn xóa không?')) {
+                const newArr = formik.values.groupQuestions[index].data.filter(
+                    (el: MultipleChoiceType) => el.id !== question.id,
+                )
+                formik.values.groupQuestions[index].data = newArr
+                formik.setValues({
+                    ...formik.values,
+                    groupQuestions: formik.values.groupQuestions,
+                })
+            }
+        }
+    }
     return (
         <Fragment>
-            {/* {showModalEditQuestion && (
-                <PopupCreateQuestion onClose={() => setShowModalEditQuestion(null)}>
-                    {
-                        <MultipleChoice
-                            question={showModalEditQuestion}
-                            closeAction={() => setShowModalEditQuestion(null)}
-                            saveAction={(question: MultipleChoiceType) => {
-                                const newData = formik.values.groupQuestions[index].data?.map(
-                                    (item: MultipleChoiceType) => {
-                                        if (item.id === question.id) {
-                                            return question
-                                        }
-                                        return item
-                                    },
-                                )
-                                formik.values.groupQuestions[index].data = newData
-                            }}
-                            formik={formik}
-                            index={index}
-                        />
-                    }
-                </PopupCreateQuestion>
-            )}
-            {showModal && (
-                <PopupCreateQuestion onClose={() => setShowModal(false)}>
-                    {
-                        <MultipleChoice
-                            question={new MultipleChoiceType()}
-                            closeAction={() => setShowModal(false)}
-                            saveAction={(question: MultipleChoiceType) => {
-                                question.id = (
-                                    formik.values.groupQuestions[index].data?.length + 1
-                                ).toString()
-                                formik.values.groupQuestions[index].data?.push(
-                                    question as MultipleChoiceType,
-                                )
-                            }}
-                            formik={formik}
-                            index={index}
-                        />
-                    }
-                </PopupCreateQuestion>
-            )} */}
-            <AddEditQuestion
+            <Question
                 isCreate={isCreate}
                 index={index}
                 formik={formik}
@@ -166,7 +140,7 @@ export default function GroupQuestionsComponent({
                         </label>
                         {Array.isArray(formik.values.groupQuestions[index].data) &&
                             formik.values.groupQuestions[index].data?.map(
-                                (question: MultipleChoiceType, i) => (
+                                (question: UnionType, i) => (
                                     <Fragment key={i}>
                                         <Card
                                             sx={{
@@ -180,13 +154,13 @@ export default function GroupQuestionsComponent({
                                                     <Typography
                                                         style={{ fontSize: 14, color: '#4f6799' }}
                                                         dangerouslySetInnerHTML={{
-                                                            __html: question.question,
+                                                            __html: question.questionText,
                                                         }}
                                                     ></Typography>
                                                 </CardContent>
                                                 <CardActions style={{ margin: 0 }}>
                                                     <Button
-                                                    size={'small'}
+                                                        size={'small'}
                                                         onClick={() => {
                                                             setIsCreate(false)
                                                             setShowModal(true)
@@ -197,32 +171,8 @@ export default function GroupQuestionsComponent({
                                                     </Button>
                                                     <Button
                                                         onClick={() => {
-                                                            const isBrowser =
-                                                                typeof window !== 'undefined'
-
-                                                            if (
-                                                                isBrowser &&
-                                                                window.confirm(
-                                                                    'Bạn có chắc muốn xóa không?',
-                                                                )
-                                                            ) {
-                                                                const newArr =
-                                                                    formik.values.groupQuestions[
-                                                                        index
-                                                                    ].data.filter(
-                                                                        (el: MultipleChoiceType) =>
-                                                                            el.id !== question.id,
-                                                                    )
-                                                                formik.values.groupQuestions[
-                                                                    index
-                                                                ].data = newArr
-                                                                formik.setValues({
-                                                                    ...formik.values,
-                                                                    groupQuestions:
-                                                                        formik.values
-                                                                            .groupQuestions,
-                                                                })
-                                                            }
+                                                            deleteQuestion(question)
+                                                            console.log(1)
                                                         }}
                                                         size="small"
                                                     >
@@ -244,12 +194,11 @@ export default function GroupQuestionsComponent({
                         <KeyboardArrowDownIcon />
                     </Button>
                     <Button
-                        onClick={
-                            () => {
-                                setIsCreate(true)
-                                setShowModal(true)
-                                setShowModalEditQuestion(null)
-                            }}
+                        onClick={() => {
+                            setIsCreate(true)
+                            setShowModal(true)
+                            setShowModalEditQuestion(null)
+                        }}
                         size={'small'}
                         style={{ color: '#4E6799' }}
                     >
