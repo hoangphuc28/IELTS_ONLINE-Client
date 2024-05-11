@@ -4,7 +4,7 @@ import { useState } from 'react'
 export default function ImageUpload() {
     const [image, setImage] = useState(null)
 
-    const handleImageChange = (e) => {
+    const handleImageChange = (e: any) => {
         const file = e.target.files[0]
         const reader = new FileReader()
 
@@ -46,7 +46,6 @@ export default function ImageUpload() {
                     z-index: 9;
                     font-size: 14px;
                 }
-               
 
                 .preview:hover button {
                     opacity: 1;

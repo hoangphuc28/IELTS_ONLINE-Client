@@ -23,7 +23,6 @@ export default function Page() {
     // #region parts contains number of questions in groups
     const startIndexEveryPart: number[] = []
     let totalQuestions = 1
-    
     targetSkillTest.parts.forEach((part: IPart, index: number, baseData: IPart[]) => {
         if (index > 0) {
             totalQuestions += baseData[index - 1].groups.reduce(
