@@ -18,7 +18,8 @@ export default function ImageUpload() {
     }
 
     const handleButtonClick = () => {
-        document?.getElementById('upload-button').click()
+        const uploadButton = document.getElementById('upload-button');
+        uploadButton?.click();
     }
     return (
         <div>
