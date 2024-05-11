@@ -2,14 +2,14 @@
 import { useState } from 'react'
 
 export default function ImageUpload() {
-    const [image, setImage] = useState(null)
+    const [image, setImage] = useState<string | ArrayBuffer | null>(null);
 
     const handleImageChange = (e: any) => {
         const file = e.target.files[0]
         const reader = new FileReader()
 
         reader.onloadend = () => {
-            setImage(reader.result)
+            setImage(reader?.result)
         }
 
         if (file) {
