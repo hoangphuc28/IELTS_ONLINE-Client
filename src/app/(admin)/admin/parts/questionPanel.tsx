@@ -11,7 +11,19 @@ import '@admin/styles/globals.css'
 import ListParts from './listParts'
 import { Stack, Pagination } from '@mui/material'
 import routes from '../../lib/routes/routes'
+import { useEffect } from 'react'
+import { GetAllParts } from '../../lib/redux/action/Part/get'
+import { useDispatch, useSelector } from 'react-redux'
+import { PaginationInterface } from '../../lib/type/pagination'
+import _ from 'lodash'
+import { setPartPagination } from '../../lib/redux/reducer/partReducer'
 export default function QuestionPanel() {
+    const dispatch = useDispatch()
+    const totalPage = useSelector((state) => state.part.totalPage)
+    const pagination: PaginationInterface = useSelector((state) => state.part.pagination)
+    useEffect(() => {
+        dispatch(GetAllParts(pagination))
+    }, [pagination])
     return (
         <div className="cover">
             <div className="question-contain">
@@ -45,7 +57,7 @@ export default function QuestionPanel() {
                     </div>
                     <div className="right">
                         <div className="flex">
-                            <Search />
+                            <Search  />
                             <SelectMenu />
                         </div>
                     </div>
@@ -53,7 +65,11 @@ export default function QuestionPanel() {
                 <ListParts />
                 <div className="pagination" style={{marginTop: "20px", display: "flex", justifyContent: "center"}}>
                 <Stack spacing={2}>
-                    <Pagination count={10} variant="outlined" shape="rounded" />
+                    <Pagination onChange={(event: any, page) => {
+                        const newPagination = _.cloneDeep(pagination)
+                        newPagination.page = page
+                        dispatch(setPartPagination(newPagination))
+                    }} page={pagination.page} count={totalPage} variant="outlined" shape="rounded" />
                 </Stack>
                 </div>
             </div>

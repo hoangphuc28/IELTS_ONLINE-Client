@@ -9,6 +9,7 @@ import { UnionType } from '../../type/unionType'
 import { MultipleChoice as MultipleChoiceType, MultipleResponse } from '../../type/Question'
 import { QuestionProps } from '../questionType/dataQuestion'
 import MultipleResponseForm from '../questionType/multipleResponse'
+import DropdownForm from '../questionType/dropDown'
 interface Props {
     index: number
     formik: FormikProps<Part>
@@ -31,7 +32,7 @@ export default function Question({
             case QuestionType.MultipleChoice:
                 return (
                     <MultipleChoice
-                        question={isCreate ? new MultipleChoiceType() : showModalEditQuestion}
+                        data={isCreate ? new MultipleChoiceType() : showModalEditQuestion}
                         closeAction={() => setShowModal(false)}
                         saveAction={(question: MultipleChoiceType) => {
                             if (!isCreate) {
@@ -90,7 +91,36 @@ export default function Question({
                     />
                 )
             case QuestionType.Dropdown:
-                // Return Dropdown component
+                return (
+                    <DropdownForm
+                        data={isCreate ? new MultipleResponse() : showModalEditQuestion}
+                        closeAction={() => setShowModal(false)}
+                        saveAction={(question: MultipleResponse) => {
+                            if (!isCreate) {
+                                console.log(question)
+                                const newData = formik.values.groupQuestions[index].data?.map(
+                                    (item: MultipleChoiceType) => {
+                                        if (item.id === question.id) {
+                                            return question
+                                        }
+                                        return item
+                                    },
+                                )
+
+                                formik.values.groupQuestions[index].data = newData
+                            } else {
+                                question.id = (
+                                    formik.values.groupQuestions[index].data?.length + 1
+                                ).toString()
+                                formik.values.groupQuestions[index].data?.push(
+                                    question as MultipleResponse,
+                                )
+                            }
+                        }}
+                        formik={formik}
+                        index={index}
+                    />
+                )
                 break
             case QuestionType.Matching:
                 // Return Matching component

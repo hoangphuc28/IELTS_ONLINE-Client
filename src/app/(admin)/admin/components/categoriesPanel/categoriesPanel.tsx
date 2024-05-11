@@ -4,27 +4,21 @@ import "@admin/styles/components/_cover.scss"
 import PlusFolder from '@/public/admin/svg/folder-plus-svgrepo-com.svg'
 import '@admin/styles/components/categoriesPanel.scss'
 import Portlet from './portlet'
+import { SkillEnum } from '../../parts/type/enum'
 interface Props {
-    dataPanel: {
-        text: string
-        categories: Category[]
-    }
+    title: string
+    skills: SkillEnum
 }
-interface Category {
-    id: String,
-    title: String
-}
-export default function CategoriesPanel(props: Props) {
+
+export default function CategoriesPanel({title, skills}: Props) {
     return (
         <div className="categories-panel">
             <div className="cover">
                 <div className="panel-top">
-                <div className="title">{props.dataPanel.text} categories</div>
+                <div className="title">{title}</div>
                     <Image src={PlusFolder} alt="folder-icon" />
                 </div>
-              <Portlet categories={props.dataPanel.categories}/>
-
-             
+              <Portlet skills={skills}/>
             </div>
         </div>
     )

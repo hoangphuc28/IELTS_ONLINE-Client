@@ -106,10 +106,13 @@ export default function GroupQuestionsComponent({
                             __html: formik.values.groupQuestions[index].instruction,
                         }}
                         sx={{
+                            marginRight: '50px',
                             width: '33%',
                             flexShrink: 0,
                             wordWrap: 'break-word',
-                            maxWidth: '200px',
+                            maxWidth: '250px',
+                            maxHeight: '50px',
+                            overflow: 'scroll'
                         }}
                     ></Typography>
                     <Typography sx={{ color: 'text.secondary' }}>

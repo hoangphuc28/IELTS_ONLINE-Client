@@ -8,15 +8,15 @@ import { Autoformat } from '@ckeditor/ckeditor5-autoformat';
 import { Bold, Italic, Underline } from '@ckeditor/ckeditor5-basic-styles';
 import type { EditorConfig } from '@ckeditor/ckeditor5-core';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
-import { FontSize } from '@ckeditor/ckeditor5-font';
-import { Image, ImageResize, ImageUpload } from '@ckeditor/ckeditor5-image';
-import { Link } from '@ckeditor/ckeditor5-link';
+import { Heading } from '@ckeditor/ckeditor5-heading';
+import { Image, ImageInsert, ImageResize, ImageStyle, ImageToolbar, ImageUpload } from '@ckeditor/ckeditor5-image';
 import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
-import { Table, TableToolbar } from '@ckeditor/ckeditor5-table';
+import { Table } from '@ckeditor/ckeditor5-table';
+import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { Undo } from '@ckeditor/ckeditor5-undo';
 declare class Editor extends ClassicEditor {
-    static builtinPlugins: (typeof Alignment | typeof Autoformat | typeof Bold | typeof Essentials | typeof FontSize | typeof Image | typeof ImageResize | typeof ImageUpload | typeof Italic | typeof Link | typeof Paragraph | typeof PasteFromOffice | typeof Table | typeof TableToolbar | typeof Underline | typeof Undo)[];
+    static builtinPlugins: (typeof Alignment | typeof Autoformat | typeof Bold | typeof Essentials | typeof Heading | typeof Image | typeof ImageInsert | typeof ImageResize | typeof ImageStyle | typeof ImageToolbar | typeof ImageUpload | typeof Italic | typeof Paragraph | typeof PasteFromOffice | typeof Table | typeof TextTransformation | typeof Underline | typeof Undo)[];
     static defaultConfig: EditorConfig;
 }
 export default Editor;

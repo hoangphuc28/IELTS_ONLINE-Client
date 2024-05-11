@@ -1,39 +1,53 @@
 'use client'
-import { useState } from "react"
-import "@admin/styles/components/_portlet.scss"
-import Search from "../search/search"
+import { useState } from 'react'
+import '@admin/styles/components/_portlet.scss'
+import Search from '../search/search'
 import Folder from '@/public/admin/svg/folder.svg'
 import Image from 'next/image'
+import { SkillEnum } from '../../parts/type/enum'
+import { useDispatch, useSelector } from 'react-redux'
+import { PaginationInterface } from '../../../lib/type/pagination'
+import _ from 'lodash'
+import { setPartPagination } from '../../../lib/redux/reducer/partReducer'
 
-interface Category {
-    id: String,
-    title: String
+interface Props {
+    skills: SkillEnum
 }
-interface PortletProps {
-    categories: Category[];
-}
-export default function Portlet({ categories }: PortletProps) {
-    const [selectedCategory, setSelectedCategory] = useState(categories[0]?.id)
+
+export default function Portlet({ skills }: Props) {
+    const dispatch = useDispatch()
+    const pagination: PaginationInterface = useSelector((state) => state.part.pagination)
+    const [selected, setSelected] = useState(pagination.filter.skill)
 
     return (
         <div className="portlet">
-        <div className="portlet-top">
-            <div style={{ marginTop: '20px' }}>
-                <Search />
+            <div className="portlet-top">
+                <div style={{ marginTop: '20px' }}>{/* <Search /> */}</div>
             </div>
-        </div>
-        <div className="portlet-bottom">
-            <div className="portlet-contain">
-                {categories?.map((item, index) => (
+            <div className="portlet-bottom">
+                <div className="portlet-contain">
                     <div onClick={() => {
-                        setSelectedCategory(item.id)
-                    }} key={index} className={`portlet-item ${selectedCategory === item.id && "selected"}`}>
+                        setSelected('All')
+                        const newPagination = _.cloneDeep(pagination)
+                        newPagination.filter.skill = ''
+                        dispatch(setPartPagination(newPagination))
+                    }} className={`portlet-item ${selected === 'All' && "selected"}`}>
                         <Image src={Folder} alt="folder" />
-                        <div className="text">{item.title}</div>
+                        <div className="text">All</div>
                     </div>
-                ))}
+                    {Object.keys(skills).map((key) => (
+                        <div onClick={() => {
+                            setSelected(key)
+                            const newPagination = _.cloneDeep(pagination)
+                            newPagination.filter.skill = key
+                            dispatch(setPartPagination(newPagination))
+                        }} key={key} className={`portlet-item ${selected === key && "selected"}`}>
+                            <Image src={Folder} alt="folder" />
+                            <div className="text">{skills[key as keyof typeof skills]}</div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
-    </div>
     )
 }

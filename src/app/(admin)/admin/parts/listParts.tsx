@@ -9,12 +9,13 @@ import { GetAllParts } from '../../lib/redux/action/Part/get'
 export default function ListParts() {
     const dispatch = useDispatch()
     const parts = useSelector((state) => state.part.list)
+    const pagination = useSelector((state) => state.part.pagination)
     useEffect(() => {
-        dispatch(GetAllParts())
+        dispatch(GetAllParts(pagination))
     }, [])
     return (
         <div className="parts-list">
-            {parts.map((item, index) => (
+            {parts?.map((item, index) => (
                 <React.Fragment key={index}>
                     <PartItem item={item} />
                 </React.Fragment>
