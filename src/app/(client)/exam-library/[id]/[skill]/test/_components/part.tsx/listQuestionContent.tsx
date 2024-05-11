@@ -41,8 +41,9 @@ export default function ComponentListQuestionContent({
 function ComponentWritingQuestion({ data }: { data: IGroup }) {
     return (
         <section className="flex flex-col gap-5 px-5 w-full">
-            {data.questions.map((question) => (
+            {data.questions.map((question, index) => (
                 <textarea
+                    key={index}
                     name={question.id}
                     className="w-full rounded-lg border-violet-500 border-2"
                     rows={16}

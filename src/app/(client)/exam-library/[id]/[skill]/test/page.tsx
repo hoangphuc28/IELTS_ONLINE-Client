@@ -12,12 +12,18 @@ import ComponentTestHeader from './_components/header'
 export default function Page() {
     const params = useParams<{ id: string; skill: string }>()
     const router = useRouter()
+     useEffect(() => {
+        localStorage.setItem('startIndexEveryPart', JSON.stringify(startIndexEveryPart))
+        // according()
+        // toQuestion()
+    }, [])
     const targetSkillTest = test.details.find((detailSkill) => detailSkill.name === params.skill)
     if (!targetSkillTest) return router.push('/404')
 
     // #region parts contains number of questions in groups
     const startIndexEveryPart: number[] = []
     let totalQuestions = 1
+    
     targetSkillTest.parts.forEach((part: IPart, index: number, baseData: IPart[]) => {
         if (index > 0) {
             totalQuestions += baseData[index - 1].groups.reduce(
@@ -30,11 +36,7 @@ export default function Page() {
         }
         startIndexEveryPart.push(totalQuestions)
     })
-    useEffect(() => {
-        localStorage.setItem('startIndexEveryPart', JSON.stringify(startIndexEveryPart))
-        // according()
-        // toQuestion()
-    }, [])
+   
     // #endregion parts contains number of questions in groups
     return (
         <>
