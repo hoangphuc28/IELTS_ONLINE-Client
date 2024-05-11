@@ -1,26 +1,19 @@
-'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react';
 
 export default function ImageUpload() {
     const [image, setImage] = useState<string | ArrayBuffer | null>(null);
 
-    const handleImageChange = (e: any) => {
-        const file = e.target.files[0]
-        const reader = new FileReader()
-
-        reader.onloadend = () => {
-            setImage(reader?.result)
-        }
-
+    const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
         if (file) {
-            reader.readAsDataURL(file)
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImage(reader.result);
+            };
+            reader.readAsDataURL(file);
         }
-    }
+    };
 
-    const handleButtonClick = () => {
-        const uploadButton = document.getElementById('upload-button');
-        uploadButton?.click();
-    }
     return (
         <div>
             <style jsx>{`
@@ -57,7 +50,7 @@ export default function ImageUpload() {
 
             `}</style>
             <div className="preview">
-                <button type="button" onClick={handleButtonClick}>
+                <button type="button" onClick={() => document.getElementById('upload-button')?.click()}>
                     Upload Image
                 </button>
                 <input
@@ -67,8 +60,12 @@ export default function ImageUpload() {
                     onChange={handleImageChange}
                 />
 
-                {image && <img src={image} alt="Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: "10px"}} />}
+                {typeof image === 'string' ? (
+                    <img src={image} alt="Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: "10px"}} />
+                ) : (
+                    <div>Loading...</div>
+                )}
             </div>
         </div>
-    )
+    );
 }
