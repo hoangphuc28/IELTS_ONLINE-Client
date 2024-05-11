@@ -9,7 +9,7 @@ import { GroupQuestion } from '../../type/GroupQuestion.class'
 interface AddQuestionPopup {
     onClose: () => void
     formik: FormikProps<Part>
-    saveEvent: (data) => void
+    saveEvent: (data: any) => void
 }
 export default function AddQuestionPopup({ onClose, formik, saveEvent }: AddQuestionPopup) {
     const [newGroupQuestion, setNewGroupQuesiton] = useState(new GroupQuestion())

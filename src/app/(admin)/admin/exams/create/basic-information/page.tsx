@@ -8,7 +8,7 @@ import { useExamContext } from '../../../providers/examProvider'
 import { useRouter } from "next/navigation"
 
 export default function BasicInformation() {
-    const {isUnlimited, setIsUnlimited} = useExamContext()
+    const {setIsUnlimited} : any= useExamContext()
     const router = useRouter()
     const formik = useFormik({
         initialValues: {

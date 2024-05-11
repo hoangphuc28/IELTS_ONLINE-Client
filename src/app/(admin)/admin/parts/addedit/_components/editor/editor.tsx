@@ -40,24 +40,24 @@ const CustomEditor = ({ formik, index, saveData, data }: Props) => {
     const [editorData, setEditorData] = useState('')
     return (
         <div className={`${index}`}>
-            <CKEditor
-                editor={Editor}
-                // config={editorConfiguration}
-                config={{
-                    editorConfiguration,
-                    extraPlugins: [uploadPlugin],
-                }}
-                onReady={(editor) => {}}
-                onBlur={(event, editor) => {}}
-                onFocus={(event, editor) => {}}
-                onChange={(event, editor) => {
-                    console.log(editor.getData())
-                    saveData(editor.getData())
-                    setEditorData(editor.getData())
-                }}
-                data={data}
-            />
-        </div>
+        <CKEditor
+            editor={Editor}
+            // config={editorConfiguration}
+            config={{
+                editorConfiguration,
+                extraPlugins: [uploadPlugin],
+            }}
+            onReady={(editor: any) => {}}
+            onBlur={(event: any, editor: any) => {}}
+            onFocus={(event: any, editor: any) => {}}
+            onChange={(event: any, editor: any) => {
+                console.log(editor.getData());
+                saveData(editor.getData());
+                setEditorData(editor.getData());
+            }}
+            data={data}
+        />
+    </div>
     )
 }
 function uploadAdapter(loader: FileLoader): UploadAdapter {

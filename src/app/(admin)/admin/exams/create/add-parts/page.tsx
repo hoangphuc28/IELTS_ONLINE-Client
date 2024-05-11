@@ -12,7 +12,9 @@ import Writing from './writing'
 import Speaking from './speaking'
 
 export default function AddQuestions() {
-    const { stepSelected, setStepSelected, isUnlimited, setIsUnlimited } = useExamContext()
+    // const { stepSelected, setStepSelected, isUnlimited, setIsUnlimited } = useExamContext()
+    const { isUnlimited }: any = useExamContext()
+
     const [showPopup, setShowPopup] = useState(false)
     const [selected, setSelected] = useState(1)
     console.log(isUnlimited)

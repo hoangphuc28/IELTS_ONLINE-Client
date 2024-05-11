@@ -10,7 +10,7 @@ import { setPartPagination } from "../../../lib/redux/reducer/partReducer";
 export default function Search() {
     const [searchContent, setSearchContent] = useState('')
     const dispatch = useDispatch()
-    const pagination: PaginationInterface = useSelector((state) => state.part.pagination)
+    const pagination: PaginationInterface = useSelector((state: any) => state.part.pagination)
     const handleInput = (event: any) => {
         if (event.key === 'Enter') {
             const newPagination = _.cloneDeep(pagination)

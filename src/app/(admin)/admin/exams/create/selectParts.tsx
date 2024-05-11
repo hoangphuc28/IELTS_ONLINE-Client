@@ -20,7 +20,7 @@ export default function ChosePart() {
         <div className='selectPart'>
             <div className="container">
                 <div ref={examLeft} className="left">
-                    <Portlet categories={categories}/>
+                    <Portlet/>
                 </div>
                 <div className="middle">
                     <Resizer max={800} forwardedRef={examLeft} />

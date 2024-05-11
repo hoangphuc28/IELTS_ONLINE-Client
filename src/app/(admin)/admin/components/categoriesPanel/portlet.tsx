@@ -10,13 +10,9 @@ import { PaginationInterface } from '../../../lib/type/pagination'
 import _ from 'lodash'
 import { setPartPagination } from '../../../lib/redux/reducer/partReducer'
 
-interface Props {
-    skills: SkillEnum
-}
-
-export default function Portlet({ skills }: Props) {
+export default function Portlet() {
     const dispatch = useDispatch()
-    const pagination: PaginationInterface = useSelector((state) => state.part.pagination)
+    const pagination: PaginationInterface = useSelector((state: any) => state.part.pagination)
     const [selected, setSelected] = useState(pagination.filter.skill)
 
     return (
@@ -26,24 +22,31 @@ export default function Portlet({ skills }: Props) {
             </div>
             <div className="portlet-bottom">
                 <div className="portlet-contain">
-                    <div onClick={() => {
-                        setSelected('All')
-                        const newPagination = _.cloneDeep(pagination)
-                        newPagination.filter.skill = ''
-                        dispatch(setPartPagination(newPagination))
-                    }} className={`portlet-item ${selected === 'All' && "selected"}`}>
+                    <div
+                        onClick={() => {
+                            setSelected('All')
+                            const newPagination = _.cloneDeep(pagination)
+                            newPagination.filter.skill = ''
+                            dispatch(setPartPagination(newPagination))
+                        }}
+                        className={`portlet-item ${selected === 'All' && 'selected'}`}
+                    >
                         <Image src={Folder} alt="folder" />
                         <div className="text">All</div>
                     </div>
-                    {Object.keys(skills).map((key) => (
-                        <div onClick={() => {
-                            setSelected(key)
-                            const newPagination = _.cloneDeep(pagination)
-                            newPagination.filter.skill = key
-                            dispatch(setPartPagination(newPagination))
-                        }} key={key} className={`portlet-item ${selected === key && "selected"}`}>
+                    {Object.keys(SkillEnum).map((key) => (
+                        <div
+                            onClick={() => {
+                                setSelected(key)
+                                const newPagination = _.cloneDeep(pagination)
+                                newPagination.filter.skill = key
+                                dispatch(setPartPagination(newPagination))
+                            }}
+                            key={key} // Assertion to React.ReactText
+                            className={`portlet-item ${selected === key && 'selected'}`}
+                        >
                             <Image src={Folder} alt="folder" />
-                            <div className="text">{skills[key as keyof typeof skills]}</div>
+                            <div className="text">{SkillEnum[key as keyof typeof SkillEnum]}</div>
                         </div>
                     ))}
                 </div>

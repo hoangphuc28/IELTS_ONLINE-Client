@@ -18,7 +18,7 @@ export default function CategoriesPanel({title, skills}: Props) {
                 <div className="title">{title}</div>
                     <Image src={PlusFolder} alt="folder-icon" />
                 </div>
-              <Portlet skills={skills}/>
+              <Portlet/>
             </div>
         </div>
     )

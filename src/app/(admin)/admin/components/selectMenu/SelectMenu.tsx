@@ -17,7 +17,7 @@ export default function SelectMenu() {
     const [height, setHeight] = useState('0')
     const partValues = Object.values(PartEnum)
     const dispatch = useDispatch()
-    const pagination: PaginationInterface = useSelector((state) => state.part.pagination)
+    const pagination: PaginationInterface = useSelector((state: any) => state.part.pagination)
     const changeHeight = async () => {
         const updatedOpenMenu = !openMenu
         setOpenMenu(updatedOpenMenu)
