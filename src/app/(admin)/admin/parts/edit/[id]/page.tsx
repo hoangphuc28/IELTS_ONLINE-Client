@@ -14,14 +14,15 @@ import { setPartEdit, setPartList } from '../../../../lib/redux/reducer/partRedu
 import _ from 'lodash'
 import { UpdatePart } from '../../../../lib/redux/action/Part/update'
 import routes from '../../../../lib/routes/routes'
+import { useAppDispatch } from '@/src/app/(admin)/lib/redux/hooks'
 
 export default function Page() {
     const { push } = useRouter();
     const { step: stepContext } = useQuestionContext()
     const { stepSelected, setStepSelected } = stepContext
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const param = useParams()
-    const partEdit = useSelector((state) => state.part.partEdit)
+    const partEdit = useSelector((state: any) => state.part.partEdit)
     useEffect(() => {
         dispatch(setPartEdit(null))
         dispatch(GetPart(param.id))

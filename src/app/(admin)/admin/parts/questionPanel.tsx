@@ -17,10 +17,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { PaginationInterface } from '../../lib/type/pagination'
 import _ from 'lodash'
 import { setPartPagination } from '../../lib/redux/reducer/partReducer'
+import { useAppDispatch } from '../../lib/redux/hooks'
 export default function QuestionPanel() {
-    const dispatch = useDispatch()
-    const totalPage = useSelector((state) => state.part.totalPage)
-    const pagination: PaginationInterface = useSelector((state) => state.part.pagination)
+    const dispatch = useAppDispatch()
+    const totalPage = useSelector((state: any) => state.part.totalPage)
+    const pagination: PaginationInterface = useSelector((state: any) => state.part.pagination)
     useEffect(() => {
         dispatch(GetAllParts(pagination))
     }, [pagination])

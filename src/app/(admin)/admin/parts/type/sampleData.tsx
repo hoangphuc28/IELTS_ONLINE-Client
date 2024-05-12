@@ -15,7 +15,7 @@ answer2.isCorrect = false;
 // Create sample multiple choice question
 const multipleChoiceQuestion = new MultipleChoice();
 multipleChoiceQuestion.id = '1';
-multipleChoiceQuestion.question = 'Sample multiple choice question';
+multipleChoiceQuestion.questionText = 'Sample multiple choice question';
 multipleChoiceQuestion.answers = [answer1, answer2];
 
 // Create sample group question

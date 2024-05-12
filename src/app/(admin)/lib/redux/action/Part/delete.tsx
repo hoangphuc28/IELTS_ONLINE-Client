@@ -3,7 +3,7 @@ import api from "../api"
 import { setPartList } from "../../reducer/partReducer"
 
 export const DeletePart = (partId: string) => {
-    return async (dispatch) => {
+    return async (dispatch: any) => {
         try {
             const res = await axios({
                 url: `${api.part.common}/${partId}`,

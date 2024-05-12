@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 export default function ImageUpload() {
     const [image, setImage] = useState<string | ArrayBuffer | null>(null);
@@ -63,7 +63,7 @@ export default function ImageUpload() {
                 {typeof image === 'string' ? (
                     <img src={image} alt="Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: "10px"}} />
                 ) : (
-                    <div>Loading...</div>
+                    <Fragment></Fragment>
                 )}
             </div>
         </div>

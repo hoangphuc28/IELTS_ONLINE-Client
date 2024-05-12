@@ -18,7 +18,6 @@ export default function Search() {
             dispatch(setPartPagination(newPagination))
         }
       };
-    
     return (
         <div className="search">
             <input

@@ -17,7 +17,7 @@ export const groupQuestionSlice = createSlice({
     name: 'groupQuestions',
     initialState,
     reducers: {
-        setList(state, action: PayloadAction<GroupQuestion[]>) {
+        setList(state, action: PayloadAction<any[]>) {
             state.list = action.payload
         },
     }

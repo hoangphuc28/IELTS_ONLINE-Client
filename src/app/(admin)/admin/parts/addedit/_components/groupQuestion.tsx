@@ -17,13 +17,10 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import MultipleChoice from '../questionType/multipleChoice'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
-import { GroupQuestion } from '../../type/GroupQuestion.class'
 import { FormikProps } from 'formik'
 import { Part } from '../../type/Part.class'
-import PopupCreateQuestion from '../questionType/modal'
 import { MultipleChoice as MultipleChoiceType } from '../../type/Question'
 import Close from '@mui/icons-material/Close'
-import { Editor } from '@tiptap/react'
 import dynamic from 'next/dynamic'
 import { truncateParagraph } from '../../../../util/truncate'
 import EditIcon from '@mui/icons-material/Edit'
@@ -66,15 +63,15 @@ export default function GroupQuestionsComponent({
     const [showModal, setShowModal] = useState(false)
     const [isCreate, setIsCreate] = useState(false)
 
-    const [showModalEditQuestion, setShowModalEditQuestion] = useState(null)
+    const [showModalEditQuestion, setShowModalEditQuestion] = useState<UnionType | null>(null)
     const DynamicEditor = dynamic(() => import('./editor/editor'), { ssr: false })
     const Editor = useMemo(() => DynamicEditor, [resetEditor])
-    const deleteQuestion = (question: MultipleChoiceType) => {
+    const deleteQuestion = (question: any) => {
         {
             const isBrowser = typeof window !== 'undefined'
             if (isBrowser && window.confirm('Bạn có chắc muốn xóa không?')) {
                 const newArr = formik.values.groupQuestions[index].data.filter(
-                    (el: MultipleChoiceType) => el.id !== question.id,
+                    (el: any) => el.id !== question.id,
                 )
                 formik.values.groupQuestions[index].data = newArr
                 formik.setValues({
@@ -93,7 +90,7 @@ export default function GroupQuestionsComponent({
                 showModal={showModal}
                 setShowModal={setShowModal}
                 showModalEditQuestion={showModalEditQuestion}
-                setShowModalEditQuestion={setShowModalEditQuestion}
+                // setShowModalEditQuestion={setShowModalEditQuestion}
             />
             <Accordion>
                 <AccordionSummary
@@ -112,7 +109,7 @@ export default function GroupQuestionsComponent({
                             wordWrap: 'break-word',
                             maxWidth: '250px',
                             maxHeight: '50px',
-                            overflow: 'scroll'
+                            overflow: 'scroll',
                         }}
                     ></Typography>
                     <Typography sx={{ color: 'text.secondary' }}>
@@ -126,7 +123,7 @@ export default function GroupQuestionsComponent({
                         </label>
                         <Editor
                             data={formik.values.groupQuestions[index].instruction}
-                            saveData={(data) => {
+                            saveData={(data: any) => {
                                 formik.values.groupQuestions[index].instruction = data
                                 formik.setValues({
                                     ...formik.values,
@@ -142,51 +139,49 @@ export default function GroupQuestionsComponent({
                             Questions
                         </label>
                         {Array.isArray(formik.values.groupQuestions[index].data) &&
-                            formik.values.groupQuestions[index].data?.map(
-                                (question: UnionType, i) => (
-                                    <Fragment key={i}>
-                                        <Card
-                                            sx={{
-                                                width: '100%',
-                                                height: '50px',
-                                                marginTop: '0.5rem',
-                                            }}
-                                        >
-                                            <div className="flex justify-between items-center">
-                                                <CardContent>
-                                                    <Typography
-                                                        style={{ fontSize: 14, color: '#4f6799' }}
-                                                        dangerouslySetInnerHTML={{
-                                                            __html: question.questionText,
-                                                        }}
-                                                    ></Typography>
-                                                </CardContent>
-                                                <CardActions style={{ margin: 0 }}>
-                                                    <Button
-                                                        size={'small'}
-                                                        onClick={() => {
-                                                            setIsCreate(false)
-                                                            setShowModal(true)
-                                                            setShowModalEditQuestion(question)
-                                                        }}
-                                                    >
-                                                        <EditIcon />
-                                                    </Button>
-                                                    <Button
-                                                        onClick={() => {
-                                                            deleteQuestion(question)
-                                                            console.log(1)
-                                                        }}
-                                                        size="small"
-                                                    >
-                                                        <Close color="error"></Close>
-                                                    </Button>
-                                                </CardActions>
-                                            </div>
-                                        </Card>
-                                    </Fragment>
-                                ),
-                            )}
+                            formik.values.groupQuestions[index].data?.map((question: any, i) => (
+                                <Fragment key={i}>
+                                    <Card
+                                        sx={{
+                                            width: '100%',
+                                            height: '50px',
+                                            marginTop: '0.5rem',
+                                        }}
+                                    >
+                                        <div className="flex justify-between items-center">
+                                            <CardContent>
+                                                <Typography
+                                                    style={{ fontSize: 14, color: '#4f6799' }}
+                                                    dangerouslySetInnerHTML={{
+                                                        __html: question.questionText,
+                                                    }}
+                                                ></Typography>
+                                            </CardContent>
+                                            <CardActions style={{ margin: 0 }}>
+                                                <Button
+                                                    size={'small'}
+                                                    onClick={() => {
+                                                        setIsCreate(false)
+                                                        setShowModal(true)
+                                                        setShowModalEditQuestion(question)
+                                                    }}
+                                                >
+                                                    <EditIcon />
+                                                </Button>
+                                                <Button
+                                                    onClick={() => {
+                                                        deleteQuestion(question)
+                                                        console.log(1)
+                                                    }}
+                                                    size="small"
+                                                >
+                                                    <Close color="error"></Close>
+                                                </Button>
+                                            </CardActions>
+                                        </div>
+                                    </Card>
+                                </Fragment>
+                            ))}
                     </div>
                 </AccordionDetails>
                 <AccordionActions>

@@ -30,7 +30,7 @@ export default function MultipleResponseForm(props: QuestionProps) {
                 </label>
                 <Editor
                     data={question?.questionText}
-                    saveData={(data) => (question.questionText = data)}
+                    saveData={(data: any) => (question.questionText = data)}
                     formik={props.formik}
                     index={props.index}
                 />
@@ -50,7 +50,7 @@ export default function MultipleResponseForm(props: QuestionProps) {
                         <AccordionDetails>
                             <Editor
                                 data={item.content}
-                                saveData={(data) => (item.content = data)}
+                                saveData={(data: any) => (item.content = data)}
                                 formik={props.formik}
                                 index={props.index}
                             />

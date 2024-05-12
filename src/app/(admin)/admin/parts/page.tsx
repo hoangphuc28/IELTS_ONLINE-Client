@@ -22,7 +22,7 @@ export default function Page() {
     return (
         <div className="layout-table">
             <div ref={examLeft} className="layout-table-left">
-                <CategoriesPanel title={'Skills'} skills={SkillEnum} />
+                <CategoriesPanel title={'Skills'} />
             </div>
             <div style={{ padding: '17px 0' }} className="layout-table-middle">
                 <Resizer max={800} forwardedRef={examLeft} />

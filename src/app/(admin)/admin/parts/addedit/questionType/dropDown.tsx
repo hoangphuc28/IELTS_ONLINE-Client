@@ -1,5 +1,5 @@
 import { Fragment, useMemo, useState } from 'react'
-import { Answer, Dropdown, Dropdown, MultipleResponse } from '../../type/Question'
+import { Answer, Dropdown, MultipleResponse } from '../../type/Question'
 import {
     Accordion,
     AccordionActions,
@@ -30,7 +30,7 @@ export default function DropdownForm(props: QuestionProps) {
                 </label>
                 <Editor
                     data={question?.questionText}
-                    saveData={(data) => (question.questionText = data)}
+                    saveData={(data: any) => (question.questionText = data)}
                     formik={props.formik}
                     index={props.index}
                 />

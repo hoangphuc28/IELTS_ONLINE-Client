@@ -4,7 +4,7 @@ import { setList } from "../../reducer/groupQuestionReducer"
 import api from "../api"
 
 export const GetGroupQuestion = () => {
-    return async (dispatch)  => {
+    return async (dispatch: any)  => {
         try {
             const res = await axios({
                 url: api.groupQuestions.common,

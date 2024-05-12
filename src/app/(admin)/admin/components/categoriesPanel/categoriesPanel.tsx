@@ -7,10 +7,9 @@ import Portlet from './portlet'
 import { SkillEnum } from '../../parts/type/enum'
 interface Props {
     title: string
-    skills: SkillEnum
 }
 
-export default function CategoriesPanel({title, skills}: Props) {
+export default function CategoriesPanel({title}: Props) {
     return (
         <div className="categories-panel">
             <div className="cover">

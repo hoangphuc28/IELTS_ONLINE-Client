@@ -33,7 +33,7 @@ export const partSlice = createSlice({
             state.list = action.payload.parts;
             state.totalPage = action.payload.totalPage;
         },
-        setPartEdit(state, action: PayloadAction<Part>) {
+        setPartEdit(state, action: PayloadAction<any>) {
             state.partEdit = action.payload;
         },
         setPartPagination(state, action: PayloadAction<PaginationInterface>) {

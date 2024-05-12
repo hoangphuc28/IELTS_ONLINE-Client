@@ -7,5 +7,5 @@ export interface QuestionProps {
     index: number
     saveAction: (question: any) => void
     closeAction: () => void
-    data:  UnionType
+    data:  UnionType | null
 }

@@ -7,7 +7,7 @@ export default function MatchingFillTheBlank() {
             <label className="title-label" htmlFor="name">
                 Name
             </label>
-            <Editor />
+            {/* <Editor /> */}
         </div>
     )
 }

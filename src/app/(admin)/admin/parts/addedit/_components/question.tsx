@@ -16,7 +16,7 @@ interface Props {
     showModal: boolean
     setShowModal: (check: boolean) => void
     isCreate: boolean
-    showModalEditQuestion: UnionType
+    showModalEditQuestion: UnionType | null
 }
 
 export default function Question({
@@ -37,7 +37,7 @@ export default function Question({
                         saveAction={(question: MultipleChoiceType) => {
                             if (!isCreate) {
                                 const newData = formik.values.groupQuestions[index].data?.map(
-                                    (item: MultipleChoiceType) => {
+                                    (item: any) => {
                                         if (item.id === question.id) {
                                             return question
                                         }
@@ -68,7 +68,7 @@ export default function Question({
                             if (!isCreate) {
                                 console.log(question)
                                 const newData = formik.values.groupQuestions[index].data?.map(
-                                    (item: MultipleChoiceType) => {
+                                    (item: any) => {
                                         if (item.id === question.id) {
                                             return question
                                         }
@@ -99,7 +99,7 @@ export default function Question({
                             if (!isCreate) {
                                 console.log(question)
                                 const newData = formik.values.groupQuestions[index].data?.map(
-                                    (item: MultipleChoiceType) => {
+                                    (item: any) => {
                                         if (item.id === question.id) {
                                             return question
                                         }

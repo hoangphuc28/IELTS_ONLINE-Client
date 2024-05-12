@@ -4,7 +4,7 @@ import { setPartEdit, setPartList } from '../../reducer/partReducer'
 import { PaginationInterface } from '../../../type/pagination'
 
 export const GetAllParts = (pagination: PaginationInterface) => {
-    return async (dispatch) => {
+    return async (dispatch: any) => {
         try {
             const res = await axios({
                 url: `${api.part.common}?search=${pagination.search}&page=${pagination.page}&limit=${pagination.limit}&partnumber=${pagination.filter.partNumber}&skill=${pagination.filter.skill}`,
@@ -16,8 +16,8 @@ export const GetAllParts = (pagination: PaginationInterface) => {
         }
     }
 }
-export const GetPart = (partId: string) => {
-    return async (dispatch) => {
+export const GetPart = (partId: string | string[]) => {
+    return async (dispatch: any) => {
         try {
             const res = await axios({
                 url: `${api.part.common}/${partId}`,

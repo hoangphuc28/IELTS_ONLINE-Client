@@ -28,7 +28,7 @@ export class Dropdown {
 export class Matching {
     public id: string = ''
     public questionText: string = ''
-    public answer: Answer = new Answer()
+    public answer: Answer[] =  []
 }
 
 export class MatchingHeading {

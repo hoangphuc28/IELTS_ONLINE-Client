@@ -7,12 +7,13 @@ import { DeletePart } from '../../lib/redux/action/Part/delete'
 import { useRouter } from 'next/navigation'
 import routes from '../../lib/routes/routes'
 import formatter from '../../util/timeFormat'
+import { useAppDispatch } from '../../lib/redux/hooks'
 
 interface Props {
     item: Part
 }
 export default function PartItem({ item }: Props) {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     return (
         <div className="part-item">
             <div className="flex items-start">
