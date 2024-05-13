@@ -27,6 +27,7 @@ export default function Portlet() {
                             setSelected('All')
                             const newPagination = _.cloneDeep(pagination)
                             newPagination.filter.skill = ''
+                            newPagination.page = 1
                             dispatch(setPartPagination(newPagination))
                         }}
                         className={`portlet-item ${selected === 'All' && 'selected'}`}
@@ -40,6 +41,7 @@ export default function Portlet() {
                                 setSelected(key)
                                 const newPagination = _.cloneDeep(pagination)
                                 newPagination.filter.skill = key
+                                newPagination.page = 1
                                 dispatch(setPartPagination(newPagination))
                             }}
                             key={key} // Assertion to React.ReactText

@@ -1,5 +1,5 @@
-import { Dropdown } from 'flowbite'
-import { MultipleChoice, MultipleResponse, Matching, MatchingHeading, FillTheBlank, MatchingFillBlank } from './Question'
+
+import { MultipleChoice, MultipleResponse, DragAndDrop, MatchingHeading, FillTheBlank, MatchingFillBlank, Dropdown } from './Question'
 import { QuestionType } from './enum'
 
 
@@ -11,7 +11,7 @@ export class GroupQuestion {
         (| MultipleChoice
         | MultipleResponse
         | Dropdown
-        | Matching
+        | DragAndDrop
         | MatchingHeading
         | FillTheBlank
         | MatchingFillBlank)[] = []

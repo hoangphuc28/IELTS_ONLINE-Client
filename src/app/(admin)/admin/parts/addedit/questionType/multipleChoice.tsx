@@ -21,7 +21,6 @@ export default function MultipleChoiceForm(props: QuestionProps) {
     const DynamicEditor = dynamic(() => import('../_components/editor/editor'), { ssr: false })
     const Editor = useMemo(() => DynamicEditor, [])
     const [question, setQuestion] = useState<MultipleChoiceType>(props.data as MultipleChoiceType)
-    console.log(question)
     return (
         <Fragment>
             <div className="title mb-5">Multiple choice</div>

@@ -1,5 +1,5 @@
 import { Fragment, useMemo, useState } from 'react'
-import { Answer, Dropdown, MultipleResponse } from '../../type/Question'
+import { Answer, DragAndDrop, Dropdown, MultipleResponse } from '../../type/Question'
 import {
     Accordion,
     AccordionActions,
@@ -17,35 +17,31 @@ import AddCircleIcon from '@mui/icons-material/AddCircle'
 import dynamic from 'next/dynamic'
 import { QuestionProps } from './dataQuestion'
 
-export default function DropdownForm(props: QuestionProps) {
+export default function DragAndDropForm(props: QuestionProps) {
     const DynamicEditor = dynamic(() => import('../_components/editor/editor'), { ssr: false })
     const Editor = useMemo(() => DynamicEditor, [])
-    const [question, setQuestion] = useState<Dropdown>(props.data as Dropdown)
+    const [question, setQuestion] = useState<DragAndDrop>(props.data as DragAndDrop)
     return (
         <Fragment>
-            <div className="title mb-5">Dropdown</div>
+            <div className="title mb-5">Drag And Drop</div>
             <div>
-                <label className="title-label block mb-2" htmlFor="name">
-                    Question text
-                </label>
-                <Editor
-                    data={question?.questionText}
-                    saveData={(data: any) => (question.questionText = data)}
-                    formik={props.formik}
-                    index={props.index}
-                />
-            </div>
-            <label className="title-label block mt-3" htmlFor="name">
-                Answers
-            </label>
-            {question?.answers.map((item, i) => (
-                <Fragment key={i}>
+                        <label className="title-label block mb-2" htmlFor="">
+                            Question text
+                        </label>
+                        <Editor
+                            data={question?.questionText}
+                            saveData={(data: any) => (question.questionText = data)}
+                            formik={props.formik}
+                            index={props.index}
+                        />
+                    </div>
+                    <Fragment>
                     <div className="flex justify-start items-start mt-5">
-                        <label style={{ width: '15%' }} htmlFor="email">
-                            Choice[[{item.id}]]
+                        <label style={{ width: '15%' }} htmlFor="">
+                           Answer
                         </label>
                         <input
-                            value={item.content}
+                            value={question.answer.content}
                             className="form-control w-2/5 h-10 box-border"
                             style={{ width: '30%' }}
                             id="title"
@@ -53,33 +49,19 @@ export default function DropdownForm(props: QuestionProps) {
                             type="title"
                             onChange={(event: any) => {
                                 const newValue = event.target.value
-                                const updatedAnswers = [...question.answers]
-                                updatedAnswers[i].content = newValue
+                                const updatedAnswer = question.answer
+                                updatedAnswer.content = newValue
                                 setQuestion((prevQuestion) => ({
                                     ...prevQuestion,
-                                    answers: updatedAnswers,
+                                    answer: updatedAnswer,
                                 }))
                             }}
                             // value={formik.values.title}
                         />
                     </div>
                 </Fragment>
-            ))}
 
             <div className="mt-5">
-                <Button
-                    onClick={() => {
-                        let temp = { ...question }
-                        temp.answers.push(new Answer((question.answers.length + 1).toString()))
-                        setQuestion(temp)
-                    }}
-                    variant="contained"
-                    style={{
-                        background: '#36aafd',
-                    }}
-                >
-                    <AddCircleIcon style={{ marginRight: '5px' }} /> Add new answer
-                </Button>
                 <Button
                     onClick={() => {
                         props.saveAction(question)

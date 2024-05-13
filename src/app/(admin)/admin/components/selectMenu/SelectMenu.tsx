@@ -45,6 +45,7 @@ export default function SelectMenu() {
                         onClick={() => {
                             const newPagination = _.cloneDeep(pagination)
                             newPagination.filter.partNumber = ''
+                            newPagination.page= 1
                             dispatch(setPartPagination(newPagination))
                         }}
                     >
@@ -55,6 +56,7 @@ export default function SelectMenu() {
                         onClick={() => {
                             const newPagination = _.cloneDeep(pagination)
                             newPagination.filter.partNumber = key
+                            newPagination.page= 1
                             dispatch(setPartPagination(newPagination))
                         }}
                         key={key}>{PartEnum[key as keyof typeof PartEnum]}</li>

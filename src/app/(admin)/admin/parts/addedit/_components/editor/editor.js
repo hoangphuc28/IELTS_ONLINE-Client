@@ -19,29 +19,29 @@ import { HOST } from '@/src/utils/constanst/host'
 
 const CustomEditor = ({ formik, index, saveData, data }) => {
     const config = {
-        toolbar: [
-            'Alignment',
-            'Autoformat',
-            'Bold',
-            'Essentials',
-            'Heading',
-            'Image',
-            'ImageInsert',
-            'ImageResize',
-            'ImageStyle',
-            'ImageToolbar',
-            'ImageUpload',
-            'Italic',
-            'Paragraph',
-            'PasteFromOffice',
-            'Table',
-            'TextTransformation',
-            'Underline',
-            'Undo',
-        ],
-        // ckfinder: {
-        //     uploadUrl: ''
-        // }
+        toolbar: {
+			items: [
+				'undo',
+				'redo',
+				'|',
+				'bold',
+				'italic',
+				'underline',
+				'|',
+				'alignment',
+				'insertTable',
+				'imageInsert'
+			]
+		},
+		language: 'en',
+		image: {
+			toolbar: [
+				'imageTextAlternative',
+				'imageStyle:inline',
+				'imageStyle:block',
+				'imageStyle:side'
+			]
+		},
         extraPlugins: [uploadPlugin],
     }
     const [editorData, setEditorData] = useState('')
@@ -57,7 +57,6 @@ const CustomEditor = ({ formik, index, saveData, data }) => {
                 onBlur={(event, editor) => {}}
                 onFocus={(event, editor) => {}}
                 onChange={(event, editor) => {
-                    console.log(editor.getData())
                     saveData(editor.getData())
                     setEditorData(editor.getData())
                 }}

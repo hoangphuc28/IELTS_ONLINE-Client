@@ -25,10 +25,10 @@ export class Dropdown {
     public answers: Answer[] = []
 }
 
-export class Matching {
+export class DragAndDrop {
     public id: string = ''
     public questionText: string = ''
-    public answer: Answer[] =  []
+    public answer: Answer = new Answer('1')
 }
 
 export class MatchingHeading {
@@ -49,6 +49,6 @@ export class FillTheBlank {
 export class MatchingFillBlank {
     public id: string = '';
     public questionText: string = '';
-    public correctAnswers: Answer[] = [];
+    public answers: Answer[] = [];
     public totalAnswers: Answer[] = [];
 }

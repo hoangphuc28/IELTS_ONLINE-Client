@@ -37,6 +37,7 @@ export default function Page() {
                     {
                         partEdit !== null ?
                     <AddPart action={(values) => {
+
                         dispatch(UpdatePart(values, () => push(`${routes.parts}`)))
                     }} part={_.cloneDeep(partEdit)} />
                         : <Fragment></Fragment>

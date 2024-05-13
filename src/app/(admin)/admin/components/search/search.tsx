@@ -3,7 +3,7 @@ import SearchIcon from "@/public/admin/svg/search.svg";
 import "@admin/styles/components/_search.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { PaginationInterface } from "../../../lib/type/pagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { targets } from '../../../../(client)/account/_components/sideBar';
 import _ from "lodash";
 import { setPartPagination } from "../../../lib/redux/reducer/partReducer";
@@ -18,9 +18,13 @@ export default function Search() {
             dispatch(setPartPagination(newPagination))
         }
       };
+      useEffect(() => {
+        setSearchContent(pagination.search)
+      }, [])
     return (
         <div className="search">
             <input
+            value={searchContent}
             onKeyDown={handleInput}
             onChange={(event: any) => {
                 setSearchContent(event.target.value)

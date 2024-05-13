@@ -27,6 +27,7 @@ import EditIcon from '@mui/icons-material/Edit'
 import AddEditQuestion from './question'
 import Question from './question'
 import { UnionType } from '../../type/unionType'
+import { QuestionType } from '../../type/enum'
 //using useReducer
 // const initialState = {
 //     groupQuestion: formik.values.groupQuestions[index]
@@ -149,7 +150,10 @@ export default function GroupQuestionsComponent({
                                         }}
                                     >
                                         <div className="flex justify-between items-center">
-                                            <CardContent>
+                                            <CardContent sx={{
+                                                 maxHeight: '20px',
+                                                 overflow: 'scroll',
+                                            }}>
                                                 <Typography
                                                     style={{ fontSize: 14, color: '#4f6799' }}
                                                     dangerouslySetInnerHTML={{
@@ -168,15 +172,18 @@ export default function GroupQuestionsComponent({
                                                 >
                                                     <EditIcon />
                                                 </Button>
-                                                <Button
-                                                    onClick={() => {
-                                                        deleteQuestion(question)
-                                                        console.log(1)
-                                                    }}
-                                                    size="small"
-                                                >
-                                                    <Close color="error"></Close>
-                                                </Button>
+                                                {formik.values.groupQuestions[index]
+                                                    .questionType !== QuestionType.Dropdown && (
+                                                    <Button
+                                                        onClick={() => {
+                                                            deleteQuestion(question)
+                                                            console.log(1)
+                                                        }}
+                                                        size="small"
+                                                    >
+                                                        <Close color="error"></Close>
+                                                    </Button>
+                                                )}
                                             </CardActions>
                                         </div>
                                     </Card>
@@ -191,17 +198,21 @@ export default function GroupQuestionsComponent({
                     <Button size={'small'} onClick={downEvent}>
                         <KeyboardArrowDownIcon />
                     </Button>
-                    <Button
-                        onClick={() => {
-                            setIsCreate(true)
-                            setShowModal(true)
-                            setShowModalEditQuestion(null)
-                        }}
-                        size={'small'}
-                        style={{ color: '#4E6799' }}
-                    >
-                        Add Question
-                    </Button>
+                    {(formik.values.groupQuestions[index].questionType !== QuestionType.Dropdown ||
+                      formik.values.groupQuestions[index].questionType !== QuestionType.DragAndDrop) ? (
+                        <Button
+                            onClick={() => {
+                                setIsCreate(true)
+                                setShowModal(true)
+                                setShowModalEditQuestion(null)
+                            }}
+                            size={'small'}
+                            style={{ color: '#4E6799' }}
+                        >
+                            Add Question
+                        </Button>
+                    ): <Fragment></Fragment>
+                }
                     <Button onClick={deleteEvent} size={'small'} style={{ color: '#d52b2a' }}>
                         Delete
                     </Button>

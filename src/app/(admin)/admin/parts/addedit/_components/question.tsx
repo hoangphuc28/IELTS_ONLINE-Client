@@ -3,13 +3,14 @@ import { Part } from '../../type/Part.class'
 import { FormikProps } from 'formik'
 import Modal from '../questionType/modal'
 import MultipleChoice from '../questionType/multipleChoice'
-import { Dropdown } from 'flowbite'
 import { QuestionType } from '../../type/enum'
 import { UnionType } from '../../type/unionType'
-import { MultipleChoice as MultipleChoiceType, MultipleResponse } from '../../type/Question'
+import { DragAndDrop, Dropdown, MatchingFillBlank, MultipleChoice as MultipleChoiceType, MultipleResponse } from '../../type/Question'
 import { QuestionProps } from '../questionType/dataQuestion'
 import MultipleResponseForm from '../questionType/multipleResponse'
 import DropdownForm from '../questionType/dropDown'
+import DragAndDropForm from '../questionType/dragAndDrop'
+import MatchingFillBlankForm from '../questionType/matchingFillTheBlank'
 interface Props {
     index: number
     formik: FormikProps<Part>
@@ -93,9 +94,9 @@ export default function Question({
             case QuestionType.Dropdown:
                 return (
                     <DropdownForm
-                        data={isCreate ? new MultipleResponse() : showModalEditQuestion}
+                        data={isCreate ? new Dropdown() : showModalEditQuestion}
                         closeAction={() => setShowModal(false)}
-                        saveAction={(question: MultipleResponse) => {
+                        saveAction={(question: Dropdown) => {
                             if (!isCreate) {
                                 console.log(question)
                                 const newData = formik.values.groupQuestions[index].data?.map(
@@ -122,17 +123,73 @@ export default function Question({
                     />
                 )
                 break
-            case QuestionType.Matching:
-                // Return Matching component
+            case QuestionType.DragAndDrop:
+                return (
+                    <DragAndDropForm
+                        data={isCreate ? new DragAndDrop() : showModalEditQuestion}
+                        closeAction={() => setShowModal(false)}
+                        saveAction={(question: Dropdown) => {
+                            if (!isCreate) {
+                                console.log(question)
+                                const newData = formik.values.groupQuestions[index].data?.map(
+                                    (item: any) => {
+                                        if (item.id === question.id) {
+                                            return question
+                                        }
+                                        return item
+                                    },
+                                )
+                                formik.values.groupQuestions[index].data = newData
+                            } else {
+                                question.id = (
+                                    formik.values.groupQuestions[index].data?.length + 1
+                                ).toString()
+                                formik.values.groupQuestions[index].data?.push(
+                                    question as MultipleResponse,
+                                )
+                            }
+                        }}
+                        formik={formik}
+                        index={index}
+                    />
+                )
                 break
             case QuestionType.MatchingHeading:
-                // Return MatchingHeading component
                 break
             case QuestionType.FillInTheBlank:
                 // Return FillInTheBlank component
                 break
             case QuestionType.MatchingFillInBlank:
-                // Return MatchingFillInBlank component
+                return (
+                    <MatchingFillBlankForm
+                        data={isCreate ? new MatchingFillBlank() : showModalEditQuestion}
+                        closeAction={() => setShowModal(false)}
+                        saveAction={(question: MatchingFillBlank) => {
+                            if (!isCreate) {
+                                console.log(question)
+                                const newData = formik.values.groupQuestions[index].data?.map(
+                                    (item: any) => {
+                                        if (item.id === question.id) {
+                                            return question
+                                        }
+                                        return item
+                                    },
+                                )
+
+                                formik.values.groupQuestions[index].data = newData
+                            } else {
+                                question.id = (
+                                    formik.values.groupQuestions[index].data?.length + 1
+                                ).toString()
+                                formik.values.groupQuestions[index].data?.push(
+                                    question as MultipleResponse,
+                                )
+                            }
+                        }}
+                        formik={formik}
+                        index={index}
+                    />
+                )
                 break
             default:
                 return null
