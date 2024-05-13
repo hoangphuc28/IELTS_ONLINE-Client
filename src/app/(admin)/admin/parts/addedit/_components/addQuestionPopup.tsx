@@ -6,7 +6,7 @@ import { targets } from '../../../../../(client)/account/_components/sideBar'
 import { QuestionType } from '../../type/enum'
 import { Part } from '../../type/Part.class'
 import { GroupQuestion } from '../../type/GroupQuestion.class'
-import { Answer, DragAndDrop, Dropdown } from '../../type/Question'
+import { Answer, DragAndDrop, Dropdown, FillTheBlank } from '../../type/Question'
 interface AddQuestionPopup {
     onClose: () => void
     formik: FormikProps<Part>
@@ -110,6 +110,10 @@ export default function AddQuestionPopup({ onClose, formik, saveEvent }: AddQues
                                     }
                                     case QuestionType.DragAndDrop: {
                                         newGroupQuestion.data.push(new DragAndDrop())
+                                        break;
+                                    }
+                                    case QuestionType.FillInTheBlank: {
+                                        newGroupQuestion.data.push(new FillTheBlank())
                                         break;
                                     }
                                 }

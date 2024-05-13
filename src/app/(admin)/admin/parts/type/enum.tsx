@@ -3,9 +3,10 @@ export enum QuestionType {
     MultipleResponse = 'Multiple Response',
     Dropdown = 'Dropdown',
     DragAndDrop = 'Drag&Drop',
-    MatchingHeading = 'Matching heading',
-    FillInTheBlank = 'Fill in the Blank',
-    MatchingFillInBlank = 'Matching fill in the blanks',
+    FillInTheBlank = 'Fill In The Blank',
+    // MatchingFillInBlank = 'Matching fill in the blanks',
+    // MatchingHeading = 'Matching Heading',
+
 }
 export enum SkillEnum {
     READING = 'Reading',

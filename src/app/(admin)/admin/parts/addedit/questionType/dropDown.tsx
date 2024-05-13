@@ -55,6 +55,7 @@ export default function DropdownForm(props: QuestionProps) {
                                 const newValue = event.target.value
                                 const updatedAnswers = [...question.answers]
                                 updatedAnswers[i].content = newValue
+                                updatedAnswers[i].numberOrder = parseInt(item.id)
                                 setQuestion((prevQuestion) => ({
                                     ...prevQuestion,
                                     answers: updatedAnswers,

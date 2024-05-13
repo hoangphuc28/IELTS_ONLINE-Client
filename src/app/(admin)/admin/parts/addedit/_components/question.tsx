@@ -5,12 +5,17 @@ import Modal from '../questionType/modal'
 import MultipleChoice from '../questionType/multipleChoice'
 import { QuestionType } from '../../type/enum'
 import { UnionType } from '../../type/unionType'
-import { DragAndDrop, Dropdown, MatchingFillBlank, MultipleChoice as MultipleChoiceType, MultipleResponse } from '../../type/Question'
-import { QuestionProps } from '../questionType/dataQuestion'
+import {
+    DragAndDrop,
+    Dropdown,
+    FillTheBlank,
+    MultipleChoice as MultipleChoiceType,
+    MultipleResponse,
+} from '../../type/Question'
 import MultipleResponseForm from '../questionType/multipleResponse'
 import DropdownForm from '../questionType/dropDown'
 import DragAndDropForm from '../questionType/dragAndDrop'
-import MatchingFillBlankForm from '../questionType/matchingFillTheBlank'
+import FillBlankForm from '../questionType/fillTheBlank'
 interface Props {
     index: number
     formik: FormikProps<Part>
@@ -122,7 +127,7 @@ export default function Question({
                         index={index}
                     />
                 )
-                break
+
             case QuestionType.DragAndDrop:
                 return (
                     <DragAndDropForm
@@ -153,18 +158,12 @@ export default function Question({
                         index={index}
                     />
                 )
-                break
-            case QuestionType.MatchingHeading:
-                break
             case QuestionType.FillInTheBlank:
-                // Return FillInTheBlank component
-                break
-            case QuestionType.MatchingFillInBlank:
                 return (
-                    <MatchingFillBlankForm
-                        data={isCreate ? new MatchingFillBlank() : showModalEditQuestion}
+                    <FillBlankForm
+                        data={isCreate ? new FillTheBlank() : showModalEditQuestion}
                         closeAction={() => setShowModal(false)}
-                        saveAction={(question: MatchingFillBlank) => {
+                        saveAction={(question: FillTheBlank) => {
                             if (!isCreate) {
                                 console.log(question)
                                 const newData = formik.values.groupQuestions[index].data?.map(
@@ -175,7 +174,6 @@ export default function Question({
                                         return item
                                     },
                                 )
-
                                 formik.values.groupQuestions[index].data = newData
                             } else {
                                 question.id = (
@@ -190,7 +188,6 @@ export default function Question({
                         index={index}
                     />
                 )
-                break
             default:
                 return null
         }

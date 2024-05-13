@@ -1,11 +1,11 @@
 
-import { MultipleResponse, MatchingHeading, FillTheBlank, MatchingFillBlank as MultipleChoiceType, Dropdown, Matching, MatchingFillBlank } from "./Question";
+import { MultipleResponse, MatchingHeading, FillTheBlank, MatchingFillBlank as MultipleChoiceType, Dropdown, DragAndDrop, MatchingFillBlank } from "./Question";
 
 export type UnionType =
   | MultipleChoiceType
   | MultipleResponse
   | Dropdown
-  | Matching
+  | DragAndDrop
   | MatchingHeading
   | FillTheBlank
   | MatchingFillBlank;

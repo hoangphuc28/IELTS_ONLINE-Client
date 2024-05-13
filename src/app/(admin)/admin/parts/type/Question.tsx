@@ -1,7 +1,9 @@
 export class Answer {
     public id: string = ''
     public content: string = ''
+    public numberOrder: number = 1
     public isCorrect: boolean = false
+    public subAnswers: string[] = []
     constructor(id: string) {
         this.id = id;
     }
@@ -28,7 +30,7 @@ export class Dropdown {
 export class DragAndDrop {
     public id: string = ''
     public questionText: string = ''
-    public answer: Answer = new Answer('1')
+    public answers: Answer[] = []
 }
 
 export class MatchingHeading {
