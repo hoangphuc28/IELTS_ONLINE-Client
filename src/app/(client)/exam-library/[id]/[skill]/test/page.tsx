@@ -9,6 +9,8 @@ import IPart from '@/src/utils/shares/interfaces/IPart'
 import IGroup from '../../../../../../utils/shares/interfaces/IGroup'
 import ComponentTestHeader from './_components/header'
 
+import { ExamService } from '@utils/shares/db/answer/services/exam.service'
+
 export default function Page() {
     const params = useParams<{ id: string; skill: string }>()
     const router = useRouter()
@@ -34,6 +36,8 @@ export default function Page() {
         localStorage.setItem('startIndexEveryPart', JSON.stringify(startIndexEveryPart))
         // according()
         // toQuestion()
+
+        // ExamService.test()
     }, [])
     // #endregion parts contains number of questions in groups
     return (

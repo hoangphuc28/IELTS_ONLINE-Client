@@ -1,12 +1,15 @@
 import IMiniTest from "../../../../utils/shares/interfaces/IMiniTest"
 import ITest from "../../../../utils/shares/interfaces/ITest"
 
+import { QuestionType } from "@/src/utils/constants/questionType"
+
 const miniTest: Array<IMiniTest> = [
     {
         name: 'Listening',
         parts: [
             {
                 id: 'listening-part-1',
+                examSkillDetailId: 'listening-part-1',
                 src: '../../../../assets/img/src-test-default.jpg',
                 time: '00:30:00',
                 description: "India's Modern Women",
@@ -15,7 +18,7 @@ const miniTest: Array<IMiniTest> = [
                         id: 'listening-parts-1-groups-1',
                         title: '<a href="">(Choice) Do the following statements agree with the information given in Reading Passage 1?</a>',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'choice',
+                        type: QuestionType.multiChoice,
                         questions: [
                             {
                                 id: 'listening-parts-1-groups-1-1',
@@ -95,7 +98,7 @@ const miniTest: Array<IMiniTest> = [
                         id: 'listening-parts-1-groups-2',
                         title: '(Multi choice) Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'multi-choice',
+                        type: QuestionType.multipleResponse,
                         questions: [
                             {
                                 id: 'listening-parts-1-groups-2-9',
@@ -151,7 +154,7 @@ const miniTest: Array<IMiniTest> = [
                         id: 'listening-parts-1-groups-3',
                         title: '(Drag and drop) Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'drag-drop',
+                        type: QuestionType.matching,
                         questions: [
                             {
                                 id: 'listening-parts-1-groups-3-9',
@@ -194,7 +197,7 @@ const miniTest: Array<IMiniTest> = [
                         id: 'listening-parts-1-groups-4',
                         title: '(Drag and drop) Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'drag-drop',
+                        type: QuestionType.matching,
                         questions: [
                             {
                                 id: 'listening-parts-1-groups-4-9',
@@ -250,7 +253,7 @@ const miniTest: Array<IMiniTest> = [
                         id: 'listening-parts-1-groups-5',
                         title: '(Short answer) Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'short-answer',
+                        type: QuestionType.fillInTheBlank,
                         questions: [
                             {
                                 id: 'listening-parts-1-groups-5-9',
@@ -274,9 +277,9 @@ const miniTest: Array<IMiniTest> = [
                     },
                     {
                         id: 'listening-parts-1-groups-6',
-                        title: '(Short answer) Do the following statements agree with the information given in Reading Passage 1?',
+                        title: '(DROP_DOWN) Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'DROP_DOWN',
+                        type: QuestionType.dropdown,
                         questions: [
                             {
                                 id: 'listening-parts-1-groups-6-9',
@@ -304,17 +307,17 @@ const miniTest: Array<IMiniTest> = [
                     },
                     {
                         id: 'listening-parts-1-groups-7',
-                        title: '(Short answer) Do the following statements agree with the information given in Reading Passage 1?',
+                        title: '(DRAG_AND_DROP_HEADING) Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'DRAG_AND_DROP_HEADING',
+                        type: QuestionType.matchingHeading,
                         questions: [],
                         answers: [{ id: 'listening-parts-1-groups-7-answer-1', content: 'A' }, { id: 'listening-parts-1-groups-7-answer-2', content: 'B' }, { id: 'listening-parts-1-groups-7-answer-3', content: 'C' }, { id: 'listening-parts-1-groups-7-answer-4', content: 'D' }]
                     },
                     {
                         id: 'listening-parts-1-groups-8',
-                        title: '(DRAG_AND_DROP_HEADING) Do the following statements agree with the information given in Reading Passage 1?',
+                        title: '(DRAG_AND_DROP_SHORT_ANSWER) Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'DRAG_AND_DROP_SHORT_ANSWER',
+                        type: QuestionType.matchingFillInTheBlanks,
                         questions: [{
                             id: 'listening-parts-1-groups-8-question-1',
                             content: 'Do the following statements agree with the information given in Reading Passage 1? <DragAndDropShortAnswer /> Do the following statements agree with the information given in Reading Passage 1? <DragAndDropShortAnswer /> Do the following statements agree with the information given in Reading Passage 1? <DragAndDropShortAnswer />',
@@ -329,6 +332,7 @@ const miniTest: Array<IMiniTest> = [
             },
             {
                 id: 'listening-part-2',
+                examSkillDetailId: 'listening-part-2',
                 src: '../../../../assets/img/src-test-default.jpg',
                 time: '00:30:00',
                 description: "India's Modern Women",
@@ -337,7 +341,7 @@ const miniTest: Array<IMiniTest> = [
                         id: 'listening-parts-2-groups-1',
                         title: 'Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'drag-drop',
+                        type: QuestionType.matching,
                         questions: [
                             {
                                 id: 'listening-parts-2-groups-1-1',
@@ -361,7 +365,7 @@ const miniTest: Array<IMiniTest> = [
                         id: 'listening-parts-2-groups-2',
                         title: 'Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'drag-drop',
+                        type: QuestionType.matching,
                         questions: [
                             {
                                 id: 'listening-parts-1-groups-1-9',
@@ -403,6 +407,7 @@ const miniTest: Array<IMiniTest> = [
             },
             {
                 id: 'listening-part-3',
+                examSkillDetailId: 'listening-part-3',
                 src: '../../../../assets/img/src-test-default.jpg',
                 time: '00:30:00',
                 description: "India's Modern Women",
@@ -411,7 +416,7 @@ const miniTest: Array<IMiniTest> = [
                         id: 'listening-parts-3-groups-1',
                         title: 'Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'drag-drop',
+                        type: QuestionType.matching,
                         questions: [
                             {
                                 id: 'listening-parts-3-groups-1-1',
@@ -435,7 +440,7 @@ const miniTest: Array<IMiniTest> = [
                         id: 'listening-parts-3-groups-2',
                         title: 'Do the following statements agree with the information given in Reading Passage 1?',
                         description: 'In boxes 9 - 13 on your answer sheet, write.',
-                        type: 'drag-drop',
+                        type: QuestionType.matching,
                         questions: [
                             {
                                 id: 'listening-parts-1-groups-1-9',
@@ -477,6 +482,7 @@ const miniTest: Array<IMiniTest> = [
             },
             {
                 id: 'listening-part-4',
+                examSkillDetailId: 'listening-part-4',
                 src: '../../../../assets/img/src-test-default.jpg',
                 time: '00:30:00',
                 description: "India's Modern Women",
@@ -517,6 +523,7 @@ const miniTest: Array<IMiniTest> = [
         parts: [
             {
                 id: 'reading-part-1',
+                examSkillDetailId: 'reading-part-1',
                 src: '../../../../assets/img/src-test-default.jpg',
                 time: '00:30:00',
                 description: "India's Modern Women",
@@ -557,6 +564,7 @@ const miniTest: Array<IMiniTest> = [
         parts: [
             {
                 id: 'writing-part-1',
+                examSkillDetailId: 'writing-part-1',
                 src: '../../../../assets/img/src-test-default.jpg',
                 time: '00:30:00',
                 description: "India's Modern Women",
@@ -597,6 +605,7 @@ const miniTest: Array<IMiniTest> = [
         parts: [
             {
                 id: 'speaking-part-1',
+                examSkillDetailId: 'speaking-part-1',
                 src: '../../../../assets/img/src-test-default.jpg',
                 time: '00:30:00',
                 description: "India's Modern Women",
@@ -636,6 +645,7 @@ const miniTest: Array<IMiniTest> = [
             },
             {
                 id: 'speaking-part-2',
+                examSkillDetailId: 'speaking-part-2',
                 src: '../../../../assets/img/src-test-default.jpg',
                 time: '00:30:00',
                 description: "India's Modern Women",
@@ -675,6 +685,7 @@ const miniTest: Array<IMiniTest> = [
             },
             {
                 id: 'speaking-part-3',
+                examSkillDetailId: 'speaking-part-3',
                 src: '../../../../assets/img/src-test-default.jpg',
                 time: '00:30:00',
                 description: "India's Modern Women",

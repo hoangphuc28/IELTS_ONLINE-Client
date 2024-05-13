@@ -1,44 +1,50 @@
 'use client'
 
 import IAnswer from '@/src/utils/shares/interfaces/IAnswer'
-import IGroup from '@/src/utils/shares/interfaces/IGroup'
-import ComponentDropItem, { componentStringDropItem } from '../dragdrop/dropItem'
-import ComponentListDrag from '../dragdrop/listDrag'
+import ComponentDropItem, {
+    componentStringDropItem,
+} from '@/src/app/(client)/exam-library/[id]/[skill]/test/_components/dragdrop/dropItem'
+import ComponentListDrag from '@/src/app/(client)/exam-library/[id]/[skill]/test/_components/dragdrop/listDrag'
 import ComponentFloatingInputLabel, {
     componentStringFloatingInputLabel,
 } from '../floatingInputLabel'
 import { useParams } from 'next/navigation'
-import ComponentDropdownManager from '../dropdown/dropdownManager'
-import ComponentDropdownItemCheckBox from '../dropdown/dropdownCheckBox'
 import { useEffect, useRef } from 'react'
 import ComponentDropdownItem from '../dropdown/dropdownItem'
 import { allowDrop, drop } from '../../../utils/dragAndDrop'
+import ComponentContainerMultiChoice from '@/src/app/(client)/exam-library/[id]/[skill]/test/_components/questionItems/multipleChoice'
+import ComponentContainerMultipleResponse from '@clientExamLibrary/[id]/[skill]/test/_components/questionItems/multipleResponse'
+
+import { QuestionType } from '@/src/utils/constants/questionType'
+
+import { GroupShowDTO } from '../../../../../../../../utils/shares/dto/group-show.dto'
 
 export default function ComponentListQuestionContent({
     data,
     startQuestionIndex,
 }: {
-    data: IGroup
+    data: GroupShowDTO
     startQuestionIndex?: number
 }) {
     const params = useParams<{ skill: string }>()
     // if (params.skill === 'Speaking') return <></>
     if (params.skill === 'Writing') return <ComponentWritingQuestion data={data} />
-    if (data.type === 'choice') return <ComponentQuestionChoice data={data} />
-    if (data.type === 'multi-choice') return <ComponentQuestionMultiChoice data={data} />
-    if (data.type === 'drag-drop') return <ComponentQuestionDragDrop data={data} />
-    if (data.type === 'short-answer')
+    if (data.type === QuestionType.multiChoice) return <ComponentListMultipleChoice data={data} />
+    if (data.type === QuestionType.multipleResponse)
+        return <ComponentListQuestionMultipleResponse data={data} />
+    if (data.type === QuestionType.matching) return <ComponentQuestionDragDrop data={data} />
+    if (data.type === QuestionType.fillInTheBlank)
         return <ComponentQuestionShortAnswer data={data} startQuestionIndex={startQuestionIndex} />
-    if (data.type === 'DROP_DOWN') return <ComponentQuestionDropDown data={data} />
-    if (data.type === 'DRAG_AND_DROP_HEADING')
+    if (data.type === QuestionType.dropdown) return <ComponentQuestionDropDown data={data} />
+    if (data.type === QuestionType.matchingHeading)
         return <ComponentQuestionDragDropHeading data={data} />
-    if (data.type === 'DRAG_AND_DROP_SHORT_ANSWER')
+    if (data.type === QuestionType.matchingFillInTheBlanks)
         return <ComponentQuestionDragDropShortAnswer data={data} />
     // if (data.type === 'DROP_DOWN_CHECKBOX') return <ComponentDropDownCheckbox data={data} />
     return <></>
 }
 
-function ComponentWritingQuestion({ data }: { data: IGroup }) {
+function ComponentWritingQuestion({ data }: { data: GroupShowDTO }) {
     return (
         <section className="flex flex-col gap-5 px-5 w-full">
             {data.questions.map((question) => (
@@ -52,7 +58,7 @@ function ComponentWritingQuestion({ data }: { data: IGroup }) {
     )
 }
 
-function ComponentQuestionChoice({ data }: { data: IGroup }) {
+function ComponentListMultipleChoice({ data }: { data: GroupShowDTO }) {
     return (
         <>
             <section className="flex flex-col gap-2">
@@ -61,36 +67,18 @@ function ComponentQuestionChoice({ data }: { data: IGroup }) {
                 {data.questions.map((question, index) => {
                     const key = 'exam-library-part-list-question-choice-' + index
                     return (
-                        <section className="flex flex-col gap-1" key={key}>
-                            <h3 dangerouslySetInnerHTML={{ __html: question.content }}></h3>
-
-                            <section className="flex flex-col gap-1">
-                                {question.answers.map((answer, answerIndex) => (
-                                    <section
-                                        className="flex items-center gap-2"
-                                        key={key + '-answer-' + answerIndex}
-                                    >
-                                        <input
-                                            id={answer.id}
-                                            type="radio"
-                                            name={question.id}
-                                            value={answer.id}
-                                        />
-                                        <label
-                                            htmlFor={answer.id}
-                                            dangerouslySetInnerHTML={{ __html: answer.content }}
-                                        ></label>
-                                    </section>
-                                ))}
-                            </section>
-                        </section>
+                        <ComponentContainerMultiChoice
+                            examSkillDetailId={data.examSkillDetailId}
+                            data={question}
+                            key={key}
+                        />
                     )
                 })}
             </section>
         </>
     )
 }
-function ComponentQuestionMultiChoice({ data }: { data: IGroup }) {
+function ComponentListQuestionMultipleResponse({ data }: { data: GroupShowDTO }) {
     return (
         <>
             <section className="flex flex-col gap-2">
@@ -99,38 +87,18 @@ function ComponentQuestionMultiChoice({ data }: { data: IGroup }) {
                 {data.questions.map((question, index) => {
                     const key = 'exam-library-part-list-question-choice-' + index
                     return (
-                        <section className="flex flex-col gap-1" key={key}>
-                            <h3 dangerouslySetInnerHTML={{ __html: question.content }}></h3>
-
-                            <section className="flex flex-col gap-1">
-                                {question.answers.map((answer, answerIndex) => (
-                                    <section
-                                        className="flex items-center gap-2"
-                                        key={key + '-answer-' + answerIndex}
-                                    >
-                                        <input
-                                            id={key + answer.id + '-answer-index-' + answerIndex}
-                                            type="checkbox"
-                                            name={question.id}
-                                            value={answer.id}
-                                        />
-                                        <label
-                                            htmlFor={
-                                                key + answer.id + '-answer-index-' + answerIndex
-                                            }
-                                            dangerouslySetInnerHTML={{ __html: answer.content }}
-                                        ></label>
-                                    </section>
-                                ))}
-                            </section>
-                        </section>
+                        <ComponentContainerMultipleResponse
+                            examSkillDetailId={data.examSkillDetailId}
+                            data={question}
+                            key={key}
+                        />
                     )
                 })}
             </section>
         </>
     )
 }
-function ComponentQuestionDragDrop({ data }: { data: IGroup }) {
+function ComponentQuestionDragDrop({ data }: { data: GroupShowDTO }) {
     const answers: IAnswer[] = []
     data.questions.forEach((question) => {
         // every question have one answer
@@ -166,7 +134,7 @@ function ComponentQuestionShortAnswer({
     data,
     startQuestionIndex,
 }: {
-    data: IGroup
+    data: GroupShowDTO
     startQuestionIndex?: number
 }) {
     const refDataHTML = useRef<HTMLDivElement>(null)
@@ -200,7 +168,7 @@ function ComponentQuestionShortAnswer({
     )
 }
 
-function ComponentQuestionDropDown({ data }: { data: IGroup }) {
+function ComponentQuestionDropDown({ data }: { data: GroupShowDTO }) {
     return (
         <section className="flex flex-col gap-2">
             <h3 dangerouslySetInnerHTML={{ __html: data.title }}></h3>
@@ -218,7 +186,7 @@ function ComponentQuestionDropDown({ data }: { data: IGroup }) {
     )
 }
 
-function ComponentQuestionDragDropHeading({ data }: { data: IGroup }) {
+function ComponentQuestionDragDropHeading({ data }: { data: GroupShowDTO }) {
     useEffect(() => {
         for (let index = 0; index < data.questions.length; index++) {
             const questionId = data.questions[index]
@@ -250,7 +218,7 @@ function ComponentQuestionDragDropHeading({ data }: { data: IGroup }) {
     )
 }
 
-function ComponentQuestionDragDropShortAnswer({ data }: { data: IGroup }) {
+function ComponentQuestionDragDropShortAnswer({ data }: { data: GroupShowDTO }) {
     const refDataHTML = useRef<HTMLDivElement>(null)
     let dataHTML = data.questions[0].content
     let index = 0
@@ -289,7 +257,7 @@ function ComponentQuestionDragDropShortAnswer({ data }: { data: IGroup }) {
     )
 }
 
-// function ComponentDropDownCheckbox({ data }: { data: IGroup }) {
+// function ComponentDropDownCheckbox({ data }: { data: GroupShowDTO }) {
 //     return (
 //         <>
 //             <section className="flex flex-col gap-2">

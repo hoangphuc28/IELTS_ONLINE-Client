@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation'
 import ComponentListQuestion from './listQuestion'
 import ComponentLeftSide from './leftSide'
 import ComponentSubmit from '../submit'
+import { GroupShowDTO } from '@utils/shares/dto/group-show.dto'
 
 export default function ComponentPart({
     data,
@@ -42,10 +43,11 @@ export default function ComponentPart({
 
                     <section className="flex flex-col gap-3 w-full">
                         {data.groups.map((group, index) => {
+                            const groupDto = new GroupShowDTO(group, data.examSkillDetailId)
                             return (
                                 <ComponentListQuestion
                                     key={'exam-library-part-' + index + '-group-' + index}
-                                    data={group}
+                                    data={groupDto}
                                     startIndex={startQuestionIndex[index]}
                                 />
                             )

@@ -1,14 +1,15 @@
 'use client'
 
-import IGroup from '@/src/utils/shares/interfaces/IGroup'
 import ComponentListQuestionContent from './listQuestionContent'
 import { useParams } from 'next/navigation'
+import { GroupShowDTO } from '../../../../../../../../utils/shares/dto/group-show.dto'
 
+// Group question
 export default function ComponentListQuestion({
     data,
     startIndex,
 }: {
-    data: IGroup
+    data: GroupShowDTO
     startIndex: number
 }) {
     const startQuestionIndex = startIndex

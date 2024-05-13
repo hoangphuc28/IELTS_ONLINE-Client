@@ -49,6 +49,11 @@ export default function Page() {
     )
     const maxExams: Array<number> = [40, 40, 3, 2]
 
+    useEffect(() => {
+        // const data = new AnswerForPart({ examSkillDetailId: 'idExamDetail', answer: { id: 'a', value: 'b' } })
+        // ExamService.createPart(data)
+    }, [])
+
     return (
         <>
             <main className="min-h-[50vh] mb-5 sm:mt-5 sm:py-5">
