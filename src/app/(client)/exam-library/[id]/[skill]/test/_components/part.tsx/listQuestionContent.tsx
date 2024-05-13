@@ -1,10 +1,9 @@
 'use client'
 
 import IAnswer from '@/src/utils/shares/interfaces/IAnswer'
-import ComponentDropItem, {
-    componentStringDropItem,
-} from '@/src/app/(client)/exam-library/[id]/[skill]/test/_components/dragdrop/dropItem'
-import ComponentListDrag from '@/src/app/(client)/exam-library/[id]/[skill]/test/_components/dragdrop/listDrag'
+import IGroup from '@/src/utils/shares/interfaces/IGroup'
+import ComponentDropItem, { ComponentStringDropItem } from '../dragdrop/dropItem'
+import ComponentListDrag from '../dragdrop/listDrag'
 import ComponentFloatingInputLabel, {
     componentStringFloatingInputLabel,
 } from '../floatingInputLabel'
@@ -47,8 +46,9 @@ export default function ComponentListQuestionContent({
 function ComponentWritingQuestion({ data }: { data: GroupShowDTO }) {
     return (
         <section className="flex flex-col gap-5 px-5 w-full">
-            {data.questions.map((question) => (
+            {data.questions.map((question, index) => (
                 <textarea
+                    key={index}
                     name={question.id}
                     className="w-full rounded-lg border-violet-500 border-2"
                     rows={16}
@@ -226,7 +226,7 @@ function ComponentQuestionDragDropShortAnswer({ data }: { data: GroupShowDTO }) 
         index++
         dataHTML = dataHTML.replace(
             '<DragAndDropShortAnswer />',
-            componentStringDropItem({
+            ComponentStringDropItem({
                 groupId: data.id,
                 data: {
                     id: 'group-' + data.id + '-question-' + index,

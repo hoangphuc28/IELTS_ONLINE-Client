@@ -6,36 +6,49 @@ import { useDispatch } from 'react-redux'
 import { DeletePart } from '../../lib/redux/action/Part/delete'
 import { useRouter } from 'next/navigation'
 import routes from '../../lib/routes/routes'
+import formatter from '../../util/timeFormat'
+import { useAppDispatch } from '../../lib/redux/hooks'
+
 interface Props {
     item: Part
 }
-export default function PartItem({item} : Props) {
-    const {push, refresh} = useRouter()
-    const dispatch = useDispatch();
+export default function PartItem({ item }: Props) {
+    const dispatch = useAppDispatch()
     return (
         <div className="part-item">
             <div className="flex items-start">
-                <div className="mt-6 radio-btn">
-                    <input id="examTimes" name="examTimes" type="checkbox" />
-                    <span className="checkmark"></span>
-                </div>
+                <span className="">#{item.publicId}</span>
                 <div className="right-bottom-btns">
                     <Link href="#addition" type="button" className="btn  operation-btn">
-                        Additional{' '}
+                        Preview
                     </Link>
-                    <Link href={`/admin/parts/edit/${item.id}`} data-action="edit-question" type="button" className="btn operation-btn">
-                        Edit{' '}
+                    <Link
+                        href={`/admin/parts/edit/${item.id}`}
+                        data-action="edit-question"
+                        type="button"
+                        className="btn operation-btn"
+                    >
+                        Edit
                     </Link>
-                    <Link onClick={() => {
-                        const isBrowser = typeof window !== 'undefined'
-                        if (isBrowser && window.confirm('If you delete this part, all data in the part will be deleted too. Are you sure?')) {
-                        dispatch(DeletePart(item.id))
-                        }
-                    }} href="#" type="button" className="btn operation-btn">
+                    <Link
+                        onClick={() => {
+                            const isBrowser = typeof window !== 'undefined'
+                            if (
+                                isBrowser &&
+                                window.confirm(
+                                    'If you delete this part, all data in the part will be deleted too. Are you sure?',
+                                )
+                            ) {
+                                dispatch(DeletePart(item.id))
+                            }
+                        }}
+                        href="#"
+                        type="button"
+                        className="btn operation-btn"
+                    >
                         Delete{' '}
                     </Link>
                 </div>
-
                 <div className="row question ml-10" style={{ marginTop: 0 }}>
                     <div className="col-xs-12  col-sm-12 col-md-12">
                         <div className="row" style={{ marginTop: 0 }}>
@@ -54,10 +67,10 @@ export default function PartItem({item} : Props) {
                                             <div>
                                                 {' '}
                                                 <span className="labels other" title="Category">
-                                                    Category: Default category
+                                                    Create: {formatter.format(new Date(item.createdAt))}
                                                 </span>
                                                 <span className="labels other">
-                                                    Update: 2024-04-09 14:29
+                                                    Update: {formatter.format(new Date(item.updatedAt))}
                                                 </span>{' '}
                                             </div>
                                             <p />

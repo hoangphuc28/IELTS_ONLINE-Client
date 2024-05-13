@@ -29,6 +29,9 @@
             }
             a:last-child {
                 color:$color-red1;
+                &:hover {
+                    color: $color-red2;
+                }
             }
         }
         .ques-title {

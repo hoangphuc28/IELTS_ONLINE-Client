@@ -8,7 +8,7 @@ import { setLoading } from "../../reducer/commonReducer"
 
 
 export const CreatePart = (data: Part, successAction: () => void) => {
-    return async (dispatch) => {
+    return async (dispatch: any) => {
         try {
             const res = await axios({
                 url: api.part.common,

@@ -1,6 +1,7 @@
 import IQuestion from '@/src/utils/shares/interfaces/IQuestion'
 import { allowDrop, drop } from '@clientExamLibrary/[id]/[skill]/utils/dragAndDrop'
-import { useEffect } from 'react'
+import { useEffect } from 'react';
+
 
 export default function ComponentDropItem({ groupId, data }: { groupId: string; data: IQuestion }) {
     return (
@@ -21,19 +22,20 @@ export default function ComponentDropItem({ groupId, data }: { groupId: string; 
         </section>
     )
 }
-export function componentStringDropItem({ groupId, data }: { groupId: string; data: IQuestion }) {
+export const ComponentStringDropItem = ({ groupId, data }: { groupId: string; data: IQuestion }) => {
     useEffect(() => {
-        const input = document.querySelector(`input[name="${data.id}"]`) as HTMLInputElement | null
-        if (!input) return
-        const parentInput = input.parentElement as HTMLInputElement | null
-        if (!parentInput) return
+        const input = document.querySelector(`input[name="${data.id}"]`) as HTMLInputElement | null;
+        if (!input) return;
+        const parentInput = input.parentElement as HTMLInputElement | null;
+        if (!parentInput) return;
         parentInput.addEventListener('drop', (e) => {
-            drop(e as any)
-        })
+            drop(e as any);
+        });
         parentInput.addEventListener('dragover', (e) => {
-            allowDrop(e as any)
-        })
-    }, [])
+            allowDrop(e as any);
+        });
+    }, [data.id]);
+
     return `
         <section class="inline-flex items-center">
             <section class="relative inline-block select-none min-w-[100px] min-h-[24px]">
@@ -46,5 +48,5 @@ export function componentStringDropItem({ groupId, data }: { groupId: string; da
                 </div>
             </section>
         </section>
-    `
-}
+    `;
+};

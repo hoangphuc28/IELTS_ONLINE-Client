@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import IHistory from '../interfaces/IHistory'
 import HistoryItem from './item'
+import { Fragment } from 'react'
 
 export default function ComponentHistory({ data }: { data: Array<IHistory> }) {
     return (
@@ -12,8 +13,14 @@ export default function ComponentHistory({ data }: { data: Array<IHistory> }) {
                     <p className="col-span-1 text-center font-bold">Điểm</p>
                 </div>
 
-                {data.map((history) => (
-                    <HistoryItem time={history.time} name={history.name} grade={history.grade} />
+                {data.map((history, index) => (
+                    <Fragment key={index}>
+                        <HistoryItem
+                            time={history.time}
+                            name={history.name}
+                            grade={history.grade}
+                        />
+                    </Fragment>
                 ))}
 
                 <section className="flex justify-center py-2">

@@ -1,5 +1,5 @@
-import { Dropdown } from 'flowbite'
-import { MultipleChoice, MultipleReponse, Matching, MatchingHeading, FillTheBlank, MatchingFillBlank } from './Question'
+
+import { MultipleChoice, MultipleResponse, DragAndDrop, MatchingHeading, FillTheBlank, MatchingFillBlank, Dropdown } from './Question'
 import { QuestionType } from './enum'
 
 
@@ -8,11 +8,11 @@ export class GroupQuestion {
     public instruction: string = ''
     public questionType: QuestionType = QuestionType.MultipleChoice
     public data:
-        | MultipleChoice[]
-        | MultipleReponse[]
-        | Dropdown[]
-        | Matching[]
-        | MatchingHeading[]
-        | FillTheBlank[]
-        | MatchingFillBlank = []
+        (| MultipleChoice
+        | MultipleResponse
+        | Dropdown
+        | DragAndDrop
+        | MatchingHeading
+        | FillTheBlank
+        | MatchingFillBlank)[] = []
 }

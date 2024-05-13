@@ -1,12 +1,6 @@
 import ExamItem from "./examItem";
-interface Exam {
-    thumbnail: String,
-    title: String,
-    description: String
-    status: String,
-    author: String,
-    createdAt: String,
-}
+import Exam from "./type/exam";
+
 const sampleExam: Exam[] = [{
     thumbnail: "https://onlineexammaker.com/components/com_exams/assets/exam-img/medicine/medicine_4.png",
     title: "Sample Exam",

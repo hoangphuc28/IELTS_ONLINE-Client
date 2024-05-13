@@ -12,9 +12,8 @@ export default function ComponentLeftSide({
     skill: string
     data: IPart
 }) {
-    // console.log(name)
-    if (skill === 'Listening' || skill === 'Speaking') return <></>
     const refLeftContent = useRef<HTMLDivElement>(null)
+    if (skill === 'Listening' || skill === 'Speaking') return <></>
     return (
         <section className="flex">
             <div

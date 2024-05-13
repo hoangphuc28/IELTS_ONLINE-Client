@@ -14,12 +14,12 @@ export default function Page() {
 
     return (
         <div className="layout-table">
-            <div ref={examLeft} className="layout-table-left">
-                <CategoriesPanel dataPanel={{ text: "Exam", categories}} />
+            {/* <div ref={examLeft} className="layout-table-left">
+                 <CategoriesPanel title={"Exam"} skills={categories} />
             </div>
           <div style={{padding: "17px 0"}} className="table-middle">
             <Resizer max={800} forwardedRef={examLeft}/>
-          </div>
+          </div> */}
             <div className="layout-table-right">
                 <ExamPanel />
             </div>

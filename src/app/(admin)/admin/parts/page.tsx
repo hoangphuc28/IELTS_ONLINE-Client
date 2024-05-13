@@ -7,6 +7,7 @@ import QuestionPanel from './questionPanel'
 import Pagination from '@mui/material/Pagination'
 import Stack from '@mui/material/Stack'
 import ListParts from './listParts'
+import { SkillEnum } from './type/enum'
 interface Category {
     id: String
     title: String
@@ -21,7 +22,7 @@ export default function Page() {
     return (
         <div className="layout-table">
             <div ref={examLeft} className="layout-table-left">
-                <CategoriesPanel dataPanel={{ text: 'Question', categories }} />
+                <CategoriesPanel title={'Skills'} />
             </div>
             <div style={{ padding: '17px 0' }} className="layout-table-middle">
                 <Resizer max={800} forwardedRef={examLeft} />

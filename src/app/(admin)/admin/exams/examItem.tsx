@@ -1,28 +1,23 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import '@admin/styles/components/_examItem.scss'
 import '@admin/styles/components/_button.scss'
+import Exam from './type/exam'
+import  Image  from 'next/image'
+
 interface Props {
-    data: Exam
-    index: number
+    data: Exam;
+    index: number;
 }
-interface Exam {
-    thumbnail: string
-    title: String
-    description: String
-    status: String
-    author: String
-    createdAt: String
-}
+
 export default function ExamItem({ data, index }: Props) {
     return (
         <div className="exam-item">
             <div className="item-infor">
                 <div className="exam-infor-left">
                     <div>#{index + 1}</div>
-                    <img src={data.thumbnail} alt="thumbnail" />
+                    <Image src={data.thumbnail} alt="thumbnail" />
                 </div>
                 <div className="exam-infor-right">
                     <div className="infor-right-top">

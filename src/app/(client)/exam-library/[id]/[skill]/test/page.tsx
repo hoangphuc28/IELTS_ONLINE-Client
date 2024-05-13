@@ -14,6 +14,11 @@ import { ExamService } from '@utils/shares/db/answer/services/exam.service'
 export default function Page() {
     const params = useParams<{ id: string; skill: string }>()
     const router = useRouter()
+    useEffect(() => {
+        localStorage.setItem('startIndexEveryPart', JSON.stringify(startIndexEveryPart))
+        // according()
+        // toQuestion()
+    }, [])
     const targetSkillTest = test.details.find((detailSkill) => detailSkill.name === params.skill)
     if (!targetSkillTest) return router.push('/404')
 
@@ -32,13 +37,7 @@ export default function Page() {
         }
         startIndexEveryPart.push(totalQuestions)
     })
-    useEffect(() => {
-        localStorage.setItem('startIndexEveryPart', JSON.stringify(startIndexEveryPart))
-        // according()
-        // toQuestion()
 
-        // ExamService.test()
-    }, [])
     // #endregion parts contains number of questions in groups
     return (
         <>

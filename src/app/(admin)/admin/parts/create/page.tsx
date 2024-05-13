@@ -13,11 +13,12 @@ import { useDispatch } from 'react-redux'
 import { CreatePart } from '../../../lib/redux/action/Part/create'
 import { useRouter } from 'next/navigation'
 import routes from '../../../lib/routes/routes'
+import { useAppDispatch } from '../../../lib/redux/hooks'
 export default function Page() {
     const {push} = useRouter()
     const { step: stepContext } = useQuestionContext()
     const { stepSelected, setStepSelected } = stepContext
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         setStepSelected(1)

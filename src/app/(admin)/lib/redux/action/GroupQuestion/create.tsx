@@ -3,7 +3,7 @@ import { GroupQuestion } from "../../../../admin/parts/type/GroupQuestion.class"
 import api from "../api";
 
 export const CreateGroupQuestion = (data: GroupQuestion) => {
-    return async (dispatch)  => {
+    return async (dispatch: any)  => {
         try {
             const res = await axios({
                 url: api.groupQuestions.common,
@@ -21,7 +21,7 @@ export const CreateManyGroupQuestion = (groupQuestions: GroupQuestion[], partId:
         partId: partId,
         groupQuestions: groupQuestions
     }
-    return async (dispatch)  => {
+    return async (dispatch: any)  => {
         try {
             const res = await axios({
                 url: api.groupQuestions.manyGroupQuestions,

@@ -6,10 +6,11 @@ import { targets } from '../../../../../(client)/account/_components/sideBar'
 import { QuestionType } from '../../type/enum'
 import { Part } from '../../type/Part.class'
 import { GroupQuestion } from '../../type/GroupQuestion.class'
+import { Answer, DragAndDrop, Dropdown } from '../../type/Question'
 interface AddQuestionPopup {
     onClose: () => void
     formik: FormikProps<Part>
-    saveEvent: (data) => void
+    saveEvent: (data: any) => void
 }
 export default function AddQuestionPopup({ onClose, formik, saveEvent }: AddQuestionPopup) {
     const [newGroupQuestion, setNewGroupQuesiton] = useState(new GroupQuestion())
@@ -101,6 +102,17 @@ export default function AddQuestionPopup({ onClose, formik, saveEvent }: AddQues
                         </div>
                         <button
                             onClick={() => {
+                                switch(newGroupQuestion.questionType) {
+                                    case QuestionType.Dropdown: {
+                                        newGroupQuestion.data.push(new Dropdown())
+
+                                        break;
+                                    }
+                                    case QuestionType.DragAndDrop: {
+                                        newGroupQuestion.data.push(new DragAndDrop())
+                                        break;
+                                    }
+                                }
                                 saveEvent(newGroupQuestion)
                                 onClose()
                             }}
