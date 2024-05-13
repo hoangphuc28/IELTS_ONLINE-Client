@@ -5,7 +5,7 @@ import { allowDrop, drop } from '@clientExamLibrary/[id]/[skill]/utils/dragAndDr
 export default function ComponentListDrag({ groupId, data }: { groupId: string; data: IAnswer[] }) {
     return (
         <section className="relative border border-dashed border-black px-2 rounded overflow-hidden">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 py-2">
                 {data.map((data, answerIndex) => (
                     <div
                         key={'drag-item-temp-' + answerIndex}
@@ -20,7 +20,7 @@ export default function ComponentListDrag({ groupId, data }: { groupId: string; 
                 onDrop={(e) => drop(e)}
                 onDragOver={(e) => allowDrop(e)}
                 data-group-id={groupId}
-                className="absolute top-0 left-0 bottom-0 right-0 px-1 flex flex-col gap-2"
+                className="absolute top-0 left-0 bottom-0 right-0 px-1 flex flex-col gap-2 container-drag"
             >
                 {data.map((answer, answerIndex) => (
                     <ComponentDragItem

@@ -2,7 +2,7 @@
 
 import IAnswer from '@/src/utils/shares/interfaces/IAnswer'
 import IGroup from '@/src/utils/shares/interfaces/IGroup'
-import ComponentDropItem, { ComponentStringDropItem } from '../dragdrop/dropItem'
+import ComponentDropItem, { ComponentStringDropItem, handleDrop } from '../dragdrop/dropItem'
 import ComponentListDrag from '../dragdrop/listDrag'
 import ComponentFloatingInputLabel, {
     componentStringFloatingInputLabel,
@@ -197,12 +197,13 @@ function ComponentQuestionDragDropHeading({ data }: { data: GroupShowDTO }) {
             if (!input) continue
             const parentInput = input.parentElement as HTMLInputElement | null
             if (!parentInput) continue
-            parentInput.addEventListener('drop', (e) => {
-                drop(e as any)
-            })
-            parentInput.addEventListener('dragover', (e) => {
+
+            parentInput.ondrop = (e) => {
+                handleDrop(e as any)
+            }
+            parentInput.ondragover = (e) => {
                 allowDrop(e as any)
-            })
+            }
         }
     }, [])
     return (

@@ -1,23 +1,23 @@
 import { DragEvent } from 'react'
-import IAnswer from '../../../../../../utils/shares/interfaces/IAnswer'
 
 export function allowDrop(ev: DragEvent<HTMLElement>) {
     ev.preventDefault()
 }
-export function drop(ev: DragEvent<HTMLElement>, transferData?: IAnswer[]) {
+export function drop(ev: DragEvent<HTMLElement>) {
     ev.preventDefault()
     ev.stopPropagation()
 
     // #region get data drop container
-    let dropItem = ev.currentTarget as HTMLElement
-    let dropContainer = ev.currentTarget as HTMLElement
-    if (!dropContainer) return
+    const dropItem = ev.target as HTMLElement | null
+    let eventCurrentTarget = ev.currentTarget as HTMLElement | null
+    if (!eventCurrentTarget) return
     // when drag item "A", it is dragged to another drag item "B", then ev.target -> that another drag item, current dropContainer is parent of item "A"
     // => change dropContainer from parent element of item "A" to parent element of item "B"
-    if (ev.target && dropContainer != ev.target) {
-        dropContainer = (ev.target as HTMLElement).parentElement as HTMLElement
-        if (!dropContainer) return
+    if (dropItem && eventCurrentTarget != dropItem) {
+        eventCurrentTarget = dropItem.parentElement as HTMLElement
+        if (!eventCurrentTarget) return
     }
+    const dropContainer = eventCurrentTarget
     const dropElementGroupId = dropContainer.dataset['groupId']
     if (!dropElementGroupId) return
     // #endregion get data drop container
@@ -25,9 +25,9 @@ export function drop(ev: DragEvent<HTMLElement>, transferData?: IAnswer[]) {
     // #region get data drag item
     const dragItemId = ev.dataTransfer.getData('dragDataId')
     const dragItemGroupId = ev.dataTransfer.getData('dragGroupId')
-    const dragItemDOM = document.querySelector(`[data-item-id="${dragItemId}"]`) as HTMLElement
-    const dragContainer = dragItemDOM.parentElement
+    const dragItemDOM = document.querySelector(`[data-item-id="${dragItemId}"]`) as HTMLElement | null
     if (!dragItemDOM) return
+    const dragContainer = dragItemDOM.parentElement
     // #endregion get data drag item
 
     // #region handle drop
@@ -36,6 +36,7 @@ export function drop(ev: DragEvent<HTMLElement>, transferData?: IAnswer[]) {
 
     // #region clear input value before finish drop
     const maxChild_Of_DragContainer = getMaxChild(dragContainer)
+    // console.log(dropItem, dropContainer, maxChild_Of_DragContainer)
     if (Number.isFinite(maxChild_Of_DragContainer)) {
         clearInputValue(dragContainer)
     }
@@ -43,6 +44,7 @@ export function drop(ev: DragEvent<HTMLElement>, transferData?: IAnswer[]) {
 
     const input = dropContainer.querySelector('input')
     const maxChild = getMaxChild(dropContainer)
+    console.log(Array.from(dropContainer.children).length >= maxChild, maxChild)
     if (Array.from(dropContainer.children).length >= maxChild) {
         if (!input) return
         // restore last child
@@ -63,17 +65,15 @@ export function drop(ev: DragEvent<HTMLElement>, transferData?: IAnswer[]) {
 
 function getMaxChild(source: HTMLElement | null): number {
     if (!source) return Number.POSITIVE_INFINITY
-    return Number.parseInt(source.dataset.dropMaxChild || Number.POSITIVE_INFINITY.toString())
+    const dropMaxChild = source.dataset.dropMaxChild
+    if (!dropMaxChild) return Number.POSITIVE_INFINITY
+    return Number.parseInt(dropMaxChild)
 }
 
 function handleChangeInputValue(input: HTMLInputElement | null, value: string) {
     if (!input) return
 
     input.value = value
-    // const answerChoice = transferData.find((e) => e.content === value)
-    // if (answerChoice) {
-    //     input.value = answerChoice.id
-    // }
 }
 
 function handleSwapChild(sourceDOM?: HTMLElement | null, targetDOM?: HTMLElement | null): Element | null {
