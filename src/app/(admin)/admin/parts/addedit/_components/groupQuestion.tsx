@@ -14,17 +14,13 @@ import {
     CardActions,
 } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import MultipleChoice from '../questionType/multipleChoice'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { FormikProps } from 'formik'
 import { Part } from '../../type/Part.class'
-import { MultipleChoice as MultipleChoiceType } from '../../type/Question'
 import Close from '@mui/icons-material/Close'
 import dynamic from 'next/dynamic'
-import { truncateParagraph } from '../../../../util/truncate'
 import EditIcon from '@mui/icons-material/Edit'
-import AddEditQuestion from './question'
 import Question from './question'
 import { UnionType } from '../../type/unionType'
 import { QuestionType } from '../../type/enum'
@@ -91,7 +87,6 @@ export default function GroupQuestionsComponent({
                 showModal={showModal}
                 setShowModal={setShowModal}
                 showModalEditQuestion={showModalEditQuestion}
-                // setShowModalEditQuestion={setShowModalEditQuestion}
             />
             <Accordion>
                 <AccordionSummary
@@ -132,7 +127,6 @@ export default function GroupQuestionsComponent({
                                 })
                             }}
                             formik={formik}
-                            index={index}
                         />
                     </div>
                     <div className="mt-5">

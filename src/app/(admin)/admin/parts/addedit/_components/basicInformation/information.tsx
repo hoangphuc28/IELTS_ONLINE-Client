@@ -1,12 +1,12 @@
 import { FormikProps } from 'formik'
-import { Fragment, useState } from 'react'
-import { Part } from '../../type/Part.class'
-import { PartEnum, SkillEnum, SkillPart } from '../../type/enum'
-import { FormHelperText } from '@mui/material'
+import { Fragment, useMemo, useState } from 'react'
+import { Part } from '../../../type/Part.class'
+import { PartEnum, SkillEnum, SkillPart } from '../../../type/enum'
+import dynamic from 'next/dynamic'
 interface BasicInformationProps {
     formik: FormikProps<Part>
 }
-export default function BasicInformation({ formik }: BasicInformationProps) {
+export default function PartInformation({ formik }: BasicInformationProps) {
     const skillOptions: SkillPart[] = [
         {
             skill: SkillEnum.LISTENING,
@@ -27,6 +27,7 @@ export default function BasicInformation({ formik }: BasicInformationProps) {
     ]
     const [skill, setSkill] = useState(formik.values.skill)
     const changeSkill = (event: any) => {
+
         const { name, value } = event.target
         formik.setFieldValue(name, value)
         setSkill(value)
@@ -34,23 +35,6 @@ export default function BasicInformation({ formik }: BasicInformationProps) {
     }
     return (
         <Fragment>
-            <div>
-                <label className="title-label" htmlFor="email">
-                    Title
-                </label>
-                <input
-                    className="form-control h-8 mt-2 ml-5 box-border"
-                    style={{ width: '75%' }}
-                    id="title"
-                    name="title"
-                    type="title"
-                    onChange={formik.handleChange}
-                    value={formik.values.title}
-                />
-                {formik.touched.title && formik.errors.title && (
-                    <FormHelperText error={true} sx={{marginLeft: '1.25rem'}}>{formik.errors.title}</FormHelperText>
-                )}
-            </div>
             <div className="mt-3">
                 <label className="title-label" htmlFor="skill">
                     Skill

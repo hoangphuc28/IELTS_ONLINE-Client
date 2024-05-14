@@ -2,12 +2,11 @@ import '@admin/styles/globals.css'
 import '@admin/styles/components/_button.scss'
 import Link from 'next/link'
 import { Part } from './type/Part.class'
-import { useDispatch } from 'react-redux'
 import { DeletePart } from '../../lib/redux/action/Part/delete'
-import { useRouter } from 'next/navigation'
-import routes from '../../lib/routes/routes'
+
 import formatter from '../../util/timeFormat'
 import { useAppDispatch } from '../../lib/redux/hooks'
+import { truncateParagraph } from '../../util/truncate'
 
 interface Props {
     item: Part
@@ -16,8 +15,8 @@ export default function PartItem({ item }: Props) {
     const dispatch = useAppDispatch()
     return (
         <div className="part-item">
-            <div className="flex items-start">
-                <span className="">#{item.publicId}</span>
+            <div className="flex items-center">
+                <div className="">#{item.publicId}</div>
                 <div className="right-bottom-btns">
                     <Link href="#addition" type="button" className="btn  operation-btn">
                         Preview
@@ -54,23 +53,33 @@ export default function PartItem({ item }: Props) {
                         <div className="row" style={{ marginTop: 0 }}>
                             <div className="col-xs-12">
                                 <div className="row-box row-ques-detail">
-                                    <p className="ques-title need-max-height">
-                                        <span className="ques-id">{item.partNumber}</span>
-                                        <span className="ques-type ques-single type_4">
-                                            {item.skill}
-                                        </span>
-                                        <span className="ml-5">{item.title}</span>
-                                    </p>
+                                    <div className="ques-title need-max-height flex">
+                                        <div className='w-2/5' style={{maxWidth: '180px'}}>
+                                            <span style={{fontSize: 14}} className="ques-id">{item.partNumber}</span>
+                                            <span style={{fontSize: 14}} className="ques-type ques-single type_4">
+                                                {item.skill}
+                                            </span>
+                                        </div>
+
+                                        <div className="w-3/5"
+                                        dangerouslySetInnerHTML={{
+                                            __html: truncateParagraph(item.title, 100),
+                                        }}
+                                        >
+                                        </div>
+                                    </div>
                                     <div className="ques-answers detail-dom">
                                         <div className="detailLabel">
                                             <p />
                                             <div>
                                                 {' '}
                                                 <span className="labels other" title="Category">
-                                                    Create: {formatter.format(new Date(item.createdAt))}
+                                                    Create:{' '}
+                                                    {formatter.format(new Date(item.createdAt))}
                                                 </span>
                                                 <span className="labels other">
-                                                    Update: {formatter.format(new Date(item.updatedAt))}
+                                                    Update:{' '}
+                                                    {formatter.format(new Date(item.updatedAt))}
                                                 </span>{' '}
                                             </div>
                                             <p />

@@ -32,7 +32,6 @@ export default function MultipleResponseForm(props: QuestionProps) {
                     data={question?.questionText}
                     saveData={(data: any) => (question.questionText = data)}
                     formik={props.formik}
-                    index={props.index}
                 />
             </div>
             {question?.answers.map((item, i) => (
@@ -52,7 +51,6 @@ export default function MultipleResponseForm(props: QuestionProps) {
                                 data={item.content}
                                 saveData={(data: any) => (item.content = data)}
                                 formik={props.formik}
-                                index={props.index}
                             />
                         </AccordionDetails>
                         <AccordionActions>
