@@ -10,20 +10,9 @@ import ICarouselData from './interfaces/ICarouselData'
 import ITest from '@/src/utils/shares/interfaces/ITest'
 import ComponentMedia from '../_components/media'
 
+import ComponentRedirectLogin from '../../(auth)/login/_components/redirectLogin'
+
 export default function Page() {
-    // const carousels: Array<ICarouselData> = [
-    //     {
-    //         type: 'video',
-    //         url: 'https://www.youtube-nocookie.com/embed/50VNCymT-Cs?si=sqoM4SnQgU98ytj7',
-    //     },
-    //     {
-    //         type: 'img',
-    //         url: 'https://ieltsonlinetests.com/themes/iot/images/hero-background/hero-banner.jpg',
-    //     },
-    // ]
-    // if (carousels.length < 3) {
-    //     carousels.push(...carousels)
-    // }
     const bannerData: ISourceData = {
         type: 'video',
         src: 'https://www.youtube-nocookie.com/embed/50VNCymT-Cs?si=sqoM4SnQgU98ytj7',
@@ -56,6 +45,7 @@ export default function Page() {
 
     return (
         <>
+            <ComponentRedirectLogin />
             <main>
                 {/* {isClient && (
                     <ContainerCarousel

@@ -7,11 +7,11 @@ class AuthService extends BaseService {
     }
 
     async signIn(data: any) {
-        return regexResponse(await this.api.post('/sign-in', data))
+        return regexResponse(await this.api.post('/login', data))
     }
 
     async signUp(data: any) {
-        return regexResponse(await this.api.post('/sign-up', data))
+        return regexResponse(await this.api.post('/register', data))
     }
 
     async logout() {
