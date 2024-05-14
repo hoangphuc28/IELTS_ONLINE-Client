@@ -14,7 +14,7 @@ export default function Header() {
                 <section>
                     <LayoutCenter>
                         <section className="hidden sm:flex items-center justify-between py-2">
-                            <div className="logo lg:w-28 sm:w-28">
+                            <div className="logo lg:w-28 sm:w-28 rounded-full shadow-xl">
                                 <Link href="/" className="logo">
                                     <img
                                         alt=""
