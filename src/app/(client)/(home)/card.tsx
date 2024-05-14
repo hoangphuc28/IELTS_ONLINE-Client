@@ -48,14 +48,14 @@ export default function ComponentCard({
                     </span>
                 </section>
 
-                {data.hasPassword && (
+                {/* {data.hasPassword && (
                     <>
                         <div className="absolute pointer-events-none top-0 left-0 w-full h-full bg-[#000] opacity-[0.3] rounded"></div>
                         <div className="pointer-events-none absolute top-[-5px] right-[-5px] flex items-center justify-center rounded-full shadow-lg">
                             <i className="fa-solid fa-key text-yellow-300 text-2xl"></i>
                         </div>
                     </>
-                )}
+                )} */}
             </Link>
         </>
     )

@@ -9,12 +9,12 @@ import authService from '@services/auth.service'
 export default function Header() {
     return (
         <>
-            <header className="mb-1 shadow">
+            <header className="shadow">
                 {/* logo desktop and banner and header mobile */}
                 <section>
                     <LayoutCenter>
-                        {/* <section className="hidden sm:flex items-center justify-between">
-                            <div className="logo lg:w-48 sm:w-28">
+                        <section className="hidden sm:flex items-center justify-between py-2">
+                            <div className="logo lg:w-28 sm:w-28">
                                 <Link href="/" className="logo">
                                     <img
                                         alt=""
@@ -23,7 +23,14 @@ export default function Header() {
                                     />
                                 </Link>
                             </div>
-                            <div className="header-banner">
+                            {/* banner */}
+                            <section
+                                className="header-banner w-3/4 min-h-[100px] bg-img-center rounded"
+                                style={{
+                                    background: `url("./../../../../../IELTS Online Practice Tests FREE _ IELTS Online Tests_files/da18bdcf8b0a4f8d6afce6dcf976b3b6.png")`,
+                                }}
+                            ></section>
+                            {/* <div className="header-banner w-full">
                                 <Link href="#">
                                     <img
                                         src="./../../../../../IELTS Online Practice Tests FREE _ IELTS Online Tests_files/da18bdcf8b0a4f8d6afce6dcf976b3b6.png"
@@ -33,8 +40,9 @@ export default function Header() {
                                         title=""
                                     />
                                 </Link>
-                            </div>
-                        </section> */}
+                            </div> */}
+                        </section>
+                        {/* mobile */}
                         <section className="header-mobile flex sm:hidden justify-between items-center px-2 py-2 shadow shadow-lg-[#000]">
                             <section className="logo mobile w-16">
                                 <Link href="/" className="logo">
@@ -52,11 +60,16 @@ export default function Header() {
                         </section>
                     </LayoutCenter>
                 </section>
-                {/* feature - nav */}
-                <section className="hidden h-[80px] bg-[#294563] bg-purple-400 bg-yellow-400 bg-pink-400 md:block py-2">
+                {/* feature - nav  bg-purple-400 bg-yellow-400 bg-pink-400 */}
+                <section className="hidden h-[80px] bg-[#294563] md:block py-2 bg-violet-950">
                     <LayoutCenter className="h-full">
                         <nav className="h-full flex justify-between items-center gap-x-5">
-                            <section className="h-full logo shadow-lg rounded-full">
+                            <section>
+                                <Link href="/" className="text-3xl text-white">
+                                    <i className="fa-solid fa-house"></i>
+                                </Link>
+                            </section>
+                            {/* <section className="h-full logo shadow-lg rounded-full">
                                 <Link href="/" className="h-full logo">
                                     <img
                                         alt=""
@@ -64,7 +77,7 @@ export default function Header() {
                                         src={process.env.NEXT_PUBLIC_APP_LOGO}
                                     />
                                 </Link>
-                            </section>
+                            </section> */}
                             {/* <div className="relative">
                                 <Link
                                     href="/exam-library"
@@ -180,27 +193,27 @@ function ContainerAccount() {
                 </Link>
                 <section
                     // {/** bg-amber-100 */}
-                    className="hidden z-[9999] bg-white rounded-b pt-2 pb-5 min-w-[160px] absolute top-[110%] right-0 text-base shadow shadow-fuchsia-400"
+                    className="hidden z-[9999] backdrop-blur-md bg-white/65 rounded-b pt-1 pb-2 min-w-[160px] absolute top-[110%] right-0 text-base shadow shadow-fuchsia-400"
                     local-data-dropdown-toggle=""
                 >
                     <Link
-                        className="block text-[#000] text-violet-800 ps-3 pe-5 py-2 hover:bg-amber-300 hover:text-white"
+                        className="block text-violet-800 ps-3 pe-5 py-3 hover:bg-violet-900/40 hover:text-white"
                         href="/admin/dashboard"
                     >
                         Admin Dashboard
                     </Link>
                     <Link
-                        className="block text-[#000] text-violet-800 ps-3 pe-5 py-2 hover:bg-amber-300 hover:text-white"
+                        className="block text-violet-800 ps-3 pe-5 py-3 hover:bg-violet-900/40 hover:text-white"
                         href="/account/dashboard"
                     >
-                        Trang cá nhân
+                        My dashboard
                     </Link>
                     <Link
-                        className="block text-[#000] text-violet-800 ps-3 pe-5  py-2 hover:bg-amber-300 hover:text-white"
+                        className="block text-violet-800 ps-3 pe-5  py-3 hover:bg-violet-900/40 hover:text-white"
                         href="/account/logout"
                         onClick={async (e) => await handleLogOut(e)}
                     >
-                        Đăng xuất
+                        Log out
                     </Link>
                 </section>
             </section>

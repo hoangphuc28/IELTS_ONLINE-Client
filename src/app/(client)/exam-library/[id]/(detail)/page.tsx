@@ -36,7 +36,10 @@ export default function Page() {
                                 action=""
                                 method="post"
                             >
-                                {test.hasPassword && (
+                                <h2 className="font-bold text-lg text-red-600 mb-3">
+                                    The test is ready!
+                                </h2>
+                                {/* {test.hasPassword && (
                                     <section>
                                         <h2 className="font-bold text-lg text-red-600 mb-3">
                                             Để tham gia bài kiểm tra này, bạn cần biết mật khẩu
@@ -61,7 +64,7 @@ export default function Page() {
                                             </section>
                                         </section>
                                     </section>
-                                )}
+                                )} */}
                                 <div className="text-center mt-3">
                                     <button
                                         className="bg-blue-400 text-white text-lg px-3 py-2 rounded-3xl"

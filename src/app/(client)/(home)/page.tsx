@@ -45,7 +45,7 @@ export default function Page() {
 
     return (
         <>
-            <ComponentRedirectLogin />
+            {/* <ComponentRedirectLogin /> */}
             <main>
                 {/* {isClient && (
                     <ContainerCarousel
@@ -59,7 +59,7 @@ export default function Page() {
                     </ContainerCarousel>
                 )} */}
                 {/* banner */}
-                <section
+                {/* <section
                     className="w-full h-[60vh] banner-container"
                     style={{ background: 'rgba(0, 0, 0, 0.8)' }}
                 >
@@ -71,7 +71,7 @@ export default function Page() {
                             }}
                         ></section>
                     </LayoutCenter>
-                </section>
+                </section> */}
                 <section
                     className="w-full h-[60vh] notify-container"
                     style={{ background: 'rgba(0, 0, 0, 0.8)' }}
