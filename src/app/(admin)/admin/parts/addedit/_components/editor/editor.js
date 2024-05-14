@@ -17,7 +17,7 @@ import { HOST } from '@/src/utils/constanst/host'
 //     data: string
 // }
 
-const CustomEditor = ({ formik, index, saveData, data }) => {
+const CustomEditor = ({ formik, saveData, data }) => {
     const config = {
         toolbar: {
 			items: [
@@ -46,7 +46,7 @@ const CustomEditor = ({ formik, index, saveData, data }) => {
     }
     const [editorData, setEditorData] = useState('')
     return (
-        <div className={`${index}`}>
+        <div>
             <CKEditor
                 editor={Editor}
                 config={config}
@@ -79,7 +79,7 @@ function uploadAdapter(loader) {
                 }
                 const formData = new FormData()
                 formData.append('file', file)
-                const response = await axios.post(`${HOST}/api/resource`, formData, {
+                const response = await axios.post(`${HOST}/api/resource/image`, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },

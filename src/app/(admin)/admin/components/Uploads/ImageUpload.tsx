@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useState } from 'react';
+import "@admin/styles/components/_resource.scss"
 
 export default function ImageUpload() {
     const [image, setImage] = useState<string | ArrayBuffer | null>(null);
@@ -15,40 +16,8 @@ export default function ImageUpload() {
     };
 
     return (
-        <div>
-            <style jsx>{`
-                .preview {
-                    width: 250px;
-                    height: 200px;
-                    background: gray;
-                    border-radius: 10px;
-                    position: relative;
-                }
-                .preview button {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    border: none;
-                    background-color: #0077FF;
-                    color: #fff;
-                    padding: 10px 14px;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    opacity: 0;
-                    transition: all .2s;
-                    z-index: 9;
-                    font-size: 14px;
-                }
-
-                .preview:hover button {
-                    opacity: 1;
-                }
-                .preview:hover img {
-                    filter: opacity(.8);
-                }
-
-            `}</style>
+        <div className='resource'>
+           
             <div className="preview">
                 <button type="button" onClick={() => document.getElementById('upload-button')?.click()}>
                     Upload Image

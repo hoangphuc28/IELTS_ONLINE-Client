@@ -32,7 +32,6 @@ export default function FillBlankForm(props: QuestionProps) {
                     data={question?.questionText}
                     saveData={(data: any) => (question.questionText = data)}
                     formik={props.formik}
-                    index={props.index}
                 />
             </div>
             <label className="title-label block mt-3" htmlFor="name">
@@ -86,9 +85,8 @@ export default function FillBlankForm(props: QuestionProps) {
                 </Button>
                 <Button
                     onClick={() => {
-                        console.log(question)
-                        // props.saveAction(question)
-                        // props.closeAction()
+                        props.saveAction(question)
+                        props.closeAction()
                     }}
                     variant="contained"
                     style={{

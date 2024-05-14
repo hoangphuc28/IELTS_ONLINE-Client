@@ -24,7 +24,7 @@ export default function AddQuestionPopup({ onClose, formik, saveEvent }: AddQues
                     maxWidth: '50% !important',
                     width: '30% !important',
                     maxHeight: '70%',
-                    height: '370px',
+                    height: '320px',
                     transform: 'translatey(10%)',
                 }}
             >

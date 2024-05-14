@@ -32,7 +32,6 @@ export default function DropdownForm(props: QuestionProps) {
                     data={question?.questionText}
                     saveData={(data: any) => (question.questionText = data)}
                     formik={props.formik}
-                    index={props.index}
                 />
             </div>
             <label className="title-label block mt-3" htmlFor="name">
