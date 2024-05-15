@@ -5,10 +5,12 @@ import ComponentSearch from './search'
 import { MouseEvent } from 'react'
 import { createToastDanger } from './toast/sysToast'
 import authService from '@services/auth.service'
+import ComponentRedirectLogin from '@auth/login/_components/redirectLogin'
 
 export default function Header() {
     return (
         <>
+            {/* <ComponentRedirectLogin /> */}
             <header className="shadow">
                 {/* logo desktop and banner and header mobile */}
                 <section>
@@ -165,7 +167,7 @@ function ContainerSignInSignUp() {
                     data-drupal-selector="menu-item-user"
                     href="/login"
                 >
-                    Đăng nhập
+                    Sign In
                 </Link>
             </section>
             <section className="">
@@ -174,7 +176,7 @@ function ContainerSignInSignUp() {
                     data-drupal-selector="menu-item-user"
                     href="/signup"
                 >
-                    Đăng ký
+                    Sign Up
                 </Link>
             </section>
         </>

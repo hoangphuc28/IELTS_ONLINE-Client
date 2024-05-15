@@ -25,7 +25,7 @@ export default function Page() {
                 className="max-w-sm mx-auto mt-8 flex flex-col gap-3"
             >
                 <h2 className="w-full mb-4 font-bold text-2xl text-center text-gray-500 uppercase">
-                    Login to your account
+                    Sign in to your account
                 </h2>
                 <div className="">
                     <label

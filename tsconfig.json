@@ -24,6 +24,7 @@
       "@utils/*": ["./src/utils/*"],
       "@services/*": ["./src/services/*"],
       "@client/*": ["./src/app/(client)/*"],
+      "@auth/*": ["./src/app/(auth)/*"],
       "@clientAccount/*": ["./src/app/(client)/account/*"],
       "@clientExamLibrary/*": ["./src/app/(client)/exam-library/*"],
     }

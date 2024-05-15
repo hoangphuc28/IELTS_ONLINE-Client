@@ -10,8 +10,6 @@ import ICarouselData from './interfaces/ICarouselData'
 import ITest from '@/src/utils/shares/interfaces/ITest'
 import ComponentMedia from '../_components/media'
 
-import ComponentRedirectLogin from '../../(auth)/login/_components/redirectLogin'
-
 export default function Page() {
     const bannerData: ISourceData = {
         type: 'video',
@@ -45,7 +43,6 @@ export default function Page() {
 
     return (
         <>
-            {/* <ComponentRedirectLogin /> */}
             <main>
                 {/* {isClient && (
                     <ContainerCarousel
