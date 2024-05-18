@@ -6,11 +6,15 @@ import { MouseEvent } from 'react'
 import { createToastDanger } from './toast/sysToast'
 import authService from '@services/auth.service'
 import ComponentRedirectLogin from '@auth/login/_components/redirectLogin'
+import { useAppShareSelector } from '../_lib/redux/hooks'
+import { IUserState } from '../_lib/redux/reducers/userReducer'
+import { userRole } from '@/src/utils/shares/interfaces/IUser'
 
 export default function Header() {
+    const user = useAppShareSelector((state) => state.user)
     return (
         <>
-            {/* <ComponentRedirectLogin /> */}
+            <ComponentRedirectLogin />
             <header className="shadow">
                 {/* logo desktop and banner and header mobile */}
                 <section>
@@ -57,7 +61,7 @@ export default function Header() {
                             </section>
                             <nav className="h-full flex md:hidden items-center">
                                 <ContainerSignInSignUp />
-                                <ContainerAccount />
+                                <ContainerAccount user={user} />
                             </nav>
                         </section>
                     </LayoutCenter>
@@ -101,8 +105,10 @@ export default function Header() {
                                 <ComponentSearch className="w-full bg-white" />
                             </section>
                             <section className="flex items-center gap-x-2">
-                                <ContainerSignInSignUp />
-                                <ContainerAccount />
+                                {(() => {
+                                    if (!user) return <ContainerSignInSignUp />
+                                    return <ContainerAccount user={user} />
+                                })()}
                             </section>
                         </nav>
                     </LayoutCenter>
@@ -183,7 +189,7 @@ function ContainerSignInSignUp() {
     )
 }
 
-function ContainerAccount() {
+function ContainerAccount({ user }: { user: IUserState }) {
     return (
         <>
             <section local-btn-dropdown-toggle="">
@@ -198,12 +204,15 @@ function ContainerAccount() {
                     className="hidden z-[9999] backdrop-blur-md bg-white/65 rounded-b pt-1 pb-2 min-w-[160px] absolute top-[110%] right-0 text-base shadow shadow-fuchsia-400"
                     local-data-dropdown-toggle=""
                 >
-                    <Link
-                        className="block text-violet-800 ps-3 pe-5 py-3 hover:bg-violet-900/40 hover:text-white"
-                        href="/admin/dashboard"
-                    >
-                        Admin Dashboard
-                    </Link>
+                    {user.role === userRole.ADMIN && (
+                        <Link
+                            className="block text-violet-800 ps-3 pe-5 py-3 hover:bg-violet-900/40 hover:text-white"
+                            href="/admin/dashboard"
+                        >
+                            Admin Dashboard
+                        </Link>
+                    )}
+
                     <Link
                         className="block text-violet-800 ps-3 pe-5 py-3 hover:bg-violet-900/40 hover:text-white"
                         href="/account/dashboard"

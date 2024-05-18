@@ -2,10 +2,12 @@
 
 import authService from '@/src/services/auth.service'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { FormEvent, MouseEvent, useRef } from 'react'
 
 export default function Page() {
     const refForm = useRef<HTMLFormElement>(null)
+    const router = useRouter()
     return (
         <section className="min-h-[100vh] bg-gray-100">
             <section className="flex flex-col items-center pt-4">
@@ -41,9 +43,12 @@ export default function Page() {
                         <input
                             type="email"
                             id="email"
+                            name="username"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 pb-3"
                             placeholder="name@gmail.com"
                             required
+                            value="abc@gmail.com"
+                            onChange={(e) => {}}
                         />
                     </div>
                 </div>
@@ -61,9 +66,12 @@ export default function Page() {
                         <input
                             type="password"
                             id="password"
+                            name="password"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                             required
                             placeholder="password"
+                            value="12345678"
+                            onChange={(e) => {}}
                         />
                     </div>
                 </div>
@@ -84,16 +92,17 @@ export default function Page() {
     )
 
     async function handleSignIn(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault()
         const form = refForm.current
         if (!form) {
-            e.preventDefault()
             return
         }
         const formData = new FormData(form)
+        const keys: Record<string, FormDataEntryValue> = Object.fromEntries(formData.entries())
 
         try {
-            const result = await authService.signIn(formData)
-            console.log(result)
+            const result = await authService.signIn(keys)
+            router.back()
         } catch (error) {
             console.log(error)
         }

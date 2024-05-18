@@ -1,11 +1,14 @@
 'use client'
 
 import authService from '@/src/services/auth.service'
+import { getTokenKey } from '@/src/utils/shares/localStoreage'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { FormEvent, MouseEvent, useRef } from 'react'
 
 export default function Page() {
     const refForm = useRef<HTMLFormElement>(null)
+    const router = useRouter()
     return (
         <section className="min-h-[100vh] bg-gray-100">
             <section className="flex flex-col items-center pt-4">
@@ -23,10 +26,34 @@ export default function Page() {
                 ref={refForm}
                 onSubmit={(e) => handleSignUp(e)}
                 className="max-w-sm mx-auto mt-8 flex flex-col gap-3"
+                method="post"
             >
                 <h2 className="w-full mb-4 font-bold text-2xl text-center text-gray-500 uppercase">
                     Create an account
                 </h2>
+                <div className="">
+                    <label
+                        htmlFor="email"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                        Name
+                    </label>
+                    <div className="relative top-0">
+                        <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                            <i className="fa-solid fa-id-badge text-gray-500"></i>
+                        </div>
+                        <input
+                            type="text"
+                            id="text"
+                            name="name"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 pb-3"
+                            placeholder="Your name"
+                            required
+                            value="name"
+                            onChange={(e) => {}}
+                        />
+                    </div>
+                </div>
                 <div className="">
                     <label
                         htmlFor="email"
@@ -41,9 +68,12 @@ export default function Page() {
                         <input
                             type="email"
                             id="email"
+                            name="mail"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 pb-3"
                             placeholder="name@gmail.com"
                             required
+                            value="abc@gmail.com"
+                            onChange={(e) => {}}
                         />
                     </div>
                 </div>
@@ -61,9 +91,12 @@ export default function Page() {
                         <input
                             type="password"
                             id="password"
+                            name="password"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                             required
                             placeholder="password"
+                            value="12345678"
+                            onChange={(e) => {}}
                         />
                     </div>
                 </div>
@@ -81,16 +114,19 @@ export default function Page() {
                         <input
                             type="password"
                             id="repeat-password"
+                            name="confirmPassword"
                             className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                             required
                             placeholder="confirm password"
+                            value="12345678"
+                            onChange={(e) => {}}
                         />
                     </div>
                 </div>
                 <div className="flex gap-2 items-center">
                     <span className="text-gray-500">Have an account already?</span>
                     <Link href={'/login'} className="text-blue-600">
-                        Sign Up
+                        Sign In
                     </Link>
                 </div>
                 <button
@@ -104,16 +140,17 @@ export default function Page() {
     )
 
     async function handleSignUp(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault()
         const form = refForm.current
         if (!form) {
-            e.preventDefault()
             return
         }
         const formData = new FormData(form)
+        const keys: Record<string, FormDataEntryValue> = Object.fromEntries(formData.entries())
 
         try {
-            const result = await authService.signUp(formData)
-            console.log(result)
+            const result = await authService.signUpTempUser(keys)
+            router.replace('/')
         } catch (error) {
             console.log(error)
         }

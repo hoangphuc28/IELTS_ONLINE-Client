@@ -1,5 +1,7 @@
 import { regexResponse } from "@utils/shares";
 import BaseService from "@services/base";
+import { getTokenKey } from "../utils/shares/localStoreage";
+import { SetUser } from "../app/(client)/_lib/redux/actions/auth";
 
 class AuthService extends BaseService {
     constructor(url: string) {
@@ -7,15 +9,35 @@ class AuthService extends BaseService {
     }
 
     async signIn(data: any) {
-        return regexResponse(await this.api.post('/login', data))
+        const uri = '/login'
+        try {
+            const result = regexResponse(await this.api.post(uri, data))
+            const { accessToken, ...userInfo } = result.data
+            localStorage.setItem(getTokenKey(), accessToken)
+
+            SetUser(userInfo)
+            return userInfo
+        } catch (error) {
+            throw Error('[SIGN IN] An error occurred.')
+        }
     }
 
-    async signUp(data: any) {
-        return regexResponse(await this.api.post('/register', data))
+    async signUpTempUser(data: any) {
+        const uri = '/register/tempUser'
+        try {
+            const result = regexResponse(await this.api.post(uri, data))
+            const { accessToken, ...userInfo } = result.data
+            localStorage.setItem(getTokenKey(), accessToken)
+
+            SetUser(userInfo)
+            return userInfo
+        } catch (error) {
+            throw Error('[SIGN UP] An error occurred.')
+        }
     }
 
     async logout() {
-        return regexResponse(await this.api.post('log-out'))
+        return regexResponse(await this.api.get('logOut'))
     }
 }
 
