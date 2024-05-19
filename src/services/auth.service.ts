@@ -17,8 +17,8 @@ class AuthService extends BaseService {
 
             SetUser(userInfo)
             return userInfo
-        } catch (error) {
-            throw Error('[SIGN IN] An error occurred.')
+        } catch (error: any) {
+            throw error.response.data
         }
     }
 
@@ -31,8 +31,8 @@ class AuthService extends BaseService {
 
             SetUser(userInfo)
             return userInfo
-        } catch (error) {
-            throw Error('[SIGN UP] An error occurred.')
+        } catch (error: any) {
+            throw error.response.data
         }
     }
 

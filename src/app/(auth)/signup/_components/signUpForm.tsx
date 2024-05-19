@@ -137,8 +137,9 @@ export default function ComponentSignUpForm() {
         try {
             const result = await authService.signUpTempUser(keys)
             router.replace('/')
-        } catch (error) {
+        } catch (error: any) {
             console.log(error)
+            alert(error.message)
         }
     }
 }

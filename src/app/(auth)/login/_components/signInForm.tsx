@@ -91,8 +91,9 @@ export default function ComponentSignInForm() {
         try {
             const result = await authService.signIn(keys)
             router.back()
-        } catch (error) {
+        } catch (error: any) {
             console.log(error)
+            alert(error.message)
         }
     }
 }
