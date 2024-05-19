@@ -5,7 +5,7 @@ import ComponentSearch from './search'
 import { MouseEvent } from 'react'
 import { createToastDanger } from './toast/sysToast'
 import authService from '@services/auth.service'
-import ComponentRedirectLogin from '@auth/login/_components/redirectLogin'
+import ComponentRedirectSignIn from '@/src/app/(auth)/login/_components/redirectSignIn'
 import { useAppShareSelector } from '../_lib/redux/hooks'
 import { IUserState } from '../_lib/redux/reducers/userReducer'
 import { userRole } from '@/src/utils/shares/interfaces/IUser'
@@ -14,7 +14,7 @@ export default function Header() {
     const user = useAppShareSelector((state) => state.user)
     return (
         <>
-            <ComponentRedirectLogin />
+            <ComponentRedirectSignIn />
             <header className="shadow">
                 {/* logo desktop and banner and header mobile */}
                 <section>
