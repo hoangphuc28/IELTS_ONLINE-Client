@@ -83,15 +83,16 @@ export default function Page() {
 
     function handleStartTest(e: FormEvent<HTMLFormElement>) {
         e.preventDefault()
-        const form = e.currentTarget as HTMLFormElement
-        const formData = new FormData(form)
-        const data = Object.fromEntries(formData.entries())
-        if (!data?.testPassword) return
-        console.log('check code with server')
-        const isCorrect = true
-        if (isCorrect) {
-            router.push('/exam-library/' + test.code + '/overview')
-            return
-        }
+        // const form = e.currentTarget as HTMLFormElement
+        // const formData = new FormData(form)
+        // const data = Object.fromEntries(formData.entries())
+        // if (!data?.testPassword) return
+        // console.log('check code with server')
+        // const isCorrect = true
+        // if (isCorrect) {
+        //     router.push('/exam-library/' + test.code + '/overview')
+        //     return
+        // }
+        router.push('/exam-library/' + test.code + '/overview')
     }
 }

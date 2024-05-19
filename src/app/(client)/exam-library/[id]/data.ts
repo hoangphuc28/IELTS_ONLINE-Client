@@ -516,7 +516,7 @@ const miniTest: Array<IMiniTest> = [
                 updatedAt: new Date().toLocaleString(),
             },
         ],
-        time: '',
+        time: '30',
     },
     {
         name: 'Reading',
@@ -557,7 +557,7 @@ const miniTest: Array<IMiniTest> = [
                 updatedAt: new Date().toLocaleString(),
             },
         ],
-        time: '',
+        time: '40',
     },
     {
         name: 'Writing',
@@ -598,7 +598,7 @@ const miniTest: Array<IMiniTest> = [
                 updatedAt: new Date().toLocaleString(),
             },
         ],
-        time: '',
+        time: '30',
     },
     {
         name: 'Speaking',
@@ -724,7 +724,7 @@ const miniTest: Array<IMiniTest> = [
                 updatedAt: new Date().toLocaleString(),
             },
         ],
-        time: '',
+        time: '30',
     },
 ]
 const test: ITest = {

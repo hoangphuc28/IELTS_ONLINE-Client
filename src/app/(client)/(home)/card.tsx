@@ -11,7 +11,7 @@ export default function ComponentCard({
     style?: CSSProperties
     data: ITest
 }) {
-    const url = '/exam-library/' + data.code
+    const url = '/exam-library/' + data.code + '/overview'
     return (
         <>
             <Link
