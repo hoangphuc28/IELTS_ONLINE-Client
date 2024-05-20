@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { userReducer } from './reducers/userReducer'
+import { testsSkillReducer } from './reducers/test-skill.reducer'
 
 const configStore = configureStore({
     reducer: {
         user: userReducer,
+        testsSkill: testsSkillReducer,
     },
 })
 

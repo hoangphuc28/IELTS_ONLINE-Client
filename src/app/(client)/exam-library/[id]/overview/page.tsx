@@ -1,58 +1,73 @@
 'use client'
 
 import LayoutCenter from '@client/_components/layoutCenter'
-import IMiniTest from '@/src/utils/shares/interfaces/IMiniTest'
-import ITest from '@/src/utils/shares/interfaces/ITest'
 import ComponentCardInfo from '@clientExamLibrary/[id]/_components/cardInfo'
 import ComponentCardTestItem from '@clientExamLibrary/[id]/_components/cardTestItem'
 
 import test from '@clientExamLibrary/[id]/data'
-import { useEffect } from 'react'
+import { ChangeEvent, MouseEvent, MouseEventHandler, useEffect, useState } from 'react'
 import Link from 'next/link'
+import { testSkill, testSkillType } from '@/src/utils/shares/interfaces/IMiniTest'
+import { TestItemManager } from '@/src/utils/shares/localStoreage'
+import { useAppShareDispatch, useAppShareSelector } from '@client/_lib/redux/hooks'
+// import { selectFirstSkill } from '@client/_lib/redux/actions/testSkill/get'
+import { selectFirstSkill } from '@client/_lib/redux/reducers/test-skill.reducer'
+import { ToggleTestsSkillProgress } from '@client/_lib/redux/actions/testSkill/update'
+
+// const examProgresses = [
+//     [
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//     ],
+//     [
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//         { quesId: 'abc', value: '' },
+//     ],
+//     [{ quesId: 'abc', value: '' }],
+//     [{ quesId: 'abc', value: '' }],
+// ]
 
 export default function Page() {
-    const colors = ['#31aabe', '#317343', '#eea055', '#c06073']
-    const examProgresses = [
-        [
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-        ],
-        [
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-            { quesId: 'abc', value: '' },
-        ],
-        [{ quesId: 'abc', value: '' }],
-        [{ quesId: 'abc', value: '' }],
-    ]
-    const fullProgress = Math.floor(
-        (examProgresses.reduce((acc, item) => {
-            acc += item.length
-            return acc
-        }, 0) /
-            (40 + 40 + 3 + 2)) *
-            100,
+    // const testsSkill = useAppShareSelector(selectFirstSkill)
+    const testFirstSkill = useAppShareSelector((state) =>
+        selectFirstSkill({ testSkill: state.testsSkill }),
     )
-    const maxExams: Array<number> = [40, 40, 3, 2]
+    const testsSkill = useAppShareSelector((state) => state.testsSkill.testsSkillProgress)
+    const dispatch = useAppShareDispatch()
+    // const testsManager = new TestItemManager()
+    // const [firstSkill, setFirstSkill] = useState<string | null>(null)
+    const colors = ['#31aabe', '#317343', '#eea055', '#c06073']
+
+    // const fullProgress = Math.floor(
+    //     (examProgresses.reduce((acc, item) => {
+    //         acc += item.length
+    //         return acc
+    //     }, 0) /
+    //         (40 + 40 + 3 + 2)) *
+    //         100,
+    // )
+    // const maxExams: Array<number> = [40, 40, 3, 2]
 
     useEffect(() => {
         // const data = new AnswerForPart({ examSkillDetailId: 'idExamDetail', answer: { id: 'a', value: 'b' } })
         // ExamService.createPart(data)
+        // testsManager.reset()
     }, [])
 
     return (
@@ -74,14 +89,16 @@ export default function Page() {
                                         color={colors[index]}
                                         name={miniTest.name}
                                         time={miniTest.time}
+                                        callback={() => handleClickCheckSkill(miniTest.name)}
                                     />
                                 ))}
                             </section>
 
                             <section className="text-end">
                                 <Link
-                                    href={''}
+                                    href={`/exam-library/${test.code}/${testFirstSkill}/test`}
                                     className="inline-block min-w-[110px] px-5 py-2 rounded font-bold bg-violet-600 hover:bg-violet-500 text-white text-lg text-center"
+                                    onClick={handleClickStartProgressTest}
                                 >
                                     Start
                                 </Link>
@@ -92,36 +109,67 @@ export default function Page() {
             </main>
         </>
     )
+
+    function handleClickStartProgressTest(e: MouseEvent<HTMLAnchorElement, any>) {
+        if (!testFirstSkill) e.preventDefault()
+    }
+
+    function handleClickCheckSkill(skill: testSkillType) {
+        dispatch(ToggleTestsSkillProgress(testsSkill, skill))
+        // testsManager.toggle(skill)
+        // setFirstSkill(testsManager.getFirst())
+    }
 }
 
 function ComponentTestItemManger({
     color,
     name,
     time,
+    callback,
 }: {
     color: string
     name: string
     time: string
+    callback?: CallableFunction
 }) {
-    const tempId = name + new Date().getTime().toString()
+    const [isClient, setIsClient] = useState(false)
+    const tempId = name + new Date().getTime().toString() + (100 * Math.random()).toString()
+
+    useEffect(() => {
+        setIsClient(true)
+    }, [])
     return (
-        <section className="flex flex-col gap-2">
-            <section className="text-center">
-                <input className="rounded" type="checkbox" id={tempId} name={name} />
-            </section>
-            <label htmlFor={tempId} className="cursor-pointer select-none">
-                <ComponentCardTestItem
-                    color={color}
-                    name={name}
-                    time={time}
-                    // data={miniTest}
-                    // testId={test.code}
-                    // examProgress={examProgresses[index] as any[]}
-                    // maxExam={maxExams[index]}
-                />
-            </label>
-        </section>
+        <>
+            {isClient && (
+                <section className="flex flex-col gap-2">
+                    <section className="text-center">
+                        <input
+                            className="rounded"
+                            type="checkbox"
+                            id={tempId}
+                            name={name}
+                            onChange={handleChangeCheckBox}
+                        />
+                    </section>
+                    <label htmlFor={tempId} className="cursor-pointer select-none">
+                        <ComponentCardTestItem
+                            color={color}
+                            name={name}
+                            time={time}
+                            // data={miniTest}
+                            // testId={test.code}
+                            // examProgress={examProgresses[index] as any[]}
+                            // maxExam={maxExams[index]}
+                        />
+                    </label>
+                </section>
+            )}
+        </>
     )
+
+    function handleChangeCheckBox(e: ChangeEvent<HTMLInputElement>) {
+        if (callback) callback()
+    }
 }
 
 function ComponentFullTest() {

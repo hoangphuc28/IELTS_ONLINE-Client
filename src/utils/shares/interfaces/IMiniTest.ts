@@ -7,9 +7,11 @@ export enum testSkill {
     SPEAKING = 'speaking'
 }
 
+export type testSkillType = keyof typeof testSkill
+
 export default interface IMiniTest {
     time: string
     src?: string
-    name: string
+    name: testSkillType
     parts: Array<IPart>
 }

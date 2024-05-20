@@ -5,7 +5,7 @@ import { QuestionType } from "@/src/utils/constants/questionType"
 
 const miniTest: Array<IMiniTest> = [
     {
-        name: 'Listening',
+        name: "LISTENING",
         parts: [
             {
                 id: 'listening-part-1',
@@ -519,7 +519,7 @@ const miniTest: Array<IMiniTest> = [
         time: '30',
     },
     {
-        name: 'Reading',
+        name: "READING",
         parts: [
             {
                 id: 'reading-part-1',
@@ -560,7 +560,7 @@ const miniTest: Array<IMiniTest> = [
         time: '40',
     },
     {
-        name: 'Writing',
+        name: "WRITING",
         parts: [
             {
                 id: 'writing-part-1',
@@ -601,7 +601,7 @@ const miniTest: Array<IMiniTest> = [
         time: '30',
     },
     {
-        name: 'Speaking',
+        name: "SPEAKING",
         parts: [
             {
                 id: 'speaking-part-1',
