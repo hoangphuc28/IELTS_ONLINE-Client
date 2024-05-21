@@ -1,5 +1,6 @@
 import { testSkill, testSkillType } from '@/src/utils/shares/interfaces/IMiniTest'
 import { Draft, PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { getFirstSkill } from '../actions/testSkill/get'
 
 const initialState: ITestSkill = {
     testsSkillProgress: [],
@@ -38,11 +39,7 @@ export const testSkillSlice = createSlice({
         },
     },
     selectors: {
-        selectFirstSkill(state): string | null {
-            const data = state.testsSkillProgress
-            if (data.length === 0) return null
-            return data[0]
-        },
+        selectFirstSkill: getFirstSkill,
     },
 })
 

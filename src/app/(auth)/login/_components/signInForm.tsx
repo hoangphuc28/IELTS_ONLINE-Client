@@ -1,11 +1,15 @@
 'use client'
 
+import { createToastDanger } from '@client/_components/toast/sysToast'
+import { SignIn } from '@client/_lib/redux/actions/auth'
+import { useAppShareDispatch } from '@client/_lib/redux/hooks'
 import authService from '@/src/services/auth.service'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { FormEvent, useRef } from 'react'
+import { FormEvent, useEffect, useRef } from 'react'
 
 export default function ComponentSignInForm() {
+    const dispatch = useAppShareDispatch()
     const refForm = useRef<HTMLFormElement>(null)
     const router = useRouter()
 
@@ -89,11 +93,12 @@ export default function ComponentSignInForm() {
         const keys: Record<string, FormDataEntryValue> = Object.fromEntries(formData.entries())
 
         try {
-            const result = await authService.signIn(keys)
-            router.back()
+            dispatch(SignIn(keys))
+            // await authService.signIn(keys)
+            // router.back()
         } catch (error: any) {
             console.log(error)
-            alert(error.message)
+            createToastDanger(error.message)
         }
     }
 }

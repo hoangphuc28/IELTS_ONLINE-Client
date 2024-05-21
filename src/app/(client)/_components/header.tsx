@@ -2,16 +2,18 @@
 import Link from 'next/link'
 import LayoutCenter from './layoutCenter'
 import ComponentSearch from './search'
-import { MouseEvent } from 'react'
+import { MouseEvent, useEffect } from 'react'
 import { createToastDanger } from './toast/sysToast'
 import authService from '@services/auth.service'
-import ComponentRedirectSignIn from '@/src/app/(auth)/login/_components/redirectSignIn'
-import { useAppShareSelector } from '../_lib/redux/hooks'
-import { IUserState } from '../_lib/redux/reducers/userReducer'
+import ComponentRedirectSignIn from '@auth/login/_components/redirectSignIn'
+import { useAppShareDispatch, useAppShareSelector } from '../_lib/redux/hooks'
+import { IUserState, setUser } from '../_lib/redux/reducers/userReducer'
 import { userRole } from '@/src/utils/shares/interfaces/IUser'
+import { getTokenKey } from '@/src/utils/shares/localStoreage'
 
 export default function Header() {
     const user = useAppShareSelector((state) => state.user)
+
     return (
         <>
             <ComponentRedirectSignIn />
@@ -36,17 +38,6 @@ export default function Header() {
                                     background: `url("./../../../../../IELTS Online Practice Tests FREE _ IELTS Online Tests_files/da18bdcf8b0a4f8d6afce6dcf976b3b6.png")`,
                                 }}
                             ></section>
-                            {/* <div className="header-banner w-full">
-                                <Link href="#">
-                                    <img
-                                        src="./../../../../../IELTS Online Practice Tests FREE _ IELTS Online Tests_files/da18bdcf8b0a4f8d6afce6dcf976b3b6.png"
-                                        width="728"
-                                        height="90"
-                                        alt=""
-                                        title=""
-                                    />
-                                </Link>
-                            </div> */}
                         </section>
                         {/* mobile */}
                         <section className="header-mobile flex sm:hidden justify-between items-center px-2 py-2 shadow shadow-lg-[#000]">
@@ -70,37 +61,9 @@ export default function Header() {
                 <section className="hidden h-[80px] bg-[#294563] md:block py-2 bg-violet-950">
                     <LayoutCenter className="h-full">
                         <nav className="h-full flex justify-between items-center gap-x-5">
-                            <section>
-                                <Link href="/" className="text-3xl text-white">
-                                    <i className="fa-solid fa-house"></i>
-                                </Link>
-                            </section>
-                            {/* <section className="h-full logo shadow-lg rounded-full">
-                                <Link href="/" className="h-full logo">
-                                    <img
-                                        alt=""
-                                        className="h-full"
-                                        src={process.env.NEXT_PUBLIC_APP_LOGO}
-                                    />
-                                </Link>
-                            </section> */}
-                            {/* <div className="relative">
-                                <Link
-                                    href="/exam-library"
-                                    className="text-white"
-                                    local-btn-dropdown-toggle=""
-                                >
-                                    <span className="me-1">Thư viện đề thi IELTS</span>
-                                    <i className="fa-solid fa-angle-down"></i>
-                                    <div
-                                        className="hidden absolute z-[9999] top-[140%] left-0 w-[130%] rounded-b ps-3 pe-4 py-3 shadow-xl shadow-[#ffffff10] bg-[#294563dd]"
-                                        local-data-dropdown-toggle=""
-                                        style={{ backgroundColor: '#294563e6' }}
-                                    >
-                                        <ExamLibrary />
-                                    </div>
-                                </Link>
-                            </div> */}
+                            <ContainerRenderLogo />
+                            <ComponentRenderLibrary />
+
                             <section className="grow">
                                 <ComponentSearch className="w-full bg-white" />
                             </section>
@@ -164,6 +127,27 @@ export default function Header() {
 //     )
 // }
 
+function ContainerRenderLogo() {
+    return (
+        <>
+            <section>
+                <Link href="/" className="text-3xl text-white">
+                    <i className="fa-solid fa-house"></i>
+                </Link>
+            </section>
+            {/* <section className="h-full logo shadow-lg rounded-full">
+                <Link href="/" className="h-full logo">
+                    <img
+                        alt=""
+                        className="h-full"
+                        src={process.env.NEXT_PUBLIC_APP_LOGO}
+                    />
+                </Link>
+            </section> */}
+        </>
+    )
+}
+
 function ContainerSignInSignUp() {
     return (
         <>
@@ -190,6 +174,8 @@ function ContainerSignInSignUp() {
 }
 
 function ContainerAccount({ user }: { user: IUserState }) {
+    const dispatch = useAppShareDispatch()
+    console.log('role compare: ', user, user.role, userRole.ADMIN, user.role == userRole.ADMIN)
     return (
         <>
             <section local-btn-dropdown-toggle="">
@@ -204,7 +190,7 @@ function ContainerAccount({ user }: { user: IUserState }) {
                     className="hidden z-[9999] backdrop-blur-md bg-white/65 rounded-b pt-1 pb-2 min-w-[160px] absolute top-[110%] right-0 text-base shadow shadow-fuchsia-400"
                     local-data-dropdown-toggle=""
                 >
-                    {user.role === userRole.ADMIN && (
+                    {user.role == userRole.ADMIN && (
                         <Link
                             className="block text-violet-800 ps-3 pe-5 py-3 hover:bg-violet-900/40 hover:text-white"
                             href="/admin/dashboard"
@@ -234,10 +220,36 @@ function ContainerAccount({ user }: { user: IUserState }) {
     async function handleLogOut(e: MouseEvent<HTMLAnchorElement, any>) {
         e.preventDefault()
         try {
-            const data = await authService.logout()
+            // const data = await authService.logout()
+            localStorage.removeItem(getTokenKey())
+            dispatch(setUser({ id: '', name: '', role: '', mail: '' }))
         } catch (error) {
             console.log(error)
             createToastDanger('Đăng xuất thất bại!')
         }
     }
+}
+
+function ComponentRenderLibrary() {
+    return (
+        <>
+            {/* <div className="relative">
+                <Link
+                    href="/exam-library"
+                    className="text-white"
+                    local-btn-dropdown-toggle=""
+                >
+                    <span className="me-1">Thư viện đề thi IELTS</span>
+                    <i className="fa-solid fa-angle-down"></i>
+                    <div
+                        className="hidden absolute z-[9999] top-[140%] left-0 w-[130%] rounded-b ps-3 pe-4 py-3 shadow-xl shadow-[#ffffff10] bg-[#294563dd]"
+                        local-data-dropdown-toggle=""
+                        style={{ backgroundColor: '#294563e6' }}
+                    >
+                        <ExamLibrary />
+                    </div>
+                </Link>
+            </div> */}
+        </>
+    )
 }

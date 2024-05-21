@@ -139,7 +139,7 @@ export default function ComponentSignUpForm() {
             router.replace('/')
         } catch (error: any) {
             console.log(error)
-            alert(error.message)
+            createToastDanger(error.message)
         }
     }
 }

@@ -8,7 +8,7 @@ import ComponentCard from './card'
 import ISourceData from './interfaces/ISourceData'
 import ICarouselData from './interfaces/ICarouselData'
 import ITest from '@/src/utils/shares/interfaces/ITest'
-import ComponentMedia from '../_components/media'
+import ComponentMedia from '@client/_components/media'
 
 export default function Page() {
     const bannerData: ISourceData = {

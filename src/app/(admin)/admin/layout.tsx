@@ -6,25 +6,21 @@ import { Provider, useSelector } from 'react-redux'
 import '@admin/styles/components/_loader.scss'
 import ReduxProvider from './providers/reduxProvider'
 
-export const metadata = {
-    title: 'Admin',
-}
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en">
-            <body>
-                <ReduxProvider>
-                    <div className="layout">
-                        <div className="layout-cover">
-                            <Nav />
-                            <div className="page-contain">
-                                <ExamProvider>{children}</ExamProvider>
-                            </div>
-                        </div>
+        <ReduxProvider>
+            <div className="layout">
+                <div className="layout-cover">
+                    <Nav />
+                    <div className="page-contain">
+                        <ExamProvider>{children}</ExamProvider>
                     </div>
-                </ReduxProvider>
-            </body>
-        </html>
+                </div>
+            </div>
+        </ReduxProvider>
+        // <html lang="en">
+        //     <body>
+        //     </body>
+        // </html>
     )
 }

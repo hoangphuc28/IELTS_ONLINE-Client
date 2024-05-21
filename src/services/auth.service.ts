@@ -1,7 +1,6 @@
 import { regexResponse } from "@utils/shares";
 import BaseService from "@services/base";
 import { getTokenKey } from "../utils/shares/localStoreage";
-import { SetUser } from "../app/(client)/_lib/redux/actions/auth";
 
 class AuthService extends BaseService {
     constructor(url: string) {
@@ -12,11 +11,10 @@ class AuthService extends BaseService {
         const uri = '/login'
         try {
             const result = regexResponse(await this.api.post(uri, data))
-            const { accessToken, ...userInfo } = result.data
+            const { accessToken, ...otherData } = result.data
             localStorage.setItem(getTokenKey(), accessToken)
 
-            SetUser(userInfo)
-            return userInfo
+            return otherData.userInfo
         } catch (error: any) {
             throw error.response.data
         }
@@ -29,7 +27,6 @@ class AuthService extends BaseService {
             const { accessToken, ...userInfo } = result.data
             localStorage.setItem(getTokenKey(), accessToken)
 
-            SetUser(userInfo)
             return userInfo
         } catch (error: any) {
             throw error.response.data

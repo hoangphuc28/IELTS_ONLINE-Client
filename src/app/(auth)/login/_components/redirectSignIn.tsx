@@ -1,16 +1,16 @@
 'use client'
 
-import { getTokenKey } from '@/src/utils/shares/localStoreage'
+import { useAppShareSelector } from '@client/_lib/redux/hooks'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
 export default function ComponentRedirectLogin() {
+    const user = useAppShareSelector((state) => state.user)
     const router = useRouter()
     useEffect(() => {
-        const haveAccessToken = localStorage.getItem(getTokenKey())
-        if (!haveAccessToken) {
+        if (!user.id) {
             router.push('/login')
         }
-    }, [])
+    }, [user])
     return <></>
 }

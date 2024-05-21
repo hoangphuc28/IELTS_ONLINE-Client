@@ -1,11 +1,7 @@
-import { createSelector } from "@reduxjs/toolkit";
-import { ITestSkill } from "../../reducers/test-skill.reducer";
-import { RootShareState } from "../../store";
+import { ITestSkill } from "../../reducers/test-skill.reducer"
 
-const selectTestsSkill = (state: RootShareState) => state.testsSkill
-
-// export const selectFirstSkill = createSelector([selectTestsSkill], (testsSkill) => {
-//     const data = testsSkill.testsSkillProgress
-//     if (data.length === 0) return null
-//     return data[0]
-// })
+export const getFirstSkill = (testsSkill: ITestSkill) => {
+    const data = testsSkill.testsSkillProgress
+    if (data.length === 0) return null
+    return data[0]
+}
