@@ -7,14 +7,14 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default function Page() {
-    const user = useAppShareSelector((state) => state.user)
-    const router = useRouter()
+    // const user = useAppShareSelector((state) => state.user)
+    // const router = useRouter()
 
-    useEffect(() => {
-        if (user.id) {
-            router.back()
-        }
-    }, [user])
+    // useEffect(() => {
+    //     if (user.id) {
+    //         router.back()
+    //     }
+    // }, [user])
 
     return (
         <section className="min-h-[100vh] bg-gray-100">

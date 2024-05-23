@@ -1,4 +1,5 @@
 import { StoreShareProvider } from '@client/providers/redux.provider'
+import { ComponentGetUser } from './(auth)/login/_components/getUser'
 
 export const metadata = {
     title: 'Dedicate to life-long education',
@@ -9,6 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <StoreShareProvider>
+                <ComponentGetUser />
                 <body>{children}</body>
             </StoreShareProvider>
         </html>

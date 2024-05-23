@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import '@clientAccount/styles/account.scss'
 import Header from '@client/_components/header'
 import Footer from '@client/_components/footer'
+import { ComponentRedirectSignIn } from '../../(auth)/login/_components/redirectSignIn'
 
 export default function AccountLayout({ children }: { children: React.ReactNode }) {
     // #region select side bar active
@@ -13,6 +14,7 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
     const activeSidebar = routerSegments[routerSegments.length - 1]
     return (
         <>
+            <ComponentRedirectSignIn />
             <Header />
             <main className="account-page min-h-[80vh]">
                 <LayoutCenter className="my-5 pb-3">

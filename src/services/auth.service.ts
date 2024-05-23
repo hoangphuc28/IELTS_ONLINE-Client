@@ -1,10 +1,24 @@
 import { regexResponse } from "@utils/shares";
 import BaseService from "@services/base";
-import { getTokenKey } from "../utils/shares/localStoreage";
+import { getTokenKey } from "../utils/shares/localStorage";
 
 class AuthService extends BaseService {
     constructor(url: string) {
         super(url)
+    }
+
+    async verify(token: string) {
+        const uri = '/verify'
+        try {
+            const userInfo = regexResponse(await this.api.get(uri, {
+                headers: {
+                    Authorization: 'Bearer ' + token
+                }
+            }))
+            return userInfo
+        } catch (error) {
+            throw error
+        }
     }
 
     async signIn(data: any) {

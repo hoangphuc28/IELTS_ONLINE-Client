@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import CircleProgressBar from './circleProgressBar'
 import Link from 'next/link'
 
-export default function ComponentCardTestItem({
+export function ComponentCardTestItem({
     // testId,
     // data,
     name,

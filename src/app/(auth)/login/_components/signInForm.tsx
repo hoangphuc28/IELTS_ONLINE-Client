@@ -93,9 +93,9 @@ export default function ComponentSignInForm() {
         const keys: Record<string, FormDataEntryValue> = Object.fromEntries(formData.entries())
 
         try {
-            dispatch(SignIn(keys))
-            // await authService.signIn(keys)
-            // router.back()
+            // dispatch(SignIn(keys))
+            await authService.signIn(keys)
+            router.back()
         } catch (error: any) {
             console.log(error)
             createToastDanger(error.message)

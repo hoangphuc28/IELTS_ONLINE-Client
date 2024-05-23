@@ -4,19 +4,16 @@ import LayoutCenter from './layoutCenter'
 import ComponentSearch from './search'
 import { MouseEvent, useEffect } from 'react'
 import { createToastDanger } from './toast/sysToast'
-import authService from '@services/auth.service'
-import ComponentRedirectSignIn from '@auth/login/_components/redirectSignIn'
 import { useAppShareDispatch, useAppShareSelector } from '../_lib/redux/hooks'
 import { IUserState, setUser } from '../_lib/redux/reducers/userReducer'
 import { userRole } from '@/src/utils/shares/interfaces/IUser'
-import { getTokenKey } from '@/src/utils/shares/localStoreage'
+import { getTokenKey } from '@/src/utils/shares/localStorage'
 
 export default function Header() {
     const user = useAppShareSelector((state) => state.user)
 
     return (
         <>
-            <ComponentRedirectSignIn />
             <header className="shadow">
                 {/* logo desktop and banner and header mobile */}
                 <section>
@@ -175,7 +172,6 @@ function ContainerSignInSignUp() {
 
 function ContainerAccount({ user }: { user: IUserState }) {
     const dispatch = useAppShareDispatch()
-    console.log('role compare: ', user, user.role, userRole.ADMIN, user.role == userRole.ADMIN)
     return (
         <>
             <section local-btn-dropdown-toggle="">
