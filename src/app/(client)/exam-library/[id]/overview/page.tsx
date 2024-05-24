@@ -8,20 +8,28 @@ import { MouseEvent, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { testSkill, testSkillType } from '@/src/utils/shares/interfaces/IMiniTest'
 import { TestItemManager } from '@/src/utils/shares/localStorage'
-import { useAppShareSelector } from '@client/_lib/redux/hooks'
-import { selectFirstSkill } from '@client/_lib/redux/reducers/test-skill.reducer'
+import { useAppShareDispatch, useAppShareSelector } from '@client/_lib/redux/hooks'
+import {
+    testSkillActions,
+    testSkillSelectors,
+} from '@client/_lib/redux/reducers/test-skill.reducer'
 import { ComponentTestItem } from './_components/testItems/item'
+import { useRouter } from 'next/navigation'
+import { examActions } from '../../../_lib/redux/reducers/exam.reducer'
 
 export default function Page() {
+    const router = useRouter()
+    const dispatch = useAppShareDispatch()
     const testFirstSkill = useAppShareSelector((state) =>
-        selectFirstSkill({ testSkill: state.testsSkill }),
+        testSkillSelectors.GetFirstSkill({ testSkill: state.testsSkill }),
     )
-    const testsManager = new TestItemManager()
-    const [firstSkill, setFirstSkill] = useState<string | null>(null)
+    // const testsManager = new TestItemManager()
+    // const [firstSkill, setFirstSkill] = useState<string | null>(null)
     const colors = ['#31aabe', '#317343', '#eea055', '#c06073']
 
     useEffect(() => {
-        testsManager.reset()
+        dispatch(examActions.setter(test))
+        // testsManager.reset()
     }, [])
 
     return (
@@ -50,7 +58,7 @@ export default function Page() {
 
                             <section className="text-end">
                                 <Link
-                                    href={`/exam-library/${test.code}/${firstSkill}/test`}
+                                    href={`exam-library/${test.code}/${testFirstSkill?.name}/test`} ///
                                     className="inline-block min-w-[110px] px-5 py-2 rounded font-bold bg-violet-600 hover:bg-violet-500 text-white text-lg text-center"
                                     onClick={handleClickStartProgressTest}
                                 >
@@ -65,12 +73,18 @@ export default function Page() {
     )
 
     function handleClickStartProgressTest(e: MouseEvent<HTMLAnchorElement, any>) {
-        if (!testFirstSkill) e.preventDefault()
+        if (!testFirstSkill) return e.preventDefault()
+        // create user answer
+        // create user exam skill process
+        // connect socket
+        // load first exam skill
+        router.push(`exam-library/${test.code}/${testFirstSkill.name}/test`)
     }
 
-    function handleClickCheckSkill(skill: testSkillType) {
-        testsManager.toggle(skill)
-        setFirstSkill(testsManager.getFirst())
+    function handleClickCheckSkill(skillName: string) {
+        dispatch(testSkillActions.ToggleTestsSkillProgress(skillName))
+        // testsManager.toggle(skillId)
+        // setFirstSkill(testsManager.getFirst())
     }
 }
 

@@ -1,4 +1,4 @@
-import { useDispatch, useSelector, useStore } from "react-redux"
+import { TypedUseSelectorHook, useDispatch, useSelector, useStore } from "react-redux"
 import { AppShareDispatch, AppShareStore, RootShareState } from "./store"
 
 export const useAppShareStore = useStore.withTypes<AppShareStore>()

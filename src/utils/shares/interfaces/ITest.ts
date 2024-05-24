@@ -8,7 +8,7 @@ export default interface ITest {
     description: string
     time: string
     status: string
-    hasPassword: boolean
+    hasPassword?: boolean
     createdAt?: string
     updatedAt?: string
     details: Array<IMiniTest>

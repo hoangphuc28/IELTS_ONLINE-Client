@@ -5,7 +5,7 @@ import ComponentSearch from './search'
 import { MouseEvent, useEffect } from 'react'
 import { createToastDanger } from './toast/sysToast'
 import { useAppShareDispatch, useAppShareSelector } from '../_lib/redux/hooks'
-import { IUserState, setUser } from '../_lib/redux/reducers/userReducer'
+import { IUserState, setUser } from '../_lib/redux/reducers/user.reducer'
 import { userRole } from '@/src/utils/shares/interfaces/IUser'
 import { getTokenKey } from '@/src/utils/shares/localStorage'
 

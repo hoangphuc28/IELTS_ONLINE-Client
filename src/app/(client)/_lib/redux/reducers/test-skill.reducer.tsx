@@ -1,59 +1,66 @@
 import { testSkill, testSkillType } from '@/src/utils/shares/interfaces/IMiniTest'
 import { Draft, PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { getFirstSkill } from '../actions/testSkill/get'
+import * as Getter from '../actions/testSkill/get.action'
+import * as Updater from '../actions/testSkill/update.action'
+
+export interface ITestSkillProcess {
+    id: string
+    name: string
+}
+
+export interface ITestSkill {
+    testsSkillProgress: Draft<ITestSkillProcess>[]
+}
 
 const initialState: ITestSkill = {
     testsSkillProgress: [],
 }
 
+const reducers = {
+    updateProgress(state: ITestSkill, action: PayloadAction<ITestSkillProcess[]>) {
+        state.testsSkillProgress = action.payload
+    },
+    addProgress(state: ITestSkill, action: PayloadAction<ITestSkillProcess>) {
+        const items: ITestSkillProcess[] = state.testsSkillProgress
+        const newItem = action.payload
+        const result: ITestSkillProcess[] = []
+        for (const key in testSkill) {
+            if (Object.prototype.hasOwnProperty.call(testSkill, key)) {
+                const k: testSkillType = key as testSkillType
+                const skill: string = testSkill[k]
+                const item = items.find((item) => item.name === skill)
+                if (skill == newItem.name) {
+                    result.push(newItem)
+                    continue
+                }
+                if (!!item) {
+                    result.push(item)
+                    continue
+                }
+            }
+        }
+
+        state.testsSkillProgress = result
+        return
+    },
+    removeProgress(state: ITestSkill, action: PayloadAction<string>) {
+        const items = state.testsSkillProgress
+        const id = action.payload
+        // const value = testSkill[name]
+        const result = items.filter((item) => item.id != id)
+        state.testsSkillProgress = result
+    },
+}
+
 export const testSkillSlice = createSlice({
     name: 'testSkill',
     initialState,
-    reducers: {
-        updateTestsSkillProgress(state: ITestSkill, action: PayloadAction<string[]>) {
-            state.testsSkillProgress = action.payload
-        },
-        addTestsSkillProgress(state: ITestSkill, action: PayloadAction<any>) {
-            const items: string[] = state.testsSkillProgress
-            const name = action.payload
-            const result = []
-            for (const key in testSkill) {
-                if (Object.prototype.hasOwnProperty.call(testSkill, key)) {
-                    const k: testSkillType = key as testSkillType
-                    const skill: string = testSkill[k]
-                    if (k == name || items.includes(skill)) {
-                        result.push(skill)
-                    }
-                }
-            }
-
-            state.testsSkillProgress = result
-            return
-        },
-        removeTestsSkillProgress(state: ITestSkill, action: PayloadAction<testSkillType>) {
-            const items: string[] = state.testsSkillProgress
-            const name = action.payload
-            const value = testSkill[name]
-            const result = items.filter((item) => item != value)
-            state.testsSkillProgress = result
-        },
-    },
-    selectors: {
-        selectFirstSkill: getFirstSkill,
-    },
+    reducers: reducers,
+    selectors: { ...Getter },
 })
 
-export const {
-    updateTestsSkillProgress,
-    // toggleTestsSkillProgress,
-    addTestsSkillProgress,
-    removeTestsSkillProgress,
-} = testSkillSlice.actions
+export const testSkillActions = { ...testSkillSlice.actions, ...Updater }
 
-export const { selectFirstSkill } = testSkillSlice.selectors
+export const testSkillSelectors = testSkillSlice.selectors
 
 export const testsSkillReducer = testSkillSlice.reducer
-
-export interface ITestSkill {
-    testsSkillProgress: Draft<string>[]
-}

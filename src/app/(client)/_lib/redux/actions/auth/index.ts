@@ -1,5 +1,5 @@
 import authService from "@/src/services/auth.service"
-import { setUser } from "../../reducers/userReducer"
+import { setUser } from "../../reducers/user.reducer"
 
 export function SignIn(data: any) {
     return async (dispatch: any) => {

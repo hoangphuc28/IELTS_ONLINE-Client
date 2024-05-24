@@ -1,12 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { userReducer } from './reducers/userReducer'
-import { testsSkillReducer } from './reducers/test-skill.reducer'
+import * as reducers from './states'
 
-const configStore = configureStore({
-    reducer: {
-        user: userReducer,
-        testsSkill: testsSkillReducer,
-    },
+export const configStore = configureStore({
+    reducer: reducers,
 })
 
 export const storeShare = () => configStore

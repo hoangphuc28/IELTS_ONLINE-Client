@@ -1,11 +1,12 @@
-import IMiniTest from "../../../../utils/shares/interfaces/IMiniTest"
+import IMiniTest, { testSkill } from "../../../../utils/shares/interfaces/IMiniTest"
 import ITest from "../../../../utils/shares/interfaces/ITest"
 
 import { QuestionType } from "@/src/utils/constants/questionType"
 
 const miniTest: Array<IMiniTest> = [
     {
-        name: "LISTENING",
+        id: 'listening-1',
+        name: testSkill.LISTENING,
         parts: [
             {
                 id: 'listening-part-1',
@@ -519,7 +520,8 @@ const miniTest: Array<IMiniTest> = [
         time: '30',
     },
     {
-        name: "READING",
+        id: 'reading-1',
+        name: testSkill.READING,
         parts: [
             {
                 id: 'reading-part-1',
@@ -560,7 +562,8 @@ const miniTest: Array<IMiniTest> = [
         time: '40',
     },
     {
-        name: "WRITING",
+        id: 'writing-1',
+        name: testSkill.WRITING,
         parts: [
             {
                 id: 'writing-part-1',
@@ -601,7 +604,8 @@ const miniTest: Array<IMiniTest> = [
         time: '30',
     },
     {
-        name: "SPEAKING",
+        id: 'speaking-1',
+        name: testSkill.SPEAKING,
         parts: [
             {
                 id: 'speaking-part-1',

@@ -1,7 +1,7 @@
 'use client'
 
 import { createToastDanger } from '@/src/app/(client)/_components/toast/sysToast'
-import { setUser } from '@/src/app/(client)/_lib/redux/reducers/userReducer'
+import { setUser } from '@/src/app/(client)/_lib/redux/reducers/user.reducer'
 import authService from '@/src/services/auth.service'
 import { getTokenKey } from '@/src/utils/shares/localStorage'
 import { useAppShareDispatch, useAppShareSelector } from '@client/_lib/redux/hooks'
