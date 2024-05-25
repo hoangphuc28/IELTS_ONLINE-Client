@@ -20,6 +20,9 @@ const reducers = {
     updateProgress(state: ITestSkill, action: PayloadAction<ITestSkillProcess[]>) {
         state.testsSkillProgress = action.payload
     },
+    resetProcess(state: ITestSkill) {
+        state.testsSkillProgress = []
+    },
     addProgress(state: ITestSkill, action: PayloadAction<ITestSkillProcess>) {
         const items: ITestSkillProcess[] = state.testsSkillProgress
         const newItem = action.payload

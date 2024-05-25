@@ -5,7 +5,7 @@ import { QuestionType } from "@/src/utils/constants/questionType"
 
 const miniTest: Array<IMiniTest> = [
     {
-        id: 'listening-1',
+        id: '0bf13320-4258-47a8-a650-129022bd6a12',
         name: testSkill.LISTENING,
         parts: [
             {
@@ -520,7 +520,7 @@ const miniTest: Array<IMiniTest> = [
         time: '30',
     },
     {
-        id: 'reading-1',
+        id: '286a9b63-c8a3-4b66-b2e8-a54e06f4bf35',
         name: testSkill.READING,
         parts: [
             {
@@ -562,7 +562,7 @@ const miniTest: Array<IMiniTest> = [
         time: '40',
     },
     {
-        id: 'writing-1',
+        id: '87d4e45e-c3a4-4bc5-ae51-efc315cca5b5',
         name: testSkill.WRITING,
         parts: [
             {
@@ -604,7 +604,7 @@ const miniTest: Array<IMiniTest> = [
         time: '30',
     },
     {
-        id: 'speaking-1',
+        id: '82ef9245-69a2-4183-9e1b-9ca9995d8e37',
         name: testSkill.SPEAKING,
         parts: [
             {

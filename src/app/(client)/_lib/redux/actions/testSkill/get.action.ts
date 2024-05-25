@@ -10,3 +10,5 @@ export const GetFirstSkill = (testsSkill: ITestSkill) => {
     // if (!testSkill) return null
     return idTestFirstSkill
 }
+
+export const GetTestSkillsProcess = (testsSkill: ITestSkill) => testsSkill.testsSkillProgress

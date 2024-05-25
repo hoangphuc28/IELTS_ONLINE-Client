@@ -7,11 +7,13 @@ export function ComponentTestItem({
     color,
     name,
     time,
+    checked,
     callback,
 }: {
     color: string
     name: string
     time: string
+    checked: boolean
     callback?: CallableFunction
 }) {
     const [isClient, setIsClient] = useState(false)
@@ -31,6 +33,7 @@ export function ComponentTestItem({
                             id={tempId}
                             name={name}
                             onChange={handleChangeCheckBox}
+                            checked={checked}
                         />
                     </section>
                     <label htmlFor={tempId} className="cursor-pointer select-none">

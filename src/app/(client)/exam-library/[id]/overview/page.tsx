@@ -16,10 +16,15 @@ import {
 import { ComponentTestItem } from './_components/testItems/item'
 import { useRouter } from 'next/navigation'
 import { examActions } from '../../../_lib/redux/reducers/exam.reducer'
+import { userAnswerService } from '@/src/services/user-answer.service'
 
 export default function Page() {
     const router = useRouter()
     const dispatch = useAppShareDispatch()
+    const user = useAppShareSelector((state) => state.user)
+    const testsSkill = useAppShareSelector((state) =>
+        testSkillSelectors.GetTestSkillsProcess({ testSkill: state.testsSkill }),
+    )
     const testFirstSkill = useAppShareSelector((state) =>
         testSkillSelectors.GetFirstSkill({ testSkill: state.testsSkill }),
     )
@@ -29,6 +34,7 @@ export default function Page() {
 
     useEffect(() => {
         dispatch(examActions.setter(test))
+        dispatch(testSkillActions.resetProcess())
         // testsManager.reset()
     }, [])
 
@@ -51,6 +57,9 @@ export default function Page() {
                                         color={colors[index]}
                                         name={miniTest.name}
                                         time={miniTest.time}
+                                        checked={
+                                            !!testsSkill.find((item) => item.id === miniTest.id)
+                                        }
                                         callback={() => handleClickCheckSkill(miniTest.name)}
                                     />
                                 ))}
@@ -72,13 +81,21 @@ export default function Page() {
         </>
     )
 
-    function handleClickStartProgressTest(e: MouseEvent<HTMLAnchorElement, any>) {
-        if (!testFirstSkill) return e.preventDefault()
+    async function handleClickStartProgressTest(e: MouseEvent<HTMLAnchorElement, any>) {
+        e.preventDefault()
+        // if (!testFirstSkill) return e.preventDefault()
         // create user answer
         // create user exam skill process
         // connect socket
         // load first exam skill
-        router.push(`exam-library/${test.code}/${testFirstSkill.name}/test`)
+        console.log('User id: ', user)
+        if (!user?.id) return router.push('/login')
+        const userAnswer = await userAnswerService.create({
+            timeStart: new Date(),
+            userId: user.id,
+            examSkills: testsSkill,
+        })
+        // router.push(`exam-library/${test.code}/${testFirstSkill.name}/test`)
     }
 
     function handleClickCheckSkill(skillName: string) {
