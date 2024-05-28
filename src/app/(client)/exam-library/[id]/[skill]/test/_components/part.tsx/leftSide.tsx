@@ -22,9 +22,10 @@ export default function ComponentLeftSide({
             >
                 <h2 className="font-bold text-xl" dangerouslySetInnerHTML={{ __html: name }}></h2>
                 <div>
-                    <img className="w-full max-w-[500px]" src={data.src} alt="" />
+                    <img className="w-full max-w-[500px]" src={data.resource} alt="" />
                 </div>
-                <p dangerouslySetInnerHTML={{ __html: data.description }}></p>
+                <p dangerouslySetInnerHTML={{ __html: data.title }}></p>
+                <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
             </div>
             <div style={{ padding: '17px 0' }}>
                 <Resizer max={800} forwardedRef={refLeftContent} />

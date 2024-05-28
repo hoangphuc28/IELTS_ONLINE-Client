@@ -4,27 +4,27 @@ import IQuestion from "../interfaces/IQuestion"
 
 export class GroupDTO implements IGroup {
     id: string
-    type: string
-    title: string
-    description: string
+    questionType: string
+    instruction: string
     createdAt?: string | undefined
     updatedAt?: string | undefined
-    questions: IQuestion[]
-    answers?: IAnswer[] | undefined
+    data: IQuestion[]
+    answers: IAnswer[] = []
 
     constructor(data: IGroup) {
         this.id = data.id
-        this.type = data.type
-        this.title = data.title
-        this.description = data.description
+        this.questionType = data.questionType
+        this.instruction = data.instruction
         if (data.createdAt) {
             this.createdAt = data.createdAt
         }
         if (data.updatedAt) {
             this.updatedAt = data.updatedAt
         }
-        this.questions = JSON.parse(JSON.stringify(data.questions))
-        this.answers = data.answers ? JSON.parse(JSON.stringify(data.answers)) : undefined
+        this.data = JSON.parse(JSON.stringify(data.data))
+        if (data.answers) {
+            this.answers = [...data.answers]
+        }
     }
 
 }

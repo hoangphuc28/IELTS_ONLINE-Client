@@ -1,4 +1,5 @@
-import IMiniTest from '../../../../../../../utils/shares/interfaces/IMiniTest'
+import { useEffect } from 'react'
+import IMiniTest, { testSkill } from '../../../../../../../utils/shares/interfaces/IMiniTest'
 import ComponentSubmit from './submit'
 
 export default function ComponentTestHeader({ data }: { data: IMiniTest }) {
@@ -7,6 +8,9 @@ export default function ComponentTestHeader({ data }: { data: IMiniTest }) {
         m: 12,
         s: 0,
     }
+    useEffect(() => {
+        console.log('data: ', data)
+    }, [])
     return (
         <>
             <header className="bg-white px-5">
@@ -24,9 +28,15 @@ export default function ComponentTestHeader({ data }: { data: IMiniTest }) {
                             {time.h}:{time.m}:{time.s}
                         </p>
                     </section>
-                    <section>{data.name === 'Listening' && <ComponentSubmit target="" />}</section>
+                    <section>
+                        {data.name.toLowerCase() === testSkill.LISTENING.toLowerCase() && (
+                            <ComponentSubmit target="" />
+                        )}
+                    </section>
                 </section>
-                {data.name === 'Listening' && <ListeningHeader data={data.src || ''} />}
+                {data.name.toLowerCase() === testSkill.LISTENING.toLowerCase() && (
+                    <ListeningHeader data={data.src || ''} />
+                )}
             </header>
         </>
     )
@@ -37,9 +47,9 @@ function ListeningHeader({ data }: { data: string }) {
         <>
             <section>
                 <audio
-                    className="static block w-full"
+                    className="static w-full"
                     src="../../../../../../../assets/media/test-media.m4a"
-                    controls
+                    // controls
                 ></audio>
             </section>
         </>

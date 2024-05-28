@@ -17,6 +17,7 @@ import { ComponentTestItem } from './_components/testItems/item'
 import { useRouter } from 'next/navigation'
 import { examActions } from '../../../_lib/redux/reducers/exam.reducer'
 import { userAnswerService } from '@/src/services/user-answer.service'
+import { userAnswerActions } from '../../../_lib/redux/reducers/user-exam.reducer'
 
 export default function Page() {
     const router = useRouter()
@@ -83,11 +84,9 @@ export default function Page() {
 
     async function handleClickStartProgressTest(e: MouseEvent<HTMLAnchorElement, any>) {
         e.preventDefault()
-        // if (!testFirstSkill) return e.preventDefault()
+        if (!testFirstSkill) return
         // create user answer
         // create user exam skill process
-        // connect socket
-        // load first exam skill
         console.log('User id: ', user)
         if (!user?.id) return router.push('/login')
         const userAnswer = await userAnswerService.create({
@@ -95,7 +94,9 @@ export default function Page() {
             userId: user.id,
             examSkills: testsSkill,
         })
-        // router.push(`exam-library/${test.code}/${testFirstSkill.name}/test`)
+        console.log('user answer: ', userAnswer)
+        dispatch(userAnswerActions.setter(userAnswer))
+        router.push(`/exam-library/${test.code}/${testFirstSkill.name}/test`)
     }
 
     function handleClickCheckSkill(skillName: string) {

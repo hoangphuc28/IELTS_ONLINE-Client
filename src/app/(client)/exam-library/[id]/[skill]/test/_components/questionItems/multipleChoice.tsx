@@ -16,13 +16,13 @@ export default function ComponentContainerMultiChoice({
 }) {
     return (
         <section className="flex flex-col gap-1">
-            <h3 dangerouslySetInnerHTML={{ __html: data.content }}></h3>
+            <h3 dangerouslySetInnerHTML={{ __html: data.question || '' }}></h3>
 
             <section className="flex flex-col gap-1">
                 {data.answers.map((answer, index) => (
                     <ComponentQuestionMultipleChoiceItem
                         examSkillDetailId={examSkillDetailId}
-                        questionId={data.id}
+                        questionId={data.id || ''}
                         data={answer}
                         key={'question-' + data.id + '-answer-' + index}
                     />

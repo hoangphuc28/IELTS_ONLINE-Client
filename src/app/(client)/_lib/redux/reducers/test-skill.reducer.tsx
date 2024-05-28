@@ -4,16 +4,19 @@ import * as Getter from '../actions/testSkill/get.action'
 import * as Updater from '../actions/testSkill/update.action'
 
 export interface ITestSkillProcess {
+    // ITestSkill
     id: string
     name: string
 }
 
 export interface ITestSkill {
     testsSkillProgress: Draft<ITestSkillProcess>[]
+    startIndexesEveryPart: Draft<number>[]
 }
 
 const initialState: ITestSkill = {
     testsSkillProgress: [],
+    startIndexesEveryPart: [],
 }
 
 const reducers = {
@@ -52,6 +55,9 @@ const reducers = {
         // const value = testSkill[name]
         const result = items.filter((item) => item.id != id)
         state.testsSkillProgress = result
+    },
+    setStartIndexEveryPart(state: ITestSkill, action: PayloadAction<number[]>) {
+        state.startIndexesEveryPart = action.payload
     },
 }
 

@@ -12,3 +12,5 @@ export const GetFirstSkill = (testsSkill: ITestSkill) => {
 }
 
 export const GetTestSkillsProcess = (testsSkill: ITestSkill) => testsSkill.testsSkillProgress
+
+export const GetIndexesEveryPart = (testsSkill: ITestSkill) => testsSkill.startIndexesEveryPart

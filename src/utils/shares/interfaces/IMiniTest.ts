@@ -9,9 +9,9 @@ export enum testSkill {
 
 export type testSkillType = keyof typeof testSkill
 
-export default interface IMiniTest {
-    id: string
-    time: string
+export default interface IMiniTest { //ISkillExamDetail[]
+    id: string // id exam detail
+    time: string // total time of parts
     src?: string
     name: testSkill
     parts: Array<IPart>

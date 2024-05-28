@@ -3,11 +3,10 @@ import IQuestion from "./IQuestion";
 
 export default interface IGroup {
     id: string
-    type: string
-    title: string
-    description: string
+    questionType: string
+    instruction: string
     createdAt?: string
     updatedAt?: string
-    questions: Array<IQuestion>
-    answers?: IAnswer[]
+    data: Array<IQuestion>
+    answers: IAnswer[]
 }

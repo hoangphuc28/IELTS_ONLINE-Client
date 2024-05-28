@@ -2,11 +2,14 @@ import IGroup from "./IGroup"
 
 export default interface IPart {
     id: string
-    examSkillDetailId: string
-    description: string
-    src: string
-    time: string
+    publicId: number
+    title: string
+    content: string
+    resource: string
+    partNumber: string
+    // examSkillDetailId: string
+    // description: string
     createdAt: string
     updatedAt: string
-    groups: Array<IGroup>
+    groupQuestions: IGroup[]
 }

@@ -2,7 +2,7 @@
 
 import IPart from '@/src/utils/shares/interfaces/IPart'
 import { useParams } from 'next/navigation'
-import ComponentListQuestion from './listQuestion'
+import { ComponentContainerListQuestion } from '../listQuestion/listQuestion'
 import ComponentLeftSide from './leftSide'
 import ComponentSubmit from '../submit'
 import { GroupShowDTO } from '@utils/shares/dto/group-show.dto'
@@ -10,21 +10,23 @@ import { GroupShowDTO } from '@utils/shares/dto/group-show.dto'
 export default function ComponentPart({
     data,
     index,
-    startQuestion,
-}: {
+}: // startQuestion,
+{
     data: IPart
     index: number
-    startQuestion: number
+    // startQuestion: number
 }) {
     const params = useParams<{ skill: string }>()
-    const name = (params.skill != 'Writing' ? 'Part' : 'Task') + ' ' + (index + 1)
+    // const name = (params.skill != 'Writing' ? 'Part' : 'Task') + ' ' + (index + 1)
+    const name = data.partNumber
 
-    const startQuestionIndex = [startQuestion]
+    console.log('[PART PARAM DATA] ', data)
 
-    for (let i = 1; i < data.groups.length; i++) {
-        const group = data.groups[i - 1]
-        startQuestionIndex.push(startQuestionIndex[i - 1] + group.questions.length)
-    }
+    // const startQuestionIndex = [startQuestion]
+    // for (let i = 1; i < data.groupQuestions.length; i++) {
+    //     const group = data.groupQuestions[i - 1]
+    //     startQuestionIndex.push(startQuestionIndex[i - 1] + group.data.length)
+    // }
 
     return (
         <>
@@ -42,13 +44,13 @@ export default function ComponentPart({
                     </section>
 
                     <section className="flex flex-col gap-3 w-full">
-                        {data.groups.map((group, index) => {
-                            const groupDto = new GroupShowDTO(group, data.examSkillDetailId)
+                        {data.groupQuestions.map((group, index) => {
+                            const groupDto = new GroupShowDTO(group, data.id)
                             return (
-                                <ComponentListQuestion
+                                <ComponentContainerListQuestion
                                     key={'exam-library-part-' + index + '-group-' + index}
                                     data={groupDto}
-                                    startIndex={startQuestionIndex[index]}
+                                    startIndex={0} //startQuestionIndex[index]
                                 />
                             )
                         })}
