@@ -1,5 +1,5 @@
 import { Draft, PayloadAction, createSlice } from '@reduxjs/toolkit'
-import * as Getter from '../actions/user-answer/get.action'
+import * as Getter from '../actions/user-answer/selector.action'
 
 const initialState: IUserAnswer = {
     id: '',

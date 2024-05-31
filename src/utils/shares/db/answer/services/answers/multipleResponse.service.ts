@@ -10,13 +10,17 @@ class MultipleResponse extends BaseService {
             // console.log(error)
             const err: DexieError = error as any
             if (err.name === Dexie.errnames.Constraint) {
-                this.updateAnswer(data)
+                try {
+                    return await this.updateAnswer(data)
+                } catch (error) {
+                    throw error
+                }
             }
         }
     }
 
     async updateAnswer(data: AnswerAddDTO) {
-        await this.getTable().update(data.key, (prevData: AnswerAddDTO) => {
+        return await this.getTable().update(data.key, (prevData: AnswerAddDTO) => {
             prevData.value = [...prevData.value, ...data.value]
             prevData.updatedAt = data.updatedAt
 
@@ -26,14 +30,14 @@ class MultipleResponse extends BaseService {
 
     async removeAnswersItem(data: AnswerAddDTO) {
         try {
-            await this.getTable().update(data.key, (prevData: AnswerAddDTO) => {
+            return await this.getTable().update(data.key, (prevData: AnswerAddDTO) => {
                 prevData.value = prevData.value.filter((answer: string) => answer !== data.value[0])
                 return true
             })
         } catch (error) {
             console.log(error)
+            throw error
         }
-        return
     }
 
 }

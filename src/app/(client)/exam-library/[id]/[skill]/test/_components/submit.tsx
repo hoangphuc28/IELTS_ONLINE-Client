@@ -9,7 +9,7 @@ export default function ComponentSubmit({ target }: { target: string }) {
                 ref={btnRef}
                 className="bg-cyan-700 px-4 py-1 text-gray-200 font-bold text-base rounded-2xl"
             >
-                Nộp bài <i className="fa-regular fa-paper-plane"></i>
+                Submit <i className="fa-regular fa-paper-plane"></i>
             </button>
         </>
     )

@@ -99,7 +99,7 @@ export function handleShowAccordingData(id?: string): void {
         return
     }
 
-    const part = document.querySelector(`[data-part-id=${id}]`) as (HTMLElement | null)
+    const part = document.querySelector(`[data-part-id="${id}"]`) as (HTMLElement | null)
     if (!part) {
         console.log("Part not found")
         return

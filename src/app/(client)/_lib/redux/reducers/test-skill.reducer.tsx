@@ -1,6 +1,6 @@
 import { testSkill, testSkillType } from '@/src/utils/shares/interfaces/IMiniTest'
 import { Draft, PayloadAction, createSlice } from '@reduxjs/toolkit'
-import * as Getter from '../actions/testSkill/get.action'
+import * as Getter from '../actions/testSkill/selector.action'
 import * as Updater from '../actions/testSkill/update.action'
 
 export interface ITestSkillProcess {

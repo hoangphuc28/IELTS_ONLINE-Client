@@ -12,7 +12,7 @@ export const CONSTANT = {
     },
 }
 
-export function createToastDanger(message: string) {
+export function createToastDanger(message: string = 'Error!') {
     const containerAlert = document.getElementById('alert')
     const container = document.createElement('div') as Container
     const root = createRoot(container)

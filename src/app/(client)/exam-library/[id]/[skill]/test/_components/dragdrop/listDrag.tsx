@@ -1,3 +1,5 @@
+'use client'
+
 import ComponentDragItem from './dragItem'
 import IAnswer from '@/src/utils/shares/interfaces/IAnswer'
 import { allowDrop, drop } from '@clientExamLibrary/[id]/[skill]/utils/dragAndDrop'
@@ -10,9 +12,8 @@ export default function ComponentListDrag({ groupId, data }: { groupId: string; 
                     <div
                         key={'drag-item-temp-' + answerIndex}
                         className="text-transparent select-none"
-                    >
-                        TEMP
-                    </div>
+                        dangerouslySetInnerHTML={{ __html: data.content }}
+                    ></div>
                 ))}
             </div>
 

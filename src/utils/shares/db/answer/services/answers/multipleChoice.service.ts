@@ -10,18 +10,22 @@ class MultipleChoice extends BaseService {
             // console.log(error)
             const err: DexieError = error as any
             if (err.name === Dexie.errnames.Constraint) {
-                this.updateAnswer(data)
+                try {
+                    return await this.updateAnswer(data)
+                } catch (error) {
+                    throw error
+                }
             }
         }
     }
 
     async updateAnswer(data: AnswerAddDTO) {
-        await this.getTable().update(data.key, (prevData: AnswerAddDTO) => {
+        return (await this.getTable().update(data.key, (prevData: AnswerAddDTO) => {
             prevData.value = [...data.value,]
             prevData.updatedAt = data.updatedAt
 
-            return false
-        })
+            return true
+        }))
     }
 }
 

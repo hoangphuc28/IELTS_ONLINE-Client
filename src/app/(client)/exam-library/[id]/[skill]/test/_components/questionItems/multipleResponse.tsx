@@ -1,5 +1,6 @@
 'use client'
 
+import { IAnswerProps } from '@/src/utils/shares/db/answer/dtos/IAnswerProps.dto'
 import { AnswerAddDTO } from '@/src/utils/shares/db/answer/dtos/answer-add.dto'
 import { multipleResponse } from '@/src/utils/shares/db/answer/services/answers/multipleResponse.service'
 import IAnswer from '@/src/utils/shares/interfaces/IAnswer'
@@ -9,19 +10,20 @@ import { MouseEvent } from 'react'
 export default function ComponentContainerMultipleResponse({
     examSkillDetailId,
     data,
-}: {
-    examSkillDetailId: string
-    data: IQuestion
-}) {
+    groupId,
+}: IAnswerProps) {
     return (
         <section className="flex flex-col gap-1">
-            <h3 dangerouslySetInnerHTML={{ __html: data.content }}></h3>
+            <h3 dangerouslySetInnerHTML={{ __html: data.question || '' }}></h3>
 
             <section className="flex flex-col gap-1">
                 {data.answers.map((answer, index) => (
                     <ComponentMultipleResponseItem
                         examSkillDetailId={examSkillDetailId}
-                        questionId={data.id}
+                        questionId={
+                            data.id || (new Date().getTime() + 100 * Math.random()).toString()
+                        }
+                        groupId={groupId}
                         data={answer}
                         key={'question-' + data.id + '-answer-' + index}
                     />
@@ -35,10 +37,12 @@ function ComponentMultipleResponseItem({
     examSkillDetailId,
     questionId,
     data,
+    groupId,
 }: {
     examSkillDetailId: string
     questionId: string
     data: IAnswer
+    groupId: string
 }) {
     return (
         <section className="flex items-center gap-2">
@@ -72,6 +76,7 @@ function ComponentMultipleResponseItem({
         const answer = new AnswerAddDTO({
             id: questionId,
             value: [answerContent],
+            groupQuestionId: groupId,
             examSkillDetailId: examSkillDetailId,
         })
 

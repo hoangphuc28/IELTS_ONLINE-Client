@@ -6,8 +6,6 @@ import ComponentCardInfo from '@clientExamLibrary/[id]/_components/cardInfo'
 import test from '@clientExamLibrary/[id]/data'
 import { MouseEvent, useEffect, useState } from 'react'
 import Link from 'next/link'
-import { testSkill, testSkillType } from '@/src/utils/shares/interfaces/IMiniTest'
-import { TestItemManager } from '@/src/utils/shares/localStorage'
 import { useAppShareDispatch, useAppShareSelector } from '@client/_lib/redux/hooks'
 import {
     testSkillActions,
@@ -15,9 +13,9 @@ import {
 } from '@client/_lib/redux/reducers/test-skill.reducer'
 import { ComponentTestItem } from './_components/testItems/item'
 import { useRouter } from 'next/navigation'
-import { examActions } from '../../../_lib/redux/reducers/exam.reducer'
+import { examActions, examSelectors } from '../../../_lib/redux/reducers/exam.reducer'
 import { userAnswerService } from '@/src/services/user-answer.service'
-import { userAnswerActions } from '../../../_lib/redux/reducers/user-exam.reducer'
+import { IUserAnswer, userAnswerActions } from '../../../_lib/redux/reducers/user-exam.reducer'
 
 export default function Page() {
     const router = useRouter()
@@ -29,6 +27,7 @@ export default function Page() {
     const testFirstSkill = useAppShareSelector((state) =>
         testSkillSelectors.GetFirstSkill({ testSkill: state.testsSkill }),
     )
+    const exam = useAppShareSelector((state) => examSelectors.Get(state))
     // const testsManager = new TestItemManager()
     // const [firstSkill, setFirstSkill] = useState<string | null>(null)
     const colors = ['#31aabe', '#317343', '#eea055', '#c06073']
@@ -44,7 +43,7 @@ export default function Page() {
             <main className="min-h-[50vh] mb-5 sm:mt-5 sm:py-5">
                 <LayoutCenter>
                     <section>
-                        <ComponentCardInfo data={test} />
+                        <ComponentCardInfo data={exam} />
                     </section>
                     <section className="mt-3 pb-3 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center">
                         <div className="grid grid-cols-1 my-5 gap-2">
@@ -89,7 +88,7 @@ export default function Page() {
         // create user exam skill process
         console.log('User id: ', user)
         if (!user?.id) return router.push('/login')
-        const userAnswer = await userAnswerService.create({
+        const userAnswer: IUserAnswer = await userAnswerService.create({
             timeStart: new Date(),
             userId: user.id,
             examSkills: testsSkill,

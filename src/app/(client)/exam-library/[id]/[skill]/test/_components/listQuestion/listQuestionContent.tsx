@@ -4,9 +4,7 @@ import IAnswer from '@/src/utils/shares/interfaces/IAnswer'
 import IGroup from '@/src/utils/shares/interfaces/IGroup'
 import ComponentDropItem, { ComponentStringDropItem, handleDrop } from '../dragdrop/dropItem'
 import ComponentListDrag from '../dragdrop/listDrag'
-import ComponentFloatingInputLabel, {
-    componentStringFloatingInputLabel,
-} from '../floatingInputLabel'
+import { ComponentStringFloatingInputLabel } from '../floatingInputLabel'
 import { useParams } from 'next/navigation'
 import { useEffect, useRef } from 'react'
 import ComponentDropdownItem from '../dropdown/dropdownItem'
@@ -73,6 +71,7 @@ function ComponentListMultipleChoice({ data }: { data: GroupShowDTO }) {
                         <ComponentContainerMultiChoice
                             examSkillDetailId={data.examSkillDetailId}
                             data={question}
+                            groupId={data.id}
                             key={key}
                         />
                     )
@@ -92,6 +91,7 @@ function ComponentListQuestionMultipleResponse({ data }: { data: GroupShowDTO })
                         <ComponentContainerMultipleResponse
                             examSkillDetailId={data.examSkillDetailId}
                             data={question}
+                            groupId={data.id}
                             key={key}
                         />
                     )
@@ -100,43 +100,7 @@ function ComponentListQuestionMultipleResponse({ data }: { data: GroupShowDTO })
         </>
     )
 }
-function ComponentQuestionDragDrop({ data }: { data: GroupShowDTO }) {
-    const answers: IAnswer[] = []
-    data.data.forEach((question) => {
-        // every question have one answer
-        question.answers.forEach((answer) => {
-            const ans = answers.find((an) => answer.content === an.content)
-            if (!ans) {
-                answers.push({ ...answer })
-            }
-        })
-    })
-    return (
-        <>
-            <section className="flex flex-col gap-2">
-                <h3 dangerouslySetInnerHTML={{ __html: data.instruction }}></h3>
 
-                <div className="flex gap-2">
-                    <ComponentListDrag groupId={data.id} data={answers} />
-                    <div className="flex flex-col gap-2">
-                        {data.data.map((questionData, index) => {
-                            const key = 'exam-library-part-list-question-choice-' + index
-                            if (!questionData.question || questionData.question.trim().length === 0)
-                                return <section key={key}></section>
-                            return (
-                                <ComponentDropItem
-                                    groupId={data.id}
-                                    data={questionData}
-                                    key={key}
-                                />
-                            )
-                        })}
-                    </div>
-                </div>
-            </section>
-        </>
-    )
-}
 function ComponentQuestionShortAnswer({
     data,
     startQuestionIndex,
@@ -147,11 +111,17 @@ function ComponentQuestionShortAnswer({
     const refDataHTML = useRef<HTMLDivElement>(null)
     let dataHTML = data.data[0].question
     let index = 0
-    while (index < data.data[0].answers.length - 1) {
+    while (dataHTML!.indexOf('<ShortAnswer />') != -1) {
         index++
         dataHTML = dataHTML!.replace(
             '<ShortAnswer />',
-            componentStringFloatingInputLabel({ id: 'group-' + data.id + '-question-' + index }),
+            ComponentStringFloatingInputLabel({
+                examSkillDetailId: data.examSkillDetailId,
+                groupId: data.id,
+                answerId:
+                    data.data[0].answers[index - 1].id ||
+                    (new Date().getTime() + 100 * Math.random()).toString(),
+            }),
         )
     }
     return (
@@ -183,6 +153,8 @@ function ComponentQuestionDropDown({ data }: { data: GroupShowDTO }) {
                     <ComponentDropdownItem
                         key={'question-' + question.id + '-index-' + index}
                         data={question}
+                        examSkillDetailId={data.examSkillDetailId}
+                        groupId={data.id}
                         answers={data.answers || []}
                     />
                 ))}
@@ -191,10 +163,49 @@ function ComponentQuestionDropDown({ data }: { data: GroupShowDTO }) {
     )
 }
 
+function ComponentQuestionDragDrop({ data }: { data: GroupShowDTO }) {
+    const answers: IAnswer[] = []
+    data.data.forEach((question) => {
+        // every question have one answer
+        question.answers.forEach((answer) => {
+            const ans = answers.find((an) => answer.content === an.content)
+            if (!ans) {
+                answers.push({ ...answer })
+            }
+        })
+    })
+    return (
+        <>
+            <section className="flex flex-col gap-2">
+                <h3 dangerouslySetInnerHTML={{ __html: data.instruction }}></h3>
+
+                <div className="flex gap-2">
+                    <ComponentListDrag groupId={data.id} data={answers} />
+                    <div className="flex flex-col gap-2">
+                        {data.data.map((questionData, index) => {
+                            const key = 'exam-library-part-list-question-choice-' + index
+                            if (!questionData.question || questionData.question.trim().length === 0)
+                                return <section key={key}></section>
+                            return (
+                                <ComponentDropItem
+                                    examSkillDetailId={data.examSkillDetailId}
+                                    groupId={data.id}
+                                    data={questionData}
+                                    key={key}
+                                />
+                            )
+                        })}
+                    </div>
+                </div>
+            </section>
+        </>
+    )
+}
+
 function ComponentQuestionDragDropHeading({ data }: { data: GroupShowDTO }) {
     useEffect(() => {
         for (let index = 0; index < data.data.length; index++) {
-            const questionId = data.data[index]
+            const questionId = data.data[index].id
 
             const input = document.querySelector(
                 `input[name="${questionId}"]`,
@@ -203,8 +214,8 @@ function ComponentQuestionDragDropHeading({ data }: { data: GroupShowDTO }) {
             const parentInput = input.parentElement as HTMLInputElement | null
             if (!parentInput) continue
 
-            parentInput.ondrop = (e) => {
-                handleDrop(e as any)
+            parentInput.ondrop = async (e) => {
+                await handleDrop(e as any)
             }
             parentInput.ondragover = (e) => {
                 allowDrop(e as any)
@@ -233,6 +244,7 @@ function ComponentQuestionDragDropShortAnswer({ data }: { data: GroupShowDTO }) 
             '<DragAndDropShortAnswer />',
             ComponentStringDropItem({
                 groupId: data.id,
+                examSkillDetailId: data.examSkillDetailId,
                 data: {
                     id: 'group-' + data.id + '-question-' + index,
                     question: '',

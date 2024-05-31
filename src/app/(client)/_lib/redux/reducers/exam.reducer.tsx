@@ -1,6 +1,6 @@
 import ITest from '@/src/utils/shares/interfaces/ITest'
 import { Draft, PayloadAction, createSlice } from '@reduxjs/toolkit'
-import * as Getter from '../actions/exam/get.action'
+import * as Getter from '../actions/exam/selector.action'
 import IMiniTest from '@/src/utils/shares/interfaces/IMiniTest'
 
 const initialState: IExamState = {

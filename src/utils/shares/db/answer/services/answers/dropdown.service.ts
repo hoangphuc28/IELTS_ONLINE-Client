@@ -2,7 +2,7 @@ import { Dexie, DexieError } from 'dexie'
 import { BaseService } from "@utils/shares/db/answer/services/exam.service"
 import { AnswerAddDTO } from '@utils/shares/db/answer/dtos/answer-add.dto'
 
-class Match extends BaseService {
+class DropDown extends BaseService {
     async addAnswer(data: AnswerAddDTO): Promise<any> {
         try {
             const id = await this.getTable().add(data)
@@ -20,13 +20,13 @@ class Match extends BaseService {
     }
 
     async updateAnswer(data: AnswerAddDTO) {
-        return await this.getTable().update(data.key, (prevData: AnswerAddDTO) => {
+        return (await this.getTable().update(data.key, (prevData: AnswerAddDTO) => {
             prevData.value = [...data.value,]
             prevData.updatedAt = data.updatedAt
 
-            return false
-        })
+            return true
+        }))
     }
 }
 
-export const match = new Match()
+export const dropDown = new DropDown()

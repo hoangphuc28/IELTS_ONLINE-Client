@@ -12,9 +12,10 @@ export function ComponentContainerListQuestion({
     data: GroupShowDTO
     startIndex: number
 }) {
-    const startQuestionIndex = startIndex
-    const endQuestionIndex = startIndex + data.data.length - 1
-    const params = useParams<{ skill: string }>()
+    // const startQuestionIndex = startIndex
+    // const endQuestionIndex = startIndex + data.data.length - 1
+    // const params = useParams<{ skill: string }>()
+
     return (
         <>
             <section className="flex flex-col gap-3">

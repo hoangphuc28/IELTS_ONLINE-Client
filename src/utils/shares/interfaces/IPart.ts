@@ -1,7 +1,7 @@
 import IGroup from "./IGroup"
 
 export default interface IPart {
-    id: string
+    id: string // id exam skill detail
     publicId: number
     title: string
     content: string

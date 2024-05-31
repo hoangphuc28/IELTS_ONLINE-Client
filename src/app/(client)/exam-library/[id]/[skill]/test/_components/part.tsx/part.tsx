@@ -20,7 +20,7 @@ export default function ComponentPart({
     // const name = (params.skill != 'Writing' ? 'Part' : 'Task') + ' ' + (index + 1)
     const name = data.partNumber
 
-    console.log('[PART PARAM DATA] ', data)
+    // console.log('[PART PARAM DATA] ', data)
 
     // const startQuestionIndex = [startQuestion]
     // for (let i = 1; i < data.groupQuestions.length; i++) {
@@ -30,15 +30,12 @@ export default function ComponentPart({
 
     return (
         <>
-            <section className="flex gap-2 h-full">
+            <section
+                className={'gap-2 h-full ' + (index === 0 ? 'flex' : 'hidden')}
+                data-according-content={data.id}
+            >
                 <ComponentLeftSide name={name} skill={params.skill} data={data} />
-                <section
-                    className={
-                        'w-full min-h-[60vh] h-full flex-col gap-2 ' +
-                        (index === 0 ? 'flex' : 'hidden')
-                    }
-                    data-according-content={data.id}
-                >
+                <section className={'w-full min-h-[60vh] h-full flex-col gap-2 flex'}>
                     <section>
                         <h2 className="font-bold text-lg">{name}</h2>
                     </section>

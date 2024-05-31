@@ -18,9 +18,15 @@ export default function ComponentTabItem({
     const params = useParams<{ id: string; skill: string }>()
     if (params.skill === 'Writing') itemName = 'Task'
     const questions = data.groupQuestions.reduce((acc: IQuestion[], group) => {
-        acc.push(...group.data)
+        group.data.forEach((question, index) => {
+            if (!!question.question && question.question.length > 0) {
+                acc.push(question)
+            }
+        })
+        // acc.push(...group.data)
         return acc
     }, [])
+    // console.log('[FOOTER] ', data.partNumber, ' ', data, questions)
     return (
         <>
             <section

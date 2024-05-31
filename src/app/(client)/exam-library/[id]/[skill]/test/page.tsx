@@ -14,13 +14,14 @@ import { userAnswerSelectors } from '@/src/app/(client)/_lib/redux/reducers/user
 import IMiniTest, { testSkill } from '@/src/utils/shares/interfaces/IMiniTest'
 import skillExamService from '@/src/services/skill-exam.service'
 import { testSkillActions } from '@/src/app/(client)/_lib/redux/reducers/test-skill.reducer'
+import { IExamSkill, IExamSkillDetail } from '@/src/utils/shares/dto/exam-skill.dto'
 
 export default function Page() {
     const params = useParams<{ id: string; skill: string }>()
     const router = useRouter()
     const dispatch = useAppShareDispatch()
     const currentSkillProcess = useAppShareSelector((state) =>
-        userAnswerSelectors.GetCurrentSkill({ userAnswer: state.userAnswer }, params.skill),
+        userAnswerSelectors.GetCurrentSkill(state, params.skill),
     )
     // const targetSkillTest = test.details.find((detailSkill) => detailSkill.name === params.skill)
     const [targetSkillTest, setTargetSkillTest] = useState<IMiniTest | null>(null)
@@ -34,20 +35,17 @@ export default function Page() {
     useEffect(() => {
         // localStorage.setItem('startIndexEveryPart', JSON.stringify(startIndexEveryPart))
 
-        init()
+        getCurrentSkillExam()
             .then(() => {})
             .catch((e) => console.log(e))
 
-        async function init() {
+        async function getCurrentSkillExam() {
             // console.log('[CUR SKILL PROCESS] ', currentSkillProcess)
             if (!currentSkillProcess) return
             const targetSkill: IExamSkill = await skillExamService.get(
                 currentSkillProcess.skillExam.id,
             )
             console.log('[GET EXAM] ', targetSkill)
-            // console.log('[TARGET SKILL TEST] ', targetSkillTest)
-            // const targetSkillParts = targetSkill.details
-            // console.log('[SELECTED] ', targetSkill)
             // if (!targetSkill) {
             //     // router.push('/404')
             //     return
@@ -61,10 +59,6 @@ export default function Page() {
             dispatch(testSkillActions.setStartIndexEveryPart(startIndexesEveryPart))
         }
     }, [])
-
-    // useEffect(() => {
-    //     console.log('[TARGET SKILL TEST] ', targetSkillTest)
-    // }, [targetSkillTest])
     return (
         <>
             {targetSkillTest && (
@@ -93,23 +87,31 @@ export default function Page() {
         </>
     )
 
-    function convertDataSkillExamDetail(data: IExamSkill) {
+    function convertDataSkillExamDetail(data: IExamSkill): IMiniTest {
         return {
             id: data.id,
             name: data.name,
-            parts: data.details.map((item) => item.part),
-            time: data.details
+            parts: convertExamSkillDetailToPartClient(data.details),
+            time: calcTotalTime(data.details),
+            src: '',
+        }
+
+        function convertExamSkillDetailToPartClient(details: IExamSkillDetail[]): IPart[] {
+            return details.map((item: IExamSkillDetail) => ({ ...item.part, id: item.id }))
+        }
+
+        function calcTotalTime(details: IExamSkillDetail[]): string {
+            return data.details
                 .reduce((totalTime, detail) => {
                     return totalTime + new Date(detail.time).getTime()
                 }, 0)
-                .toString(),
-            src: '',
+                .toString()
         }
     }
 
     function calcStartIndexEveryPart(result: number[], parts: IPart[]) {
         let totalQuestions = 1
-        console.log('[DATA PART] ', parts)
+        // console.log('[DATA PART] ', parts)
         parts.forEach((part: IPart, index: number, baseData: IPart[]) => {
             if (index > 0) {
                 totalQuestions += baseData[index - 1].groupQuestions.reduce(
@@ -127,14 +129,4 @@ export default function Page() {
             result.push(totalQuestions)
         })
     }
-}
-
-export interface IExamSkill {
-    id: string
-    name: testSkill
-    details: {
-        id: string
-        time: string
-        part: IPart
-    }[]
 }

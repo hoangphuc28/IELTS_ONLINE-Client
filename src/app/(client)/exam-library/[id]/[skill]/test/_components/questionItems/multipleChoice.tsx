@@ -6,14 +6,13 @@ import IQuestion from '@/src/utils/shares/interfaces/IQuestion'
 
 import { AnswerAddDTO } from '@utils/shares/db/answer/dtos/answer-add.dto'
 import { multipleChoice } from '@/src/utils/shares/db/answer/services/answers/multipleChoice.service'
+import { IAnswerProps } from '@/src/utils/shares/db/answer/dtos/IAnswerProps.dto'
 
 export default function ComponentContainerMultiChoice({
     examSkillDetailId,
     data,
-}: {
-    examSkillDetailId: string
-    data: IQuestion
-}) {
+    groupId,
+}: IAnswerProps) {
     return (
         <section className="flex flex-col gap-1">
             <h3 dangerouslySetInnerHTML={{ __html: data.question || '' }}></h3>
@@ -23,6 +22,7 @@ export default function ComponentContainerMultiChoice({
                     <ComponentQuestionMultipleChoiceItem
                         examSkillDetailId={examSkillDetailId}
                         questionId={data.id || ''}
+                        groupId={groupId}
                         data={answer}
                         key={'question-' + data.id + '-answer-' + index}
                     />
@@ -35,9 +35,11 @@ export default function ComponentContainerMultiChoice({
 function ComponentQuestionMultipleChoiceItem({
     examSkillDetailId,
     questionId,
+    groupId,
     data,
 }: {
     examSkillDetailId: string
+    groupId: string
     questionId: string
     data: IAnswer
 }) {
@@ -48,7 +50,7 @@ function ComponentQuestionMultipleChoiceItem({
                 id={data.id}
                 type="radio"
                 name={questionId}
-                value={data.content}
+                value={data.id}
             />
             <label htmlFor={data.id} dangerouslySetInnerHTML={{ __html: data.content }}></label>
         </section>
@@ -70,6 +72,7 @@ function ComponentQuestionMultipleChoiceItem({
         const answer = new AnswerAddDTO({
             id: questionId,
             value: [answerContent],
+            groupQuestionId: groupId,
             examSkillDetailId: examSkillDetailId,
         })
         await multipleChoice.addAnswer(answer)
