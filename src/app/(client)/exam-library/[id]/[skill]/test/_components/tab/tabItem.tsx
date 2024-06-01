@@ -46,17 +46,18 @@ export default function ComponentTabItem({
                     data-according-body={data.id}
                 >
                     <span className="text-3xl mb-[8px]">[</span>
-                    {questions.map((question, index) => (
-                        <button
-                            onClick={(e) => handleToQuestion(e)}
-                            data-part-id={data.id}
-                            data-question-id-target={question.id}
-                            className="border w-8 h-8 rounded-full bg-gray-200 hover:opacity-[0.7] hover:shadow-lg"
-                            key={'test-footer-list-tab-item-' + index}
-                        >
-                            {index + questionIndex}
-                        </button>
-                    ))}
+                    {questions.length > 1 &&
+                        questions.map((question, index) => (
+                            <button
+                                onClick={(e) => handleToQuestion(e)}
+                                data-part-id={data.id}
+                                data-question-id-target={question.id}
+                                className="border w-8 h-8 rounded-full bg-gray-200 hover:opacity-[0.7] hover:shadow-lg"
+                                key={'test-footer-list-tab-item-' + index}
+                            >
+                                {index + questionIndex}
+                            </button>
+                        ))}
                     <span className="text-3xl mb-[8px]">]</span>
                 </div>
             </section>

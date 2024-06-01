@@ -9,6 +9,7 @@ class Match extends BaseService {
         } catch (error) {
             // console.log(error)
             const err: DexieError = error as any
+            console.log(err.name, Dexie.errnames.Constraint, err.name === Dexie.errnames.Constraint)
             if (err.name === Dexie.errnames.Constraint) {
                 try {
                     return await this.updateAnswer(data)
@@ -24,8 +25,12 @@ class Match extends BaseService {
             prevData.value = [...data.value,]
             prevData.updatedAt = data.updatedAt
 
-            return false
+            return true
         })
+    }
+
+    async removeAnswer(id: string) {
+        return await this.getTable().delete(id)
     }
 }
 

@@ -1,9 +1,11 @@
+import { AnswerAddDTO } from '@/src/utils/shares/db/answer/dtos/answer-add.dto'
+import { match } from '@/src/utils/shares/db/answer/services/answers/match.service'
 import { DragEvent } from 'react'
 
 export function allowDrop(ev: DragEvent<HTMLElement>) {
     ev.preventDefault()
 }
-export function drop(ev: DragEvent<HTMLElement>) {
+export async function drop(ev: DragEvent<HTMLElement>) {
     ev.preventDefault()
     ev.stopPropagation()
 
@@ -38,13 +40,13 @@ export function drop(ev: DragEvent<HTMLElement>) {
     const maxChild_Of_DragContainer = getMaxChild(dragContainer)
     // console.log(dropItem, dropContainer, maxChild_Of_DragContainer)
     if (Number.isFinite(maxChild_Of_DragContainer)) {
-        clearInputValue(dragContainer)
+        await clearInputValue(dragContainer)
     }
     // #endregion clear input value before finish drop
 
     const input = dropContainer.querySelector('input')
     const maxChild = getMaxChild(dropContainer)
-    console.log(Array.from(dropContainer.children).length >= maxChild, maxChild)
+    // console.log(Array.from(dropContainer.children).length >= maxChild, maxChild)
     if (Array.from(dropContainer.children).length >= maxChild) {
         if (!input) return
         // restore last child
@@ -53,14 +55,15 @@ export function drop(ev: DragEvent<HTMLElement>) {
             // if dragContainer is another drop container => change input in drop container
             if (dragContainer) {
                 const inputInDragItem = dragContainer.querySelector('input') as HTMLInputElement | null
-                handleChangeInputValue(inputInDragItem, swapItem.innerText)
+                await handleChangeInputValue(inputInDragItem, swapItem.innerText)
             }
         }
     }
     // if drop container exist input element, change value that input
-    handleChangeInputValue(input, dragItemDOM.innerText)
+    await handleChangeInputValue(input, dragItemDOM.innerText)
     dropContainer.appendChild(dragItemDOM)
     // #endregion handle drop
+    return input
 }
 
 function getMaxChild(source: HTMLElement | null): number {
@@ -70,10 +73,15 @@ function getMaxChild(source: HTMLElement | null): number {
     return Number.parseInt(dropMaxChild)
 }
 
-function handleChangeInputValue(input: HTMLInputElement | null, value: string) {
+async function handleChangeInputValue(input: HTMLInputElement | null, value: string) {
     if (!input) return
-
     input.value = value
+    const questionId = input.name
+    const examSkillDetailId = input.dataset.examSkillDetailId
+    const groupId = input.dataset.groupId
+    if (!questionId || !examSkillDetailId || !groupId) return
+    const data = new AnswerAddDTO({ examSkillDetailId, groupQuestionId: groupId, id: questionId, value: [value] })
+    await match.addAnswer(data)
 }
 
 function handleSwapChild(sourceDOM?: HTMLElement | null, targetDOM?: HTMLElement | null): Element | null {
@@ -86,10 +94,15 @@ function handleSwapChild(sourceDOM?: HTMLElement | null, targetDOM?: HTMLElement
     return lastChild
 }
 
-function clearInputValue(container: HTMLElement | null) {
+async function clearInputValue(container: HTMLElement | null) {
     if (!container) return
     const input = container.querySelector('input')
     if (!input) return
+    const questionId = input.name
+    const examSkillDetailId = input.dataset.examSkillDetailId
+    const groupId = input.dataset.groupId
+    if (!questionId || !examSkillDetailId || !groupId) return
+    await match.removeAnswer(new AnswerAddDTO({ examSkillDetailId, groupQuestionId: groupId, id: questionId, value: [''] }).generateKey())
     input.value = ''
 }
 

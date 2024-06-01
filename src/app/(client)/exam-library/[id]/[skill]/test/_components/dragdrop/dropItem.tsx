@@ -28,7 +28,7 @@ export default function ComponentDropItem({
                         className="hidden"
                         type="text"
                         name={data.id}
-                        data-exam-detail-id={examSkillDetailId}
+                        data-exam-skill-detail-id={examSkillDetailId}
                         data-group-id={groupId}
                     />
                 </div>
@@ -75,23 +75,24 @@ export const ComponentStringDropItem = ({
 }
 
 export async function handleDrop(e: DragEvent<HTMLElement>) {
-    drop(e)
+    const inp = await drop(e)
+    console.log(inp)
 
-    const container = e.currentTarget as HTMLElement | null
-    if (!container) return
-    const input = container.querySelector('input') as HTMLInputElement | null
-    if (!input) return
+    // const container = e.currentTarget as HTMLElement | null
+    // if (!container) return
+    // const input = container.querySelector('input') as HTMLInputElement | null
+    // if (!input) return
 
-    const questionId = input.name
-    const answerId = input.value
-    const examSkillDetailId = input.dataset.examSkillDetailId
-    const groupId = input.dataset.groupId
-    if (!questionId || !answerId || !examSkillDetailId || !groupId) return
-    const answer = new AnswerAddDTO({
-        id: questionId,
-        value: [answerId],
-        groupQuestionId: groupId,
-        examSkillDetailId: examSkillDetailId,
-    })
-    await match.addAnswer(answer)
+    // const questionId = input.name
+    // const value = input.value
+    // const examSkillDetailId = input.dataset.examSkillDetailId
+    // const groupId = input.dataset.groupId
+    // if (!questionId || !value || !examSkillDetailId || !groupId) return
+    // const answer = new AnswerAddDTO({
+    //     id: questionId,
+    //     value: [value],
+    //     groupQuestionId: groupId,
+    //     examSkillDetailId: examSkillDetailId,
+    // })
+    // await match.addAnswer(answer)
 }

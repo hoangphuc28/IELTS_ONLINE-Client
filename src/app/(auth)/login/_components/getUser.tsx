@@ -18,12 +18,13 @@ export function ComponentGetUser() {
             return
         }
 
+        if (user.id.length !== 0) return
         authService
             .verify(accessToken!)
             .then((user) => dispatch(setUser(user)))
             .catch((error) => {
                 console.log(error)
             })
-    }, [user])
+    })
     return <></>
 }
