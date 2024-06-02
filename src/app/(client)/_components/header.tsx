@@ -48,8 +48,10 @@ export default function Header() {
                                 </Link>
                             </section>
                             <nav className="h-full flex md:hidden items-center">
-                                <ContainerSignInSignUp />
-                                <ContainerAccount user={user} />
+                                {(() => {
+                                    if (user.id.length === 0) return <ContainerSignInSignUp />
+                                    return <ContainerAccount user={user} />
+                                })()}
                             </nav>
                         </section>
                     </LayoutCenter>
@@ -59,14 +61,14 @@ export default function Header() {
                     <LayoutCenter className="h-full">
                         <nav className="h-full flex justify-between items-center gap-x-5">
                             <ContainerRenderLogo />
-                            <ComponentRenderLibrary />
+                            {/* <ComponentRenderLibrary /> */}
 
                             <section className="grow">
                                 <ComponentSearch className="w-full bg-white" />
                             </section>
                             <section className="flex items-center gap-x-2">
                                 {(() => {
-                                    if (!user) return <ContainerSignInSignUp />
+                                    if (user.id.length === 0) return <ContainerSignInSignUp />
                                     return <ContainerAccount user={user} />
                                 })()}
                             </section>
@@ -77,52 +79,6 @@ export default function Header() {
         </>
     )
 }
-
-// function ExamLibrary() {
-//     return (
-//         <>
-//             <div className="flex flex-col gy-5">
-//                 <div>
-//                     <Link
-//                         href="/exam-library?skill=listening"
-//                         className="text-white  hover:opacity-[0.8]"
-//                     >
-//                         IELTS Listening Tests
-//                     </Link>
-//                 </div>
-//                 <div>
-//                     <Link
-//                         href="/exam-library?skill=reading"
-//                         className="text-white  hover:opacity-[0.8]"
-//                     >
-//                         IELTS Reading Tests
-//                     </Link>
-//                 </div>
-//                 <div>
-//                     <Link
-//                         href="/exam-library?skill=writing"
-//                         className="text-white  hover:opacity-[0.8]"
-//                     >
-//                         IELTS Writing Tests
-//                     </Link>
-//                 </div>
-//                 <div>
-//                     <Link
-//                         href="/exam-library?skill=speaking"
-//                         className="text-white  hover:opacity-[0.8]"
-//                     >
-//                         IELTS Speaking Tests
-//                     </Link>
-//                 </div>
-//                 <div>
-//                     <Link href="/exam-library" className="text-white  hover:opacity-[0.8]">
-//                         IELTS Test Collection
-//                     </Link>
-//                 </div>
-//             </div>
-//         </>
-//     )
-// }
 
 function ContainerRenderLogo() {
     return (
@@ -221,31 +177,76 @@ function ContainerAccount({ user }: { user: IUserState }) {
             dispatch(setUser({ id: '', name: '', role: '', mail: '' }))
         } catch (error) {
             console.log(error)
-            createToastDanger('Đăng xuất thất bại!')
+            createToastDanger('Failure!')
         }
     }
 }
 
-function ComponentRenderLibrary() {
-    return (
-        <>
-            {/* <div className="relative">
-                <Link
-                    href="/exam-library"
-                    className="text-white"
-                    local-btn-dropdown-toggle=""
-                >
-                    <span className="me-1">Thư viện đề thi IELTS</span>
-                    <i className="fa-solid fa-angle-down"></i>
-                    <div
-                        className="hidden absolute z-[9999] top-[140%] left-0 w-[130%] rounded-b ps-3 pe-4 py-3 shadow-xl shadow-[#ffffff10] bg-[#294563dd]"
-                        local-data-dropdown-toggle=""
-                        style={{ backgroundColor: '#294563e6' }}
-                    >
-                        <ExamLibrary />
-                    </div>
-                </Link>
-            </div> */}
-        </>
-    )
-}
+// function ExamLibrary() {
+//     return (
+//         <>
+//             <div className="flex flex-col gy-5">
+//                 <div>
+//                     <Link
+//                         href="/exam-library?skill=listening"
+//                         className="text-white  hover:opacity-[0.8]"
+//                     >
+//                         IELTS Listening Tests
+//                     </Link>
+//                 </div>
+//                 <div>
+//                     <Link
+//                         href="/exam-library?skill=reading"
+//                         className="text-white  hover:opacity-[0.8]"
+//                     >
+//                         IELTS Reading Tests
+//                     </Link>
+//                 </div>
+//                 <div>
+//                     <Link
+//                         href="/exam-library?skill=writing"
+//                         className="text-white  hover:opacity-[0.8]"
+//                     >
+//                         IELTS Writing Tests
+//                     </Link>
+//                 </div>
+//                 <div>
+//                     <Link
+//                         href="/exam-library?skill=speaking"
+//                         className="text-white  hover:opacity-[0.8]"
+//                     >
+//                         IELTS Speaking Tests
+//                     </Link>
+//                 </div>
+//                 <div>
+//                     <Link href="/exam-library" className="text-white  hover:opacity-[0.8]">
+//                         IELTS Test Collection
+//                     </Link>
+//                 </div>
+//             </div>
+//         </>
+//     )
+// }
+// function ComponentRenderLibrary() {
+//     return (
+//         <>
+//             <div className="relative">
+//                 <Link
+//                     href="/exam-library"
+//                     className="text-white"
+//                     local-btn-dropdown-toggle=""
+//                 >
+//                     <span className="me-1">Thư viện đề thi IELTS</span>
+//                     <i className="fa-solid fa-angle-down"></i>
+//                     <div
+//                         className="hidden absolute z-[9999] top-[140%] left-0 w-[130%] rounded-b ps-3 pe-4 py-3 shadow-xl shadow-[#ffffff10] bg-[#294563dd]"
+//                         local-data-dropdown-toggle=""
+//                         style={{ backgroundColor: '#294563e6' }}
+//                     >
+//                         <ExamLibrary />
+//                     </div>
+//                 </Link>
+//             </div>
+//         </>
+//     )
+// }

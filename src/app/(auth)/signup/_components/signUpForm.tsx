@@ -5,9 +5,12 @@ import authService from '@/src/services/auth.service'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { FormEvent, useRef } from 'react'
+import { verify } from '../../login/_components/getUser'
+import { useAppShareDispatch } from '@/src/app/(client)/_lib/redux/hooks'
 
 export default function ComponentSignUpForm() {
     const refForm = useRef<HTMLFormElement>(null)
+    const dispatch = useAppShareDispatch()
     const router = useRouter()
     return (
         <form
@@ -137,6 +140,8 @@ export default function ComponentSignUpForm() {
 
         try {
             const result = await authService.signUpTempUser(keys)
+
+            verify(dispatch)
             router.replace('/')
         } catch (error: any) {
             console.log(error)

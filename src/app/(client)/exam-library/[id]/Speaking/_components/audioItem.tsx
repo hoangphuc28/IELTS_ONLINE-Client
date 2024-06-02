@@ -4,26 +4,56 @@ import IMiniTest from '@/src/utils/shares/interfaces/IMiniTest'
 import IPart from '@/src/utils/shares/interfaces/IPart'
 import { ComponentDrawSound } from './drawSound'
 import { MouseEvent, useEffect, useRef, useState } from 'react'
-import { sources } from 'next/dist/compiled/webpack/webpack'
+import ComponentLoading from './loading'
 
 export default function ComponentAudioItem({
     data,
     index,
     nextPartCallback,
+    submitCallback,
 }: {
     data: IMiniTest
     index: number
     nextPartCallback: CallableFunction
+    submitCallback: CallableFunction
 }) {
     const currentPart: IPart = data.parts[index]
     const [isRecording, setIsRecording] = useState<boolean>(false)
+    const [timeOutStart, setTimeoutStart] = useState<NodeJS.Timeout | null>(null)
+    const [countDown, setCountDown] = useState<number>(60)
     // #region handle media
     const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null)
     const [stream, setStream] = useState<MediaStream | null>(null)
     const [audioContext, setAudioContext] = useState(new AudioContext())
     const [analyser, setAnalyser] = useState(audioContext.createAnalyser())
     const audioRef = useRef<HTMLAudioElement>(null)
+    const btnMicroRef = useRef<HTMLButtonElement>(null)
+    const [isLoadingMedia, setIsLoadingMedia] = useState<boolean>(true)
     // #endregion handle media
+
+    useEffect(() => {
+        btnMicroRef.current?.classList.remove('hidden')
+
+        if (index === 1 && countDown === 60) {
+            // => part 2
+            const interval = setInterval(
+                () =>
+                    setCountDown((prev) => {
+                        console.log(prev)
+                        if (prev <= 0) {
+                            clearInterval(interval)
+                            return 0
+                        }
+                        return prev - 1
+                    }),
+                1000,
+            )
+            setTimeoutStart(interval)
+            return () => clearInterval(interval)
+        } else {
+            handleStartAudio(audioRef.current)
+        }
+    }, [index])
     return (
         <section className="relative flex flex-col gap-2 bg-white max-w-[900px] min-h-[300px] py-3 pe-3 mx-auto my-3 rounded shadow-lg">
             <section className="flex border-b pb-3">
@@ -52,14 +82,16 @@ export default function ComponentAudioItem({
                 <p className="" dangerouslySetInnerHTML={{ __html: currentPart.title }}></p>
                 <p className="" dangerouslySetInnerHTML={{ __html: currentPart.content }}></p>
                 <section className="relative h-[200px]">
-                    {!isRecording && (
-                        <button
-                            onClick={(e) => handleStartRecording(e)}
-                            className="absolute top-1/2 -translate-y-1/2 w-[100px] h-[100px] rounded-full shadow-2xl flex items-center justify-center hover:bg-gray-100"
-                        >
-                            <i className="fa-solid fa-microphone-lines text-6xl text-violet-700"></i>
-                        </button>
-                    )}
+                    <button
+                        ref={btnMicroRef}
+                        onClick={(e) => handleStartRecording(e)}
+                        className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[100px] h-[100px] rounded-full border border-gray-200/90 shadow-2xl flex flex-col items-center justify-center gap-2 py-2 hover:bg-gray-100"
+                    >
+                        {index === 1 && (
+                            <span className="text-violet-700 font-semibold">({countDown})</span>
+                        )}
+                        <i className="fa-solid fa-microphone-lines text-5xl text-violet-700"></i>
+                    </button>
                     {isRecording && (
                         <ComponentDrawSound
                             isDraw={isRecording}
@@ -67,25 +99,67 @@ export default function ComponentAudioItem({
                             style={{ width: '400px', height: '200px' }}
                         />
                     )}
-                    <audio ref={audioRef} src="" controls></audio>
+
+                    {isLoadingMedia && <ComponentLoading />}
+
+                    <audio
+                        className="hidden"
+                        ref={audioRef}
+                        src={currentPart.resource || ''}
+                        controls
+                    ></audio>
                 </section>
             </section>
         </section>
     )
 
+    function handleStartAudio(audio: HTMLAudioElement | null) {
+        if (!audio) return
+        audio.onplay = () => {
+            setIsLoadingMedia(false)
+        }
+        audio.play()
+        audio.onended = () => {
+            console.log('ended')
+            handleStartRecording({
+                currentTarget: btnMicroRef.current!,
+            } as any)
+        }
+    }
+
     async function handleStartRecording(e: MouseEvent<HTMLButtonElement, any>) {
-        setIsRecording(true)
-        await startRecording()
+        try {
+            const isExist = handleHiddenButton(e.currentTarget)
+            if (!isExist) return
+            audioRef.current?.pause()
+            await startRecording()
+            setIsRecording(true)
+            timeOutStart && clearInterval(timeOutStart)
+        } catch (error) {
+            console.log(error)
+            throw error
+        }
+    }
+
+    function handleHiddenButton(btn: HTMLButtonElement): boolean {
+        if (btn && !btn.classList.contains('hidden')) {
+            btn.classList.add('hidden')
+            // btn.setAttribute('disabled', 'disabled')
+            return true
+        }
+        return false
     }
 
     function handleNextPart() {
         setIsRecording(false)
         stopRecording()
+        nextPartCallback()
     }
 
     function handleSubmit() {
         setIsRecording(false)
         stopRecording()
+        submitCallback()
     }
 
     async function startRecording() {
@@ -107,25 +181,29 @@ export default function ComponentAudioItem({
                 const blob = new Blob(chunks, {
                     type: 'audio/ogg; codecs=opus',
                 })
+                const audioURL = URL.createObjectURL(blob)
                 const audioPlayer = audioRef.current
-                console.log('Audio player')
-                if (!!audioPlayer) {
-                    console.log('aaaaaaaa')
-                    const audioURL = URL.createObjectURL(blob)
-                    audioPlayer.src = audioURL
-                }
+                // console.log('Audio player')
+                // if (!!audioPlayer) {
+                //     console.log('aaaaaaaa')
+                //     audioPlayer.src = audioURL
+                // }
             }
 
             mediaRecorder.start()
         } catch (error) {
-            throw error
+            return error
         }
     }
 
     function stopRecording() {
         if (mediaRecorder && mediaRecorder.state !== 'inactive') {
             mediaRecorder.stop()
-            stream?.getAudioTracks()[0].stop()
+            const tracks: MediaStreamTrack[] = []
+            if (!!stream) {
+                tracks.push(...stream.getAudioTracks())
+            }
+            tracks.forEach((track) => track.stop())
         }
     }
 }

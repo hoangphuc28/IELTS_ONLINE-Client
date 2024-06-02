@@ -7,6 +7,7 @@ import authService from '@/src/services/auth.service'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { FormEvent, useEffect, useRef } from 'react'
+import { verify } from './getUser'
 
 export default function ComponentSignInForm() {
     const dispatch = useAppShareDispatch()
@@ -95,6 +96,7 @@ export default function ComponentSignInForm() {
         try {
             // dispatch(SignIn(keys))
             await authService.signIn(keys)
+            verify(dispatch)
             router.back()
         } catch (error: any) {
             console.log(error)

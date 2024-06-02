@@ -12,19 +12,32 @@ export function ComponentGetUser() {
     const user = useAppShareSelector((state) => state.user)
     const router = useRouter()
     useEffect(() => {
-        // check token, if it has existed, then verify.
-        const accessToken = localStorage.getItem(getTokenKey())
-        if (!accessToken) {
-            return
-        }
-
         if (user.id.length !== 0) return
-        authService
-            .verify(accessToken!)
-            .then((user) => dispatch(setUser(user)))
-            .catch((error) => {
-                console.log(error)
-            })
+        // check token, if it has existed, then verify.
+        // const accessToken = localStorage.getItem(getTokenKey())
+        // if (!accessToken) {
+        //     return
+        // }
+        // authService
+        //     .verify(accessToken!)
+        //     .then((user) => dispatch(setUser(user)))
+        //     .catch((error) => {
+        //         console.log(error)
+        //     })
+        verify(dispatch)
     })
     return <></>
+}
+
+export function verify(dispatch: any) {
+    const accessToken = localStorage.getItem(getTokenKey())
+    if (!accessToken) {
+        return
+    }
+    authService
+        .verify(accessToken!)
+        .then((user) => dispatch(setUser(user)))
+        .catch((error) => {
+            console.log(error)
+        })
 }

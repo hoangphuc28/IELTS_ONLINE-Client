@@ -10,6 +10,7 @@ import { IExamSkill, IExamSkillDetail } from '@/src/utils/shares/dto/exam-skill.
 import skillExamService from '@/src/services/skill-exam.service'
 import IPart from '@/src/utils/shares/interfaces/IPart'
 import ComponentAudioItem from '../_components/audioItem'
+import { createToastDanger } from '@/src/app/(client)/_components/toast/sysToast'
 
 export default function Page() {
     const pageName: string = testSkill.SPEAKING
@@ -19,7 +20,7 @@ export default function Page() {
         userAnswerSelectors.GetCurrentSkill(state, pageName),
     )
     const [targetSkillTest, setTargetSkillTest] = useState<IMiniTest | null>(null)
-    const [partProcess, setPartProcess] = useState<number>(1)
+    const [partProcess, setPartProcess] = useState<number>(0)
 
     useEffect(() => {
         getCurrentSkillExam()
@@ -32,7 +33,7 @@ export default function Page() {
             const targetSkill: IExamSkill = await skillExamService.get(
                 currentSkillProcess.skillExam.id,
             )
-            console.log('[GET EXAM] ', targetSkill)
+            // console.log('[GET EXAM] ', targetSkill)
             // if (!targetSkill) {
             //     // router.push('/404')
             //     return
@@ -50,6 +51,7 @@ export default function Page() {
                         data={targetSkillTest}
                         index={partProcess}
                         nextPartCallback={nextPart}
+                        submitCallback={handleSubmit}
                     />
                 </section>
             )}
@@ -80,5 +82,15 @@ export default function Page() {
 
     function nextPart() {
         return setPartProcess((prev) => prev + 1)
+    }
+
+    function handleSubmit() {
+        if (!targetSkillTest) {
+            createToastDanger('No data!')
+            return
+        }
+        if (partProcess === targetSkillTest?.parts.length - 1) {
+        }
+        return
     }
 }
