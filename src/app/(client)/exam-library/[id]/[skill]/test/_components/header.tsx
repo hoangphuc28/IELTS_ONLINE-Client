@@ -29,7 +29,7 @@ export default function ComponentTestHeader({ data }: { data: IMiniTest }) {
                         </p>
                     </section>
                     <section>
-                        {data.name.toLowerCase() === testSkill.LISTENING.toLowerCase() && (
+                        {data.name.toLowerCase() !== testSkill.SPEAKING.toLowerCase() && (
                             <ComponentSubmit target="" />
                         )}
                     </section>
