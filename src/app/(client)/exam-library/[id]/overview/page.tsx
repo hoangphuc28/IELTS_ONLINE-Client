@@ -22,11 +22,9 @@ export default function Page() {
     const dispatch = useAppShareDispatch()
     const user = useAppShareSelector((state) => state.user)
     const testsSkill = useAppShareSelector((state) =>
-        testSkillSelectors.GetTestSkillsProcess({ testSkill: state.testsSkill }),
+        testSkillSelectors.GetTestSkillsProcess(state),
     )
-    const testFirstSkill = useAppShareSelector((state) =>
-        testSkillSelectors.GetFirstSkill({ testSkill: state.testsSkill }),
-    )
+    const testFirstSkill = useAppShareSelector((state) => testSkillSelectors.GetFirstSkill(state))
     const exam = useAppShareSelector((state) => examSelectors.Get(state))
     // const testsManager = new TestItemManager()
     // const [firstSkill, setFirstSkill] = useState<string | null>(null)

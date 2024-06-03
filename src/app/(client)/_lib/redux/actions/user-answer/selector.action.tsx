@@ -2,13 +2,14 @@ import { testSkill } from '@/src/utils/shares/interfaces/IMiniTest'
 import { IUserAnswer, IUserAnswerProcess } from '../../reducers/user-exam.reducer'
 
 export const GetCurrentSkill = (state: IUserAnswer, name: string) => {
-    // console.log('[SELECTOR] ', state, name)
+    console.log('[SELECTOR] ', state, name, name.toLowerCase())
     return state.processes.find(
         (process) => process.skillExam.name.toLowerCase() == name.toLowerCase(),
     ) as IUserAnswerProcess | undefined
 }
 
 export const GetNextSkill = (state: IUserAnswer, name: string) => {
+    if (!name || name.length === 0) return null
     const currentSkillIndex = state.processes.findIndex(
         (process) => process.skillExam.name.toLowerCase() == name.toLowerCase(),
     )

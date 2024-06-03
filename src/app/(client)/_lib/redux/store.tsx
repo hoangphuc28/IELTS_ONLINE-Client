@@ -11,3 +11,4 @@ export type AppShareStore = ReturnType<typeof storeShare>
 
 export type RootShareState = ReturnType<typeof configStore.getState>
 export type AppShareDispatch = typeof configStore.dispatch
+export type AppShareGetState = () => RootShareState

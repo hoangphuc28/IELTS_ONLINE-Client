@@ -1,5 +1,4 @@
 import { ITestSkill } from "../../reducers/test-skill.reducer"
-import { useAppShareSelector } from '../../hooks';
 
 export const GetFirstSkill = (testsSkill: ITestSkill) => {
     const data = testsSkill.testsSkillProgress
@@ -14,3 +13,5 @@ export const GetFirstSkill = (testsSkill: ITestSkill) => {
 export const GetTestSkillsProcess = (testsSkill: ITestSkill) => testsSkill.testsSkillProgress
 
 export const GetIndexesEveryPart = (testsSkill: ITestSkill) => testsSkill.startIndexesEveryPart
+
+export const GetSkillExam = (testsSkill: ITestSkill) => testsSkill.targetSkillExam

@@ -2,6 +2,8 @@ import { IUserAnswerProcess } from '@/src/app/(client)/_lib/redux/reducers/user-
 import ComponentBaseModel from './base'
 import { useRouter } from 'next/navigation'
 import { useAppShareSelector } from '@/src/app/(client)/_lib/redux/hooks'
+import { ExamService } from '@/src/utils/shares/db/answer/services/exam.service'
+import { testSkillSelectors } from '@/src/app/(client)/_lib/redux/reducers/test-skill.reducer'
 
 export default function ComponentNextExamConfirmModel({
     nextExam,
@@ -14,6 +16,7 @@ export default function ComponentNextExamConfirmModel({
 }) {
     const router = useRouter()
     const exam = useAppShareSelector((state) => state.exam)
+    const targetSkillExam = useAppShareSelector((state) => testSkillSelectors.GetSkillExam(state))
     return (
         <ComponentBaseModel>
             <section className="flex flex-col gap-3">
@@ -56,6 +59,7 @@ export default function ComponentNextExamConfirmModel({
 
     function handleNextTest() {
         console.log('Go to next test.')
+        ExamService.submit(targetSkillExam.parts.map((part) => part.id))
 
         // save this exam
 

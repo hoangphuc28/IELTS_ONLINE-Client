@@ -28,8 +28,6 @@ export default function ComponentListQuestionContent({
     const params = useParams<{ skill: string }>()
     console.log('[LIST QUESTION] ', data)
     // if (params.skill === 'Speaking') return <></>
-    if (params.skill.toLowerCase() === 'Writing'.toLowerCase())
-        return <ComponentWritingQuestion data={data} />
     if (data.questionType === QuestionType.multiChoice)
         return <ComponentListMultipleChoice data={data} />
     if (data.questionType === QuestionType.multipleResponse)
@@ -46,40 +44,6 @@ export default function ComponentListQuestionContent({
         return <ComponentQuestionDragDropShortAnswer data={data} />
     // if (data.type === 'DROP_DOWN_CHECKBOX') return <ComponentDropDownCheckbox data={data} />
     return <></>
-}
-
-function ComponentWritingQuestion({ data }: { data: GroupShowDTO }) {
-    return (
-        <section className="flex flex-col gap-5 px-5 w-full">
-            {data.data.map((question, index) => (
-                <textarea
-                    key={index}
-                    name={question.id}
-                    className="w-full rounded-lg border-violet-500 border-2"
-                    rows={16}
-                    onInput={(e) =>
-                        handleInput(e, data.examSkillDetailId, data.id, question.id || '')
-                    }
-                ></textarea>
-            ))}
-        </section>
-    )
-
-    async function handleInput(
-        e: FormEvent<HTMLTextAreaElement>,
-        examSkillDetailId: string,
-        groupId: string,
-        id: string,
-    ) {
-        const value = e.currentTarget.value
-        const data = new AnswerAddDTO({
-            examSkillDetailId,
-            groupQuestionId: groupId,
-            id: id,
-            value: [value],
-        })
-        await fillInTheBlank.addAnswer(data)
-    }
 }
 
 function ComponentListMultipleChoice({ data }: { data: GroupShowDTO }) {

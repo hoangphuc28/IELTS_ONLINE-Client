@@ -1,8 +1,8 @@
 import Nav from './components/nav/nav'
+import '@admin/styles/globals.css'
 import '@admin/styles/base/_reset.scss'
 import '@admin/styles/base/_layout.scss'
 import ExamProvider from './providers/examProvider'
-import { Provider, useSelector } from 'react-redux'
 import '@admin/styles/components/_loader.scss'
 import ReduxProvider from './providers/reduxProvider'
 

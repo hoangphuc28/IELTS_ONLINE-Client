@@ -12,7 +12,7 @@ export default function ComponentListTap({ data }: { data: IMiniTest }) {
     const router = useRouter()
     const [isShow, setIsShow] = useState<boolean>(false)
     const startIndexesEveryPart = useAppShareSelector((state) =>
-        testSkillSelectors.GetIndexesEveryPart({ testSkill: state.testsSkill }),
+        testSkillSelectors.GetIndexesEveryPart(state),
     )
     useEffect(() => {
         // const data = localStorage.getItem('startIndexEveryPart')

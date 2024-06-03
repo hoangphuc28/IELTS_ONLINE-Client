@@ -11,6 +11,10 @@ import skillExamService from '@/src/services/skill-exam.service'
 import IPart from '@/src/utils/shares/interfaces/IPart'
 import ComponentAudioItem from '../_components/audioItem'
 import { createToastDanger } from '@/src/app/(client)/_components/toast/sysToast'
+import {
+    testSkillActions,
+    testSkillSelectors,
+} from '@/src/app/(client)/_lib/redux/reducers/test-skill.reducer'
 
 export default function Page() {
     const pageName: string = testSkill.SPEAKING
@@ -19,32 +23,18 @@ export default function Page() {
     const currentSkillProcess = useAppShareSelector((state) =>
         userAnswerSelectors.GetCurrentSkill(state, pageName),
     )
-    const [targetSkillTest, setTargetSkillTest] = useState<IMiniTest | null>(null)
     const [partProcess, setPartProcess] = useState<number>(0)
+    const targetSkillTest = useAppShareSelector((state) => testSkillSelectors.GetSkillExam(state))
 
+    // #endregion parts contains number of questions in groups
     useEffect(() => {
-        getCurrentSkillExam()
-            .then(() => {})
-            .catch((e) => console.log(e))
-
-        async function getCurrentSkillExam() {
-            // console.log('[CUR SKILL PROCESS] ', currentSkillProcess)
-            if (!currentSkillProcess) return
-            const targetSkill: IExamSkill = await skillExamService.get(
-                currentSkillProcess.skillExam.id,
-            )
-            // console.log('[GET EXAM] ', targetSkill)
-            // if (!targetSkill) {
-            //     // router.push('/404')
-            //     return
-            // }
-            const data: IMiniTest = convertDataSkillExamDetail(targetSkill)
-            setTargetSkillTest(data)
-        }
+        console.log('[CURRENT Skill process]', currentSkillProcess)
+        if (!currentSkillProcess) return
+        dispatch(testSkillActions.GetSkillExamData(currentSkillProcess.skillExam.id))
     }, [])
     return (
         <>
-            {targetSkillTest && (
+            {targetSkillTest.id.length > 0 && (
                 <section className="">
                     <ComponentTestHeader data={targetSkillTest} />
                     <ComponentAudioItem
@@ -57,28 +47,6 @@ export default function Page() {
             )}
         </>
     )
-
-    function convertDataSkillExamDetail(data: IExamSkill): IMiniTest {
-        return {
-            id: data.id,
-            name: data.name,
-            parts: convertExamSkillDetailToPartClient(data.details),
-            time: calcTotalTime(data.details),
-            src: '',
-        }
-
-        function convertExamSkillDetailToPartClient(details: IExamSkillDetail[]): IPart[] {
-            return details.map((item: IExamSkillDetail) => ({ ...item.part, id: item.id }))
-        }
-
-        function calcTotalTime(details: IExamSkillDetail[]): string {
-            return data.details
-                .reduce((totalTime, detail) => {
-                    return totalTime + new Date(detail.time).getTime()
-                }, 0)
-                .toString()
-        }
-    }
 
     function nextPart() {
         return setPartProcess((prev) => prev + 1)

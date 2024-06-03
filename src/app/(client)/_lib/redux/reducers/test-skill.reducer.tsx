@@ -1,6 +1,7 @@
-import { testSkill, testSkillType } from '@/src/utils/shares/interfaces/IMiniTest'
+import IMiniTest, { testSkill, testSkillType } from '@/src/utils/shares/interfaces/IMiniTest'
 import { Draft, PayloadAction, createSlice } from '@reduxjs/toolkit'
-import * as Getter from '../actions/testSkill/selector.action'
+import * as Selector from '../actions/testSkill/selector.action'
+import * as Getter from '../actions/testSkill/get.action'
 import * as Updater from '../actions/testSkill/update.action'
 
 export interface ITestSkillProcess {
@@ -10,11 +11,19 @@ export interface ITestSkillProcess {
 }
 
 export interface ITestSkill {
+    targetSkillExam: Draft<IMiniTest>
     testsSkillProgress: Draft<ITestSkillProcess>[]
     startIndexesEveryPart: Draft<number>[]
 }
 
 const initialState: ITestSkill = {
+    targetSkillExam: {
+        id: '',
+        name: testSkill.LISTENING,
+        parts: [],
+        time: '',
+        src: '',
+    },
     testsSkillProgress: [],
     startIndexesEveryPart: [],
 }
@@ -59,16 +68,19 @@ const reducers = {
     setStartIndexEveryPart(state: ITestSkill, action: PayloadAction<number[]>) {
         state.startIndexesEveryPart = action.payload
     },
+    setTargetSkillExam(state: ITestSkill, action: PayloadAction<IMiniTest>) {
+        state.targetSkillExam = action.payload
+    },
 }
 
 export const testSkillSlice = createSlice({
     name: 'testSkill',
     initialState,
     reducers: reducers,
-    selectors: { ...Getter },
+    selectors: { ...Selector },
 })
 
-export const testSkillActions = { ...testSkillSlice.actions, ...Updater }
+export const testSkillActions = { ...testSkillSlice.actions, ...Updater, ...Getter }
 
 export const testSkillSelectors = testSkillSlice.selectors
 

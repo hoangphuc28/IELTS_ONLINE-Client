@@ -1,4 +1,6 @@
 
+import IGroup from '../../../interfaces/IGroup'
+import IMiniTest from '../../../interfaces/IMiniTest'
 import { db } from '../../index'
 import { AnswerAddDTO } from '../dtos/answer-add.dto'
 
@@ -32,6 +34,18 @@ export class Service extends BaseService {
         throw new Error('Method not implemented.')
     }
     async addAnswer(): Promise<any> {
+    }
+
+    async submit(idSkillExamDetails: string[]) {
+        const data = (await this.getTable().toArray())
+        const dataFilter = data.filter((collect: AnswerAddDTO) => {
+            let isPass = true
+            isPass = !!idSkillExamDetails.find(id => id === collect.examSkillDetailId)
+            isPass = new Date().getTime() - collect.updatedAt <= 5 * 60 * 60 * 1000 //5hours
+            return isPass
+        })
+
+        console.log('data: ', data, ' new data: ', dataFilter)
     }
 }
 

@@ -15,7 +15,7 @@ export class AnswerAddDTO implements IAnswerAddDTO {
     id: string
     value: string[]
     key?: string
-    updatedAt?: number
+    updatedAt: number = new Date().getTime()
     groupQuestionId: string
 
     constructor(data: IAnswerAddDTO) {
