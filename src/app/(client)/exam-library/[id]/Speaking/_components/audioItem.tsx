@@ -5,6 +5,10 @@ import IPart from '@/src/utils/shares/interfaces/IPart'
 import { ComponentDrawSound } from './drawSound'
 import { MouseEvent, useEffect, useRef, useState } from 'react'
 import ComponentLoading from './loading'
+import { useAppShareSelector } from '@/src/app/(client)/_lib/redux/hooks'
+import { resourceServiceAPI } from '@/src/services/resource.service'
+import { multipleChoice } from '@/src/utils/shares/db/answer/services/answers/multipleChoice.service'
+import { AnswerAddDTO } from '@/src/utils/shares/db/answer/dtos/answer-add.dto'
 
 export default function ComponentAudioItem({
     data,
@@ -17,6 +21,7 @@ export default function ComponentAudioItem({
     nextPartCallback: CallableFunction
     submitCallback: CallableFunction
 }) {
+    const user = useAppShareSelector((state) => state.user)
     const currentPart: IPart = data.parts[index]
     const [isRecording, setIsRecording] = useState<boolean>(false)
     const [timeOutStart, setTimeoutStart] = useState<NodeJS.Timeout | null>(null)
@@ -177,10 +182,26 @@ export default function ComponentAudioItem({
                 chunks.push(e.data)
             }
 
-            mediaRecorder.onstop = function () {
+            mediaRecorder.onstop = async function () {
                 const blob = new Blob(chunks, {
                     type: 'audio/ogg; codecs=opus',
                 })
+                const file = new File(
+                    [blob],
+                    user.id + currentPart.id + '--' + new Date().getTime().toString() + '.ogg',
+                    {
+                        type: 'ogg',
+                    },
+                )
+                const fileName = await resourceServiceAPI.uploadAudio(file)
+                const dataVoiceAnswer: AnswerAddDTO = new AnswerAddDTO({
+                    examSkillDetailId: currentPart.id,
+                    groupQuestionId: currentPart.id,
+                    id: currentPart.id,
+                    value: [fileName],
+                })
+                multipleChoice.addAnswer(dataVoiceAnswer)
+
                 const audioURL = URL.createObjectURL(blob)
                 const audioPlayer = audioRef.current
                 // console.log('Audio player')
@@ -199,11 +220,11 @@ export default function ComponentAudioItem({
     function stopRecording() {
         if (mediaRecorder && mediaRecorder.state !== 'inactive') {
             mediaRecorder.stop()
-            const tracks: MediaStreamTrack[] = []
-            if (!!stream) {
-                tracks.push(...stream.getAudioTracks())
-            }
-            tracks.forEach((track) => track.stop())
+            // const tracks: MediaStreamTrack[] = []
+            // if (!!stream) {
+            //     tracks.push(...stream.getAudioTracks())
+            // }
+            // tracks.forEach((track) => track.stop())
         }
     }
 }

@@ -15,6 +15,8 @@ import {
     testSkillActions,
     testSkillSelectors,
 } from '@/src/app/(client)/_lib/redux/reducers/test-skill.reducer'
+import ComponentCompleteAlert from '../../[skill]/test/_components/modals/completeAlert'
+import { ExamService } from '@/src/utils/shares/db/answer/services/exam.service'
 
 export default function Page() {
     const pageName: string = testSkill.SPEAKING
@@ -24,6 +26,7 @@ export default function Page() {
         userAnswerSelectors.GetCurrentSkill(state, pageName),
     )
     const [partProcess, setPartProcess] = useState<number>(0)
+    const [isShowCompleteModel, setIsShowCompleteModel] = useState<boolean>(false)
     const targetSkillTest = useAppShareSelector((state) => testSkillSelectors.GetSkillExam(state))
 
     // #endregion parts contains number of questions in groups
@@ -43,6 +46,7 @@ export default function Page() {
                         nextPartCallback={nextPart}
                         submitCallback={handleSubmit}
                     />
+                    {isShowCompleteModel && <ComponentCompleteAlert />}
                 </section>
             )}
         </>
@@ -52,13 +56,31 @@ export default function Page() {
         return setPartProcess((prev) => prev + 1)
     }
 
-    function handleSubmit() {
-        if (!targetSkillTest) {
-            createToastDanger('No data!')
+    async function handleSubmit() {
+        try {
+            if (!targetSkillTest) {
+                createToastDanger('No data!')
+                return
+            }
+            if (partProcess === targetSkillTest?.parts.length - 1) {
+                console.log('Submit the entire exam...')
+
+                if (!currentSkillProcess) {
+                    console.log('Exam not found.')
+                    return
+                }
+                await ExamService.submit(
+                    targetSkillTest.parts.map((part) => part.id),
+                    currentSkillProcess.id,
+                )
+
+                // handle end test. ex: disconnect socket, end exam.
+                setIsShowCompleteModel(true)
+            }
             return
+        } catch (error) {
+            console.log(error)
+            createToastDanger('An error occurred')
         }
-        if (partProcess === targetSkillTest?.parts.length - 1) {
-        }
-        return
     }
 }

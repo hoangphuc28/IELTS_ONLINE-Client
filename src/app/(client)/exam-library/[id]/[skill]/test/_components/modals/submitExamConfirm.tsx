@@ -7,6 +7,9 @@ import { useAppShareSelector } from '@/src/app/(client)/_lib/redux/hooks'
 import { useParams } from 'next/navigation'
 import { FormEvent, useState } from 'react'
 import ComponentCompleteAlert from './completeAlert'
+import { ExamService } from '@/src/utils/shares/db/answer/services/exam.service'
+import { testSkillSelectors } from '@/src/app/(client)/_lib/redux/reducers/test-skill.reducer'
+import { createToastDanger } from '@/src/app/(client)/_components/toast/sysToast'
 
 export default function ComponentSubmitExamConfirmModel({
     closeModelCallback,
@@ -16,6 +19,10 @@ export default function ComponentSubmitExamConfirmModel({
     const params = useParams<{ skill: string }>()
     const examNotDone = useAppShareSelector((state) =>
         userAnswerSelectors.GetExamNotDone({ userAnswer: state.userAnswer }, params.skill),
+    )
+    const targetSkillExam = useAppShareSelector((state) => testSkillSelectors.GetSkillExam(state))
+    const currentProcess = useAppShareSelector((state) =>
+        userAnswerSelectors.GetCurrentSkill(state, params.skill),
     )
     const [submitStep, setSubmitStep] = useState<number>(1)
     return (
@@ -51,7 +58,10 @@ export default function ComponentSubmitExamConfirmModel({
                             </p>
                             <section className="flex flex-col gap-1">
                                 <div className="grid grid-cols-2 gap-2">
-                                    <button className="px-2 rounded border border-gray-200/90 bg-gray-200 hover:bg-gray-300 py-1">
+                                    <button
+                                        onClick={(e) => closeModelCallback()}
+                                        className="px-2 rounded border border-gray-200/90 bg-gray-200 hover:bg-gray-300 py-1"
+                                    >
                                         Cancel
                                     </button>
                                     <button
@@ -71,8 +81,26 @@ export default function ComponentSubmitExamConfirmModel({
         </>
     )
 
-    function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    async function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault()
-        setSubmitStep(2)
+
+        try {
+            // handle submit the entire exam
+            // save this exam
+            if (!currentProcess) {
+                console.log('Exam not found.')
+                return
+            }
+            await ExamService.submit(
+                targetSkillExam.parts.map((part) => part.id),
+                currentProcess.id,
+            )
+
+            // handle end test. ex: disconnect socket, end exam.
+            setSubmitStep(2)
+        } catch (error) {
+            console.log(error)
+            createToastDanger('An error occurred')
+        }
     }
 }

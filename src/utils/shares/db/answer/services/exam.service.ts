@@ -36,21 +36,24 @@ export class Service extends BaseService {
     async addAnswer(): Promise<any> {
     }
 
-    async submit(idSkillExamDetails: string[]) {
-        const data = (await this.getTable().toArray())
-        const dataFilter = data.filter((collect: AnswerAddDTO) => {
-            let isPass = true
-            isPass = !!idSkillExamDetails.find(id => id === collect.examSkillDetailId)
-            isPass = new Date().getTime() - collect.updatedAt <= 5 * 60 * 60 * 1000 //5hours
-            return isPass
-        })
+    async submit(idSkillExamDetails: string[], idProcess: string) {
+        try {
+            const data = (await this.getTable().toArray())
+            const dataFilter = data.filter((collect: AnswerAddDTO) => {
+                let isPass = true
+                isPass = !!idSkillExamDetails.find(id => id === collect.examSkillDetailId)
+                isPass = new Date().getTime() - collect.updatedAt <= 5 * 60 * 60 * 1000 //5hours
+                return isPass
+            })
 
-        console.log('data: ', data, ' new data: ', dataFilter)
+            console.log('data: ', data, ' new data: ', dataFilter)
+        } catch (error) {
+            throw error
+        }
     }
 }
 
 export const ExamService = new Service
-
 
 // #region Test
 abstract class Parent {

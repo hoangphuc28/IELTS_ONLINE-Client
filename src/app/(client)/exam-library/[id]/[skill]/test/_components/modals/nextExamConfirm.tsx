@@ -1,6 +1,9 @@
-import { IUserAnswerProcess } from '@/src/app/(client)/_lib/redux/reducers/user-exam.reducer'
+import {
+    IUserAnswerProcess,
+    userAnswerSelectors,
+} from '@/src/app/(client)/_lib/redux/reducers/user-exam.reducer'
 import ComponentBaseModel from './base'
-import { useRouter } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import { useAppShareSelector } from '@/src/app/(client)/_lib/redux/hooks'
 import { ExamService } from '@/src/utils/shares/db/answer/services/exam.service'
 import { testSkillSelectors } from '@/src/app/(client)/_lib/redux/reducers/test-skill.reducer'
@@ -14,9 +17,13 @@ export default function ComponentNextExamConfirmModel({
     submitCallback?: CallableFunction
     closeModelCallback: CallableFunction
 }) {
+    const params = useParams<{ skill: string }>()
     const router = useRouter()
     const exam = useAppShareSelector((state) => state.exam)
     const targetSkillExam = useAppShareSelector((state) => testSkillSelectors.GetSkillExam(state))
+    const currentProcess = useAppShareSelector((state) =>
+        userAnswerSelectors.GetCurrentSkill(state, params.skill),
+    )
     return (
         <ComponentBaseModel>
             <section className="flex flex-col gap-3">
@@ -32,7 +39,7 @@ export default function ComponentNextExamConfirmModel({
                 <section className="flex flex-col gap-1">
                     <div>
                         <button
-                            onClick={(e) => handleNextTest()}
+                            onClick={async (e) => await handleNextTest()}
                             className="rounded w-full py-2 border border-gray-200/90 bg-yellow-400/80 hover:bg-yellow-400"
                         >
                             Move to the next test
@@ -57,14 +64,28 @@ export default function ComponentNextExamConfirmModel({
         </ComponentBaseModel>
     )
 
-    function handleNextTest() {
-        console.log('Go to next test.')
-        ExamService.submit(targetSkillExam.parts.map((part) => part.id))
+    async function handleNextTest() {
+        try {
+            console.log('Go to next test.')
 
-        // save this exam
+            // save this exam
+            if (!currentProcess) {
+                console.log('Exam not found.')
+                return
+            }
+            await ExamService.submit(
+                targetSkillExam.parts.map((part) => part.id),
+                currentProcess.id,
+            )
 
-        // redirect to next test
-        const nextUri = `/exam-library/${exam.code}/${nextExam.skillExam.name.toLowerCase()}/test`
-        router.push(nextUri)
+            // redirect to next test
+            console.log('Go to next test.')
+            const nextUri = `/exam-library/${
+                exam.code
+            }/${nextExam.skillExam.name.toLowerCase()}/test`
+            router.push(nextUri)
+        } catch (error) {
+            console.log(error)
+        }
     }
 }

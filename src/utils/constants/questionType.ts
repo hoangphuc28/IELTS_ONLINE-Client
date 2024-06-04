@@ -1,9 +1,9 @@
 export enum QuestionType {
-    multiChoice = 'Multiple Choice',
-    multipleResponse = 'Multiple Response',
-    dropdown = 'Dropdown',
-    matching = 'Drag&Drop', // drag and drop
-    fillInTheBlank = 'Fill In The Blank',
+    multiChoice = 'MultipleChoice',
+    multipleResponse = 'MultipleResponse',
+    dropdown = 'DropDown',
+    matching = 'DragAndDrop', // drag and drop
+    fillInTheBlank = 'FillInTheBlank',
     matchingHeading = 'Matching Heading',
     matchingFillInTheBlanks = 'Matching Fill In The Blanks',
 }
