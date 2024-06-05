@@ -37,8 +37,15 @@ export default function ComponentSubmitExamConfirmModel({
                                         There will be{' '}
                                         <span className="font-semibold">{examNotDone.length}</span>{' '}
                                         test remaining:{''}
-                                        {examNotDone.map((process) => (
-                                            <span className="font-semibold ms-1">
+                                        {examNotDone.map((process, index) => (
+                                            <span
+                                                key={
+                                                    'submit-exam-confirm-' +
+                                                    index +
+                                                    new Date().getTime()
+                                                }
+                                                className="font-semibold ms-1"
+                                            >
                                                 {process.skillExam.name}
                                             </span>
                                         ))}

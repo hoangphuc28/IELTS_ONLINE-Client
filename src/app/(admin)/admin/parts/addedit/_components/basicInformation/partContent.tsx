@@ -1,3 +1,5 @@
+'use client'
+
 import { FormikProps } from 'formik'
 import { Part } from '../../../type/Part.class'
 import dynamic from 'next/dynamic'

@@ -5,6 +5,7 @@ import ComponentSignInForm from './_components/signInForm'
 import { useAppShareSelector } from '../../(client)/_lib/redux/hooks'
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 export default function Page() {
     // const user = useAppShareSelector((state) => state.user)
@@ -21,10 +22,15 @@ export default function Page() {
             <section className="flex flex-col items-center pt-4">
                 <section className="logo w-24">
                     <Link href="/" className="logo">
-                        <img
+                        {/* <img
                             alt=""
                             className="w-100 w-full"
                             src={process.env.NEXT_PUBLIC_APP_LOGO}
+                        /> */}
+                        <Image
+                            alt=""
+                            className="w-100 w-full"
+                            src={process.env.NEXT_PUBLIC_APP_LOGO || ''}
                         />
                     </Link>
                 </section>

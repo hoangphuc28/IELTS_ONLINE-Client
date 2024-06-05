@@ -1,25 +1,28 @@
-import { Fragment, useEffect, useState } from 'react';
-import "@admin/styles/components/_resource.scss"
+import { Fragment, useEffect, useState } from 'react'
+import '@admin/styles/components/_resource.scss'
+import Image from 'next/image'
 
 export default function ImageUpload() {
-    const [image, setImage] = useState<string | ArrayBuffer | null>(null);
+    const [image, setImage] = useState<string | ArrayBuffer | null>(null)
 
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
+        const file = e.target.files?.[0]
         if (file) {
-            const reader = new FileReader();
+            const reader = new FileReader()
             reader.onloadend = () => {
-                setImage(reader.result);
-            };
-            reader.readAsDataURL(file);
+                setImage(reader.result)
+            }
+            reader.readAsDataURL(file)
         }
-    };
+    }
 
     return (
-        <div className='resource'>
-           
+        <div className="resource">
             <div className="preview">
-                <button type="button" onClick={() => document.getElementById('upload-button')?.click()}>
+                <button
+                    type="button"
+                    onClick={() => document.getElementById('upload-button')?.click()}
+                >
                     Upload Image
                 </button>
                 <input
@@ -30,11 +33,21 @@ export default function ImageUpload() {
                 />
 
                 {typeof image === 'string' ? (
-                    <img src={image} alt="Preview" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: "10px"}} />
+                    // <img/>
+                    <Image
+                        src={image}
+                        alt="Preview"
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            borderRadius: '10px',
+                        }}
+                    />
                 ) : (
                     <Fragment></Fragment>
                 )}
             </div>
         </div>
-    );
+    )
 }

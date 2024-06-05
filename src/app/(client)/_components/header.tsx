@@ -8,6 +8,7 @@ import { useAppShareDispatch, useAppShareSelector } from '../_lib/redux/hooks'
 import { IUserState, setUser } from '../_lib/redux/reducers/user.reducer'
 import { userRole } from '@/src/utils/shares/interfaces/IUser'
 import { getTokenKey } from '@/src/utils/shares/localStorage'
+import Image from 'next/image'
 
 export default function Header() {
     const user = useAppShareSelector((state) => state.user)
@@ -21,10 +22,15 @@ export default function Header() {
                         <section className="hidden sm:flex items-center justify-between py-2">
                             <div className="logo lg:w-28 sm:w-28 rounded-full shadow-xl">
                                 <Link href="/" className="logo">
-                                    <img
+                                    {/* <img
                                         alt=""
                                         className="w-100 w-full"
                                         src={process.env.NEXT_PUBLIC_APP_LOGO}
+                                    /> */}
+                                    <Image
+                                        alt=""
+                                        className="w-100 w-full"
+                                        src={process.env.NEXT_PUBLIC_APP_LOGO || ''}
                                     />
                                 </Link>
                             </div>

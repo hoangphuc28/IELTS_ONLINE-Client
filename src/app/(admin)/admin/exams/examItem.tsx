@@ -4,11 +4,11 @@ import Link from 'next/link'
 import '@admin/styles/components/_examItem.scss'
 import '@admin/styles/components/_button.scss'
 import Exam from './type/exam'
-import  Image  from 'next/image'
+import Image from 'next/image'
 
 interface Props {
-    data: Exam;
-    index: number;
+    data: Exam
+    index: number
 }
 
 export default function ExamItem({ data, index }: Props) {
@@ -17,7 +17,8 @@ export default function ExamItem({ data, index }: Props) {
             <div className="item-infor">
                 <div className="exam-infor-left">
                     <div>#{index + 1}</div>
-                    <img src={data.thumbnail} alt="thumbnail" />
+                    {/* <img  /> */}
+                    <Image src={data.thumbnail} alt="thumbnail" />
                 </div>
                 <div className="exam-infor-right">
                     <div className="infor-right-top">

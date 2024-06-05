@@ -70,7 +70,7 @@ export default function ComponentSignInForm() {
                 </div>
             </div>
             <div className="flex gap-2 items-center">
-                <span className="text-gray-500">Don't have an account?</span>
+                <span className="text-gray-500">Don&rsquo;t have an account?</span>
                 <Link href={'/signup'} className="text-blue-600">
                     Sign Up
                 </Link>

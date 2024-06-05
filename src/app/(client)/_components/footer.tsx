@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import LayoutCenter from './layoutCenter'
 import ComponentSearch from './search'
+import Image from 'next/image'
 
 export default function Footer() {
     return (
@@ -11,7 +12,8 @@ export default function Footer() {
                         <section className="flex flex-col sm:flex-row justify-between items-center gap-5">
                             <section className="logo w-16">
                                 <Link href="/">
-                                    <img src={process.env.NEXT_PUBLIC_APP_LOGO} alt="" />
+                                    {/* <img src={process.env.NEXT_PUBLIC_APP_LOGO} alt="" /> */}
+                                    <Image src={process.env.NEXT_PUBLIC_APP_LOGO || ''} alt="" />
                                 </Link>
                             </section>
 
