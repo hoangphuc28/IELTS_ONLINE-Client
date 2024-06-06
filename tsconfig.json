@@ -29,6 +29,6 @@
       "@clientExamLibrary/*": ["./src/app/(client)/exam-library/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/(admin)/admin/parts/addedit/_components/editor/editor.tsxx", "src/app/(admin)/admin/parts/addedit/_components/editor/uploadAdapter.js", "src/app/(admin)/admin/parts/addedit/_components/editor/editor.js", "src/app/(admin)/util/timeFormat.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/(admin)/admin/parts/addedit/_components/editor/editor.tsxx", "src/app/(admin)/admin/parts/addedit/_components/editor/uploadAdapter.js", "src/app/(admin)/admin/parts/addedit/_components/editor/editor.tsx", "src/app/(admin)/util/timeFormat.js"],
   "exclude": ["node_modules"]
 }

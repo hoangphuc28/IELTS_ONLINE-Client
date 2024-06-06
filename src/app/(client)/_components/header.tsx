@@ -13,6 +13,9 @@ import Image from 'next/image'
 export default function Header() {
     const user: IUserState = useAppShareSelector((state) => state.user)
 
+    useEffect(() => {
+        console.log('next_public_app_logo: ', process.env.NEXT_PUBLIC_APP_LOGO)
+    }, [])
     return (
         <>
             <header className="shadow">
@@ -22,16 +25,16 @@ export default function Header() {
                         <section className="hidden sm:flex items-center justify-between py-2">
                             <div className="logo lg:w-28 sm:w-28 rounded-full shadow-xl">
                                 <Link href="/" className="logo">
-                                    {/* <img
+                                    <img
                                         alt=""
                                         className="w-100 w-full"
                                         src={process.env.NEXT_PUBLIC_APP_LOGO}
-                                    /> */}
-                                    <Image
+                                    />
+                                    {/* <Image
                                         alt=""
                                         className="w-100 w-full"
                                         src={process.env.NEXT_PUBLIC_APP_LOGO || ''}
-                                    />
+                                    /> */}
                                 </Link>
                             </div>
                             {/* banner */}
@@ -46,16 +49,16 @@ export default function Header() {
                         <section className="header-mobile flex sm:hidden justify-between items-center px-2 py-2 shadow shadow-lg-[#000]">
                             <section className="logo mobile w-16">
                                 <Link href="/" className="logo">
-                                    {/* <img
+                                    <img
                                         alt=""
                                         className="w-100 w-full"
                                         src={process.env.NEXT_PUBLIC_APP_LOGO}
-                                    /> */}
-                                    <Image
+                                    />
+                                    {/* <Image
                                         alt=""
                                         className="w-100 w-full"
                                         src={process.env.NEXT_PUBLIC_APP_LOGO || ''}
-                                    />
+                                    /> */}
                                 </Link>
                             </section>
                             <nav className="h-full flex md:hidden items-center">

@@ -1,0 +1,23 @@
+name: ielts_online_client
+services:
+    client:
+        image: tchoa1102/${COMPOSE_PROJECT_NAME}
+        container_name: ${COMPOSE_PROJECT_NAME}
+        ports:
+            - 3000:3000
+        build:
+            dockerfile: dockerfile
+        env_file:
+            - .env.development
+        environment:
+            - NEXT_PUBLIC_API_URL=https://ielts-server-3n7v.onrender.com
+        networks:
+            ielts_online:
+volumes:
+    ielts_online:
+        name: ${COMPOSE_PROJECT_NAME}
+
+networks:
+    ielts_online:
+        name: ${COMPOSE_PROJECT_NAME}
+        driver: bridge

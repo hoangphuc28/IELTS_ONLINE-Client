@@ -17,31 +17,31 @@ import { HOST } from '@/src/utils/constanst/host'
 //     data: string
 // }
 
-const CustomEditor = ({ formik, saveData, data }) => {
+const CustomEditor = ({ formik, saveData, data }: { formik: any; saveData: any; data: any }) => {
     const config = {
         toolbar: {
-			items: [
-				'undo',
-				'redo',
-				'|',
-				'bold',
-				'italic',
-				'underline',
-				'|',
-				'alignment',
-				'insertTable',
-				'imageInsert'
-			]
-		},
-		language: 'en',
-		image: {
-			toolbar: [
-				'imageTextAlternative',
-				'imageStyle:inline',
-				'imageStyle:block',
-				'imageStyle:side'
-			]
-		},
+            items: [
+                'undo',
+                'redo',
+                '|',
+                'bold',
+                'italic',
+                'underline',
+                '|',
+                'alignment',
+                'insertTable',
+                'imageInsert',
+            ],
+        },
+        language: 'en',
+        image: {
+            toolbar: [
+                'imageTextAlternative',
+                'imageStyle:inline',
+                'imageStyle:block',
+                'imageStyle:side',
+            ],
+        },
         extraPlugins: [uploadPlugin],
     }
     const [editorData, setEditorData] = useState('')
@@ -66,8 +66,7 @@ const CustomEditor = ({ formik, saveData, data }) => {
     )
 }
 
-
-function uploadAdapter(loader) {
+function uploadAdapter(loader: any) {
     return {
         upload: async () => {
             try {
@@ -99,12 +98,10 @@ function uploadAdapter(loader) {
     }
 }
 
-function uploadPlugin(editor) {
-    editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+function uploadPlugin(editor: any) {
+    editor.plugins.get('FileRepository').createUploadAdapter = (loader: any) => {
         return uploadAdapter(loader)
     }
 }
-
-
 
 export default CustomEditor

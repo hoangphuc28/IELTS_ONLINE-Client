@@ -12,8 +12,8 @@ export default function Footer() {
                         <section className="flex flex-col sm:flex-row justify-between items-center gap-5">
                             <section className="logo w-16">
                                 <Link href="/">
-                                    {/* <img src={process.env.NEXT_PUBLIC_APP_LOGO} alt="" /> */}
-                                    <Image src={process.env.NEXT_PUBLIC_APP_LOGO || ''} alt="" />
+                                    <img src={process.env.NEXT_PUBLIC_APP_LOGO} alt="" />
+                                    {/* <Image src={process.env.NEXT_PUBLIC_APP_LOGO || ''} alt="" /> */}
                                 </Link>
                             </section>
 
