@@ -1,8 +1,10 @@
 
+import { userAnswerDetailService } from '@/src/services/user-answer-detail.service'
 import IGroup from '../../../interfaces/IGroup'
 import IMiniTest from '../../../interfaces/IMiniTest'
 import { db } from '../../index'
 import { AnswerAddDTO } from '../dtos/answer-add.dto'
+import { IReqCreateAnswerDetail, IReqGroupAnswer, IReqGroupExamSkillDetail } from '../dtos/IReqCreateAnswerDetail'
 
 export abstract class BaseService {
     getTable() {
@@ -36,17 +38,40 @@ export class Service extends BaseService {
     async addAnswer(): Promise<any> {
     }
 
-    async submit(idSkillExamDetails: string[], idProcess: string) {
+    async submit(idSkillExamDetails: string[], processId: string) {
         try {
-            const data = (await this.getTable().toArray())
-            const dataFilter = data.filter((collect: AnswerAddDTO) => {
-                let isPass = true
-                isPass = !!idSkillExamDetails.find(id => id === collect.examSkillDetailId)
-                isPass = new Date().getTime() - collect.updatedAt <= 5 * 60 * 60 * 1000 //5hours
-                return isPass
-            })
+            const data: AnswerAddDTO[] = (await this.getTable().toArray())
+            const reqData: IReqCreateAnswerDetail = {
+                processId,
+                answersOfParts: []
+            }
+            for (const id of idSkillExamDetails) {
+                const partDetail: IReqGroupExamSkillDetail = {
+                    examSkillDetailId: id,
+                    groups: []
+                }
+                const listAnswersSortByGroupId = data.sort((beforeCollect: AnswerAddDTO, afterCollect: AnswerAddDTO) => {
+                    return beforeCollect.groupQuestionId > afterCollect.groupQuestionId ? 1 : -1
+                })
+                partDetail.groups = data.reduce((acc: IReqGroupAnswer[], collect: AnswerAddDTO) => {
+                    const lastElement = acc.at(-1)
+                    if (!lastElement || (lastElement && lastElement.id != collect.examSkillDetailId)) {
+                        acc.push({
+                            id: collect.examSkillDetailId,
+                            answers: []
+                        })
+                    }
 
-            console.log('data: ', data, ' new data: ', dataFilter)
+                    acc.at(-1)?.answers.push(collect)
+                    return acc
+                }, [])
+
+                reqData.answersOfParts.push(partDetail)
+            }
+
+            console.log('data req: ', reqData)
+            const result = await userAnswerDetailService.submitExam(reqData)
+            console.log('submit exam result: ', result)
         } catch (error) {
             throw error
         }

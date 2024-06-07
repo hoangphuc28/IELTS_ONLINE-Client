@@ -70,8 +70,8 @@ function ComponentQuestionMultipleChoiceItem({
         }
 
         const answer = new AnswerAddDTO({
-            id: questionId,
-            value: [answerContent],
+            questionId: questionId,
+            answer: answerContent,
             groupQuestionId: groupId,
             examSkillDetailId: examSkillDetailId,
         })

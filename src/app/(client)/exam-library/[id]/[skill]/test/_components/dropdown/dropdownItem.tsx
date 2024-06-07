@@ -59,8 +59,8 @@ export default function ComponentDropdownItem({
             const data = new AnswerAddDTO({
                 examSkillDetailId,
                 groupQuestionId: groupId,
-                id: id,
-                value: [value],
+                questionId: id,
+                answer: value,
             })
             await dropDown.addAnswer(data)
         } catch (error) {

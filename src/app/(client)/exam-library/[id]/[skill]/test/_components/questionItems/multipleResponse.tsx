@@ -25,6 +25,7 @@ export default function ComponentContainerMultipleResponse({
                         }
                         groupId={groupId}
                         data={answer}
+                        index={index}
                         key={'question-' + data.id + '-answer-' + index}
                     />
                 ))}
@@ -38,17 +39,20 @@ function ComponentMultipleResponseItem({
     questionId,
     data,
     groupId,
+    index,
 }: {
     examSkillDetailId: string
     questionId: string
     data: IAnswer
     groupId: string
+    index: number
 }) {
     return (
         <section className="flex items-center gap-2">
             <input
                 id={'question-' + questionId + '-answer-' + data.id}
                 type="checkbox"
+                data-answer-index={index}
                 name={questionId}
                 value={data.id}
                 onClick={async (e) => await handleChoiceAnswer(e)}
@@ -68,16 +72,24 @@ function ComponentMultipleResponseItem({
         }
         const questionId = input.name
         const answerContent = input.value
-        if (questionId.length === 0 || answerContent.length === 0) {
+        const answerIndex = input.dataset?.answerIndex
+        if (
+            questionId.length === 0 ||
+            answerContent.length === 0 ||
+            !answerIndex ||
+            answerIndex.length === 0
+        ) {
             console.log('Error: Answer empty.')
             return
         }
+        console.log(answerIndex)
 
         const answer = new AnswerAddDTO({
-            id: questionId,
-            value: [answerContent],
+            questionId,
+            answer: answerContent,
             groupQuestionId: groupId,
             examSkillDetailId: examSkillDetailId,
+            index: Number.parseInt(answerIndex),
         })
 
         const isRemove: boolean = !input.checked

@@ -1,5 +1,4 @@
-import { AnswerAddDTO } from '@/src/utils/shares/db/answer/dtos/answer-add.dto'
-import { match } from '@/src/utils/shares/db/answer/services/answers/match.service'
+'use client'
 import IQuestion from '@/src/utils/shares/interfaces/IQuestion'
 import { allowDrop, drop } from '@clientExamLibrary/[id]/[skill]/utils/dragAndDrop'
 import { DragEvent, useEffect } from 'react'

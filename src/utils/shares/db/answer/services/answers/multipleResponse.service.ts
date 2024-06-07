@@ -21,7 +21,7 @@ class MultipleResponse extends BaseService {
 
     async updateAnswer(data: AnswerAddDTO) {
         return await this.getTable().update(data.key, (prevData: AnswerAddDTO) => {
-            prevData.value = [...prevData.value, ...data.value]
+            prevData.answer = data.answer
             prevData.updatedAt = data.updatedAt
 
             return true
@@ -30,10 +30,11 @@ class MultipleResponse extends BaseService {
 
     async removeAnswersItem(data: AnswerAddDTO) {
         try {
-            return await this.getTable().update(data.key, (prevData: AnswerAddDTO) => {
-                prevData.value = prevData.value.filter((answer: string) => answer !== data.value[0])
-                return true
-            })
+            return await this.getTable().delete(data.key)
+            // update(data.key, (prevData: AnswerAddDTO) => {
+            //     prevData.answer = prevData..filter((answer: string) => answer !== data.value[0])
+            //     return true
+            // })
         } catch (error) {
             console.log(error)
             throw error

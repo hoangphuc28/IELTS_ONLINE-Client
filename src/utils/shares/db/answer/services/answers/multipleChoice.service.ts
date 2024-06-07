@@ -21,7 +21,7 @@ class MultipleChoice extends BaseService {
 
     async updateAnswer(data: AnswerAddDTO) {
         return (await this.getTable().update(data.key, (prevData: AnswerAddDTO) => {
-            prevData.value = [...data.value,]
+            prevData.answer = data.answer
             prevData.updatedAt = data.updatedAt
 
             return true

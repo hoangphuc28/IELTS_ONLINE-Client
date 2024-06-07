@@ -197,8 +197,8 @@ export default function ComponentAudioItem({
                 const dataVoiceAnswer: AnswerAddDTO = new AnswerAddDTO({
                     examSkillDetailId: currentPart.id,
                     groupQuestionId: currentPart.id,
-                    id: currentPart.id,
-                    value: [fileName],
+                    questionId: currentPart.id,
+                    answer: fileName,
                 })
                 multipleChoice.addAnswer(dataVoiceAnswer)
 

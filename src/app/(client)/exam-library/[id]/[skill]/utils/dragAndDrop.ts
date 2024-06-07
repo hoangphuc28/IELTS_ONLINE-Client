@@ -55,12 +55,12 @@ export async function drop(ev: DragEvent<HTMLElement>) {
             // if dragContainer is another drop container => change input in drop container
             if (dragContainer) {
                 const inputInDragItem = dragContainer.querySelector('input') as HTMLInputElement | null
-                await handleChangeInputValue(inputInDragItem, swapItem.innerText)
+                await handleChangeInputValue(inputInDragItem, swapItem)
             }
         }
     }
     // if drop container exist input element, change value that input
-    await handleChangeInputValue(input, dragItemDOM.innerText)
+    await handleChangeInputValue(input, dragItemDOM)
     dropContainer.appendChild(dragItemDOM)
     // #endregion handle drop
     return input
@@ -73,16 +73,30 @@ function getMaxChild(source: HTMLElement | null): number {
     return Number.parseInt(dropMaxChild)
 }
 
-async function handleChangeInputValue(input: HTMLInputElement | null, value: string) {
+async function handleChangeInputValue(input: HTMLInputElement | null, answerDOM: HTMLElement) {
     if (!input) return
-    input.value = value
+    // const value = answerDOM.innerText
+    const value = getAnswerId(answerDOM)
+    // const answerId = getAnswerId(answerDOM)
     const questionId = input.name
     const examSkillDetailId = input.dataset.examSkillDetailId
     const groupId = input.dataset.groupId
     if (!questionId || !examSkillDetailId || !groupId) return
-    const data = new AnswerAddDTO({ examSkillDetailId, groupQuestionId: groupId, id: questionId, value: [value] })
+    const data = new AnswerAddDTO({ examSkillDetailId, groupQuestionId: groupId, questionId, answer: value })
     await match.addAnswer(data)
+    input.value = value
+    // setAnswerToInput(input, answerId)
 }
+// async function handleChangeInputValue(input: HTMLInputElement | null, value: string) {
+//     if (!input) return
+//     input.value = value
+//     const questionId = input.name
+//     const examSkillDetailId = input.dataset.examSkillDetailId
+//     const groupId = input.dataset.groupId
+//     if (!questionId || !examSkillDetailId || !groupId) return
+//     const data = new AnswerAddDTO({ examSkillDetailId, groupQuestionId: groupId, id: questionId, value: [value] })
+//     await match.addAnswer(data)
+// }
 
 function handleSwapChild(sourceDOM?: HTMLElement | null, targetDOM?: HTMLElement | null): Element | null {
     if (!sourceDOM || !targetDOM) return null
@@ -102,9 +116,28 @@ async function clearInputValue(container: HTMLElement | null) {
     const examSkillDetailId = input.dataset.examSkillDetailId
     const groupId = input.dataset.groupId
     if (!questionId || !examSkillDetailId || !groupId) return
-    await match.removeAnswer(new AnswerAddDTO({ examSkillDetailId, groupQuestionId: groupId, id: questionId, value: [''] }).generateKey())
+    await match.removeAnswer(new AnswerAddDTO({ examSkillDetailId, groupQuestionId: groupId, questionId, answer: '' }).generateKey())
     input.value = ''
+    // setAnswerToInput(input, '')
 }
+
+function setAnswerToInput(input: HTMLInputElement, answerId: string) {
+    input.setAttribute('data-item-id', answerId)
+}
+function getAnswerId(answerDOM: HTMLElement) {
+    return answerDOM.dataset.itemId || ''
+}
+// async function clearInputValue(container: HTMLElement | null) {
+//     if (!container) return
+//     const input = container.querySelector('input')
+//     if (!input) return
+//     const questionId = input.name
+//     const examSkillDetailId = input.dataset.examSkillDetailId
+//     const groupId = input.dataset.groupId
+//     if (!questionId || !examSkillDetailId || !groupId) return
+//     await match.removeAnswer(new AnswerAddDTO({ examSkillDetailId, groupQuestionId: groupId, id: questionId, value: [''] }).generateKey())
+//     input.value = ''
+// }
 
 export function drag(e: DragEvent<HTMLElement>) {
     // e.stopPropagation()
