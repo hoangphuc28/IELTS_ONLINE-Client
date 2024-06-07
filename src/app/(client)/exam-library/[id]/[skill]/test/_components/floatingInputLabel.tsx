@@ -90,8 +90,8 @@ export function ComponentStringFloatingInputLabel({
         const value = input.value
         const [examSkillDetailId, groupId, answerId] = getValue(id)
         const answer = new AnswerAddDTO({
-            id: answerId,
-            value: [value],
+            questionId: answerId,
+            answer: value,
             groupQuestionId: groupId,
             examSkillDetailId: examSkillDetailId,
         })

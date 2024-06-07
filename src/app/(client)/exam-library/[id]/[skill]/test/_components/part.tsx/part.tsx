@@ -97,8 +97,8 @@ export default function ComponentPart({
             const data = new AnswerAddDTO({
                 examSkillDetailId,
                 groupQuestionId: groupId,
-                id: id,
-                value: [value],
+                questionId: id,
+                answer: value,
             })
             await fillInTheBlank.addAnswer(data)
         }
