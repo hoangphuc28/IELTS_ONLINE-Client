@@ -9,6 +9,14 @@ class TestService extends BaseService {
     async search(code: string) {
         return regexResponse(await this.api.get('/' + code))
     }
+
+    async getAll() {
+        return regexResponse(await this.api.get('/all'))
+    }
+
+    async get(id: string) {
+        return regexResponse(await this.api.get(`/one/${id}`))
+    }
 }
 
 const testService = new TestService(process.env.NEXT_PUBLIC_API_URL + '/exam-library');

@@ -12,6 +12,7 @@ const initialState: IExamState = {
     time: '',
     status: '',
     details: [],
+    exams: [],
 }
 
 const reducers = {
@@ -23,6 +24,9 @@ const reducers = {
         state.time = data.time
         state.status = data.status
         state.details = data.details
+    },
+    setterExams(state: IExamState, action: PayloadAction<ITest[]>) {
+        state.exams = action.payload
     },
 }
 
@@ -39,4 +43,5 @@ export const examReducers = examSlice.reducer
 
 export interface IExamState extends ITest {
     details: Draft<IMiniTest>[]
+    exams: Draft<ITest>[]
 }
