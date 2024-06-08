@@ -5,7 +5,7 @@ import {
     userAnswerSelectors,
 } from '@/src/app/(client)/_lib/redux/reducers/user-exam.reducer'
 import { useParams } from 'next/navigation'
-import { useEffect, useRef, useState } from 'react'
+import { MouseEvent, useEffect, useRef, useState } from 'react'
 import ComponentNextExamConfirmModel from './modals/nextExamConfirm'
 import ComponentSubmitExamConfirmModel from './modals/submitExamConfirm'
 
@@ -22,7 +22,7 @@ export default function ComponentSubmit({ target }: { target: string }) {
         <>
             <button
                 ref={btnRef}
-                onClick={(e) => handleNextExam()}
+                onClick={(e) => handleNextExam(e)}
                 className="bg-cyan-700 px-4 py-1 text-gray-200 font-bold text-base rounded-2xl"
             >
                 Submit <i className="fa-regular fa-paper-plane"></i>
@@ -41,7 +41,8 @@ export default function ComponentSubmit({ target }: { target: string }) {
         </>
     )
 
-    function handleNextExam() {
+    function handleNextExam(e: MouseEvent<HTMLButtonElement, any>) {
+        e.preventDefault()
         if (!!nextSkillProcess) {
             setIsShowNextExamConfirm(true)
             return

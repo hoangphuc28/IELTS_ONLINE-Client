@@ -10,6 +10,7 @@ import { testSkill } from '@/src/utils/shares/interfaces/IMiniTest'
 import { FormEvent } from 'react'
 import { AnswerAddDTO } from '@/src/utils/shares/db/answer/dtos/answer-add.dto'
 import { fillInTheBlank } from '@/src/utils/shares/db/answer/services/answers/fillInTheBlank.service'
+import ComponentSpeakingTest from '../speakingTest/ComponentSpeaking'
 
 export default function ComponentPart({
     data,
@@ -64,10 +65,6 @@ export default function ComponentPart({
                                 )
                             })
                         )}
-                    </section>
-
-                    <section className="mt-auto text-end">
-                        <ComponentSubmit target="" />
                     </section>
                 </section>
             </section>

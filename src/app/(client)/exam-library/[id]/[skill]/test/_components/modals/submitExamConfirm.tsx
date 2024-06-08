@@ -3,27 +3,27 @@ import {
     userAnswerSelectors,
 } from '@/src/app/(client)/_lib/redux/reducers/user-exam.reducer'
 import ComponentBaseModel from './base'
-import { useAppShareSelector } from '@/src/app/(client)/_lib/redux/hooks'
+import { useAppShareDispatch, useAppShareSelector } from '@/src/app/(client)/_lib/redux/hooks'
 import { useParams } from 'next/navigation'
 import { FormEvent, useState } from 'react'
 import ComponentCompleteAlert from './completeAlert'
 import { ExamService } from '@/src/utils/shares/db/answer/services/exam.service'
 import { testSkillSelectors } from '@/src/app/(client)/_lib/redux/reducers/test-skill.reducer'
 import { createToastDanger } from '@/src/app/(client)/_components/toast/sysToast'
+import { userAnswerDetailActions } from '@/src/app/(client)/_lib/redux/reducers/user-exam-detail.reducer'
 
 export default function ComponentSubmitExamConfirmModel({
     closeModelCallback,
+    preHandleSubmitCallback,
 }: {
     closeModelCallback: CallableFunction
+    preHandleSubmitCallback?: CallableFunction
 }) {
     const params = useParams<{ skill: string }>()
     const examNotDone = useAppShareSelector((state) =>
         userAnswerSelectors.GetExamNotDone({ userAnswer: state.userAnswer }, params.skill),
     )
-    const targetSkillExam = useAppShareSelector((state) => testSkillSelectors.GetSkillExam(state))
-    const currentProcess = useAppShareSelector((state) =>
-        userAnswerSelectors.GetCurrentSkill(state, params.skill),
-    )
+    const dispatch = useAppShareDispatch()
     const [submitStep, setSubmitStep] = useState<number>(1)
     return (
         <>
@@ -93,18 +93,14 @@ export default function ComponentSubmitExamConfirmModel({
 
         try {
             // handle submit the entire exam
-            // save this exam
-            if (!currentProcess) {
-                console.log('Exam not found.')
-                return
-            }
-            await ExamService.submit(
-                targetSkillExam.parts.map((part) => part.id),
-                currentProcess.id,
+            preHandleSubmitCallback && preHandleSubmitCallback()
+            dispatch(
+                userAnswerDetailActions.HandleCreate(params.skill, () => {
+                    setSubmitStep(2)
+                }),
             )
 
             // handle end test. ex: disconnect socket, end exam.
-            setSubmitStep(2)
         } catch (error) {
             console.log(error)
             createToastDanger('An error occurred')

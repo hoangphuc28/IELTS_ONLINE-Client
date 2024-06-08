@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import ComponentBaseModel from './base'
+import { MouseEvent } from 'react'
 
 export default function ComponentCompleteAlert() {
     const router = useRouter()
@@ -19,7 +20,7 @@ export default function ComponentCompleteAlert() {
                 <section className="flex flex-col gap-1">
                     <div className="">
                         <button
-                            onClick={(e) => router.push('/')}
+                            onClick={(e) => handleBack(e)}
                             className="w-full px-2 py-2 rounded border border-gray-200/90 bg-violet-700/80 hover:bg-violet-700 font-semibold text-white"
                         >
                             Back to home
@@ -29,4 +30,10 @@ export default function ComponentCompleteAlert() {
             </section>
         </ComponentBaseModel>
     )
+
+    function handleBack(e: MouseEvent<HTMLButtonElement, any>) {
+        e.preventDefault()
+        router.push('/')
+        return
+    }
 }

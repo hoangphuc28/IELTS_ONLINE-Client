@@ -14,6 +14,9 @@ import {
     testSkillActions,
     testSkillSelectors,
 } from '@/src/app/(client)/_lib/redux/reducers/test-skill.reducer'
+import ComponentSubmit from './_components/submit'
+import { testSkill } from '@/src/utils/shares/interfaces/IMiniTest'
+import ComponentSpeakingTest from './_components/speakingTest/ComponentSpeaking'
 
 export default function Page() {
     const params = useParams<{ id: string; skill: string }>()
@@ -50,14 +53,28 @@ export default function Page() {
                             name={'form-exam-' + targetSkillTest.name}
                             action=""
                         >
-                            {targetSkillTest.parts.map((part: IPart, index: number) => (
-                                <ComponentPart
-                                    key={'exam-library-part-' + index}
-                                    data={part}
-                                    index={index}
-                                />
-                            ))}
+                            {(() => {
+                                if (
+                                    params.skill.toLowerCase() === testSkill.SPEAKING.toLowerCase()
+                                ) {
+                                    return (
+                                        <ComponentSpeakingTest targetSkillTest={targetSkillTest} />
+                                    )
+                                }
+
+                                return targetSkillTest.parts.map((part: IPart, index: number) => (
+                                    <ComponentPart
+                                        key={'exam-library-part-' + index}
+                                        data={part}
+                                        index={index}
+                                    />
+                                ))
+                            })()}
                         </form>
+
+                        <section className="mt-auto text-end">
+                            <ComponentSubmit target="" />
+                        </section>
                     </main>
                     <ComponentTestFooter data={targetSkillTest} />
                 </>

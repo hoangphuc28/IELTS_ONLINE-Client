@@ -45,24 +45,44 @@ export class Service extends BaseService {
                 processId,
                 answersOfParts: []
             }
-            for (const id of idSkillExamDetails) {
+            const listAnswersSortByPart = data.sort((beforeCollect: AnswerAddDTO, afterCollect: AnswerAddDTO) => {
+                return beforeCollect.examSkillDetailId > afterCollect.examSkillDetailId ? 1 : -1
+            })
+            const listPart = listAnswersSortByPart.reduce((acc: { examSkillDetailId: string, data: AnswerAddDTO[] }[], collect: AnswerAddDTO) => {
+                const lastElement = acc.at(-1)
+                if (!lastElement || (lastElement && lastElement.examSkillDetailId != collect.examSkillDetailId)) {
+                    const part: { examSkillDetailId: string, data: AnswerAddDTO[] } = {
+                        examSkillDetailId: collect.examSkillDetailId,
+                        data: []
+                    }
+                    acc.push(part)
+                }
+
+                acc.at(-1)?.data.push(collect)
+                return acc
+            }, [])
+            for (const part of listPart) {
                 const partDetail: IReqGroupExamSkillDetail = {
-                    examSkillDetailId: id,
+                    examSkillDetailId: part.examSkillDetailId,
                     groups: []
                 }
-                const listAnswersSortByGroupId = data.sort((beforeCollect: AnswerAddDTO, afterCollect: AnswerAddDTO) => {
+
+                const listAnswersSortByGroup = part.data.sort((beforeCollect: AnswerAddDTO, afterCollect: AnswerAddDTO) => {
                     return beforeCollect.groupQuestionId > afterCollect.groupQuestionId ? 1 : -1
                 })
-                partDetail.groups = data.reduce((acc: IReqGroupAnswer[], collect: AnswerAddDTO) => {
+
+                partDetail.groups = listAnswersSortByGroup.reduce((acc: IReqGroupAnswer[], answer: AnswerAddDTO) => {
                     const lastElement = acc.at(-1)
-                    if (!lastElement || (lastElement && lastElement.id != collect.examSkillDetailId)) {
-                        acc.push({
-                            id: collect.examSkillDetailId,
+                    if (!lastElement || (lastElement && lastElement.id !== answer.groupQuestionId)) {
+                        const group: IReqGroupAnswer = {
+                            id: answer.groupQuestionId,
                             answers: []
-                        })
+                        }
+                        acc.push(group)
                     }
 
-                    acc.at(-1)?.answers.push(collect)
+                    acc.at(-1)?.answers.push(answer)
+
                     return acc
                 }, [])
 

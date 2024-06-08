@@ -4,9 +4,8 @@ import {
 } from '@/src/app/(client)/_lib/redux/reducers/user-exam.reducer'
 import ComponentBaseModel from './base'
 import { useParams, useRouter } from 'next/navigation'
-import { useAppShareSelector } from '@/src/app/(client)/_lib/redux/hooks'
-import { ExamService } from '@/src/utils/shares/db/answer/services/exam.service'
-import { testSkillSelectors } from '@/src/app/(client)/_lib/redux/reducers/test-skill.reducer'
+import { useAppShareDispatch, useAppShareSelector } from '@/src/app/(client)/_lib/redux/hooks'
+import { userAnswerDetailActions } from '@/src/app/(client)/_lib/redux/reducers/user-exam-detail.reducer'
 
 export default function ComponentNextExamConfirmModel({
     nextExam,
@@ -20,10 +19,7 @@ export default function ComponentNextExamConfirmModel({
     const params = useParams<{ skill: string }>()
     const router = useRouter()
     const exam = useAppShareSelector((state) => state.exam)
-    const targetSkillExam = useAppShareSelector((state) => testSkillSelectors.GetSkillExam(state))
-    const currentProcess = useAppShareSelector((state) =>
-        userAnswerSelectors.GetCurrentSkill(state, params.skill),
-    )
+    const dispatch = useAppShareDispatch()
     return (
         <ComponentBaseModel>
             <section className="flex flex-col gap-3">
@@ -66,24 +62,16 @@ export default function ComponentNextExamConfirmModel({
 
     async function handleNextTest() {
         try {
-            console.log('Go to next test.')
-
-            // save this exam
-            if (!currentProcess) {
-                console.log('Exam not found.')
-                return
-            }
-            await ExamService.submit(
-                targetSkillExam.parts.map((part) => part.id),
-                currentProcess.id,
+            dispatch(
+                userAnswerDetailActions.HandleCreate(params.skill, () => {
+                    // redirect to next test
+                    console.log('Go to next test.')
+                    const nextUri = `/exam-library/${
+                        exam.code
+                    }/${nextExam.skillExam.name.toLowerCase()}/test`
+                    router.push(nextUri)
+                }),
             )
-
-            // redirect to next test
-            console.log('Go to next test.')
-            const nextUri = `/exam-library/${
-                exam.code
-            }/${nextExam.skillExam.name.toLowerCase()}/test`
-            router.push(nextUri)
         } catch (error) {
             console.log(error)
         }
