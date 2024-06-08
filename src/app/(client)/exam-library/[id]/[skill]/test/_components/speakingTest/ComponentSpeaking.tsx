@@ -7,6 +7,7 @@ import ComponentCompleteAlert from '../modals/completeAlert'
 import { createToastDanger } from '@/src/app/(client)/_components/toast/sysToast'
 import { useAppShareDispatch } from '@/src/app/(client)/_lib/redux/hooks'
 import { userAnswerDetailActions } from '@/src/app/(client)/_lib/redux/reducers/user-exam-detail.reducer'
+import { siteAction } from '@/src/app/(client)/_lib/redux/reducers/site.reducer'
 
 export default function ComponentSpeakingTest({ targetSkillTest }: { targetSkillTest: IMiniTest }) {
     const [partProcess, setPartProcess] = useState<number>(0)
@@ -40,6 +41,7 @@ export default function ComponentSpeakingTest({ targetSkillTest }: { targetSkill
                 )
 
                 // handle end test. ex: disconnect socket, end exam.
+                dispatch(siteAction.DisconnectSocket())
             }
             return
         } catch (error) {

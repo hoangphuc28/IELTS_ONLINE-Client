@@ -17,6 +17,7 @@ import {
 import ComponentSubmit from './_components/submit'
 import { testSkill } from '@/src/utils/shares/interfaces/IMiniTest'
 import ComponentSpeakingTest from './_components/speakingTest/ComponentSpeaking'
+import { siteAction } from '@/src/app/(client)/_lib/redux/reducers/site.reducer'
 
 export default function Page() {
     const params = useParams<{ id: string; skill: string }>()
@@ -31,6 +32,7 @@ export default function Page() {
     useEffect(() => {
         // console.log('[CUR SKILL PROCESS] ', currentSkillProcess)
         if (!currentSkillProcess) return
+        dispatch(siteAction.ConnectSocket())
         dispatch(testSkillActions.GetSkillExamData(currentSkillProcess.skillExam.id))
         // const targetSkill: IExamSkill = await skillExamService.get(
         //     currentSkillProcess.skillExam.id,
@@ -76,7 +78,9 @@ export default function Page() {
                             <ComponentSubmit target="" />
                         </section>
                     </main>
-                    <ComponentTestFooter data={targetSkillTest} />
+                    {params.skill.toLowerCase() !== testSkill.SPEAKING.toLowerCase() && (
+                        <ComponentTestFooter data={targetSkillTest} />
+                    )}
                 </>
             )}
         </>

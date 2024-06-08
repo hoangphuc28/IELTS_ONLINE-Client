@@ -11,6 +11,7 @@ import { ExamService } from '@/src/utils/shares/db/answer/services/exam.service'
 import { testSkillSelectors } from '@/src/app/(client)/_lib/redux/reducers/test-skill.reducer'
 import { createToastDanger } from '@/src/app/(client)/_components/toast/sysToast'
 import { userAnswerDetailActions } from '@/src/app/(client)/_lib/redux/reducers/user-exam-detail.reducer'
+import { siteAction } from '@/src/app/(client)/_lib/redux/reducers/site.reducer'
 
 export default function ComponentSubmitExamConfirmModel({
     closeModelCallback,
@@ -101,6 +102,7 @@ export default function ComponentSubmitExamConfirmModel({
             )
 
             // handle end test. ex: disconnect socket, end exam.
+            dispatch(siteAction.DisconnectSocket())
         } catch (error) {
             console.log(error)
             createToastDanger('An error occurred')
