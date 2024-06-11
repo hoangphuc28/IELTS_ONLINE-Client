@@ -27,6 +27,7 @@ export default function ExamProvider({ children }: { children: React.ReactNode }
         </AppContext.Provider>
     )
 }
+
 export function useExamContext() {
     return useContext(AppContext)
 }

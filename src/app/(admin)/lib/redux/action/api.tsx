@@ -1,5 +1,5 @@
 
-const domain = 'http://localhost:3001'
+const domain = 'http://localhost:3000'
 const prefix = 'api'
 const Part = {
     common: `${domain}/${prefix}/parts`,

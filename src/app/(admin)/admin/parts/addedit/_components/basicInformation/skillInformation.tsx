@@ -18,10 +18,10 @@ export default function SKillInformation({ formik }: Props) {
             case SkillEnum.WRITING:
                 return <PartContent formik={formik} />
             case SkillEnum.SPEAKING: {
-                if (formik.values.partNumber === PartEnum.Part2) return <PartResource formik={formik} />
+                if (formik.values.partNumber === PartEnum.Part2) return <PartContent formik={formik} />
             }
             default:
-                return <PartContent formik={formik} />
+                return <PartResource formik={formik} />
         }
     }
     const component = renderComponent()
