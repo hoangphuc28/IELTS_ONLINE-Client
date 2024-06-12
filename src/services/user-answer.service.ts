@@ -1,10 +1,13 @@
 import { regexResponse } from "../utils/shares";
-import { AnswerAddDTO } from "../utils/shares/db/answer/dtos/answer-add.dto";
 import BaseService from "./base";
 
 class UserAnswerService extends BaseService {
     constructor(url: string) {
         super(url)
+    }
+
+    async getRecent(codeExam: string) {
+        return regexResponse(await this.api.get(`/${codeExam}/recent`))
     }
 }
 

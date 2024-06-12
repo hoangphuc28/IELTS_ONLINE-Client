@@ -43,8 +43,8 @@ const reducers = {
             if (Object.prototype.hasOwnProperty.call(testSkill, key)) {
                 const k: testSkillType = key as testSkillType
                 const skill: string = testSkill[k]
-                const item = items.find((item) => item.name === skill)
-                if (skill == newItem.name) {
+                const item = items.find((item) => item.name.toLowerCase() === skill.toLowerCase())
+                if (skill.toLowerCase() == newItem.name.toLowerCase()) {
                     result.push(newItem)
                     continue
                 }

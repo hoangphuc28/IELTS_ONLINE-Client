@@ -28,9 +28,11 @@ export default function ComponentCard({
                         background: `url(${data.src}), url(../../../../assets/img/src-test-default.jpg)`,
                     }}
                 ></div>
-                <h5 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
-                    {data.name}
-                </h5>
+                <div className="w-full">
+                    <h5 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+                        {data.name}
+                    </h5>
+                </div>
                 <p
                     className="w-full h-[54px] text-ellipsis overflow-hidden text-base font-normal text-gray-700"
                     style={{

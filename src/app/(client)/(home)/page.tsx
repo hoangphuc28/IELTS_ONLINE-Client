@@ -9,6 +9,10 @@ import ISourceData from './interfaces/ISourceData'
 import ICarouselData from './interfaces/ICarouselData'
 import ITest from '@/src/utils/shares/interfaces/ITest'
 import ComponentMedia from '@client/_components/media'
+import { useAppShareDispatch, useAppShareSelector } from '../_lib/redux/hooks'
+import { examActions, examSelectors } from '../_lib/redux/reducers/exam.reducer'
+import { useEffect, useState } from 'react'
+import { Pagination, Stack } from '@mui/material'
 
 export default function Page() {
     const bannerData: ISourceData = {
@@ -19,27 +23,36 @@ export default function Page() {
         // type: 'hybrid',
         // src: 'https://ieltsonlinetests.com/themes/iot/images/hero-background/hero-banner.jpg',
     }
+    const dispatch = useAppShareDispatch()
 
-    const test: ITest = {
-        code: 'haha',
-        name: 'IELTS Mock Test 2023 December',
-        title: 'Bài này để làm mẫu',
-        description: 'Bài này để làm mẫu, gió thoang thoảng, âm vang lăn tăn, tí tắt tí tắt...',
-        src: '',
-        createdAt: new Date().toLocaleString(),
-        details: [],
-        hasPassword: false,
-        status: '',
-        time: '03:00:00',
-        updatedAt: new Date().toLocaleString(),
-    }
-    const tests: ITest[] = []
-    while (tests.length < 18) {
-        const testI = { ...test }
-        if (tests.length % 4 != 0) testI.hasPassword = !testI.hasPassword
-        testI.code += '-' + tests.length.toString()
-        tests.push(testI)
-    }
+    const examsData = useAppShareSelector((state) => examSelectors.GetExams(state))
+
+    const [page, setPage] = useState<number>(1)
+
+    // const test: ITest = {
+    //     code: 'haha',
+    //     name: 'IELTS Mock Test 2023 December',
+    //     title: 'Bài này để làm mẫu',
+    //     description: 'Bài này để làm mẫu, gió thoang thoảng, âm vang lăn tăn, tí tắt tí tắt...',
+    //     src: '',
+    //     createdAt: new Date().toLocaleString(),
+    //     details: [],
+    //     hasPassword: false,
+    //     status: '',
+    //     time: '03:00:00',
+    //     updatedAt: new Date().toLocaleString(),
+    // }
+    // const tests: ITest[] = []
+    // while (tests.length < 18) {
+    //     const testI = { ...test }
+    //     if (tests.length % 4 != 0) testI.hasPassword = !testI.hasPassword
+    //     testI.code += '-' + tests.length.toString()
+    //     tests.push(testI)
+    // }
+
+    useEffect(() => {
+        dispatch(examActions.GetAllExam())
+    }, [])
 
     return (
         <>
@@ -88,14 +101,48 @@ export default function Page() {
                         </section>
                         <section className="min-h-[60vh] flex flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-x-3">
                             {(() => {
-                                return tests.map((test, index) => (
-                                    <ComponentCard
-                                        key={`card-` + test.code + '-' + index}
-                                        data={test}
-                                    />
-                                ))
+                                return examsData.reduce((acc: JSX.Element[], test, index) => {
+                                    if (
+                                        index < Math.min(page * 12, examsData.length) &&
+                                        index >= (page - 1) * 12
+                                    ) {
+                                        acc.push(
+                                            <ComponentCard
+                                                key={`card-` + test.code + '-' + index}
+                                                data={test}
+                                            />,
+                                        )
+                                    }
+                                    return acc
+                                }, [])
+                                // return examsData.map((test, index) => (
+                                //     <ComponentCard
+                                //         key={`card-` + test.code + '-' + index}
+                                //         data={test}
+                                //     />
+                                // ))
                             })()}
                         </section>
+                        {examsData.length > 12 && (
+                            <div
+                                className="pagination"
+                                style={{
+                                    marginTop: '20px',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                }}
+                            >
+                                <Stack spacing={2}>
+                                    <Pagination
+                                        count={Math.ceil(examsData.length / 12)}
+                                        variant="outlined"
+                                        shape="rounded"
+                                        page={page}
+                                        onChange={(e: any, value: number) => setPage(value)}
+                                    />
+                                </Stack>
+                            </div>
+                        )}
                     </section>
                 </LayoutCenter>
             </main>

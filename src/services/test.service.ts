@@ -19,6 +19,6 @@ class TestService extends BaseService {
     }
 }
 
-const testService = new TestService(process.env.NEXT_PUBLIC_API_URL + '/exam-library');
+const testService = new TestService(process.env.NEXT_PUBLIC_API_URL + '/exam');
 
 export default testService;

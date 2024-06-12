@@ -20,7 +20,7 @@ export default function SideBar({
         <>
             <section className={`${className ? className : ''}`}>
                 <aside
-                    className={`flex flex-col gap-y-2 bg-white rounded overflow-hidden border`}
+                    className={`flex flex-col gap-y-2 bg-white rounded overflow-hidden border backdrop-blur-md shadow`}
                     style={style}
                 >
                     <SideBarItem
@@ -60,7 +60,7 @@ function SideBarItem({
     isActive: boolean
 }) {
     // bg-cyan, text-neutral-500
-    const bgActive = 'bg-yellow-300'
+    const bgActive = 'bg-violet-400'
     const defaultBg = isActive ? bgActive : 'bg-white'
     const fontWeightActive = 'font-bold'
     const defaultFontWeight = isActive ? fontWeightActive : 'font-regular'
@@ -68,7 +68,7 @@ function SideBarItem({
     const defaultText = isActive ? textColorActive : 'text-neutral-500'
     return (
         <Link
-            className={`flex items-center ${defaultBg} hover:bg-yellow-300 ${defaultFontWeight} hover:font-bold ps-4 py-2 pe-4 text-base ${defaultText} hover:${textColorActive}`}
+            className={`flex items-center ${defaultBg} hover:bg-violet-400 ${defaultFontWeight} hover:font-bold ps-4 py-2 pe-4 text-base ${defaultText} hover:${textColorActive}`}
             href={href}
         >
             {children}

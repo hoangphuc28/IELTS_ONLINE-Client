@@ -12,12 +12,14 @@ import {
     testSkillSelectors,
 } from '@client/_lib/redux/reducers/test-skill.reducer'
 import { ComponentTestItem } from './_components/testItems/item'
-import { useRouter } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import { examActions, examSelectors } from '../../../_lib/redux/reducers/exam.reducer'
 import { userAnswerService } from '@/src/services/user-answer.service'
 import { IUserAnswer, userAnswerActions } from '../../../_lib/redux/reducers/user-exam.reducer'
+import { siteAction } from '../../../_lib/redux/reducers/site.reducer'
 
 export default function Page() {
+    const params = useParams<{ id: string }>()
     const router = useRouter()
     const dispatch = useAppShareDispatch()
     const user = useAppShareSelector((state) => state.user)
@@ -31,7 +33,8 @@ export default function Page() {
     const colors = ['#31aabe', '#317343', '#eea055', '#c06073']
 
     useEffect(() => {
-        dispatch(examActions.setter(test))
+        dispatch(examActions.GetExam(params.id))
+        // dispatch(examActions.setter(test))
         dispatch(testSkillActions.resetProcess())
         // testsManager.reset()
     }, [])
@@ -49,7 +52,7 @@ export default function Page() {
                                 Choose your practice tests
                             </h3>
                             <section className="grid grid-cols-2 md:grid-cols-4 gap-5 py-3">
-                                {test.details.map((miniTest, index) => (
+                                {exam.skillsExam.map((miniTest, index) => (
                                     <ComponentTestItem
                                         key={`test-card-item-${index}`}
                                         color={colors[index]}
@@ -82,18 +85,12 @@ export default function Page() {
     async function handleClickStartProgressTest(e: MouseEvent<HTMLAnchorElement, any>) {
         e.preventDefault()
         if (!testFirstSkill) return
-        // create user answer
-        // create user exam skill process
         console.log('User id: ', user)
         if (!user?.id) return router.push('/login')
-        const userAnswer: IUserAnswer = await userAnswerService.create({
-            timeStart: new Date(),
-            userId: user.id,
-            examSkills: testsSkill,
-        })
-        console.log('user answer: ', userAnswer)
-        dispatch(userAnswerActions.setter(userAnswer))
-        router.push(`/exam-library/${test.code}/${testFirstSkill.name}/test`)
+        // create user answer
+        // create user exam skill process
+        dispatch(userAnswerActions.Create())
+        router.push(`/exam-library/${exam.code}/${testFirstSkill.name}/test`)
     }
 
     function handleClickCheckSkill(skillName: string) {

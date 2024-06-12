@@ -1,13 +1,25 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { Draft, PayloadAction, createSlice } from '@reduxjs/toolkit'
 import * as Selector from '../actions/site/selector.action'
 import * as SocketAction from '../actions/site/socket.action'
 
+export enum ESocketStatus {
+    none = 'none',
+    connecting = 'connecting',
+    connected = 'connected',
+    connectionFailed = 'connectionFailed',
+    disconnecting = 'disconnecting',
+    disconnected = 'disconnected',
+    disconnectedFailed = 'disconnectedFailed',
+}
+
 const initialState: ISiteState = {
-    socket: undefined,
+    connectionStatus: ESocketStatus.none,
 }
 
 const reducers = {
-    setSocket(state: ISiteState, action: PayloadAction<any>) {},
+    setSocketStatus(state: ISiteState, action: PayloadAction<ESocketStatus>) {
+        state.connectionStatus = action.payload
+    },
 }
 
 const siteSlice = createSlice({
@@ -22,5 +34,5 @@ export const siteSelector = siteSlice.selectors
 export const siteReducer = siteSlice.reducer
 
 export interface ISiteState {
-    socket: any
+    connectionStatus: ESocketStatus
 }

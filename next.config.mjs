@@ -10,6 +10,7 @@ const nextConfig = {
         // NEXT_PUBLIC_API_URL: 'https://ielts-server-3n7v.onrender.com/api',
         NEXT_PUBLIC_TIME_ANSWER_CORRECT: '14400000',
         NEXT_PUBLIC_ACCESS_TOKEN_LOCAL_NAME: 'access_token_ielst-online-test',
+        NEXT_PUBLIC_SOCKET_SERVER: 'http://localhost:8001',
     },
     sassOptions: {
         includePaths: [path.join(path.dirname(__fileName), 'styles')],

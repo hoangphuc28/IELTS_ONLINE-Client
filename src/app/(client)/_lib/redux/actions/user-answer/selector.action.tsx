@@ -1,8 +1,18 @@
 import { testSkill } from '@/src/utils/shares/interfaces/IMiniTest'
 import { IUserAnswer, IUserAnswerProcess } from '../../reducers/user-exam.reducer'
 
+export const GetUserAnswer = (state: IUserAnswer) => state
+
+export const GetCountDownTimer = (state: IUserAnswer) => state.timer
+
+export const GetExportTimer = (state: IUserAnswer) => ({
+    h: Math.floor(state.timer / 3600),
+    m: Math.floor((state.timer % 3600) / 60),
+    s: Math.floor((state.timer % 3600) % 60),
+})
+
 export const GetCurrentSkill = (state: IUserAnswer, name: string) => {
-    console.log('[SELECTOR] ', state, name, name.toLowerCase())
+    // console.log('[SELECTOR] ', state, name, name.toLowerCase())
     return state.processes.find(
         (process) => process.skillExam.name.toLowerCase() == name.toLowerCase(),
     ) as IUserAnswerProcess | undefined

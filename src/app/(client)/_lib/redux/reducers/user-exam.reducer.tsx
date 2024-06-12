@@ -1,11 +1,14 @@
 import { Draft, PayloadAction, createSlice } from '@reduxjs/toolkit'
-import * as Getter from '../actions/user-answer/selector.action'
+import * as Selector from '../actions/user-answer/selector.action'
+import * as Getter from '../actions/user-answer/get.action'
+import * as Creator from '../actions/user-answer/create.action'
 import { testSkill, testSkillType } from '@/src/utils/shares/interfaces/IMiniTest'
 
 const initialState: IUserAnswer = {
     id: '',
     timeStart: undefined,
     processes: [],
+    timer: 0,
 }
 
 const reducers = {
@@ -32,16 +35,19 @@ const reducers = {
 
         state.processes = result
     },
+    setterTimer(state: IUserAnswer, action: PayloadAction<number>) {
+        state.timer = action.payload
+    },
 }
 
 export const userAnswerSlice = createSlice({
     name: 'userAnswer',
     initialState,
     reducers: reducers,
-    selectors: Getter,
+    selectors: Selector,
 })
 
-export const userAnswerActions = userAnswerSlice.actions
+export const userAnswerActions = { ...userAnswerSlice.actions, ...Getter, ...Creator }
 export const userAnswerSelectors = userAnswerSlice.selectors
 export const userAnswerReducers = userAnswerSlice.reducer
 
@@ -49,6 +55,7 @@ export interface IUserAnswer {
     id: string
     timeStart?: Draft<Date>
     processes: Draft<IUserAnswerProcess>[]
+    timer: number
 }
 
 export interface IUserAnswerProcess {

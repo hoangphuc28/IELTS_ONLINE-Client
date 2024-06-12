@@ -8,8 +8,10 @@ import { AppShareGetState } from '../../store'
 export const ToggleTestsSkillProgress = (name: string) => {
     return (dispatch: any, getState: AppShareGetState): any => {
         const skillsTestProcess: ITestSkillProcess[] = getState().testSkill.testsSkillProgress
-        const listSkillTest: IMiniTest[] = getState().exam.details
-        const skillDetail = listSkillTest.find((skill) => skill.name === name)
+        const listSkillTest: IMiniTest[] = getState().exam.skillsExam
+        const skillDetail = listSkillTest.find(
+            (skill) => skill.name.toLowerCase() === name.toLowerCase(),
+        )
         if (!skillDetail) return
         const itemProcess = skillsTestProcess.find((item) => item.id === skillDetail.id)
         if (!!itemProcess) {

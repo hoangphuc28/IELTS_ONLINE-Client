@@ -26,7 +26,7 @@ export default function ComponentListQuestionContent({
     startQuestionIndex?: number
 }) {
     const params = useParams<{ skill: string }>()
-    console.log('[LIST QUESTION] ', data)
+    // console.log('[LIST QUESTION] ', data)
     // if (params.skill === 'Speaking') return <></>
     if (data.questionType === QuestionType.multiChoice)
         return <ComponentListMultipleChoice data={data} />
