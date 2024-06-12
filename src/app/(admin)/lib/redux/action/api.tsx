@@ -1,5 +1,6 @@
+import { HOST } from '@/src/utils/constanst/host'
 
-const domain = 'http://localhost:3000'
+const domain = HOST
 const prefix = 'api'
 const Part = {
     common: `${domain}/${prefix}/parts`,
@@ -10,8 +11,7 @@ const GroupQuestions = {
 }
 const api = {
     part: Part,
-    groupQuestions: GroupQuestions
-
+    groupQuestions: GroupQuestions,
 }
 
 export default api
