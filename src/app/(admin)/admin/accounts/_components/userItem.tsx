@@ -21,7 +21,7 @@ export default function ComponentUserItem({ index, data }: { index: number; data
                 className="inline-flex items-center justify-center col-span-1 text-center text-white bg-red-400 rounded px-2 py-1"
                 onClick={async (e) => await handleDelete(data.id)}
             >
-                <i className="fa-solid fa-xmark"></i>
+                <span className="font-bold">x</span>
             </Link>
         </section>
     )

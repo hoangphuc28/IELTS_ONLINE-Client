@@ -18,7 +18,8 @@ export default function ExamItem({ data, index }: Props) {
                 <div className="exam-infor-left">
                     <div>#{index + 1}</div>
                     {/* <img  /> */}
-                    <Image src={data.thumbnail} alt="thumbnail" />
+                    <img src={data.thumbnail} alt="thumbnail" />
+                    {/* <Image src={data.thumbnail} alt="thumbnail" /> */}
                 </div>
                 <div className="exam-infor-right">
                     <div className="infor-right-top">
