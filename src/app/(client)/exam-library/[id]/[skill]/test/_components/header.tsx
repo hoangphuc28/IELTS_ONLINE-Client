@@ -8,7 +8,7 @@ import { testSkillSelectors } from '@/src/app/(client)/_lib/redux/reducers/test-
 export default function ComponentTestHeader({ data }: { data: IMiniTest }) {
     const time = useAppShareSelector((state) => userAnswerSelectors.GetExportTimer(state))
     useEffect(() => {
-        console.log('data: ', data)
+        // console.log('data: ', data)
     }, [])
     return (
         <>
@@ -39,9 +39,9 @@ export default function ComponentTestHeader({ data }: { data: IMiniTest }) {
                         )}
                     </section>
                 </section>
-                {data.name.toLowerCase() === testSkill.LISTENING.toLowerCase() &&
-                    useMemo(
-                        () => (
+                {useMemo(
+                    () =>
+                        data.name.toLowerCase() === testSkill.LISTENING.toLowerCase() && (
                             <ListeningHeader
                                 data={data.parts.reduce((total: string[], part) => {
                                     if (part.resource && part.resource.length > 0) {
@@ -51,15 +51,18 @@ export default function ComponentTestHeader({ data }: { data: IMiniTest }) {
                                 }, [])}
                             />
                         ),
-                        [],
-                    )}
+                    [],
+                )}
             </header>
         </>
     )
 }
 
 function ListeningHeader({ data }: { data: string[] }) {
-    const listRefAudio = data.map((src) => useRef<HTMLAudioElement>(null))
+    const listRefAudio: RefObject<HTMLAudioElement>[] = []
+    for (const src of data) {
+        listRefAudio.push(useRef<HTMLAudioElement>(null))
+    }
 
     return (
         <>

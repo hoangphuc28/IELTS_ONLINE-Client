@@ -32,9 +32,12 @@ export default function ComponentUpgradePointModel({
                     style={{ borderRight: '1px solid #cccccc80' }}
                 >
                     {userAnswerDetails.map((userAnswerDetail) =>
-                        userAnswerDetail.answer.map((answer) =>
+                        userAnswerDetail.answer.map((answer, index) =>
                             skillName.toLowerCase() === testSkill.WRITING.toLowerCase() ? (
-                                <p className="max-w-[800px]">
+                                <p
+                                    className="max-w-[800px]"
+                                    key={'user-answer-detail-skill-' + index}
+                                >
                                     {answer.answer +
                                         answer.answer +
                                         answer.answer +
@@ -52,7 +55,11 @@ export default function ComponentUpgradePointModel({
                                         answer.answer}
                                 </p>
                             ) : (
-                                <audio src={answer.answer} controls></audio>
+                                <audio
+                                    src={answer.answer}
+                                    controls
+                                    key={'user-answer-detail-skill-' + index}
+                                ></audio>
                             ),
                         ),
                     )}

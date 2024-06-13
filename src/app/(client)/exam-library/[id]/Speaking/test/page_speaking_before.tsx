@@ -34,7 +34,7 @@ export default function Page() {
         console.log('[CURRENT Skill process]', currentSkillProcess)
         if (!currentSkillProcess) return
         dispatch(testSkillActions.GetSkillExamData(currentSkillProcess.skillExam.id))
-    }, [])
+    }, [currentSkillProcess])
     return (
         <>
             {targetSkillTest.id.length > 0 && (

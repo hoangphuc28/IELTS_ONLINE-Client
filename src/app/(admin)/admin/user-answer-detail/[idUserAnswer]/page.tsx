@@ -133,8 +133,11 @@ export default function Page() {
                     </section>
                 </section>
             </section>
-            {userAnswer.processes.map((process) => (
-                <section className="flex justify-between bg-white px-4 py-4 rounded shadow">
+            {userAnswer.processes.map((process, index) => (
+                <section
+                    className="flex justify-between bg-white px-4 py-4 rounded shadow"
+                    key={'user-answer-detail-item-' + index}
+                >
                     <h3 className="text-xl">{process.skillExam.name}</h3>
                     <section className="flex flex-col gap-3">
                         {process.totalScore === 0 || !!process.totalScore ? (

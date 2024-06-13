@@ -1,5 +1,5 @@
 # Sử dụng một hình ảnh có sẵn chứa Node.js
-FROM node:lts-alpine as build
+FROM node:18-alpine as build
 
 # Thiết lập thư mục làm việc của ứng dụng
 WORKDIR /app
