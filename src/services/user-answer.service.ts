@@ -6,6 +6,14 @@ class UserAnswerService extends BaseService {
         super(url)
     }
 
+    async getAllRecent() {
+        return regexResponse(await this.api.get('/all'))
+    }
+
+    async getAllFilterExam(code: string) {
+        return regexResponse(await this.api.get('/all/by-exam'))
+    }
+
     async getRecent(codeExam: string) {
         return regexResponse(await this.api.get(`/${codeExam}/recent`))
     }

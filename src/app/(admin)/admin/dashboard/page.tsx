@@ -1,117 +1,70 @@
 'use client'
+import { useAppShareSelector } from '@/src/app/(client)/_lib/redux/hooks'
 import ComponentListUserAnswer from './_component/list-user-answer'
 import Charts from './charts'
 import QuicActions from './quickActions'
 import '@admin/styles/components/_cover.scss'
 import '@admin/styles/pages/dashboard.scss'
+import { useAppDispatch, useAppSelector } from '../../lib/redux/hooks'
+import {
+    adminUserAnswerAction,
+    adminUserAnswerSelector,
+} from '../../lib/redux/reducer/user-answer.reducer'
+import { useEffect } from 'react'
+import HightChart from '@/src/app/(client)/account/dashboard/_components/charts/highChart'
 
 export default function Page() {
+    const dispatch = useAppDispatch()
+    const listAnswers = useAppSelector((state) => adminUserAnswerSelector.GetList(state))
+    useEffect(() => {
+        dispatch(adminUserAnswerAction.GetAll())
+    }, [])
     return (
         <div className="dashboard">
             <section className="flex flex-col gap-3">
                 <QuicActions />
-                <section className="flex gap-2">
-                    <Charts />
-                    <Charts />
-                </section>
-                <section className="bg-white flex flex-col gap-3 px-4 py-4 rounded-lg shadow-2xl">
-                    <h3>Recent Submissions</h3>
-                    <ComponentListUserAnswer
-                        listUserAnswer={[
+                <section className="grid grid-cols-2 gap-2">
+                    <HightChart
+                        title={'In ' + new Date().toLocaleString('en-us', { month: 'long' })}
+                        xTitle="Exam's code"
+                        yTitle=""
+                        series={[
                             {
-                                id: '123',
-                                code: '123456',
-                                name: 'exam 1',
-                                userName: 'ABc',
-                                submittedAt: '16:44:47 12/6/2024',
-                                processes: [
-                                    {
-                                        totalScore: 9.5,
-                                        userAnswerDetails: [],
-                                        skillExam: {
-                                            id: '1',
-                                            name: 'Listening',
-                                        },
-                                    },
-                                    {
-                                        totalScore: 9.5,
-                                        userAnswerDetails: [
-                                            {
-                                                id: 'writing-1',
-                                                answer: '1 abc degaf adfasdf sdfasdfas dsasfasda asdfasva asdfasdf',
-                                                score: null,
-                                            },
-                                            {
-                                                id: 'writing-2',
-                                                answer: '2 abc degaf adfasdf sdfasdfas dsasfasda asdfasva asdfasdf',
-                                                score: null,
-                                            },
-                                        ],
-                                        skillExam: {
-                                            id: '1',
-                                            name: 'Writing',
-                                        },
-                                    },
-                                    {
-                                        totalScore: 9.5,
-                                        userAnswerDetails: [
-                                            {
-                                                id: 'speaking-1',
-                                                answer: 'http://localhost:3000/assets/media/test-media.m4a',
-                                                score: null,
-                                            },
-                                            {
-                                                id: 'speaking-2',
-                                                answer: 'http://localhost:3000/assets/media/robo.m4a',
-                                                score: null,
-                                            },
-                                            {
-                                                id: 'speaking-3',
-                                                answer: 'http://localhost:3000/assets/media/test-media.m4a',
-                                                score: null,
-                                            },
-                                        ],
-                                        skillExam: {
-                                            id: '1',
-                                            name: 'Speaking',
-                                        },
-                                    },
+                                name: 'Number of assignments',
+                                color: 'red',
+                                type: 'column',
+                                data: [
+                                    ['code 1', 100],
+                                    ['code 2', 2],
+                                    ['code 3', 2],
+                                    ['code 4', 1],
                                 ],
-                            },
-                            {
-                                id: '1234',
-                                code: '123456',
-                                name: 'exam 1',
-                                userName: 'ABc',
-                                submittedAt: '16:44:47 12/6/2024',
-                                processes: [],
-                            },
-                            {
-                                id: '1235',
-                                code: '123456',
-                                name: 'exam 1',
-                                userName: 'ABc',
-                                submittedAt: '16:44:47 12/6/2024',
-                                processes: [],
-                            },
-                            {
-                                id: '1236',
-                                code: '123456',
-                                name: 'exam 1',
-                                userName: 'ABc',
-                                submittedAt: '16:44:47 12/6/2024',
-                                processes: [],
-                            },
-                            {
-                                id: '1237',
-                                code: '123456',
-                                name: 'exam 1',
-                                userName: 'ABc',
-                                submittedAt: '16:44:47 12/6/2024',
-                                processes: [],
                             },
                         ]}
                     />
+                    <HightChart
+                        title="Answers"
+                        xTitle="Aug"
+                        yTitle="Assignments"
+                        series={[
+                            {
+                                name: 'Number of assignments',
+                                color: 'blue',
+                                type: 'line',
+                                data: [
+                                    { x: 1, y: 0 },
+                                    { x: 2, y: 3 },
+                                    { x: 4, y: 3 },
+                                    { x: 15, y: 4 },
+                                    { x: 31, y: 5 },
+                                ],
+                            },
+                        ]}
+                    />
+                </section>
+                <section className="bg-white flex flex-col gap-3 px-4 py-4 rounded-lg shadow-2xl">
+                    <h3>Recent Submissions</h3>
+                    <ComponentListUserAnswer listUserAnswer={listAnswers} />
                 </section>
             </section>
         </div>

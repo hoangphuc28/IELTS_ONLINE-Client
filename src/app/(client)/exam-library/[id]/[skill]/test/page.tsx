@@ -21,6 +21,7 @@ import ComponentSubmit from './_components/submit'
 import { testSkill } from '@/src/utils/shares/interfaces/IMiniTest'
 import ComponentSpeakingTest from './_components/speakingTest/ComponentSpeaking'
 import { siteAction, siteSelector } from '@/src/app/(client)/_lib/redux/reducers/site.reducer'
+import { answersKey } from '@/src/utils/shares/localStorage'
 
 export default function Page() {
     const params = useParams<{ id: string; skill: string }>()
@@ -36,7 +37,12 @@ export default function Page() {
     // const [targetSkillTest, setTargetSkillTest] = useState<IMiniTest | null>(null)
     useEffect(() => {
         if (currentSkillProcess) return
-        dispatch(userAnswerActions.Get(params.id))
+        const userAnswerId = localStorage.getItem(answersKey)
+        if (!userAnswerId) {
+            alert('Loading answers failed! Back to home?')
+            router.push('/')
+        }
+        dispatch(userAnswerActions.Get(userAnswerId!))
     }, [])
     useEffect(() => {
         // console.log('[CUR SKILL PROCESS] ', currentSkillProcess)

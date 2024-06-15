@@ -1,8 +1,11 @@
 import { testSkill, testSkillType } from "@utils/shares/interfaces/IMiniTest"
 
+export const answersKey = 'ielts-online-client-answers-key'
+
 export function getTokenKey() {
     return process.env.NEXT_PUBLIC_ACCESS_TOKEN_LOCAL_NAME || 'access_token'
 }
+
 export class TestItemManager {
     readonly name: string = 'testsStart'
 

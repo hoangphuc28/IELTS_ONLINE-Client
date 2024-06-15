@@ -59,10 +59,10 @@ export default function ComponentTestHeader({ data }: { data: IMiniTest }) {
 }
 
 function ListeningHeader({ data }: { data: string[] }) {
-    const listRefAudio: RefObject<HTMLAudioElement>[] = []
-    for (const src of data) {
-        listRefAudio.push(useRef<HTMLAudioElement>(null))
-    }
+    const ref1 = useRef<HTMLAudioElement>(null)
+    const ref2 = useRef<HTMLAudioElement>(null)
+    const ref3 = useRef<HTMLAudioElement>(null)
+    const listRefAudio: RefObject<HTMLAudioElement>[] = [ref1, ref2, ref3]
 
     return (
         <>

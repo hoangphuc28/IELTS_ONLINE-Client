@@ -7,18 +7,24 @@ export default function HightChart({
     title,
     series,
     props,
+    xTitle,
+    yTitle,
 }: {
     title: string
     series: HighCharts.SeriesOptionsType[]
-    props: HighChartsReact.Props
+    props?: HighChartsReact.Props
+    xTitle?: string
+    yTitle?: string
 }) {
+    const propsConvert = props || {}
     const chartComponentRef = useRef<HighChartsReact.RefObject>(null)
+    const xAxisOption: HighCharts.XAxisOptions = {}
     const options: HighCharts.Options = {
         title: {
             text: title,
         },
-        xAxis: [{ title: { text: 'Tháng 3', style: { fontSize: '18px' } } }],
-        yAxis: [{ max: 10, title: { text: 'Điểm', style: { fontSize: '18px' } } }],
+        xAxis: [{ title: { text: xTitle || '', style: { fontSize: '18px' } }, type: 'category' }],
+        yAxis: [{ title: { text: yTitle || '', style: { fontSize: '18px' } } }],
         series: series,
     }
     return (
@@ -27,7 +33,7 @@ export default function HightChart({
                 highcharts={HighCharts}
                 ref={chartComponentRef}
                 options={options}
-                {...props}
+                {...propsConvert}
             />
         </>
     )

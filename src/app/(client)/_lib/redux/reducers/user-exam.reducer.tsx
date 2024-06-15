@@ -23,7 +23,7 @@ const reducers = {
             if (Object.prototype.hasOwnProperty.call(testSkill, key)) {
                 const k: testSkillType = key as testSkillType
                 const skill: string = testSkill[k]
-                const item = data.processes.find(
+                const item = data.processes?.find(
                     (item) => item.skillExam.name.toLowerCase() === skill.toLowerCase(),
                 )
                 if (!!item) {
