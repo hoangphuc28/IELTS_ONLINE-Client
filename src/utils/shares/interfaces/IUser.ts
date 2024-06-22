@@ -5,6 +5,8 @@ export enum userRole {
     TEMP_USER = 'TEMPUSER',
 }
 
+export type userRoleType = keyof typeof userRole
+
 export default interface IUser {
     id: string
     name: string

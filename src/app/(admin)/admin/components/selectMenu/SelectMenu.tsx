@@ -28,11 +28,11 @@ export default function SelectMenu() {
         }
     }
     return (
-        <div style={{width: '150px'}} className={`select-box ${openMenu ? 'select-open' : ''}`}>
+        <div style={{ width: '150px' }} className={`select-box ${openMenu ? 'select-open' : ''}`}>
             <div className="select-header form-control" onClick={changeHeight}>
                 <div className="text">
                     {pagination.filter.partNumber === ''
-                        ? 'All Parts'
+                        ? 'All Exams'
                         : pagination.filter.partNumber}
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -45,21 +45,24 @@ export default function SelectMenu() {
                         onClick={() => {
                             const newPagination = _.cloneDeep(pagination)
                             newPagination.filter.partNumber = ''
-                            newPagination.page= 1
+                            newPagination.page = 1
                             dispatch(setPartPagination(newPagination))
                         }}
                     >
-                        All Parts
+                        All Exams
                     </li>
                     {Object.keys(PartEnum).map((key) => (
                         <li
-                        onClick={() => {
-                            const newPagination = _.cloneDeep(pagination)
-                            newPagination.filter.partNumber = key
-                            newPagination.page= 1
-                            dispatch(setPartPagination(newPagination))
-                        }}
-                        key={key}>{PartEnum[key as keyof typeof PartEnum]}</li>
+                            onClick={() => {
+                                const newPagination = _.cloneDeep(pagination)
+                                newPagination.filter.partNumber = key
+                                newPagination.page = 1
+                                dispatch(setPartPagination(newPagination))
+                            }}
+                            key={key}
+                        >
+                            {PartEnum[key as keyof typeof PartEnum]}
+                        </li>
                     ))}
                 </ul>
             </div>

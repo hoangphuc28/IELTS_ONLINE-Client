@@ -10,14 +10,65 @@ import {
     adminUserAnswerAction,
     adminUserAnswerSelector,
 } from '../../lib/redux/reducer/user-answer.reducer'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import HightChart from '@/src/app/(client)/account/dashboard/_components/charts/highChart'
+import { IUserAnswerFull } from '@/src/utils/shares/interfaces/IUserAnswerFull'
+import { userAnswerService } from '@/src/services/user-answer.service'
 
 export default function Page() {
     const dispatch = useAppDispatch()
     const listAnswers = useAppSelector((state) => adminUserAnswerSelector.GetList(state))
+    // const [statisticData, setStatisticData] = useState<IUserAnswerFull[]>([])
+    const [statisticExam, setStatisticExam] = useState<[string, number][]>([])
+    const [statisticAnswers, setStatisticAnswers] = useState<{ day: number; total: number }[]>([])
+    const [statisticMonth, setStatisticMonth] = useState<string>('')
     useEffect(() => {
         dispatch(adminUserAnswerAction.GetAll())
+        userAnswerService
+            .getStatisticData()
+            .then((listUserAnswers: IUserAnswerFull[]) => {
+                if (listUserAnswers.length > 0) {
+                    setStatisticMonth(
+                        new Date(listUserAnswers[0].timeStart).toLocaleString('en-us', {
+                            month: 'long',
+                        }),
+                    )
+                }
+                // #region convert data statistic exam
+                const dataExam: [string, number][] = []
+                listUserAnswers.forEach((answer) => {
+                    const examCode = answer.processes[0].skillExam.exam.code
+                    let examIndex = dataExam.findIndex((listValue) => listValue[0] === examCode)
+                    if (examIndex === -1) {
+                        examIndex = dataExam.push([examCode, 0]) - 1
+                    }
+                    dataExam[examIndex][1] += 1
+                })
+                setStatisticExam(dataExam)
+                // #endregion convert data statistic exam
+                // #region convert data statistic answer
+                const dataAnswers: { day: number; total: number }[] = []
+                const dataSortByDay: IUserAnswerFull[] = listUserAnswers.sort(
+                    (beforeItem, afterItem) => {
+                        if (beforeItem.timeStart > afterItem.timeStart) return 1
+                        return -1
+                    },
+                )
+                dataSortByDay.forEach((item) => {
+                    const dayItem = new Date(item.timeStart).getDate()
+                    let itemIndex = dataAnswers.findIndex((dItem) => dayItem === dItem.day)
+                    if (itemIndex === -1) {
+                        itemIndex = dataAnswers.push({ day: dayItem, total: 0 }) - 1
+                    }
+                    dataAnswers[itemIndex].total += 1
+                })
+
+                setStatisticAnswers(dataAnswers)
+                // #endregion convert data statistic answer
+            })
+            .catch((e) => {
+                console.log(e)
+            })
     }, [])
     return (
         <div className="dashboard">
@@ -25,7 +76,7 @@ export default function Page() {
                 <QuicActions />
                 <section className="grid grid-cols-2 gap-2">
                     <HightChart
-                        title={'In ' + new Date().toLocaleString('en-us', { month: 'long' })}
+                        title={'In ' + statisticMonth}
                         xTitle="Exam's code"
                         yTitle=""
                         series={[
@@ -33,31 +84,23 @@ export default function Page() {
                                 name: 'Number of assignments',
                                 color: 'red',
                                 type: 'column',
-                                data: [
-                                    ['code 1', 100],
-                                    ['code 2', 2],
-                                    ['code 3', 2],
-                                    ['code 4', 1],
-                                ],
+                                data: statisticExam,
                             },
                         ]}
                     />
                     <HightChart
-                        title="Answers"
-                        xTitle="Aug"
-                        yTitle="Assignments"
+                        title={'Number of answers in ' + statisticMonth}
+                        xTitle="Day"
+                        yTitle=""
                         series={[
                             {
                                 name: 'Number of assignments',
                                 color: 'blue',
                                 type: 'line',
-                                data: [
-                                    { x: 1, y: 0 },
-                                    { x: 2, y: 3 },
-                                    { x: 4, y: 3 },
-                                    { x: 15, y: 4 },
-                                    { x: 31, y: 5 },
-                                ],
+                                data: statisticAnswers.map((item) => ({
+                                    x: item.day,
+                                    y: item.total,
+                                })),
                             },
                         ]}
                     />

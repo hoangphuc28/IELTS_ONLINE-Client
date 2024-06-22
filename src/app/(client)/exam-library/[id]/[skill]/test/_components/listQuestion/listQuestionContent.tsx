@@ -1,12 +1,11 @@
 'use client'
 
 import IAnswer from '@/src/utils/shares/interfaces/IAnswer'
-import IGroup from '@/src/utils/shares/interfaces/IGroup'
 import ComponentDropItem, { ComponentStringDropItem, handleDrop } from '../dragdrop/dropItem'
 import ComponentListDrag from '../dragdrop/listDrag'
 import { ComponentStringFloatingInputLabel } from '../floatingInputLabel'
 import { useParams } from 'next/navigation'
-import { FormEvent, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import ComponentDropdownItem from '../dropdown/dropdownItem'
 import { allowDrop, drop } from '../../../utils/dragAndDrop'
 import ComponentContainerMultiChoice from '@/src/app/(client)/exam-library/[id]/[skill]/test/_components/questionItems/multipleChoice'
@@ -15,8 +14,6 @@ import ComponentContainerMultipleResponse from '@clientExamLibrary/[id]/[skill]/
 import { QuestionType } from '@/src/utils/constants/questionType'
 
 import { GroupShowDTO } from '../../../../../../../../utils/shares/dto/group-show.dto'
-import { fillInTheBlank } from '@/src/utils/shares/db/answer/services/answers/fillInTheBlank.service'
-import { AnswerAddDTO } from '@/src/utils/shares/db/answer/dtos/answer-add.dto'
 
 export default function ComponentListQuestionContent({
     data,

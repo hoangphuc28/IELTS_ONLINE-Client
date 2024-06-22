@@ -3,6 +3,7 @@ import groupQuestionReducer from './reducer/groupQuestionReducer'
 import partReducer from './reducer/partReducer'
 import commonReducer from './reducer/commonReducer'
 import { adminUserAnswerReducer } from './reducer/user-answer.reducer'
+import { adminExamReducer } from './reducer/exam.reducer'
 
 export const makeStore = () => {
     return configureStore({
@@ -11,6 +12,7 @@ export const makeStore = () => {
             part: partReducer,
             common: commonReducer,
             userAnswer: adminUserAnswerReducer,
+            adminExam: adminExamReducer,
         },
     })
 }

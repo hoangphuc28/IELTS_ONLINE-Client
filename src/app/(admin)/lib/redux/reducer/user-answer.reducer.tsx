@@ -17,6 +17,12 @@ const reducers = {
     setter(state: IUserAnswerState, action: PayloadAction<IUserAnswerFull>) {
         state.instance = action.payload
     },
+    setterFromId(state: IUserAnswerState, action: PayloadAction<string>) {
+        const data = state.listInstances.find((instance) => instance.id === action.payload)
+        if (data) {
+            state.instance = data
+        }
+    },
     setList(state: IUserAnswerState, action: PayloadAction<IUserAnswerFull[]>) {
         state.listInstances = action.payload
     },

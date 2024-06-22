@@ -34,7 +34,7 @@ export default function Search() {
                 type="text"
                 className="form-control rewrite-input-search"
                 id="categories-search"
-                placeholder="Search category"
+                placeholder="Search Exam"
             ></input>
             <Image
                 style={{ cursor: 'pointer' }}

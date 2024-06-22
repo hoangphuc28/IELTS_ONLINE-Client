@@ -83,6 +83,7 @@ export function ComponentStringFloatingInputLabel({
 
     async function handleInput(e: Event, id: string) {
         const input = e.target as HTMLInputElement | null
+        console.log('handleInput: ', e, id, input)
         if (!input) {
             createToastDanger()
             return

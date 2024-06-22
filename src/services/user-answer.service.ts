@@ -11,11 +11,15 @@ class UserAnswerService extends BaseService {
     }
 
     async getAllFilterExam(code: string) {
-        return regexResponse(await this.api.get('/all/by-exam'))
+        return regexResponse(await this.api.get(`/all/by-exam/${code}`))
     }
 
     async getRecent(codeExam: string) {
         return regexResponse(await this.api.get(`/${codeExam}/recent`))
+    }
+
+    async getStatisticData() {
+        return regexResponse(await this.api.get('/statistic/exam'))
     }
 }
 

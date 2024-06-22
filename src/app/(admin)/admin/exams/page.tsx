@@ -1,25 +1,28 @@
 'use client'
-import CategoriesPanel from "../components/categoriesPanel/categoriesPanel";
-import { useRef } from 'react';
-import ExamPanel from "./examPanel";
-import "@admin/styles/pages/layoutTable.scss"
-import Resizer from "../components/resizer";
+import CategoriesPanel from '../components/categoriesPanel/categoriesPanel'
+import { useRef } from 'react'
+import ExamPanel from './examPanel'
+import '@admin/styles/pages/layoutTable.scss'
+import Resizer from '../components/resizer'
 interface Category {
-    id: String,
+    id: String
     title: String
 }
 export default function Page() {
-    let categories: Category[] = [{id: "1", title: "All categories"}, {id: "2", title: "Default categories"}]
-    const examLeft = useRef<HTMLDivElement>(null);
+    let categories: Category[] = [
+        { id: '1', title: 'All categories' },
+        { id: '2', title: 'Default categories' },
+    ]
+    const examLeft = useRef<HTMLDivElement>(null)
 
     return (
         <div className="layout-table">
             {/* <div ref={examLeft} className="layout-table-left">
-                 <CategoriesPanel title={"Exam"} skills={categories} />
+                <CategoriesPanel title={'Exam'} skills={categories} />
             </div>
-          <div style={{padding: "17px 0"}} className="table-middle">
-            <Resizer max={800} forwardedRef={examLeft}/>
-          </div> */}
+            <div style={{ padding: '17px 0' }} className="table-middle">
+                <Resizer max={800} forwardedRef={examLeft} />
+            </div> */}
             <div className="layout-table-right">
                 <ExamPanel />
             </div>

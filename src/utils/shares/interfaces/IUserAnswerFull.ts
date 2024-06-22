@@ -1,37 +1,52 @@
 import { QuestionType } from "../../constants/questionType"
 import { testSkillType } from "./IMiniTest"
 import IQuestion from "./IQuestion"
+import { userRole, userRoleType } from "./IUser"
 
 export interface IUserAnswerFull {
     id: string
-    timeStart: Date
-    submittedAt: Date
+    timeStart: string
+    submittedAt: string
+    avgScore: number | null
     user: {
         id: string
         name: string
+        mail: string
     }
     processes: IUserAnswerProcess[]
+}
+
+export interface IUser {
+    id: string
+    name: string
+    mail: string
+    role: userRoleType
 }
 
 export interface IUserAnswerProcess {
     id: string
     totalScore: number | null,
+    skillExam: ISkillExam
     userAnswerDetails: IUserAnswerDetail[]
 }
 
 export interface IUserAnswerDetail {
     id: string
     score: number | null
-    answer: IUserAnswerDetailItem[]
+    answer: IGroupAnswer[]
     feedback: string
     examDetail: IPartDetail
 }
 
-export interface IUserAnswerDetailItem {
-    groupQuestionId: string;
+export interface IAnswerData {
     questionId: string;
     answer: string;
     isCorrect: boolean;
+}
+
+export interface IGroupAnswer {
+    id: string;
+    answers: IAnswerData[];
 }
 
 export interface IPartDetail {
@@ -74,4 +89,6 @@ export interface IExam {
     description: string
     time: string
     status: string
+    createdAt?: string
+    updatedAt?: string
 }

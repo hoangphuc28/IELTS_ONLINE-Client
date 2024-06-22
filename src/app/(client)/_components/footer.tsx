@@ -23,7 +23,7 @@ export default function Footer() {
                         </section>
                         <section className="mt-3">
                             <h2 className="text-xl uppercase text-center">
-                                Learn english - Dedicated to life long - Long Education
+                                Learn english - Dedicated to life - Long Education
                             </h2>
                         </section>
                     </div>
